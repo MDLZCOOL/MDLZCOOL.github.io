@@ -1519,7 +1519,7 @@ input::placeholder {
   z-index: -999;
   width: 100%;
   height: 100%;
-  background: #2F4F4F;
+  background: #183B34;
   background-attachment: local;
   background-position: center;
   background-size: cover;
@@ -3456,7 +3456,7 @@ h1.page-title + .tag-cloud-list {
   content: '';
 }
 #page-header.full_page {
-  height: 100vh;
+  height: 400px;
   background-attachment: fixed;
 }
 #page-header.full_page #site-info {
