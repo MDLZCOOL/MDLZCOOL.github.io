@@ -1,0 +1,166 @@
+<!DOCTYPE html><html lang="zh_CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Windows下Clash for Windows使用教程 | MDLZCOOL's Blog</title><meta name="author" content="MDLZCOOL"><meta name="copyright" content="MDLZCOOL"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="文章已加密，请输入密码以阅读">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows下Clash for Windows使用教程">
+<meta property="og:url" content="https://mdlzcool.github.io/2024/04/12/how-to-use-clash-on-windows/index.html">
+<meta property="og:site_name" content="MDLZCOOL&#39;s Blog">
+<meta property="og:description" content="文章已加密，请输入密码以阅读">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic.imgdb.cn/item/6617ce8168eb935713bda60d.jpg">
+<meta property="article:published_time" content="2024-04-11T16:13:37.375Z">
+<meta property="article:modified_time" content="2024-04-11T16:44:55.489Z">
+<meta property="article:author" content="MDLZCOOL">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic.imgdb.cn/item/6617ce8168eb935713bda60d.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://mdlzcool.github.io/2024/04/12/how-to-use-clash-on-windows/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><meta/><meta/><meta/><meta/><meta/><meta/><meta/><meta/><meta/><meta/><meta/><meta/><meta/><meta/><meta/><meta/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Error',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Windows下Clash for Windows使用教程',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-04-12 00:44:55'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.1.1"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://pic.imgdb.cn/item/6617ce8168eb935713bda60d.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">1</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="MDLZCOOL's Blog"><span class="site-name">MDLZCOOL's Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Windows下Clash for Windows使用教程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2024-04-11T16:13:37.375Z" title="Created 2024-04-12 00:13:37">2024-04-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2024-04-11T16:44:55.489Z" title="Updated 2024-04-12 00:44:55">2024-04-12</time></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="密码有误，请重试" data-whm="解密的内容无法被验证，但仍可阅读">
+  <script id="hbeData" type="hbeData" data-hmacdigest="9a232ee15da67edc809a72a8964fa57ed6fd736f3eac48b497e5ef529a627d24">f486ad9ffa4b01bca5f2d6a44c783b6260a25d706d0792afaf5549cdd484ce67e2fc78cf35a7049c8de715ca4edd8e6b05b6a86a9a4e9448dff1313ff28440d6b17686204dd7580c1cc13d47f6beddbdea101b3824c470e44d7cc816fa0db21ae3ef7a9edd5f20798918a619cbd5022b1e1a1f186e26ab8f6a7325158525a5efa5d2827f7c0b36370e232b03260fe889bbf6464ae79fb3ab5999afd2f7ff0b92f9380d678566541cbd6cd6e0e2de5d39387774edd322efca24186803800d1a72b83ef977d0234cf50620643dc51fae7e6866b1f57fb9288402c670d4716c6d61fb724b3229126d5e2c68775ffb356b8a8959098840b57a6e3e4c36729b72a49d23abec9eb907699acd498c9f960466ca2fb8f8559e18f1c496d421aeacf67ed5318970ff5a95e57461aa61fc0bff627ad3c0b0a2cc91894d389442820a316fec567d97e64e4c8affb8ffce7f92cf59c3473f118bb95f8c19599317082581bdaf79af4be8c630f6cbefcb39e3314be4d709e74b11679856dfdc3bc6af5dea3d5c2f2534eb310b9cf80649bd61b4f090e3955b32c05b2f31c47fd20e2b694f40e6db5301d36df1371a0c170ab4f76ff9e76780c564405616e9ffcb03df166501c591dbf3821ba2de2d5abd69a52f065d04fe7e7d2c8bed68bf6471a0d316231c96c71918a9192b770089c22856835b2ab4125cf3adf6acbf71316720e1f29a6f866c7bd7243054b6599a58d7f099fe70d945915fb6c8f53e64bd9b24e7b60735c75887a7ff6b670adfbb5818b31168eae9f93031a9e4522bcf7f80ce3b4c4e17dc6a504ac7da99b5d9e08524dbe931e5c7d258ced1762aa220b89f4b9b6af1872bd87260e80345270456b88338fb8ab91775b0f3f516b8a83e01fd9624c1fb39bdf5db2744119ba6dc8a04386bae1e4092197d0303e16507e54aa0021a1677a8ed30ec4184c88b62e9fb023bd6d133613542f78bae603e14dd1b4fc38648669bd9e9a1e5af6c282273637238337582bafb805db52424c3891bee62e3e81edd6e0483a96f4cf975c34b2ee33928811ce7029afbf6f79cf32de0e4e518a00a9b0b499daeae1984d773a1fa2034461a6e7a9cf64aae6a67f959b40ba4fdff775890814283c1bb36c59c626e960f10eae4172529155d93528fc2bbbc2e497b0bd405fdbfdfc7de632117c4d495d8def424bf741bc569192cc5d3073485568d2da1fdef008dc2415cfff732df7dbe6d9e4d3105397af84812aaa70cbe4e60a3ff8b7182c7d68d99c28f1be4c75a7d32924d0e6e97c786d15c281caa41af1e41712f43186f74842b7640307152caad5a429877bdf27677cfa9d71a9a312b113b46a10ceca966d4a4a78129c767cf4a3750c5c2501540039e56e23b17195bf8e1bb52f558e20e5f255ec521b40d50dd43979504c5682f8d57f92ee8c09fe3fadec50fc9bda46deb245d580a2efe7be426ab73f6fe82dfaa4fdcf60f460270cb6c5a151172689c68984c9fa69298fb70a7d3f247d2c2de7ba718b55c0ca7bd6052fe39c2fbfbd5800ad1d30f7c16ed19ebd21eb9146f4284a701029564240c880bbb961d160c873f9c8906e7327707f81b10ea4fb1eef053b1ba5099e5d9e61934f03f138fd67840e36970199f9226178e2a852eef66f4a552dc2706d2ca027de486021316173525c6f1378030c64422f8f6a8a795d667c3e99857724e77df8cf396694a07b3c3b118bd45e961fd5c42f0a38c0f4211f456610401d76f9b320d5ca235c984d0046862cea219119138ec9f0b18d21f9aa46cfd1bb748038c0b0f7d2c8dfad05825bee34b45d60c2640de19eaaf65308408f22b1aa55a0ad16bc9a334d7976318ac6100d2f7a9a6ca21b8a344b2c6cc438073dcbe3395fa992f47066545ec6c132d6a49c7112e17fcdf16a6d3f0f2ca092eabe41261368337a9ff800077ec047992cb1a98a32ab262f09d0dce8d13ba6a4e78bc6b695d84907d2dd45bff1ef930360a0fa9e02f72f8d0c6cacd78c076f0ef0fab07a85593ee61e37d301e4bd59884689c3770d583d7ed08eded717b5eeb26f19594664e6958d6691efc5ad91e44207647c5ec8ba39046aa06a097061314dcbe8542c63b5d6b9c6897ff29979c991ccc96b09da621ead5bf62e08a7240cd47485d3026ba533a727a6e7a58c6c1002c8c7cc5bd40fec9bd2810be96acfd6100c2a3ef1f4a512c6211809098db6b07b84867c854b7a7e610a6c6cab32e6d4453e6dfc986299dc30fea6350b6f6fb0b6e7999f5970f370554d0bee7045dc2480fbb36bd134da5e817869ad09934b78c8a0cfad1c98218e0224bc8ef00e4bc43ea8b639da13a0e948092795a65459ef49b0c175e4dc9cebf9ffbd6491d7cbdfeb3db507437d147ee69d4309b9926fb027becf29109a5ca2f8b3b63da6cf14690262b114ca83690b118ec5c1d8368a47a10ad0ad53f82e4e41c8a48df6e15f990bab9155d0f965728cae6a0edc88a1d151a91721b13a33ede2ce89f120025cb1426a5a8c8ab4f7a943336b9caee7e82fa4a629fdbef7202226c21ccace9498dfabf426c6148096a2625e10923467f6c0feb7e3de1ecc41a602bff119cfcf5a6d9428c94432bbc300050ac6673a322cec74c9103f12ee691d4b2922225a0cabd5e39de7f78b51c5a181db89f5fe32a84b0c51135a0a4465464a3ad07ed666bb9e4cf9f20c8d735d0bce81522cb8c311ac56bd5fac1f51c98ef2a3eccca814277ff21081ecf3ed5f2455883ae145030d5720d3e4fe32c16de397bc38b4b5b64dc4ceacfaf08b6ef0f237413a1f846f8c36550d384207d64c1bbd9f77c4db9c3c6a19e6c1216c0f70e55f205b2a2c11ed70a61939632723616623f8461217595f2250ae08a4d63b19300eb787601acdf46ec136a70625d5fe7750e47e6a9314f7cc0bfef8fd4deb0082515f3e7daaeb28cab93b2c3dfd6d8cff0d603436270c61d6dbdda9179ddc423157a104f7bcbe04902e230a5d665d4e155181c94ef316b7ca643d488c28c429fc6dc298c59b62cee2de6783bca16663f78f1854c1e593d4e693c37dc797aed9edc71cb6d378e8e61c1eca18cd99e2b4e4013d98618a995bb1a7be3eca3cfcb017493843b114cb38772226a22833add4778d1c9ddf6935d14b035b0aad8445412f534d7cc3f751fabe9b64030f6b8de0de5f7af7b0cf6a2efb03219004c9ce85ea7b034f112be9688c406f148cdaada8c4de5bf63eb1205797d1bdf2e20dcd067153fb8e92cb77b36c993cefeee7591c3c78d4e7f181a123c95c3dda562272de8a85331d5d1fa37435f237a8dc2ce89046f8c738499948d45d80d256e8d532e6987038ab7ae8059c378c6326a25260f769142fb894d8708e8b055ed4c8bcaaae6326f64683a72995de9ec448a5875fc824a9eaae8d6379cd889924ebed2c7802888bfa41348f7e186fcb352c558711f1ce0b6a63fb70909461fe43b537b5bf125d5914d888daecd4fae367d5a57d33911a5bc9af36dbd5e296d72566fc8d39f672146567edd39c3b34db5495860eb8c8f2a9758afea8b6241c1bf544923d04a533e3a543bd5e1b49db10146ae8abd5df6bf0e2a8f0c69d46fe308eb9fa8bae91e85a23340ae4b4769342004c52e66951df48e7d0f32dc8532c7e70296c511bbb6841056f158eb47912c89c27525cee84872db0f5636af3763eb16ce5eb392472eeda2fb1af338f75feeeb90c88ac3fcc806dd6865e7a2315c037a142e2e1ffde2fc640344aa8aa656a1cfeb3f959491bf8ae3942c4edf3edfbf9b52d0596de09d7d18de6d9f16830514fa7ab95596373ec19ecf80ce45518104235bcc69ddd00ebff472140de93bea68470e895016c085c0caddf2b48c2ae631929c77fc3d5aa5175e86cb7d1ad13c1ce5c4afd09e5f8474211be492f8333b33fc1220f08994c6fca3f802fa414d8e093a0abd2b6705834945aa94bc033ecfdce60d10d9a91baebe46d5c30138a592b38798c04a6bde8a66adacb36f5bff639956d907919ccbd4125e79f10fe4edccfd8366a9ab49489f909f66e98ac274eb72e6b9a2b228fc6b2462f2c9d0fc3157ba183a1e71f6a1843cbbfcdfc6ce949ce2ef0430367966764aaa560ea30759a3e878b51b9140e5e3bae6d04d8438e5cf869dfed6e98596b940d38446dc29f27442a34b4f9e61e18b582e532ff080567b7f169ba143d16afdf47a8216b03be3cb673024657eb79ffc1fba6a64aaa9d28cbf05783f8f1476af6af841ca874404e4e9a98b1c6be13a0c981ff187b2964d672e2f86c29ccdcaffcd876bf88297b2c78b6521328ef845ef0b4db0f726ce91370747b13915aeff3158d1f5a03a292520e9e91153f185ce4f18699bb19e4928fea0095663be03ebd57f8795e83083c47c36b5dd62a9c48e4372309d9874e704e8e5f72290e58c7d49150bde9831c48e4224da7185a9673ab2d9e1e44a591decf5ccc818b3a8fc87728b69a51da6be47bd5fc5244f17a19c1b3de7957e884ac16f985810b8cf7a82e60470487a6ce05e3301fa38a1f8b9fec14c7fe85332d6175b8c4ca1bf3e03e80a5c9bf581e855e8f33122983de409bdcf2203dc90eb155cbf81519ce47c5e1a3c07627f667a9d347c19a72e07c414718c23578afe730121b7e77786bec2e15662cf674c6e348bb43c7bbb48e978dca0cf4f49548127ff0496015d93ec8f2eb9df1aa925a7843b313dd2e24dc1b462bbc1dace943b791f5fc33dfd0f77497b0299a08f35d95a8f42b22b8dced2f3c97ab1f9f32b4afbe2b5e49c1d0e9b254039635b6c6d2ad892d6dd580f2557fde87da7762442c9da51c6cdbc9df1363b87e4f4f14df5c574917c570c98162f5542877bb2a6dfb68980777da5cdd5a979bac0194b14c63c1e03c2b51c061f29abb9d8dc1d40cf592c4a2661c64dc1ef1b3b49f5a2b31be24ee5847a4d7def85c39c4a8c7667985d3791ff347ac93cea11d58720566da4f5a71e0cbab82cdf22dac251939aa4011e898b00148c278fc1677bc3ef2da9aca9a6745ee22bc214d3fdd5455af213423dbfe05bfb52745594295b0dbeaf77b9c1dda54be44391e7399ca1a7b73444230be21180c4916a9e77d70c9d54559c7ebcd0092b46f2a7e8f9e8f75f91a37b6b626300154e3d616747cdd39a61a4c1c1ae8a55584e672b06412289ac20bf821b3fcf090cedc74c2192f030ae392e719232d7890bd1e935d733565fae41dcc6aab4e93cc94731327999832b46875a5ddb22e9ef61fc7ad31b5d2f4355643e308b09bec8ffd3a95e53609516c29d6d0829d55b5886a1a5b6b9824cf08ed58f1b1e0d234d7ed16b9a9612c98db34257b3b817bc2ca12eb6008593eb950235b5d0a431cb2898ef497c27af75f137fd86a34bef5a5d3597df548fb1fdd1791c30903e1838c91fe91063be58cb5b5f8279806fbedb6d1111e44dea1171b63c9932b48f8efd2d1cde9c24923d19ac5d628fafad18db64faf53073a884211825211cb020c396afae58303fbe496e64eba4343a22d4fce6e307955c6b4d3133a237fad98d2dab42641fd9ebc7ee825f44b140c190a8a00f813d09923e117fa4ce28931ab284a12be771fa4615a07c6167177baa1770ee1af7cd0c0b3ce2dd1b4978eb686423209024c4078299831e4835d5eeba0d6047c6b92ceb4ae94300b0ec93618b65f0fa4c0ef815abba18aee406acd3f516e3293830db560f3f5eb181f6abaddd3ea0a71a9b90166ce762c1310d033593fbe20330f29cd5512d6bbf09e2223157130073c4214c0a8d2e60ac519b48aff132482a6c52919523323c8bc6e8e3de83e8edf15b43cf75e2ae2440b8f2afffd1ea7f0881cda34566e0ffbb4caaf034008c0e99d9c92d7950a27d4465be92123a291a0ccd86c60fa6de213465ea4c96f454f893dafbdd012c0bfdb9a267cf80a111f4dca0988a101a4cefeef5b47f6bbb212d4851356560bf6b3f92bdac7e8c985eb64f7b99049cf55dc7a4519b3e7889e3c8bea826dda919f1822e180ac3bb03c5717a766d8826aa5b731ecad9066ffc1a4ada59cc88bfe372d0237b8cba0d62fd66c02606b478ad60071778c407fd6755da67b571f0b27a584d9cea4c2d4fef97e54a1939d503ac8171f773bf837fafee3f8704b1fa77347da6d47dd4d2e59f8c0cde53fe0bb80bfad39e75c43cd644715ac878e2ce0169a5986840f3e3fe73b2a4c46a08122726601de7cae973f163dc44b806c6f5173b3b3d770bbfea10e4e7ee4e07f319999f97dd0c95be6beda36ee05644bb7f6556620b71444a0cb70fa9323af87d45f90144ac78fe57fbe1471f8fa2421c36c50cbd01b2bfa16acee9aa9519b244b020c152045950ddf174df1436bce6dc64eee40b4ac3b321602adbaadb1b0b469b421ea3f74d377837248973dc2ee10a82ba7c54fd9ae3ac30ce7a987526fc6cc8a85b3737420dc449373e47e99e186689b2a79599dd8fec7a9333725bc58f7dc320ecb9757f1939f24878e20ebdc78f87cb8a68de6904e921ceabbe08fa44c8615b8ddfe83fcedeb78671fc41a6420cc592ed750bd374fd31f6880b234aac6c416d5aa962d5df7693be0e04a70ba74d9c8e87dfbbc5e52a07a6f0f8d90d3480bac7f6a726b173b488fef28c69b10d6e40adc0d43c880b065f4e66230f508ebc8d86def6c370b38dcbe329b2e1d2a3a203f1932a65f832c96658920339a15017f86be9866f60ecfbac9fb8e30b471bc2404484ac22cbf9f0ea48b6874b26d6d8dcd4970b6282ebb46971f02a5d809fd678ba3ccfe0756549cd9e248232d348880bf5de801c5b1403dba2fadf07318f08ed234738ebc6b5d5f9c7da92e77422cfd0c13d7dcceb852e15320e266937ba13754c010c6d6311122c44372f73dbd8ef509fed3492afba42eddf97fceec2b740001cd10891540f891a4c9ecf1eb5a8acad16d9eba250f47105f26e7acc8b098a5e057b60b0dda8cf40be2d276ab3cd65320438c82bc0e7e2aef8a75638b33403a5732739fe6900861fdf6b0350dd6e9fb898236e3127961cbee70ee73ebd23391610bd170c76857c4b18152bda4a2ecc4fe952a8a783d13a82ed269ca2a40aec8f9096faba010ce4aa09be6dc105869f2ed72dfbb8ae56ac87919196fd7ab9a9d8bfcaf8cf4ab64c8c0d4ede4ac3e37509de7b79d2285ed4802d52167416e17b65e5a5d71eca4cf241eb431bbc691b14c20142bc4ee695f8f680a5a3752101f9107921114b3cf1433a594fbcd6e76f87c224b8baa4180578616e00565c72dd99dd4fdef2e23044d4ea4891f61cc9652d38b23656a8db991f6a3396664dae3c0017dd2d1b7c82bee123b1c8a60d1c0f0976fd993ae257ab4d59a8afd322b18e91dd73a3c60b45b900c3d35d2790eef2618c47ce1df519dec7e72b20f1a0c76906473fdf9cbe7aab6bf09ec5df7c238160aa0d7105bfce5dcd57edf7467b1e4cc722</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">请输入密码</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css"></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="https://MDLZCOOL.github.io">MDLZCOOL</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="https://mdlzcool.github.io/2024/04/12/how-to-use-clash-on-windows/">https://mdlzcool.github.io/2024/04/12/how-to-use-clash-on-windows/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://pic.imgdb.cn/item/6617ce8168eb935713bda60d.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2024/04/11/dev-esp32-lvgl-transplant/" title="基于ESP-IDF在ESP32S3上移植LVGL和显示触摸驱动"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">Next</div><div class="next_info">基于ESP-IDF在ESP32S3上移植LVGL和显示触摸驱动</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://pic.imgdb.cn/item/6617ce8168eb935713bda60d.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">MDLZCOOL</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">1</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/MDLZCOOL"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content toc-div-class" style="display:none"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%B8%8B%E8%BD%BDClash-for-Windows"><span class="toc-number">1.</span> <span class="toc-text">一、下载Clash for Windows</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%88%9D%E8%AF%86CFW%E5%B9%B6%E6%B7%BB%E5%8A%A0%E8%8A%82%E7%82%B9"><span class="toc-number">2.</span> <span class="toc-text">二、初识CFW并添加节点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%87%A0%E7%82%B9%E6%B3%A8%E6%84%8F"><span class="toc-number">3.</span> <span class="toc-text">三、几点注意</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/12/how-to-use-clash-on-windows/" title="Windows下Clash for Windows使用教程">Windows下Clash for Windows使用教程</a><time datetime="2024-04-11T16:13:37.375Z" title="Created 2024-04-12 00:13:37">2024-04-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/04/11/dev-esp32-lvgl-transplant/" title="基于ESP-IDF在ESP32S3上移植LVGL和显示触摸驱动">基于ESP-IDF在ESP32S3上移植LVGL和显示触摸驱动</a><time datetime="2024-04-11T12:22:16.166Z" title="Created 2024-04-11 20:22:16">2024-04-11</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By MDLZCOOL</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">永远年轻，永远热泪盈眶</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div></div></body></html>
