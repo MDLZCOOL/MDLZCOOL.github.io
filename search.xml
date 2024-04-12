@@ -1,20 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>基于ESP-IDF在ESP32S3上移植LVGL和显示触摸驱动</title>
-    <url>/post/64bc178b.html</url>
-    <content><![CDATA[<p>test here</p>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>ESP32</tag>
-        <tag>LVGL</tag>
-        <tag>ESP-IDF</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Windows下Clash for Windows使用教程</title>
     <url>/post/5d67cfa0.html</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="密码有误，请重试" data-whm="解密的内容无法被验证，但仍可阅读">
@@ -29,5 +15,53 @@
   </div>
 </div>
 <script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+  </entry>
+  <entry>
+    <title>基于ESP-IDF在ESP32S3上移植LVGL和显示触摸驱动</title>
+    <url>/post/64bc178b.html</url>
+    <content><![CDATA[<p><em>本文使用Markdown编写</em></p>
+<p><strong>前言：之前基本一直在搞STM32的开发，想换到别的平台（比如ESP32）试试，也算对自己的一种锻炼和提升，注意到网上关于LVGL移植的教程非常多，但是大部分是基于Arduino平台的，基本没有基于ESP-IDF框架的（即使有也已经过时）。最近入手了几块ESP32的开发板和一块带CTP（电容触摸）的3.5寸IPS屏幕，可视角度和分辨率都不错，作为一个对GUI界面有执着追求的人，我想把当下很火的嵌入式GUI项目<a href="https://lvgl.io/">LVGL - Light and Versatile Embedded Graphics Library</a>移植到我的项目里，并实现一部分优化，让它即使在资源极端有限的情况下也能较为流畅地运行~</strong></p>
+<h2 id="物料选择"><a href="#物料选择" class="headerlink" title="物料选择"></a>物料选择</h2><ul>
+<li><p>ESP32S3开发板一块，比如我使用立创的ESP32-S3开发板（集成串口芯片）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121456913.jpg" alt="adaafa7619c68c78585d29edb648048"></p>
+</li>
+<li><p>3.5寸电容触摸屏（显示驱动为ST7796U，电容触摸驱动为GT911）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121456288.jpg" alt="e38667e75164ab1604978798d4a1982"></p>
+</li>
+<li><p>杜邦线若干</p>
+</li>
+<li><p>Type-C数据线</p>
+</li>
+</ul>
+<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><ul>
+<li><p>电脑系统：<code>Windows 11</code></p>
+</li>
+<li><p>开发环境：<code>Visual Studio Code</code>（至于为什么不用CLion，因为CLion上没配起来IDF框架（抽象））、<code>ESP-IDF_5.1.2</code></p>
+</li>
+</ul>
+<p><em>这里具体配置细节暂时略去，因为最近要重新装系统，到时候刚好重新配置一遍，写个教程补上 - 20240412</em></p>
+<h2 id="开工！"><a href="#开工！" class="headerlink" title="开工！"></a>开工！</h2><ul>
+<li><p>先找到示例文件夹，在IDF的安装目录下<br><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121501913.png" alt="image-20240412150107877"></p>
+</li>
+<li><p>打开进入<code>./get-started/</code>，找到<code>hello_world</code>程序并复制出来</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121502899.png" alt="image-20240412150249861"></p>
+</li>
+<li><p>再在<code>./peripherals/i2c</code>中找到<code>i2c_tools</code>，也和刚才的<code>hello_world</code>放在一起<br><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121506011.png" alt="image-20240412150606976"></p>
+</li>
+<li><p>打开<code>Visual Studio Code</code>，选到hello_world目录</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121518948.png" alt="image-20240412151819885"></p>
+</li>
+<li><p>这里配置一下开发板的信息：<br>1. 插上开发板，点一下左下角的<code>COM1</code>，根据实际选择正确的<code>COM</code><br>1. 点左下角<code>esp32</code>，选择合适的esp芯片型号，比如我就选esp32s3<br>1. 选择OpenOCD的配置文件，一般我们选择<code>via ESP-PROG</code>就好<br>1. 点左下角的五角星，选择UART（我的开发板上带了TTL芯片）<br>最终配置好应该是这样的：<br><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121527778.png" alt="image-20240412152745759"></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>ESP32</tag>
+        <tag>LVGL</tag>
+        <tag>ESP-IDF</tag>
+      </tags>
   </entry>
 </search>
