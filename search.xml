@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>基于ESP-IDF在ESP32S3上移植LVGL和显示触摸驱动</title>
+    <url>/2024/04/11/dev-esp32-lvgl-transplant/</url>
+    <content><![CDATA[<p>test here</p>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>ESP32</tag>
+        <tag>LVGL</tag>
+        <tag>ESP-IDF</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Windows下Clash for Windows使用教程</title>
     <url>/2024/04/12/how-to-use-clash-on-windows/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="密码有误，请重试" data-whm="解密的内容无法被验证，但仍可阅读">
@@ -15,19 +29,5 @@
   </div>
 </div>
 <script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-  </entry>
-  <entry>
-    <title>基于ESP-IDF在ESP32S3上移植LVGL和显示触摸驱动</title>
-    <url>/2024/04/11/dev-esp32-lvgl-transplant/</url>
-    <content><![CDATA[<p>test here</p>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>ESP32</tag>
-        <tag>LVGL</tag>
-        <tag>ESP-IDF</tag>
-      </tags>
   </entry>
 </search>
