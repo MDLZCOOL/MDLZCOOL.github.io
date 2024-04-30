@@ -17,6 +17,45 @@
 <script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
   </entry>
   <entry>
+    <title>舵机多功能测试程序说明</title>
+    <url>/post/cee333e2.html</url>
+    <content><![CDATA[<p><strong>写在前面：基地一直都有对舵机快捷测试的需求，但是每次都得改源码，很麻烦，也不能实现舵机的精准角度控制，最近忙完期中考试，抽时间写了这个程序，也算是对学到的东西的一点小小的应用吧</strong></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本程序运行在大疆开发板C型，基于STM32 HAL平台开发，具有极其优良的可移植性，可以快速迁移至其他MCU，本程序依托串口与上位机通信，使用时接串口线和__电池__即可</p>
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404301832725.png" alt="image-20240430183243677"></p>
+<p>对主菜单的解释</p>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Plain Servo Test</td>
+<td>朴素舵机测试（控制舵机转到特定角度）</td>
+</tr>
+<tr>
+<td>Interval Servo Test</td>
+<td>区间舵机测试（控制舵机在特定区间转动）</td>
+</tr>
+<tr>
+<td>Quick Servo Test</td>
+<td>快速舵机测试（快速测试舵机好坏）</td>
+</tr>
+<tr>
+<td>Use Multi Channels</td>
+<td>使用多个PWM通道，可以一次测试多个舵机</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>开箱Sipeed的SLogic Combo 8，多合一开发调试工具</title>
     <url>/post/e3aef73e.html</url>
     <content><![CDATA[<p><strong>写在前面：今天刚拿到一个好玩的小玩意，SLogic Combo 8，这是一个集逻辑分析仪、四组串口、DAP-Link、CK-Link为一体的开发调试工具，刚拿到就迫不及待地试玩了一下，发现确实好玩ლ(´ڡ&#96;ლ)，进一步丰富和简化了我的工具链，希望可以用的长一些</strong></p>
