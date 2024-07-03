@@ -1,19 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>KiCad导出Gerber图形文件</title>
-    <url>/post/ef2c5f04.html</url>
-    <content><![CDATA[<h3 id="KiCad导出Gerber图形文件"><a href="#KiCad导出Gerber图形文件" class="headerlink" title="KiCad导出Gerber图形文件"></a>KiCad导出Gerber图形文件</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png" alt="image-20240527171958427"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271720173.png" alt="image-20240527172047054"></p>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>PCB</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Windows下Clash for Windows使用教程</title>
     <url>/post/5d67cfa0.html</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="密码有误，请重试" data-whm="解密的内容无法被验证，但仍可阅读">
@@ -285,6 +272,19 @@
       </tags>
   </entry>
   <entry>
+    <title>KiCad导出Gerber图形文件</title>
+    <url>/post/ef2c5f04.html</url>
+    <content><![CDATA[<h3 id="KiCad导出Gerber图形文件"><a href="#KiCad导出Gerber图形文件" class="headerlink" title="KiCad导出Gerber图形文件"></a>KiCad导出Gerber图形文件</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png" alt="image-20240527171958427"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271720173.png" alt="image-20240527172047054"></p>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>PCB</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>舵机多功能测试程序说明</title>
     <url>/post/cee333e2.html</url>
     <content><![CDATA[<p><strong>写在前面：基地一直都有对舵机快捷测试的需求，但是每次都得改源码，很麻烦，也不能实现舵机的精准角度控制，最近忙完期中考试，抽时间写了这个程序，也算是对学到的东西的一点小小的应用吧</strong></p>
@@ -327,9 +327,14 @@
     <title>工程能力-单片机原理实验技能竞赛</title>
     <url>/post/52ee18fe.html</url>
     <content><![CDATA[<h1 id="工程能力-单片机原理实验技能竞赛"><a href="#工程能力-单片机原理实验技能竞赛" class="headerlink" title="工程能力-单片机原理实验技能竞赛"></a>工程能力-单片机原理实验技能竞赛</h1><h2 id="基于STM32的智能环境监控与极端天气预警系统——暴风突击队"><a href="#基于STM32的智能环境监控与极端天气预警系统——暴风突击队" class="headerlink" title="基于STM32的智能环境监控与极端天气预警系统——暴风突击队"></a>基于STM32的智能环境监控与极端天气预警系统——暴风突击队</h2><h3 id="一、项目简介"><a href="#一、项目简介" class="headerlink" title="一、项目简介"></a>一、项目简介</h3><p>本项目重点围绕__“智慧校园”“校园生活”__，基于STM32F4单片机平台、FatFS文件系统、LVGL嵌入式图形库，依托多种传感器和技术手段实现对气候信息的监测和记录，并且提供了一种算法来预警恶劣天气的发生。本项目的实施将推动校园智能化水平的提升，为师生提供更加便捷、舒适、安全的校园环境。同时，这也是校园信息化建设的重要组成部分，有助于提升学校的整体形象和竞争力。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">graph LR</span><br><span class="line">    NodeD&#123;STM32&#125;</span><br><span class="line">    NODEK(((智慧校园)))</span><br><span class="line">    %% Node0 -..- NODEK</span><br><span class="line">    NodeQ -..- NODEK</span><br><span class="line">    NodeK --&gt; NodeY&#123;&#123;BSP板级支持包&#125;&#125;</span><br><span class="line">    NodeD --&gt;|驱动| NodeK&#123;&#123;HAL&amp;&amp;LL提供的API&#125;&#125;</span><br><span class="line">    NodeD --&gt;|GUI| NodeX&#123;&#123;LVGL&#125;&#125;</span><br><span class="line">    NodeQ&#123;&#123;上位机&#125;&#125; --&gt; |控制|NodeD</span><br><span class="line">    NodeX --&gt; GUI界面编写</span><br><span class="line">    NodeD --&gt;|FileSystem文件系统| NodeZ&#123;&#123;FatFS&#125;&#125;</span><br><span class="line">    NodeZ --&gt; NODE3&#123;&#123;SDCard当前数据存储&#125;&#125;</span><br><span class="line">    NodeZ --&gt; NODE4&#123;&#123;SDCard历史数据读取&#125;&#125;</span><br><span class="line">    NodeY --&gt; NODE1&#123;&#123;AHT20温湿度传感器&#125;&#125;</span><br><span class="line">    NodeY --&gt; NODESCR&#123;&#123;LCD底层&#125;&#125;</span><br><span class="line">    NODESCR --&gt; NODECTP&#123;&#123;GT911触摸芯片&#125;&#125;</span><br><span class="line">    NODESCR --&gt; NODES&#123;&#123;ST7796U显示芯片&#125;&#125;</span><br><span class="line">    NodeY --&gt; NODE8&#123;&#123;BMP280气压计&#125;&#125;</span><br><span class="line">    Node0[(算法分析)]</span><br><span class="line">    NODET([恶劣天气预警])</span><br><span class="line">    NODE1 --&gt; Node0</span><br><span class="line">    NODE4 --&gt; Node0</span><br><span class="line">    NODE3 --&gt; Node0</span><br><span class="line">    NODE8 --&gt; Node0</span><br><span class="line">    Node0 --&gt; NODET</span><br><span class="line">    NODET -..- NODEK</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
+<div class="mermaid-wrap"><pre class="mermaid-src" hidden>
+  pie
+    title Key elements in Product X
+    &quot;Calcium&quot; : 42.96
+    &quot;Potassium&quot; : 50.05
+    &quot;Magnesium&quot; : 10.01
+    &quot;Iron&quot; :  5
+  </pre></div>
 <center> 项目总体框图 </center>
 
 
