@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>KiCad导出Gerber图形文件</title>
+    <url>/post/ef2c5f04.html</url>
+    <content><![CDATA[<h3 id="KiCad导出Gerber图形文件"><a href="#KiCad导出Gerber图形文件" class="headerlink" title="KiCad导出Gerber图形文件"></a>KiCad导出Gerber图形文件</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png" alt="image-20240527171958427"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271720173.png" alt="image-20240527172047054"></p>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>PCB</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Windows下Clash for Windows使用教程</title>
     <url>/post/5d67cfa0.html</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="密码有误，请重试" data-whm="解密的内容无法被验证，但仍可阅读">
@@ -15,6 +28,22 @@
   </div>
 </div>
 <script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+  </entry>
+  <entry>
+    <title>开箱Sipeed的SLogic Combo 8，多合一开发调试工具</title>
+    <url>/post/e3aef73e.html</url>
+    <content><![CDATA[<p><strong>写在前面：今天刚拿到一个好玩的小玩意，SLogic Combo 8，这是一个集逻辑分析仪、四组串口、DAP-Link、CK-Link为一体的开发调试工具，刚拿到就迫不及待地试玩了一下，发现确实好玩ლ(´ڡ&#96;ლ)，进一步丰富和简化了我的工具链，希望可以用的长一些</strong></p>
+<h2 id="开箱"><a href="#开箱" class="headerlink" title="开箱"></a>开箱</h2><p>打开包装盒，映入眼帘的就是SLogic的主体了，整体设计的简约大气，通过背面的隐藏式按键和指示灯可以知道当前在哪个模式下，同时通过面板可以知道各个模式下引脚的定义，这点设计的还是很人性化的，并且提供了3.3V和5V两种电平可以选择</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404140028088.jpg" alt="580570c6cf3dfad75f8fe9e0e9619f9"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404140030172.jpg" alt="3ee0e225bdfe8fa4c53dd99e7eabd3f"></p>
+<h2 id="试玩"><a href="#试玩" class="headerlink" title="试玩"></a>试玩</h2><p>没什么好说的，标准的串口、DAP调试器，不知道为什么DAP虚拟的串口经常会卡死，逻辑分析仪要用魔改过的上位机</p>
+]]></content>
+      <categories>
+        <category>开箱试玩</category>
+      </categories>
+      <tags>
+        <tag>逻辑分析仪</tag>
+      </tags>
   </entry>
   <entry>
     <title>基于ESP-IDF在ESP32S3上移植LVGL和显示触摸驱动</title>
@@ -272,35 +301,6 @@
       </tags>
   </entry>
   <entry>
-    <title>开箱Sipeed的SLogic Combo 8，多合一开发调试工具</title>
-    <url>/post/e3aef73e.html</url>
-    <content><![CDATA[<p><strong>写在前面：今天刚拿到一个好玩的小玩意，SLogic Combo 8，这是一个集逻辑分析仪、四组串口、DAP-Link、CK-Link为一体的开发调试工具，刚拿到就迫不及待地试玩了一下，发现确实好玩ლ(´ڡ&#96;ლ)，进一步丰富和简化了我的工具链，希望可以用的长一些</strong></p>
-<h2 id="开箱"><a href="#开箱" class="headerlink" title="开箱"></a>开箱</h2><p>打开包装盒，映入眼帘的就是SLogic的主体了，整体设计的简约大气，通过背面的隐藏式按键和指示灯可以知道当前在哪个模式下，同时通过面板可以知道各个模式下引脚的定义，这点设计的还是很人性化的，并且提供了3.3V和5V两种电平可以选择</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404140028088.jpg" alt="580570c6cf3dfad75f8fe9e0e9619f9"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404140030172.jpg" alt="3ee0e225bdfe8fa4c53dd99e7eabd3f"></p>
-<h2 id="试玩"><a href="#试玩" class="headerlink" title="试玩"></a>试玩</h2><p>没什么好说的，标准的串口、DAP调试器，不知道为什么DAP虚拟的串口经常会卡死，逻辑分析仪要用魔改过的上位机</p>
-]]></content>
-      <categories>
-        <category>开箱试玩</category>
-      </categories>
-      <tags>
-        <tag>逻辑分析仪</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>KiCad导出Gerber图形文件</title>
-    <url>/post/ef2c5f04.html</url>
-    <content><![CDATA[<h3 id="KiCad导出Gerber图形文件"><a href="#KiCad导出Gerber图形文件" class="headerlink" title="KiCad导出Gerber图形文件"></a>KiCad导出Gerber图形文件</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png" alt="image-20240527171958427"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271720173.png" alt="image-20240527172047054"></p>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>PCB</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>舵机多功能测试程序说明</title>
     <url>/post/cee333e2.html</url>
     <content><![CDATA[<p><strong>写在前面：基地一直都有对舵机快捷测试的需求，但是每次都得改源码，很麻烦，也不能实现舵机的精准角度控制，最近忙完期中考试，抽时间写了这个程序，也算是对学到的东西的一点小小的应用吧</strong></p>
@@ -329,6 +329,10 @@
 <tr>
 <td>Use Multi Channels</td>
 <td>使用多个PWM通道，可以一次测试多个舵机</td>
+</tr>
+<tr>
+<td>Direct PWM Ctrl (20240709更新)</td>
+<td>直接输入PWM Compare值控制舵机</td>
 </tr>
 </tbody></table>
 ]]></content>
