@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>KiCad导出Gerber图形文件</title>
+    <url>/post/ef2c5f04.html</url>
+    <content><![CDATA[<h3 id="KiCad导出Gerber图形文件"><a href="#KiCad导出Gerber图形文件" class="headerlink" title="KiCad导出Gerber图形文件"></a>KiCad导出Gerber图形文件</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png" alt="image-20240527171958427"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271720173.png" alt="image-20240527172047054"></p>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>PCB</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【前端学习笔记】 HTML+JavaScript+CSS</title>
     <url>/post/64aca0a5.html</url>
     <content><![CDATA[<h2 id="为什么要学"><a href="#为什么要学" class="headerlink" title="为什么要学"></a>为什么要学</h2><p>最近在学长的建议下准备开始接触前端开发，学习路线预计是先HTML，再JavaScript，再CSS。因为我之前自己在树莓派上建过服务器，搭建过WordPress和NAS等服务，可能算有一丁点基础，所以日后可能会负责维护基地的Git和Docs等服务。也产生过些一套自己的博客主题或者浏览器主页之类的想法，一个比较好的例子是<a href="https://limestart.cn/">青柠起始页</a>，之后可能会仿照着做一个。</p>
@@ -43,144 +56,6 @@
       </categories>
       <tags>
         <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>常用工具性网站&amp;工具</title>
-    <url>/post/5788685f.html</url>
-    <content><![CDATA[<h2 id="工具网站"><a href="#工具网站" class="headerlink" title="工具网站"></a>工具网站</h2><p>🎁此处列出的网站均来源于互联网，请注意不要在这些网站上输入任何个人敏感信息（如有可能）</p>
-<p>🌎某些网站可能需要国际网络</p>
-<p>🌈欢迎贡献</p>
-<ul>
-<li>添加站点</li>
-<li>反馈站点失效</li>
-<li>更多(todo)</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>序号</th>
-<th>网站</th>
-<th>添加时间</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td><a href="https://www.runoob.com/">https://www.runoob.com/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>菜鸟教程</td>
-</tr>
-<tr>
-<td>2</td>
-<td><a href="https://serial.keysking.com/">https://serial.keysking.com/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>网页版串口助手</td>
-</tr>
-<tr>
-<td>3</td>
-<td><a href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>阿里巴巴矢量图标库</td>
-</tr>
-<tr>
-<td>4</td>
-<td><a href="https://book.openmv.cc/">https://book.openmv.cc/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>OpenMV中文入门教程</td>
-</tr>
-<tr>
-<td>5</td>
-<td><a href="https://www.3dcontentcentral.com/">https://www.3dcontentcentral.com/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>3D模型下载站</td>
-</tr>
-<tr>
-<td>6</td>
-<td><a href="https://www2.futureware.at/KiCad/">https://www2.futureware.at/KiCad/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>Altium Designe转KiCad</td>
-</tr>
-<tr>
-<td>7</td>
-<td><a href="https://www.nerdfonts.com/font-downloads">https://www.nerdfonts.com/font-downloads</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>艺术字体下载</td>
-</tr>
-<tr>
-<td>8</td>
-<td><a href="https://fontawesome.p2hp.com/icons-ui.html">https://fontawesome.p2hp.com/icons-ui.html</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>The Icons矢量图标库</td>
-</tr>
-<tr>
-<td>9</td>
-<td><a href="http://network-science.de/ascii/">http://network-science.de/ascii/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>终端立体字生成</td>
-</tr>
-<tr>
-<td>10</td>
-<td><a href="https://tableconvert.com/zh-cn/latex-to-latex">https://tableconvert.com/zh-cn/latex-to-latex</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>Latex表格在线编辑和转Excel</td>
-</tr>
-<tr>
-<td>11</td>
-<td><a href="https://www.niupizhiyuan.com/download.html">https://www.niupizhiyuan.com/download.html</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>CSDN文章和文件下载</td>
-</tr>
-<tr>
-<td>12</td>
-<td><a href="http://1.94.138.197/bangumi">http://1.94.138.197/bangumi</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>百度云不限速，配合油猴</td>
-</tr>
-<tr>
-<td>13</td>
-<td><a href="https://limestart.cn/">https://limestart.cn</a></td>
-<td>2024&#x2F;7&#x2F;22</td>
-<td>青柠起始页，优雅的浏览器主页</td>
-</tr>
-<tr>
-<td>14</td>
-<td><a href="https://skillicons.dev/">https://skillicons.dev/</a></td>
-<td>2024&#x2F;7&#x2F;24</td>
-<td>Skill Icons，技术栈图标</td>
-</tr>
-<tr>
-<td>15</td>
-<td><a href="https://bing.img.run/api.html">https://bing.img.run/api.html</a></td>
-<td>2024&#x2F;7&#x2F;25</td>
-<td>获取每日Bing壁纸API，有多种选择</td>
-</tr>
-</tbody></table>
-<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>🎁此处列出的工具均来源于互联网，请注意不要在这些工具上输入任何个人敏感信息（如有可能）</p>
-<p>🌈欢迎贡献</p>
-<ul>
-<li>添加工具</li>
-<li>更多(todo)</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Tools</category>
-      </categories>
-      <tags>
-        <tag>Tools</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>KiCad导出Gerber图形文件</title>
-    <url>/post/ef2c5f04.html</url>
-    <content><![CDATA[<h3 id="KiCad导出Gerber图形文件"><a href="#KiCad导出Gerber图形文件" class="headerlink" title="KiCad导出Gerber图形文件"></a>KiCad导出Gerber图形文件</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png" alt="image-20240527171958427"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271720173.png" alt="image-20240527172047054"></p>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>PCB</tag>
       </tags>
   </entry>
   <entry>
@@ -441,7 +316,9 @@
   <entry>
     <title>用CLion优雅地调试和开发STM32(CubeMX)</title>
     <url>/post/63adfc20.html</url>
-    <content><![CDATA[<h2 id="工具链Toolchains"><a href="#工具链Toolchains" class="headerlink" title="工具链Toolchains"></a>工具链Toolchains</h2><ul>
+    <content><![CDATA[<h2 id="Why-CLion"><a href="#Why-CLion" class="headerlink" title="Why CLion?"></a>Why CLion?</h2><p>Keil操作简单，容易上手，而且可以很方便地进行调试，不过其古老的界面，不符合人类直觉的操作，不符合现代的编程习惯，必然会被逐渐淘汰。</p>
+<p>Jetbrains系IDE具有强大的代码补全、界面风格、各种插件、流畅性等众多优点，毫无疑问能够极大提高开发效率，其中CLion就是专门面向C&#x2F;C++开发的IDE。</p>
+<h2 id="工具链Toolchains"><a href="#工具链Toolchains" class="headerlink" title="工具链Toolchains"></a>工具链Toolchains</h2><ul>
 <li><p>代码编辑器：CLion</p>
 </li>
 <li><p>编译器：MinGW、arm-none-eabi-gcc</p>
@@ -510,6 +387,131 @@
       </categories>
       <tags>
         <tag>Dev</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常用工具性网站&amp;工具</title>
+    <url>/post/5788685f.html</url>
+    <content><![CDATA[<h2 id="工具网站"><a href="#工具网站" class="headerlink" title="工具网站"></a>工具网站</h2><p>🎁此处列出的网站均来源于互联网，请注意不要在这些网站上输入任何个人敏感信息（如有可能）</p>
+<p>🌎某些网站可能需要国际网络</p>
+<p>🌈欢迎贡献</p>
+<ul>
+<li>添加站点</li>
+<li>反馈站点失效</li>
+<li>更多(todo)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>网站</th>
+<th>添加时间</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><a href="https://www.runoob.com/">https://www.runoob.com/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>菜鸟教程</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="https://serial.keysking.com/">https://serial.keysking.com/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>网页版串口助手</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>阿里巴巴矢量图标库</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="https://book.openmv.cc/">https://book.openmv.cc/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>OpenMV中文入门教程</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="https://www.3dcontentcentral.com/">https://www.3dcontentcentral.com/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>3D模型下载站</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="https://www2.futureware.at/KiCad/">https://www2.futureware.at/KiCad/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>Altium Designe转KiCad</td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="https://www.nerdfonts.com/font-downloads">https://www.nerdfonts.com/font-downloads</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>艺术字体下载</td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="https://fontawesome.p2hp.com/icons-ui.html">https://fontawesome.p2hp.com/icons-ui.html</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>The Icons矢量图标库</td>
+</tr>
+<tr>
+<td>9</td>
+<td><a href="http://network-science.de/ascii/">http://network-science.de/ascii/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>终端立体字生成</td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="https://tableconvert.com/zh-cn/latex-to-latex">https://tableconvert.com/zh-cn/latex-to-latex</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>Latex表格在线编辑和转Excel</td>
+</tr>
+<tr>
+<td>11</td>
+<td><a href="https://www.niupizhiyuan.com/download.html">https://www.niupizhiyuan.com/download.html</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>CSDN文章和文件下载</td>
+</tr>
+<tr>
+<td>12</td>
+<td><a href="http://1.94.138.197/bangumi">http://1.94.138.197/bangumi</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>百度云不限速，配合油猴</td>
+</tr>
+<tr>
+<td>13</td>
+<td><a href="https://limestart.cn/">https://limestart.cn</a></td>
+<td>2024&#x2F;7&#x2F;22</td>
+<td>青柠起始页，优雅的浏览器主页</td>
+</tr>
+<tr>
+<td>14</td>
+<td><a href="https://skillicons.dev/">https://skillicons.dev/</a></td>
+<td>2024&#x2F;7&#x2F;24</td>
+<td>Skill Icons，技术栈图标</td>
+</tr>
+<tr>
+<td>15</td>
+<td><a href="https://bing.img.run/api.html">https://bing.img.run/api.html</a></td>
+<td>2024&#x2F;7&#x2F;25</td>
+<td>获取每日Bing壁纸API，有多种选择</td>
+</tr>
+</tbody></table>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>🎁此处列出的工具均来源于互联网，请注意不要在这些工具上输入任何个人敏感信息（如有可能）</p>
+<p>🌈欢迎贡献</p>
+<ul>
+<li>添加工具</li>
+<li>更多(todo)</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>Tools</tag>
       </tags>
   </entry>
   <entry>
