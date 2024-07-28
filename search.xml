@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Jetbrains系IDE使用小技巧</title>
+    <url>/post/af86e289.html</url>
+    <content><![CDATA[<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><ul>
+<li>One Dark</li>
+</ul>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><ul>
+<li>Chinese (Simplified) Language Pack &#x2F; 中文语言包</li>
+<li>CodeGlance Pro &#x2F; 侧栏代码缩略</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>Dev</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>KiCad导出Gerber图形文件</title>
     <url>/post/ef2c5f04.html</url>
     <content><![CDATA[<h3 id="KiCad导出Gerber图形文件"><a href="#KiCad导出Gerber图形文件" class="headerlink" title="KiCad导出Gerber图形文件"></a>KiCad导出Gerber图形文件</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png" alt="image-20240527171958427"></p>
@@ -314,82 +332,6 @@
       </tags>
   </entry>
   <entry>
-    <title>用CLion优雅地调试和开发STM32(CubeMX)</title>
-    <url>/post/63adfc20.html</url>
-    <content><![CDATA[<h2 id="Why-CLion"><a href="#Why-CLion" class="headerlink" title="Why CLion?"></a>Why CLion?</h2><p>Keil操作简单，容易上手，而且可以很方便地进行调试，不过其古老的界面，不符合人类直觉的操作，不符合现代的编程习惯，必然会被逐渐淘汰。</p>
-<p>Jetbrains系IDE具有强大的代码补全、界面风格、各种插件、流畅性等众多优点，毫无疑问能够极大提高开发效率，其中CLion就是专门面向C&#x2F;C++开发的IDE。</p>
-<h2 id="工具链Toolchains"><a href="#工具链Toolchains" class="headerlink" title="工具链Toolchains"></a>工具链Toolchains</h2><ul>
-<li><p>代码编辑器：CLion</p>
-</li>
-<li><p>编译器：MinGW、arm-none-eabi-gcc</p>
-</li>
-<li><p>调试器：OpenOCD</p>
-</li>
-<li><p>HAL代码生成器：STM32CubeMX</p>
-</li>
-</ul>
-<h2 id="Debugger"><a href="#Debugger" class="headerlink" title="Debugger"></a>Debugger</h2><ul>
-<li><p>cmsis-dap</p>
-</li>
-<li><p>stlink</p>
-</li>
-<li><p>jlink</p>
-</li>
-<li><p>etc.</p>
-</li>
-</ul>
-<h2 id="工具安装"><a href="#工具安装" class="headerlink" title="工具安装"></a>工具安装</h2><ol>
-<li><a href="https://www.st.com/en/development-tools/stm32cubemx.html">STM32CubeMX</a></li>
-<li><a href="https://gnutoolchains.com/arm-eabi/openocd/">OpenOCD</a></li>
-<li><a href="https://osdn.net/projects/mingw/releases/">MinGW</a>（这是MinGW的在线安装器）</li>
-<li><a href="https://www.jetbrains.com.cn/clion/">CLion</a></li>
-<li><a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads">arm-none-eabi-gcc</a></li>
-</ol>
-<p><strong>几点注意</strong>：</p>
-<ol>
-<li><p>建议OpenOCD、MinGW、arm-none-eabi-gcc解压 &#x2F; 安装到一个特定的目录（eg. &#x2F;program-tools&#x2F;）</p>
-</li>
-<li><p>MinGW可能安装过程中会由于网络原因卡死，可以尝试离线安装或连接到国际互联网</p>
-</li>
-<li><p>Jetbrains学生账号可以免费使用CLion等IDE，请抵制盗版</p>
-</li>
-<li><p>完成安装 &#x2F; 解压后，将OpenOCD、arm-none-eabi-gcc、MinGW对应文件夹下的bin添加到系统环境变量Path里</p>
-</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727221710143.png" alt="image-20240727221710143"></p>
-<p><strong>验证安装</strong>：</p>
-<p>在CMD或PowerShell中，</p>
-<ol>
-<li>输入gcc -v，有输出则说明MinGW安装正确</li>
-<li>输入arm-none-eabi-gcc -v，有输出则说明arm-none-eabi-gcc配置正确</li>
-<li>输入openocd -v，有输出则说明OpenOCD配置正确</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727221618827.png" alt="image-20240727221618827"></p>
-<h2 id="CLion配置"><a href="#CLion配置" class="headerlink" title="CLion配置"></a>CLion配置</h2><p>进入设置-构建、执行、部署-工具链，设置一下MinGW相关的配置，注意调试器不要改，不然后面会无法连接到Debugger<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727222254196.png" alt="image-20240727222254196"></p>
-<p>在设置-构建、执行、部署-嵌入式开发里配置一下OpenOCD、STM32CubeMX的路径</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727222617731.png" alt="image-20240727222617731"></p>
-<h2 id="新建项目（CubeMX）"><a href="#新建项目（CubeMX）" class="headerlink" title="新建项目（CubeMX）"></a>新建项目（CubeMX）</h2><p>打开STM32CubeMX，随便选个芯片，按照下图配置创建项目</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727222942789.png" alt="image-20240727222942789"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727223013152.png" alt="image-20240727223013152"></p>
-<p>进入生成项目代码的目录，右键在CLion中打开</p>
-<p>进来后选复制到项目并使用</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727223541302.png" alt="image-20240727223541302"></p>
-<p>现在构建、编译、调试烧录代码应该都可以了</p>
-<h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><ul>
-<li><p>编译时报错 collect2.exe: error: ld returned 1 exit status</p>
-<p>解决方法：打开STM32XXX_FLASH.Id文件，删除所有的(READONLY)关键字，重新编译即可。</p>
-</li>
-</ul>
-<h2 id="stm32-openocd-cfg-template"><a href="#stm32-openocd-cfg-template" class="headerlink" title="stm32-openocd-cfg-template"></a>stm32-openocd-cfg-template</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#设置使用的调试烧录器为ST-Link</span><br><span class="line">#source [find interface/stlink.cfg]</span><br><span class="line"></span><br><span class="line">#设置使用的调试烧录器为J-link</span><br><span class="line">#source [find interface/jlink.cfg]</span><br><span class="line"></span><br><span class="line">#设置使用的调试烧录器为DAP-Link</span><br><span class="line">#source [find interface/cmsis-dap.cfg]</span><br><span class="line"></span><br><span class="line">#调试接口选择swd，此类型是ST-Link专用的</span><br><span class="line">#transport select hla_swd</span><br><span class="line"></span><br><span class="line">#调试接口选择swd，此类型是J-link，DAP-Link通用</span><br><span class="line">#transport select swd</span><br><span class="line"></span><br><span class="line">#设置目标芯片，选择stm32f1x，如果是f4系列的换成f4就行了其他系列以此类推</span><br><span class="line">#source [find target/stm32f1x.cfg]</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>Dev</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>常用工具性网站&amp;工具</title>
     <url>/post/5788685f.html</url>
     <content><![CDATA[<h2 id="工具网站"><a href="#工具网站" class="headerlink" title="工具网站"></a>工具网站</h2><p>🎁此处列出的网站均来源于互联网，请注意不要在这些网站上输入任何个人敏感信息（如有可能）</p>
@@ -555,6 +497,82 @@
       </categories>
       <tags>
         <tag>STM32</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>用CLion优雅地调试和开发STM32(CubeMX)</title>
+    <url>/post/63adfc20.html</url>
+    <content><![CDATA[<h2 id="Why-CLion"><a href="#Why-CLion" class="headerlink" title="Why CLion?"></a>Why CLion?</h2><p>Keil操作简单，容易上手，而且可以很方便地进行调试，不过其古老的界面，不符合人类直觉的操作，不符合现代的编程习惯，必然会被逐渐淘汰。</p>
+<p>Jetbrains系IDE具有强大的代码补全、界面风格、各种插件、流畅性等众多优点，毫无疑问能够极大提高开发效率，其中CLion就是专门面向C&#x2F;C++开发的IDE。</p>
+<h2 id="工具链Toolchains"><a href="#工具链Toolchains" class="headerlink" title="工具链Toolchains"></a>工具链Toolchains</h2><ul>
+<li><p>代码编辑器：CLion</p>
+</li>
+<li><p>编译器：MinGW、arm-none-eabi-gcc</p>
+</li>
+<li><p>调试器：OpenOCD</p>
+</li>
+<li><p>HAL代码生成器：STM32CubeMX</p>
+</li>
+</ul>
+<h2 id="Debugger"><a href="#Debugger" class="headerlink" title="Debugger"></a>Debugger</h2><ul>
+<li><p>cmsis-dap</p>
+</li>
+<li><p>stlink</p>
+</li>
+<li><p>jlink</p>
+</li>
+<li><p>etc.</p>
+</li>
+</ul>
+<h2 id="工具安装"><a href="#工具安装" class="headerlink" title="工具安装"></a>工具安装</h2><ol>
+<li><a href="https://www.st.com/en/development-tools/stm32cubemx.html">STM32CubeMX</a></li>
+<li><a href="https://gnutoolchains.com/arm-eabi/openocd/">OpenOCD</a></li>
+<li><a href="https://osdn.net/projects/mingw/releases/">MinGW</a>（这是MinGW的在线安装器）</li>
+<li><a href="https://www.jetbrains.com.cn/clion/">CLion</a></li>
+<li><a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads">arm-none-eabi-gcc</a></li>
+</ol>
+<p><strong>几点注意</strong>：</p>
+<ol>
+<li><p>建议OpenOCD、MinGW、arm-none-eabi-gcc解压 &#x2F; 安装到一个特定的目录（eg. &#x2F;program-tools&#x2F;）</p>
+</li>
+<li><p>MinGW可能安装过程中会由于网络原因卡死，可以尝试离线安装或连接到国际互联网</p>
+</li>
+<li><p>Jetbrains学生账号可以免费使用CLion等IDE，请抵制盗版</p>
+</li>
+<li><p>完成安装 &#x2F; 解压后，将OpenOCD、arm-none-eabi-gcc、MinGW对应文件夹下的bin添加到系统环境变量Path里</p>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727221710143.png" alt="image-20240727221710143"></p>
+<p><strong>验证安装</strong>：</p>
+<p>在CMD或PowerShell中，</p>
+<ol>
+<li>输入gcc -v，有输出则说明MinGW安装正确</li>
+<li>输入arm-none-eabi-gcc -v，有输出则说明arm-none-eabi-gcc配置正确</li>
+<li>输入openocd -v，有输出则说明OpenOCD配置正确</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727221618827.png" alt="image-20240727221618827"></p>
+<h2 id="CLion配置"><a href="#CLion配置" class="headerlink" title="CLion配置"></a>CLion配置</h2><p>进入设置-构建、执行、部署-工具链，设置一下MinGW相关的配置，注意调试器不要改，不然后面会无法连接到Debugger<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727222254196.png" alt="image-20240727222254196"></p>
+<p>在设置-构建、执行、部署-嵌入式开发里配置一下OpenOCD、STM32CubeMX的路径</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727222617731.png" alt="image-20240727222617731"></p>
+<h2 id="新建项目（CubeMX）"><a href="#新建项目（CubeMX）" class="headerlink" title="新建项目（CubeMX）"></a>新建项目（CubeMX）</h2><p>打开STM32CubeMX，随便选个芯片，按照下图配置创建项目</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727222942789.png" alt="image-20240727222942789"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727223013152.png" alt="image-20240727223013152"></p>
+<p>进入生成项目代码的目录，右键在CLion中打开</p>
+<p>进来后选复制到项目并使用</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727223541302.png" alt="image-20240727223541302"></p>
+<p>现在构建、编译、调试烧录代码应该都可以了</p>
+<h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><ul>
+<li><p>编译时报错 collect2.exe: error: ld returned 1 exit status</p>
+<p>解决方法：打开STM32XXX_FLASH.Id文件，删除所有的(READONLY)关键字，重新编译即可。</p>
+</li>
+</ul>
+<h2 id="stm32-openocd-cfg-template"><a href="#stm32-openocd-cfg-template" class="headerlink" title="stm32-openocd-cfg-template"></a>stm32-openocd-cfg-template</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#设置使用的调试烧录器为ST-Link</span><br><span class="line">#source [find interface/stlink.cfg]</span><br><span class="line"></span><br><span class="line">#设置使用的调试烧录器为J-link</span><br><span class="line">#source [find interface/jlink.cfg]</span><br><span class="line"></span><br><span class="line">#设置使用的调试烧录器为DAP-Link</span><br><span class="line">#source [find interface/cmsis-dap.cfg]</span><br><span class="line"></span><br><span class="line">#调试接口选择swd，此类型是ST-Link专用的</span><br><span class="line">#transport select hla_swd</span><br><span class="line"></span><br><span class="line">#调试接口选择swd，此类型是J-link，DAP-Link通用</span><br><span class="line">#transport select swd</span><br><span class="line"></span><br><span class="line">#设置目标芯片，选择stm32f1x，如果是f4系列的换成f4就行了其他系列以此类推</span><br><span class="line">#source [find target/stm32f1x.cfg]</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>Dev</tag>
       </tags>
   </entry>
 </search>
