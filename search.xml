@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Jetbrains系IDE使用小技巧</title>
+    <url>/post/af86e289.html</url>
+    <content><![CDATA[<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><ul>
+<li>One Dark</li>
+</ul>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><ul>
+<li>Chinese (Simplified) Language Pack &#x2F; 中文语言包</li>
+<li>CodeGlance Pro &#x2F; 侧栏代码缩略</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>Dev</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>KiCad导出Gerber图形文件</title>
     <url>/post/ef2c5f04.html</url>
     <content><![CDATA[<h3 id="KiCad导出Gerber图形文件"><a href="#KiCad导出Gerber图形文件" class="headerlink" title="KiCad导出Gerber图形文件"></a>KiCad导出Gerber图形文件</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png" alt="image-20240527171958427"></p>
@@ -56,24 +74,6 @@
       </categories>
       <tags>
         <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Jetbrains系IDE使用小技巧</title>
-    <url>/post/af86e289.html</url>
-    <content><![CDATA[<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><ul>
-<li>One Dark</li>
-</ul>
-<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><ul>
-<li>Chinese (Simplified) Language Pack &#x2F; 中文语言包</li>
-<li>CodeGlance Pro &#x2F; 侧栏代码缩略</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>Dev</tag>
       </tags>
   </entry>
   <entry>
@@ -457,49 +457,6 @@
       </tags>
   </entry>
   <entry>
-    <title>舵机多功能测试程序说明</title>
-    <url>/post/cee333e2.html</url>
-    <content><![CDATA[<p><strong>写在前面：基地一直都有对舵机快捷测试的需求，但是每次都得改源码，很麻烦，也不能实现舵机的精准角度控制，最近忙完期中考试，抽时间写了这个程序，也算是对学到的东西的一点小小的应用吧</strong></p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本程序运行在大疆开发板C型，基于STM32 HAL平台开发，具有极其优良的可移植性，可以快速迁移至其他MCU，本程序依托串口与上位机通信，使用时接串口线和电池即可</p>
-<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404301832725.png" alt="image-20240430183243677"></p>
-<p>对主菜单的解释，每个指令串口都会输出对应的注解，<strong>注意输入任何指令都需要以回车结尾！</strong></p>
-<table>
-<thead>
-<tr>
-<th>功能</th>
-<th>解释</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Plain Servo Test</td>
-<td>朴素舵机测试（控制舵机转到特定角度）</td>
-</tr>
-<tr>
-<td>Interval Servo Test</td>
-<td>区间舵机测试（控制舵机在特定区间转动）</td>
-</tr>
-<tr>
-<td>Quick Servo Test</td>
-<td>快速舵机测试（快速测试舵机好坏）</td>
-</tr>
-<tr>
-<td>Use Multi Channels</td>
-<td>使用多个PWM通道，可以一次测试多个舵机</td>
-</tr>
-<tr>
-<td>Direct PWM Ctrl (20240709更新)</td>
-<td>直接输入PWM Compare值控制舵机</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>用CLion优雅地调试和开发STM32(CubeMX)</title>
     <url>/post/63adfc20.html</url>
     <content><![CDATA[<h2 id="Why-CLion"><a href="#Why-CLion" class="headerlink" title="Why CLion?"></a>Why CLion?</h2><p>Keil操作简单，容易上手，而且可以很方便地进行调试，不过其古老的界面，不符合人类直觉的操作，不符合现代的编程习惯，必然会被逐渐淘汰。</p>
@@ -579,6 +536,49 @@
       </categories>
       <tags>
         <tag>Dev</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>舵机多功能测试程序说明</title>
+    <url>/post/cee333e2.html</url>
+    <content><![CDATA[<p><strong>写在前面：基地一直都有对舵机快捷测试的需求，但是每次都得改源码，很麻烦，也不能实现舵机的精准角度控制，最近忙完期中考试，抽时间写了这个程序，也算是对学到的东西的一点小小的应用吧</strong></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本程序运行在大疆开发板C型，基于STM32 HAL平台开发，具有极其优良的可移植性，可以快速迁移至其他MCU，本程序依托串口与上位机通信，使用时接串口线和电池即可</p>
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404301832725.png" alt="image-20240430183243677"></p>
+<p>对主菜单的解释，每个指令串口都会输出对应的注解，<strong>注意输入任何指令都需要以回车结尾！</strong></p>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Plain Servo Test</td>
+<td>朴素舵机测试（控制舵机转到特定角度）</td>
+</tr>
+<tr>
+<td>Interval Servo Test</td>
+<td>区间舵机测试（控制舵机在特定区间转动）</td>
+</tr>
+<tr>
+<td>Quick Servo Test</td>
+<td>快速舵机测试（快速测试舵机好坏）</td>
+</tr>
+<tr>
+<td>Use Multi Channels</td>
+<td>使用多个PWM通道，可以一次测试多个舵机</td>
+</tr>
+<tr>
+<td>Direct PWM Ctrl (20240709更新)</td>
+<td>直接输入PWM Compare值控制舵机</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
       </tags>
   </entry>
   <entry>
