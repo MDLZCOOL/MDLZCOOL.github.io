@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>KiCad导出Gerber图形文件</title>
+    <url>/post/ef2c5f04.html</url>
+    <content><![CDATA[<h3 id="KiCad导出Gerber图形文件"><a href="#KiCad导出Gerber图形文件" class="headerlink" title="KiCad导出Gerber图形文件"></a>KiCad导出Gerber图形文件</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png" alt="image-20240527171958427"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271720173.png" alt="image-20240527172047054"></p>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>PCB</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Jetbrains系IDE使用小技巧</title>
     <url>/post/af86e289.html</url>
     <content><![CDATA[<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><ul>
@@ -61,19 +74,6 @@
       </categories>
       <tags>
         <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>KiCad导出Gerber图形文件</title>
-    <url>/post/ef2c5f04.html</url>
-    <content><![CDATA[<h3 id="KiCad导出Gerber图形文件"><a href="#KiCad导出Gerber图形文件" class="headerlink" title="KiCad导出Gerber图形文件"></a>KiCad导出Gerber图形文件</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png" alt="image-20240527171958427"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271720173.png" alt="image-20240527172047054"></p>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>PCB</tag>
       </tags>
   </entry>
   <entry>
@@ -539,48 +539,6 @@
       </tags>
   </entry>
   <entry>
-    <title>嵌入式驱动接口在C语言里的实现</title>
-    <url>/post/cdb42980.html</url>
-    <content><![CDATA[<h2 id="为什么要实现接口"><a href="#为什么要实现接口" class="headerlink" title="为什么要实现接口"></a>为什么要实现接口</h2><p>接口，可以是硬件与硬件之间连接的桥梁，可以是软件与软件之间沟通的窗户，也可以是硬件与软件之间通信的枢纽。其中硬件与硬件之间的桥梁，比如I2C、UART、CANFD、等等，软件与软件之间沟通的窗户，比如操作系统提供的各种API、等等。我实现的这套“接口”，连接了硬件与软件，它可以实现软硬件的完全解耦合，引入了__平台无关性__，提供了尽可能简化的逻辑，这有点类似于开汽车，一个人一旦学会了开汽车，那开什么牌子的汽车都基本是一个道理，实现了一套驱动，一套接口，对于不同系统、硬件平台的支持，这无疑会大大提高代码的易用性、复用性，大大减少重复的造轮子。</p>
-<h2 id="我所实现的接口"><a href="#我所实现的接口" class="headerlink" title="我所实现的接口"></a>我所实现的接口</h2><ul>
-<li>首先，需要一个结构体来存放系统接口，不妨叫system_interface_t，它用来存放系统的函数实现，是我们将驱动对接到不同平台的关键</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">generic_err_t</span> (*send)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*receive)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*delay_ms)(<span class="type">uint32_t</span> nms);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*delay_us)(<span class="type">uint32_t</span> nus);</span><br><span class="line">&#125; <span class="type">system_interface_t</span>;</span><br></pre></td></tr></table></figure>
-
-<p>推荐将上述代码放在一个.h文件里，这样不同的驱动只需要这一套接口即可</p>
-<ul>
-<li>接下来，需要一个结构体来存放system_interface_t（这样做的目的是实现不同驱动可以复用同一套接口），以及驱动内部实现的各种函数，比如对于aht20温度计而言，则除了对接系统的system_interface_t结构体，还应存放用于读取温度的函数</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">float</span> temperature;</span><br><span class="line">    <span class="type">float</span> humidity;</span><br><span class="line"></span><br><span class="line">    <span class="type">system_interface_t</span> *pfsystem_interface;</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*pfinit)(<span class="type">void</span> *pfdev);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*pfmeasure)(<span class="type">void</span> *pfdev);</span><br><span class="line">&#125; <span class="type">generic_sensor_aht20_driver_interface_t</span>;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>然后可以构建一个whoami函数，用于对底层驱动的对接写入，以及对内部实现函数的暴露</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">generic_err_t</span> <span class="title function_">generic_sensor_aht20_whoami</span><span class="params">(<span class="type">generic_sensor_aht20_driver_interface_t</span> *pfdev,</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*generic_send_func)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len),</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*generic_receive_func)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len),</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*delay_ms_func)(<span class="type">uint32_t</span> nms),</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*delay_us_func)(<span class="type">uint32_t</span> nus))</span> &#123;</span><br><span class="line">    pfdev-&gt;pfsystem_interface = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">system_interface_t</span>));</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;send = generic_send_func;</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;receive = generic_receive_func;</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;delay_ms = delay_ms_func;</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;delay_us = delay_us_func;</span><br><span class="line">    pfdev-&gt;pfinit = generic_sensor_aht20_init;</span><br><span class="line">    pfdev-&gt;pfmeasure = generic_sensor_aht20_measure;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> GENERIC_OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>注意这里要先给generic_sensor_aht20_driver_interface_t下的system_interface_t申请一块内存，否则直接调用pfdev-&gt;pfsystem_interface会指向非法内存，造成段错误</p>
-<h2 id="关于调用"><a href="#关于调用" class="headerlink" title="关于调用"></a>关于调用</h2><p>可以在初始化的时候进行驱动程序的注册，不要忘记申请内存</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">generic_sensor_aht20_driver_interface_t</span> *aht20_device = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">generic_sensor_aht20_driver_interface_t</span>));</span><br></pre></td></tr></table></figure>
-
-<p>然后调用whoami函数，对接系统底层到驱动层</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">generic_sensor_aht20_whoami(aht20_device,</span><br><span class="line">                          i2c_master_send,</span><br><span class="line">                          i2c_master_receive,</span><br><span class="line">                          HAL_Delay,</span><br><span class="line">                          <span class="literal">NULL</span>);</span><br></pre></td></tr></table></figure>
-
-<p>接着，便可以通过下面这种方式调用驱动暴露出来的API</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">aht20_device-&gt;pfinit(aht20_device); <span class="comment">// 如pfinit(void *pfdev)</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="删除设备"><a href="#删除设备" class="headerlink" title="删除设备"></a>删除设备</h2><p>我们前面通过malloc为设备的系统驱动以及设备暴露的接口分配了内存，下面通过释放这两块内存来删除设备</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">generic_err_t</span> <span class="title function_">generic_sensor_aht20_del</span><span class="params">(<span class="type">generic_sensor_aht20_driver_interface_t</span> *pfdev)</span> &#123;</span><br><span class="line">    <span class="built_in">free</span>(pfdev-&gt;pfsystem_interface); <span class="comment">// 先释放系统驱动</span></span><br><span class="line">    pfdev-&gt;pfsystem_interface = <span class="literal">NULL</span>; <span class="comment">// 避免悬挂指针</span></span><br><span class="line">    <span class="built_in">free</span>(pfdev); <span class="comment">// 再释放暴露的接口</span></span><br><span class="line">    pfdev = <span class="literal">NULL</span>; <span class="comment">// 避免悬挂指针</span></span><br><span class="line">    <span class="keyword">return</span> GENERIC_OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="驱动编写"><a href="#驱动编写" class="headerlink" title="驱动编写"></a>驱动编写</h2><p>驱动编写中，注意每个驱动内部的API都需要一个void *类型的指针，用来调用generic_sensor_aht20_driver_interface_t的驱动接口</p>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>Dev</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>舵机多功能测试程序说明</title>
     <url>/post/cee333e2.html</url>
     <content><![CDATA[<p><strong>写在前面：基地一直都有对舵机快捷测试的需求，但是每次都得改源码，很麻烦，也不能实现舵机的精准角度控制，最近忙完期中考试，抽时间写了这个程序，也算是对学到的东西的一点小小的应用吧</strong></p>
@@ -621,6 +579,48 @@
       </categories>
       <tags>
         <tag>STM32</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>嵌入式驱动接口在C语言里的实现</title>
+    <url>/post/cdb42980.html</url>
+    <content><![CDATA[<h2 id="为什么要实现接口"><a href="#为什么要实现接口" class="headerlink" title="为什么要实现接口"></a>为什么要实现接口</h2><p>接口，可以是硬件与硬件之间连接的桥梁，可以是软件与软件之间沟通的窗户，也可以是硬件与软件之间通信的枢纽。其中硬件与硬件之间的桥梁，比如I2C、UART、CANFD、等等，软件与软件之间沟通的窗户，比如操作系统提供的各种API、等等。我实现的这套“接口”，连接了硬件与软件，它可以实现软硬件的完全解耦合，引入了__平台无关性__，提供了尽可能简化的逻辑，这有点类似于开汽车，一个人一旦学会了开汽车，那开什么牌子的汽车都基本是一个道理，实现了一套驱动，一套接口，对于不同系统、硬件平台的支持，这无疑会大大提高代码的易用性、复用性，大大减少重复的造轮子。</p>
+<h2 id="我所实现的接口"><a href="#我所实现的接口" class="headerlink" title="我所实现的接口"></a>我所实现的接口</h2><ul>
+<li>首先，需要一个结构体来存放系统接口，不妨叫system_interface_t，它用来存放系统的函数实现，是我们将驱动对接到不同平台的关键</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">generic_err_t</span> (*send)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*receive)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*delay_ms)(<span class="type">uint32_t</span> nms);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*delay_us)(<span class="type">uint32_t</span> nus);</span><br><span class="line">&#125; <span class="type">system_interface_t</span>;</span><br></pre></td></tr></table></figure>
+
+<p>推荐将上述代码放在一个.h文件里，这样不同的驱动只需要这一套接口即可</p>
+<ul>
+<li>接下来，需要一个结构体来存放system_interface_t（这样做的目的是实现不同驱动可以复用同一套接口），以及驱动内部实现的各种函数，比如对于aht20温度计而言，则除了对接系统的system_interface_t结构体，还应存放用于读取温度的函数</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">float</span> temperature;</span><br><span class="line">    <span class="type">float</span> humidity;</span><br><span class="line"></span><br><span class="line">    <span class="type">system_interface_t</span> *pfsystem_interface;</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*pfinit)(<span class="type">void</span> *pfdev);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*pfmeasure)(<span class="type">void</span> *pfdev);</span><br><span class="line">&#125; <span class="type">generic_sensor_aht20_driver_interface_t</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>然后可以构建一个whoami函数，用于对底层驱动的对接写入，以及对内部实现函数的暴露</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">generic_err_t</span> <span class="title function_">generic_sensor_aht20_whoami</span><span class="params">(<span class="type">generic_sensor_aht20_driver_interface_t</span> *pfdev,</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*generic_send_func)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len),</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*generic_receive_func)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len),</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*delay_ms_func)(<span class="type">uint32_t</span> nms),</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*delay_us_func)(<span class="type">uint32_t</span> nus))</span> &#123;</span><br><span class="line">    pfdev-&gt;pfsystem_interface = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">system_interface_t</span>));</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;send = generic_send_func;</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;receive = generic_receive_func;</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;delay_ms = delay_ms_func;</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;delay_us = delay_us_func;</span><br><span class="line">    pfdev-&gt;pfinit = generic_sensor_aht20_init;</span><br><span class="line">    pfdev-&gt;pfmeasure = generic_sensor_aht20_measure;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> GENERIC_OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意这里要先给generic_sensor_aht20_driver_interface_t下的system_interface_t申请一块内存，否则直接调用pfdev-&gt;pfsystem_interface会指向非法内存，造成段错误</p>
+<h2 id="关于调用"><a href="#关于调用" class="headerlink" title="关于调用"></a>关于调用</h2><p>可以在初始化的时候进行驱动程序的注册，不要忘记申请内存</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">generic_sensor_aht20_driver_interface_t</span> *aht20_device = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">generic_sensor_aht20_driver_interface_t</span>));</span><br></pre></td></tr></table></figure>
+
+<p>然后调用whoami函数，对接系统底层到驱动层</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">generic_sensor_aht20_whoami(aht20_device,</span><br><span class="line">                          i2c_master_send,</span><br><span class="line">                          i2c_master_receive,</span><br><span class="line">                          HAL_Delay,</span><br><span class="line">                          <span class="literal">NULL</span>);</span><br></pre></td></tr></table></figure>
+
+<p>接着，便可以通过下面这种方式调用驱动暴露出来的API</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">aht20_device-&gt;pfinit(aht20_device); <span class="comment">// 如pfinit(void *pfdev)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="删除设备"><a href="#删除设备" class="headerlink" title="删除设备"></a>删除设备</h2><p>我们前面通过malloc为设备的系统驱动以及设备暴露的接口分配了内存，下面通过释放这两块内存来删除设备</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">generic_err_t</span> <span class="title function_">generic_sensor_aht20_del</span><span class="params">(<span class="type">generic_sensor_aht20_driver_interface_t</span> *pfdev)</span> &#123;</span><br><span class="line">    <span class="built_in">free</span>(pfdev-&gt;pfsystem_interface); <span class="comment">// 先释放系统驱动</span></span><br><span class="line">    pfdev-&gt;pfsystem_interface = <span class="literal">NULL</span>; <span class="comment">// 避免悬挂指针</span></span><br><span class="line">    <span class="built_in">free</span>(pfdev); <span class="comment">// 再释放暴露的接口</span></span><br><span class="line">    pfdev = <span class="literal">NULL</span>; <span class="comment">// 避免悬挂指针</span></span><br><span class="line">    <span class="keyword">return</span> GENERIC_OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="驱动编写"><a href="#驱动编写" class="headerlink" title="驱动编写"></a>驱动编写</h2><p>驱动编写中，注意每个驱动内部的API都需要一个void *类型的指针，用来调用generic_sensor_aht20_driver_interface_t的驱动接口</p>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>Dev</tag>
       </tags>
   </entry>
 </search>
