@@ -77,85 +77,128 @@
       </tags>
   </entry>
   <entry>
-    <title>用CLion优雅地调试和开发STM32(CubeMX)</title>
-    <url>/post/63adfc20.html</url>
-    <content><![CDATA[<h2 id="Why-CLion"><a href="#Why-CLion" class="headerlink" title="Why CLion?"></a>Why CLion?</h2><p>Keil操作简单，容易上手，而且可以很方便地进行调试，不过其古老的界面，不符合人类直觉的操作，不符合现代的编程习惯，必然会被逐渐淘汰。</p>
-<p>Jetbrains系IDE具有强大的代码补全、界面风格、各种插件、流畅性等众多优点，毫无疑问能够极大提高开发效率，其中CLion就是专门面向C&#x2F;C++开发的IDE。</p>
-<h2 id="工具链Toolchains"><a href="#工具链Toolchains" class="headerlink" title="工具链Toolchains"></a>工具链Toolchains</h2><ul>
-<li><p>代码编辑器：CLion</p>
-</li>
-<li><p>编译器：MinGW、arm-none-eabi-gcc</p>
-</li>
-<li><p>调试器：OpenOCD</p>
-</li>
-<li><p>HAL代码生成器：STM32CubeMX</p>
-</li>
+    <title>常用工具性网站&amp;工具</title>
+    <url>/post/5788685f.html</url>
+    <content><![CDATA[<h2 id="工具网站"><a href="#工具网站" class="headerlink" title="工具网站"></a>工具网站</h2><p>🎁此处列出的网站均来源于互联网，请注意不要在这些网站上输入任何个人敏感信息（如有可能）</p>
+<p>🌎某些网站可能需要国际网络</p>
+<p>🌈欢迎贡献</p>
+<ul>
+<li>添加站点</li>
+<li>反馈站点失效</li>
+<li>更多(todo)</li>
 </ul>
-<h2 id="Debugger"><a href="#Debugger" class="headerlink" title="Debugger"></a>Debugger</h2><ul>
-<li><p>cmsis-dap</p>
-</li>
-<li><p>stlink</p>
-</li>
-<li><p>jlink</p>
-</li>
-<li><p>etc.</p>
-</li>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>网站</th>
+<th>添加时间</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><a href="https://www.runoob.com/">https://www.runoob.com/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>菜鸟教程</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="https://serial.keysking.com/">https://serial.keysking.com/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>网页版串口助手</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>阿里巴巴矢量图标库</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="https://book.openmv.cc/">https://book.openmv.cc/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>OpenMV中文入门教程</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="https://www.3dcontentcentral.com/">https://www.3dcontentcentral.com/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>3D模型下载站</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="https://www2.futureware.at/KiCad/">https://www2.futureware.at/KiCad/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>Altium Designe转KiCad</td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="https://www.nerdfonts.com/font-downloads">https://www.nerdfonts.com/font-downloads</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>艺术字体下载</td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="https://fontawesome.p2hp.com/icons-ui.html">https://fontawesome.p2hp.com/icons-ui.html</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>The Icons矢量图标库</td>
+</tr>
+<tr>
+<td>9</td>
+<td><a href="http://network-science.de/ascii/">http://network-science.de/ascii/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>终端立体字生成</td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="https://tableconvert.com/zh-cn/latex-to-latex">https://tableconvert.com/zh-cn/latex-to-latex</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>Latex表格在线编辑和转Excel</td>
+</tr>
+<tr>
+<td>11</td>
+<td><a href="https://www.niupizhiyuan.com/download.html">https://www.niupizhiyuan.com/download.html</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>CSDN文章和文件下载</td>
+</tr>
+<tr>
+<td>12</td>
+<td><a href="http://1.94.138.197/bangumi">http://1.94.138.197/bangumi</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>百度云不限速，配合油猴</td>
+</tr>
+<tr>
+<td>13</td>
+<td><a href="https://limestart.cn/">https://limestart.cn</a></td>
+<td>2024&#x2F;7&#x2F;22</td>
+<td>青柠起始页，优雅的浏览器主页</td>
+</tr>
+<tr>
+<td>14</td>
+<td><a href="https://skillicons.dev/">https://skillicons.dev/</a></td>
+<td>2024&#x2F;7&#x2F;24</td>
+<td>Skill Icons，技术栈图标</td>
+</tr>
+<tr>
+<td>15</td>
+<td><a href="https://bing.img.run/api.html">https://bing.img.run/api.html</a></td>
+<td>2024&#x2F;7&#x2F;25</td>
+<td>获取每日Bing壁纸API，有多种选择</td>
+</tr>
+</tbody></table>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>🎁此处列出的工具均来源于互联网，请注意不要在这些工具上输入任何个人敏感信息（如有可能）</p>
+<p>🌈欢迎贡献</p>
+<ul>
+<li>添加工具</li>
+<li>更多(todo)</li>
 </ul>
-<h2 id="工具安装"><a href="#工具安装" class="headerlink" title="工具安装"></a>工具安装</h2><ol>
-<li><a href="https://www.st.com/en/development-tools/stm32cubemx.html">STM32CubeMX</a></li>
-<li><a href="https://gnutoolchains.com/arm-eabi/openocd/">OpenOCD</a> <em>或者用<a href="https://xpack.github.io/dev-tools/openocd/releases">xpack-openocd</a></em></li>
-<li><a href="https://osdn.net/projects/mingw/releases/">MinGW</a>（这是MinGW的在线安装器）</li>
-<li><a href="https://www.jetbrains.com.cn/clion/">CLion</a></li>
-<li><a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads">arm-none-eabi-gcc</a></li>
-</ol>
-<p><strong>几点注意</strong>：</p>
-<ol>
-<li><p>建议OpenOCD、MinGW、arm-none-eabi-gcc解压 &#x2F; 安装到一个特定的目录（eg. &#x2F;program-tools&#x2F;）</p>
-</li>
-<li><p>MinGW可能安装过程中会由于网络原因卡死，可以尝试离线安装或连接到国际互联网</p>
-</li>
-<li><p>Jetbrains学生账号可以免费使用CLion等IDE，请抵制盗版</p>
-</li>
-<li><p>完成安装 &#x2F; 解压后，将OpenOCD、arm-none-eabi-gcc、MinGW对应文件夹下的bin添加到系统环境变量Path里</p>
-</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727221710143.png" alt="image-20240727221710143"></p>
-<h2 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h2><p>在CMD或PowerShell中，</p>
-<ol>
-<li>输入gcc -v，有输出则说明MinGW安装正确</li>
-<li>输入arm-none-eabi-gcc -v，有输出则说明arm-none-eabi-gcc配置正确</li>
-<li>输入openocd -v，有输出则说明OpenOCD配置正确</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727221618827.png" alt="image-20240727221618827"></p>
-<h2 id="CLion配置"><a href="#CLion配置" class="headerlink" title="CLion配置"></a>CLion配置</h2><p>进入设置-构建、执行、部署-工具链，设置一下MinGW相关的配置，注意调试器不要改，不然后面会无法连接到Debugger<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727222254196.png" alt="image-20240727222254196"></p>
-<p>在设置-构建、执行、部署-嵌入式开发里配置一下OpenOCD、STM32CubeMX的路径</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727222617731.png" alt="image-20240727222617731"></p>
-<h2 id="新建项目（CubeMX）"><a href="#新建项目（CubeMX）" class="headerlink" title="新建项目（CubeMX）"></a>新建项目（CubeMX）</h2><p>打开STM32CubeMX，随便选个芯片，按照下图配置创建项目</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727222942789.png" alt="image-20240727222942789"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727223013152.png" alt="image-20240727223013152"></p>
-<p>进入生成项目代码的目录，右键在CLion中打开</p>
-<p>进来后选复制到项目并使用</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727223541302.png" alt="image-20240727223541302"></p>
-<p>现在构建、编译、调试烧录代码应该都可以了</p>
-<h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><ul>
-<li><p>编译时报错 collect2.exe: error: ld returned 1 exit status</p>
-<p>解决方法：打开STM32XXX_FLASH.Id文件，删除所有的(READONLY)关键字，重新编译。</p>
-</li>
-<li><p>重定向printf到uart</p>
-<p>添加<a href="https://github.com/cnoviello/mastering-stm32/blob/master/nucleo-f030R8/system/src/retarget/retarget.c">retarget.c</a>、<a href="https://github.com/cnoviello/mastering-stm32/blob/master/nucleo-f030R8/system/include/retarget/retarget.h">retarget.h</a>到工程，在syscalls.c中把冲突的几个函数注释掉，在main.c串口初始化之后调用RetargetInit(UART_HandleTypeDef *huart)函数。</p>
-</li>
-<li><p>打开硬件浮点数支持</p>
-<p>在CmakeLists.txt里取消这三行的注释。</p>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240728191654029.png" alt="image-20240728191654029"></p>
-<h2 id="stm32-openocd-cfg-template"><a href="#stm32-openocd-cfg-template" class="headerlink" title="stm32-openocd-cfg-template"></a>stm32-openocd-cfg-template</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#设置使用的调试烧录器为ST-Link</span><br><span class="line">#source [find interface/stlink.cfg]</span><br><span class="line"></span><br><span class="line">#设置使用的调试烧录器为J-link</span><br><span class="line">#source [find interface/jlink.cfg]</span><br><span class="line"></span><br><span class="line">#设置使用的调试烧录器为DAP-Link</span><br><span class="line">#source [find interface/cmsis-dap.cfg]</span><br><span class="line"></span><br><span class="line">#调试接口选择swd，此类型是ST-Link专用的</span><br><span class="line">#transport select hla_swd</span><br><span class="line"></span><br><span class="line">#调试接口选择swd，此类型是J-link，DAP-Link通用</span><br><span class="line">#transport select swd</span><br><span class="line"></span><br><span class="line">#指明调试速率</span><br><span class="line">#adapter speed 5000</span><br><span class="line"></span><br><span class="line">#设置目标芯片，选择stm32f1x，如果是f4系列的换成f4就行了其他系列以此类推</span><br><span class="line">#source [find target/stm32f1x.cfg]</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>Dev</category>
+        <category>Tools</category>
       </categories>
       <tags>
-        <tag>Dev</tag>
+        <tag>Tools</tag>
       </tags>
   </entry>
   <entry>
@@ -414,128 +457,127 @@
       </tags>
   </entry>
   <entry>
-    <title>常用工具性网站&amp;工具</title>
-    <url>/post/5788685f.html</url>
-    <content><![CDATA[<h2 id="工具网站"><a href="#工具网站" class="headerlink" title="工具网站"></a>工具网站</h2><p>🎁此处列出的网站均来源于互联网，请注意不要在这些网站上输入任何个人敏感信息（如有可能）</p>
-<p>🌎某些网站可能需要国际网络</p>
-<p>🌈欢迎贡献</p>
-<ul>
-<li>添加站点</li>
-<li>反馈站点失效</li>
-<li>更多(todo)</li>
+    <title>用CLion优雅地调试和开发STM32(CubeMX)</title>
+    <url>/post/63adfc20.html</url>
+    <content><![CDATA[<h2 id="Why-CLion"><a href="#Why-CLion" class="headerlink" title="Why CLion?"></a>Why CLion?</h2><p>Keil操作简单，容易上手，而且可以很方便地进行调试，不过其古老的界面，不符合人类直觉的操作，不符合现代的编程习惯，必然会被逐渐淘汰。</p>
+<p>Jetbrains系IDE具有强大的代码补全、界面风格、各种插件、流畅性等众多优点，毫无疑问能够极大提高开发效率，其中CLion就是专门面向C&#x2F;C++开发的IDE。</p>
+<h2 id="工具链Toolchains"><a href="#工具链Toolchains" class="headerlink" title="工具链Toolchains"></a>工具链Toolchains</h2><ul>
+<li><p>代码编辑器：CLion</p>
+</li>
+<li><p>编译器：MinGW、arm-none-eabi-gcc</p>
+</li>
+<li><p>调试器：OpenOCD</p>
+</li>
+<li><p>HAL代码生成器：STM32CubeMX</p>
+</li>
 </ul>
-<table>
-<thead>
-<tr>
-<th>序号</th>
-<th>网站</th>
-<th>添加时间</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td><a href="https://www.runoob.com/">https://www.runoob.com/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>菜鸟教程</td>
-</tr>
-<tr>
-<td>2</td>
-<td><a href="https://serial.keysking.com/">https://serial.keysking.com/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>网页版串口助手</td>
-</tr>
-<tr>
-<td>3</td>
-<td><a href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>阿里巴巴矢量图标库</td>
-</tr>
-<tr>
-<td>4</td>
-<td><a href="https://book.openmv.cc/">https://book.openmv.cc/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>OpenMV中文入门教程</td>
-</tr>
-<tr>
-<td>5</td>
-<td><a href="https://www.3dcontentcentral.com/">https://www.3dcontentcentral.com/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>3D模型下载站</td>
-</tr>
-<tr>
-<td>6</td>
-<td><a href="https://www2.futureware.at/KiCad/">https://www2.futureware.at/KiCad/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>Altium Designe转KiCad</td>
-</tr>
-<tr>
-<td>7</td>
-<td><a href="https://www.nerdfonts.com/font-downloads">https://www.nerdfonts.com/font-downloads</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>艺术字体下载</td>
-</tr>
-<tr>
-<td>8</td>
-<td><a href="https://fontawesome.p2hp.com/icons-ui.html">https://fontawesome.p2hp.com/icons-ui.html</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>The Icons矢量图标库</td>
-</tr>
-<tr>
-<td>9</td>
-<td><a href="http://network-science.de/ascii/">http://network-science.de/ascii/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>终端立体字生成</td>
-</tr>
-<tr>
-<td>10</td>
-<td><a href="https://tableconvert.com/zh-cn/latex-to-latex">https://tableconvert.com/zh-cn/latex-to-latex</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>Latex表格在线编辑和转Excel</td>
-</tr>
-<tr>
-<td>11</td>
-<td><a href="https://www.niupizhiyuan.com/download.html">https://www.niupizhiyuan.com/download.html</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>CSDN文章和文件下载</td>
-</tr>
-<tr>
-<td>12</td>
-<td><a href="http://1.94.138.197/bangumi">http://1.94.138.197/bangumi</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>百度云不限速，配合油猴</td>
-</tr>
-<tr>
-<td>13</td>
-<td><a href="https://limestart.cn/">https://limestart.cn</a></td>
-<td>2024&#x2F;7&#x2F;22</td>
-<td>青柠起始页，优雅的浏览器主页</td>
-</tr>
-<tr>
-<td>14</td>
-<td><a href="https://skillicons.dev/">https://skillicons.dev/</a></td>
-<td>2024&#x2F;7&#x2F;24</td>
-<td>Skill Icons，技术栈图标</td>
-</tr>
-<tr>
-<td>15</td>
-<td><a href="https://bing.img.run/api.html">https://bing.img.run/api.html</a></td>
-<td>2024&#x2F;7&#x2F;25</td>
-<td>获取每日Bing壁纸API，有多种选择</td>
-</tr>
-</tbody></table>
-<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>🎁此处列出的工具均来源于互联网，请注意不要在这些工具上输入任何个人敏感信息（如有可能）</p>
-<p>🌈欢迎贡献</p>
-<ul>
-<li>添加工具</li>
-<li>更多(todo)</li>
+<h2 id="Debugger"><a href="#Debugger" class="headerlink" title="Debugger"></a>Debugger</h2><ul>
+<li><p>cmsis-dap</p>
+</li>
+<li><p>stlink</p>
+</li>
+<li><p>jlink</p>
+</li>
+<li><p>etc.</p>
+</li>
 </ul>
+<h2 id="工具安装"><a href="#工具安装" class="headerlink" title="工具安装"></a>工具安装</h2><ol>
+<li><a href="https://www.st.com/en/development-tools/stm32cubemx.html">STM32CubeMX</a></li>
+<li><a href="https://gnutoolchains.com/arm-eabi/openocd/">OpenOCD</a> <em>或者用<a href="https://xpack.github.io/dev-tools/openocd/releases">xpack-openocd</a></em></li>
+<li><a href="https://osdn.net/projects/mingw/releases/">MinGW</a>（这是MinGW的在线安装器）</li>
+<li><a href="https://www.jetbrains.com.cn/clion/">CLion</a></li>
+<li><a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads">arm-none-eabi-gcc</a></li>
+</ol>
+<p><strong>几点注意</strong>：</p>
+<ol>
+<li><p>建议OpenOCD、MinGW、arm-none-eabi-gcc解压 &#x2F; 安装到一个特定的目录（eg. &#x2F;program-tools&#x2F;）</p>
+</li>
+<li><p>MinGW可能安装过程中会由于网络原因卡死，可以尝试离线安装或连接到国际互联网</p>
+</li>
+<li><p>Jetbrains学生账号可以免费使用CLion等IDE，请抵制盗版</p>
+</li>
+<li><p>完成安装 &#x2F; 解压后，将OpenOCD、arm-none-eabi-gcc、MinGW对应文件夹下的bin添加到系统环境变量Path里</p>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727221710143.png" alt="image-20240727221710143"></p>
+<h2 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h2><p>在CMD或PowerShell中，</p>
+<ol>
+<li>输入gcc -v，有输出则说明MinGW安装正确</li>
+<li>输入arm-none-eabi-gcc -v，有输出则说明arm-none-eabi-gcc配置正确</li>
+<li>输入openocd -v，有输出则说明OpenOCD配置正确</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727221618827.png" alt="image-20240727221618827"></p>
+<h2 id="CLion配置"><a href="#CLion配置" class="headerlink" title="CLion配置"></a>CLion配置</h2><p>进入设置-构建、执行、部署-工具链，设置一下MinGW相关的配置，注意调试器不要改，不然后面会无法连接到Debugger<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727222254196.png" alt="image-20240727222254196"></p>
+<p>在设置-构建、执行、部署-嵌入式开发里配置一下OpenOCD、STM32CubeMX的路径</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727222617731.png" alt="image-20240727222617731"></p>
+<h2 id="新建项目（CubeMX）"><a href="#新建项目（CubeMX）" class="headerlink" title="新建项目（CubeMX）"></a>新建项目（CubeMX）</h2><p>打开STM32CubeMX，随便选个芯片，按照下图配置创建项目</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727222942789.png" alt="image-20240727222942789"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727223013152.png" alt="image-20240727223013152"></p>
+<p>进入生成项目代码的目录，右键在CLion中打开</p>
+<p>进来后选复制到项目并使用</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727223541302.png" alt="image-20240727223541302"></p>
+<p>现在构建、编译、调试烧录代码应该都可以了</p>
+<h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><ul>
+<li><p>编译时报错 collect2.exe: error: ld returned 1 exit status</p>
+<p>解决方法：打开STM32XXX_FLASH.Id文件，删除所有的(READONLY)关键字，重新编译。</p>
+</li>
+<li><p>重定向printf到uart</p>
+<p>添加<a href="https://github.com/cnoviello/mastering-stm32/blob/master/nucleo-f030R8/system/src/retarget/retarget.c">retarget.c</a>、<a href="https://github.com/cnoviello/mastering-stm32/blob/master/nucleo-f030R8/system/include/retarget/retarget.h">retarget.h</a>到工程，在syscalls.c中把冲突的几个函数注释掉，在main.c串口初始化之后调用RetargetInit(UART_HandleTypeDef *huart)函数。</p>
+</li>
+<li><p>打开硬件浮点数支持</p>
+<p>在CmakeLists.txt里取消这三行的注释。</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240728191654029.png" alt="image-20240728191654029"></p>
+<h2 id="stm32-openocd-cfg-template"><a href="#stm32-openocd-cfg-template" class="headerlink" title="stm32-openocd-cfg-template"></a>stm32-openocd-cfg-template</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#设置使用的调试烧录器为ST-Link</span><br><span class="line">#source [find interface/stlink.cfg]</span><br><span class="line"></span><br><span class="line">#设置使用的调试烧录器为J-link</span><br><span class="line">#source [find interface/jlink.cfg]</span><br><span class="line"></span><br><span class="line">#设置使用的调试烧录器为DAP-Link</span><br><span class="line">#source [find interface/cmsis-dap.cfg]</span><br><span class="line"></span><br><span class="line">#调试接口选择swd，此类型是ST-Link专用的</span><br><span class="line">#transport select hla_swd</span><br><span class="line"></span><br><span class="line">#调试接口选择swd，此类型是J-link，DAP-Link通用</span><br><span class="line">#transport select swd</span><br><span class="line"></span><br><span class="line">#指明调试速率</span><br><span class="line">#adapter speed 5000</span><br><span class="line"></span><br><span class="line">#设置目标芯片，选择stm32f1x，如果是f4系列的换成f4就行了其他系列以此类推</span><br><span class="line">#source [find target/stm32f1x.cfg]</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>Tools</category>
+        <category>Dev</category>
       </categories>
       <tags>
-        <tag>Tools</tag>
+        <tag>Dev</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>嵌入式驱动接口在C语言里的实现</title>
+    <url>/post/cdb42980.html</url>
+    <content><![CDATA[<h2 id="为什么要实现接口"><a href="#为什么要实现接口" class="headerlink" title="为什么要实现接口"></a>为什么要实现接口</h2><p>接口，可以是硬件与硬件之间连接的桥梁，可以是软件与软件之间沟通的窗户，也可以是硬件与软件之间通信的枢纽。其中硬件与硬件之间的桥梁，比如I2C、UART、CANFD、等等，软件与软件之间沟通的窗户，比如操作系统提供的各种API、等等。我实现的这套“接口”，连接了硬件与软件，它可以实现软硬件的完全解耦合，引入了__平台无关性__，提供了尽可能简化的逻辑，这有点类似于开汽车，一个人一旦学会了开汽车，那开什么牌子的汽车都基本是一个道理，实现了一套驱动，一套接口，对于不同系统、硬件平台的支持，这无疑会大大提高代码的易用性、复用性，大大减少重复的造轮子。</p>
+<h2 id="我所实现的接口"><a href="#我所实现的接口" class="headerlink" title="我所实现的接口"></a>我所实现的接口</h2><ul>
+<li>首先，需要一个结构体来存放系统接口，不妨叫system_interface_t，它用来存放系统的函数实现，是我们将驱动对接到不同平台的关键</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">generic_err_t</span> (*send)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*receive)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*delay_ms)(<span class="type">uint32_t</span> nms);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*delay_us)(<span class="type">uint32_t</span> nus);</span><br><span class="line">&#125; <span class="type">system_interface_t</span>;</span><br></pre></td></tr></table></figure>
+
+<p>推荐将上述代码放在一个.h文件里，这样不同的驱动只需要这一套接口即可</p>
+<ul>
+<li>接下来，需要一个结构体来存放system_interface_t（这样做的目的是实现不同驱动可以复用同一套接口），以及驱动内部实现的各种函数，比如对于aht20温度计而言，则除了对接系统的system_interface_t结构体，还应存放用于读取温度的函数</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">float</span> temperature;</span><br><span class="line">    <span class="type">float</span> humidity;</span><br><span class="line"></span><br><span class="line">    <span class="type">system_interface_t</span> *pfsystem_interface;</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*pfinit)(<span class="type">void</span> *pfdev);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*pfmeasure)(<span class="type">void</span> *pfdev);</span><br><span class="line">&#125; <span class="type">generic_sensor_aht20_driver_interface_t</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>然后可以构建一个whoami函数，用于对底层驱动的对接写入，以及对内部实现函数的暴露</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">generic_err_t</span> <span class="title function_">generic_sensor_aht20_whoami</span><span class="params">(<span class="type">generic_sensor_aht20_driver_interface_t</span> *pfdev,</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*generic_send_func)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len),</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*generic_receive_func)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len),</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*delay_ms_func)(<span class="type">uint32_t</span> nms),</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*delay_us_func)(<span class="type">uint32_t</span> nus))</span> &#123;</span><br><span class="line">    pfdev-&gt;pfsystem_interface = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">system_interface_t</span>));</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;send = generic_send_func;</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;receive = generic_receive_func;</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;delay_ms = delay_ms_func;</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;delay_us = delay_us_func;</span><br><span class="line">    pfdev-&gt;pfinit = generic_sensor_aht20_init;</span><br><span class="line">    pfdev-&gt;pfmeasure = generic_sensor_aht20_measure;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> GENERIC_OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意这里要先给generic_sensor_aht20_driver_interface_t下的system_interface_t申请一块内存，否则直接调用pfdev-&gt;pfsystem_interface会指向非法内存，造成段错误</p>
+<h2 id="关于调用"><a href="#关于调用" class="headerlink" title="关于调用"></a>关于调用</h2><p>可以在初始化的时候进行驱动程序的注册，不要忘记申请内存</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">generic_sensor_aht20_driver_interface_t</span> *aht20_device = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">generic_sensor_aht20_driver_interface_t</span>));</span><br></pre></td></tr></table></figure>
+
+<p>然后调用whoami函数，对接系统底层到驱动层</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">generic_sensor_aht20_whoami(aht20_device,</span><br><span class="line">                          i2c_master_send,</span><br><span class="line">                          i2c_master_receive,</span><br><span class="line">                          HAL_Delay,</span><br><span class="line">                          <span class="literal">NULL</span>);</span><br></pre></td></tr></table></figure>
+
+<p>接着，便可以通过下面这种方式调用驱动暴露出来的API</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">aht20_device-&gt;pfinit(aht20_device); <span class="comment">// 如pfinit(void *pfdev)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="删除设备"><a href="#删除设备" class="headerlink" title="删除设备"></a>删除设备</h2><p>我们前面通过malloc为设备的系统驱动以及设备暴露的接口分配了内存，下面通过释放这两块内存来删除设备</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">generic_err_t</span> <span class="title function_">generic_sensor_aht20_del</span><span class="params">(<span class="type">generic_sensor_aht20_driver_interface_t</span> *pfdev)</span> &#123;</span><br><span class="line">    <span class="built_in">free</span>(pfdev-&gt;pfsystem_interface); <span class="comment">// 先释放系统驱动</span></span><br><span class="line">    pfdev-&gt;pfsystem_interface = <span class="literal">NULL</span>; <span class="comment">// 避免悬挂指针</span></span><br><span class="line">    <span class="built_in">free</span>(pfdev); <span class="comment">// 再释放暴露的接口</span></span><br><span class="line">    pfdev = <span class="literal">NULL</span>; <span class="comment">// 避免悬挂指针</span></span><br><span class="line">    <span class="keyword">return</span> GENERIC_OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="驱动编写"><a href="#驱动编写" class="headerlink" title="驱动编写"></a>驱动编写</h2><p>驱动编写中，注意每个驱动内部的API都需要一个void *类型的指针，用来调用generic_sensor_aht20_driver_interface_t的驱动接口</p>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>Dev</tag>
       </tags>
   </entry>
   <entry>
@@ -579,48 +621,6 @@
       </categories>
       <tags>
         <tag>STM32</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>嵌入式驱动接口在C语言里的实现</title>
-    <url>/post/cdb42980.html</url>
-    <content><![CDATA[<h2 id="为什么要实现接口"><a href="#为什么要实现接口" class="headerlink" title="为什么要实现接口"></a>为什么要实现接口</h2><p>接口，可以是硬件与硬件之间连接的桥梁，可以是软件与软件之间沟通的窗户，也可以是硬件与软件之间通信的枢纽。其中硬件与硬件之间的桥梁，比如I2C、UART、CANFD、等等，软件与软件之间沟通的窗户，比如操作系统提供的各种API、等等。我实现的这套“接口”，连接了硬件与软件，它可以实现软硬件的完全解耦合，引入了__平台无关性__，提供了尽可能简化的逻辑，这有点类似于开汽车，一个人一旦学会了开汽车，那开什么牌子的汽车都基本是一个道理，实现了一套驱动，一套接口，对于不同系统、硬件平台的支持，这无疑会大大提高代码的易用性、复用性，大大减少重复的造轮子。</p>
-<h2 id="我所实现的接口"><a href="#我所实现的接口" class="headerlink" title="我所实现的接口"></a>我所实现的接口</h2><ul>
-<li>首先，需要一个结构体来存放系统接口，不妨叫system_interface_t，它用来存放系统的函数实现，是我们将驱动对接到不同平台的关键</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">generic_err_t</span> (*send)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*receive)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*delay_ms)(<span class="type">uint32_t</span> nms);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*delay_us)(<span class="type">uint32_t</span> nus);</span><br><span class="line">&#125; <span class="type">system_interface_t</span>;</span><br></pre></td></tr></table></figure>
-
-<p>推荐将上述代码放在一个.h文件里，这样不同的驱动只需要这一套接口即可</p>
-<ul>
-<li>接下来，需要一个结构体来存放system_interface_t（这样做的目的是实现不同驱动可以复用同一套接口），以及驱动内部实现的各种函数，比如对于aht20温度计而言，则除了对接系统的system_interface_t结构体，还应存放用于读取温度的函数</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">float</span> temperature;</span><br><span class="line">    <span class="type">float</span> humidity;</span><br><span class="line"></span><br><span class="line">    <span class="type">system_interface_t</span> *pfsystem_interface;</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*pfinit)(<span class="type">void</span> *pfdev);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*pfmeasure)(<span class="type">void</span> *pfdev);</span><br><span class="line">&#125; <span class="type">generic_sensor_aht20_driver_interface_t</span>;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>然后可以构建一个whoami函数，用于对底层驱动的对接写入，以及对内部实现函数的暴露</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">generic_err_t</span> <span class="title function_">generic_sensor_aht20_whoami</span><span class="params">(<span class="type">generic_sensor_aht20_driver_interface_t</span> *pfdev,</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*generic_send_func)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len),</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*generic_receive_func)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len),</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*delay_ms_func)(<span class="type">uint32_t</span> nms),</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*delay_us_func)(<span class="type">uint32_t</span> nus))</span> &#123;</span><br><span class="line">    pfdev-&gt;pfsystem_interface = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">system_interface_t</span>));</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;send = generic_send_func;</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;receive = generic_receive_func;</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;delay_ms = delay_ms_func;</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;delay_us = delay_us_func;</span><br><span class="line">    pfdev-&gt;pfinit = generic_sensor_aht20_init;</span><br><span class="line">    pfdev-&gt;pfmeasure = generic_sensor_aht20_measure;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> GENERIC_OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>注意这里要先给generic_sensor_aht20_driver_interface_t下的system_interface_t申请一块内存，否则直接调用pfdev-&gt;pfsystem_interface会指向非法内存，造成段错误</p>
-<h2 id="关于调用"><a href="#关于调用" class="headerlink" title="关于调用"></a>关于调用</h2><p>可以在初始化的时候进行驱动程序的注册，不要忘记申请内存</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">generic_sensor_aht20_driver_interface_t</span> *aht20_device = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">generic_sensor_aht20_driver_interface_t</span>));</span><br></pre></td></tr></table></figure>
-
-<p>然后调用whoami函数，对接系统底层到驱动层</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">generic_sensor_aht20_whoami(aht20_device,</span><br><span class="line">                          i2c_master_send,</span><br><span class="line">                          i2c_master_receive,</span><br><span class="line">                          HAL_Delay,</span><br><span class="line">                          <span class="literal">NULL</span>);</span><br></pre></td></tr></table></figure>
-
-<p>接着，便可以通过下面这种方式调用驱动暴露出来的API</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">aht20_device-&gt;pfinit(aht20_device); <span class="comment">// 如pfinit(void *pfdev)</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="删除设备"><a href="#删除设备" class="headerlink" title="删除设备"></a>删除设备</h2><p>我们前面通过malloc为设备的系统驱动以及设备暴露的接口分配了内存，下面通过释放这两块内存来删除设备</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">generic_err_t</span> <span class="title function_">generic_sensor_aht20_del</span><span class="params">(<span class="type">generic_sensor_aht20_driver_interface_t</span> *pfdev)</span> &#123;</span><br><span class="line">    <span class="built_in">free</span>(pfdev-&gt;pfsystem_interface); <span class="comment">// 先释放系统驱动</span></span><br><span class="line">    pfdev-&gt;pfsystem_interface = <span class="literal">NULL</span>; <span class="comment">// 避免悬挂指针</span></span><br><span class="line">    <span class="built_in">free</span>(pfdev); <span class="comment">// 再释放暴露的接口</span></span><br><span class="line">    pfdev = <span class="literal">NULL</span>; <span class="comment">// 避免悬挂指针</span></span><br><span class="line">    <span class="keyword">return</span> GENERIC_OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="驱动编写"><a href="#驱动编写" class="headerlink" title="驱动编写"></a>驱动编写</h2><p>驱动编写中，注意每个驱动内部的API都需要一个void *类型的指针，用来调用generic_sensor_aht20_driver_interface_t的驱动接口</p>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>Dev</tag>
       </tags>
   </entry>
 </search>
