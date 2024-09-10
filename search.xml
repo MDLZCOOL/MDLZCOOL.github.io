@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Git&amp;&amp;Github使用Tricks</title>
+    <url>/post/4bb6437a.html</url>
+    <content><![CDATA[<h2 id="Tricks"><a href="#Tricks" class="headerlink" title="Tricks"></a>Tricks</h2><h3 id="经历了一次错误的commit，想要撤回"><a href="#经历了一次错误的commit，想要撤回" class="headerlink" title="经历了一次错误的commit，想要撤回"></a>经历了一次错误的commit，想要撤回</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span> <span class="comment"># 查看上次commit的完整hash字串</span></span><br><span class="line">git reset &lt;arg1&gt; &lt;<span class="built_in">hash</span>字串&gt; <span class="comment"># 撤回commit，&lt;arg1&gt;有参数--soft、--hard、--mixed可选，区别为</span></span><br><span class="line"><span class="comment"># --soft 文件还保存在git里，可以再reset回来</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)        (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B-C</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># --hard 文件直接被删去，慎用！！！</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)        (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># --mixed 文件未被删去，就在本地workspace里，处于未被add的状态(推荐)</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)          (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B-C</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 注：(F)指的是磁盘里此时实际的文件处于哪个版本</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Jetbrains系IDE使用小技巧</title>
+    <url>/post/af86e289.html</url>
+    <content><![CDATA[<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><ul>
+<li>One Dark</li>
+</ul>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><ul>
+<li>Chinese (Simplified) Language Pack &#x2F; 中文语言包</li>
+<li>CodeGlance Pro &#x2F; 侧栏代码缩略</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>Dev</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>KiCad导出Gerber图形文件</title>
     <url>/post/ef2c5f04.html</url>
     <content><![CDATA[<h3 id="KiCad导出Gerber图形文件"><a href="#KiCad导出Gerber图形文件" class="headerlink" title="KiCad导出Gerber图形文件"></a>KiCad导出Gerber图形文件</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png" alt="image-20240527171958427"></p>
@@ -11,6 +42,242 @@
       </categories>
       <tags>
         <tag>PCB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【前端学习笔记】 HTML+JavaScript+CSS</title>
+    <url>/post/64aca0a5.html</url>
+    <content><![CDATA[<h2 id="为什么要学"><a href="#为什么要学" class="headerlink" title="为什么要学"></a>为什么要学</h2><p>最近在学长的建议下准备开始接触前端开发，学习路线预计是先HTML，再JavaScript，再CSS。因为我之前自己在树莓派上建过服务器，搭建过WordPress和NAS等服务，可能算有一丁点基础，所以日后可能会负责维护基地的Git和Docs等服务。也产生过些一套自己的博客主题或者浏览器主页之类的想法，一个比较好的例子是<a href="https://limestart.cn/">青柠起始页</a>，之后可能会仿照着做一个。</p>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><p>HTML的全称为超文本标记语言，是一种标记语言。它包括一系列标签，通过这些标签可以将网络上的文档格式统一，使分散的Internet资源连接为一个逻辑整体。HTML文本是由HTML命令组成的描述性文本，HTML命令可以说明文字，图形、动画、声音、表格、链接等。<strong>值得注意的是，HTML不是一种编程语言，因其不具有逻辑处理的能力。</strong></p>
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><p>JavaScript（简称“JS”）是一种具有函数优先的轻量级，解释型或即时编译型的编程语言。虽然它是作为开发Web页面的脚本语言而出名，但是它也被用到了很多非浏览器环境中，JavaScript基于原型编程、多范式的动态脚本语言，并且支持面向对象、命令式、声明式、函数式编程范式。</p>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><p>层叠样式表(英文全称：Cascading Style Sheets)是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言。CSS不仅可以静态地修饰网页，还可以配合各种脚本语言动态地对网页各元素进行格式化。</p>
+<blockquote>
+<p>简单理解：CSS可以美化HTML，让HTML更漂亮，JavaScript可以给页面带来生命力，让其具有逻辑性。</p>
+<p>CSS、HTML、JavaScript使页面的构建更加模块化，单元化。</p>
+</blockquote>
+<h2 id="编辑器IDE"><a href="#编辑器IDE" class="headerlink" title="编辑器IDE"></a>编辑器IDE</h2><p>我用的是Jetbrains的<code>WebStorm</code>编辑器，主要原因是写C代码用的是<code>CLion</code>，使用下来体验感很好，而且JB家的IDE设置可以无损在各种IDE迁移，这点很爽，对于一个新的IDE完全没有上手难度</p>
+<h2 id="今日所学-2024-7-22"><a href="#今日所学-2024-7-22" class="headerlink" title="今日所学(2024&#x2F;7&#x2F;22)"></a>今日所学(2024&#x2F;7&#x2F;22)</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>HTML study<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--标题标签 h--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Heading<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>Heading<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span>Heading<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span>&gt;</span>Heading<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h5</span>&gt;</span>Heading<span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h6</span>&gt;</span>Heading<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--段落文本 p--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, deleniti exercitationem facere fugit id</span><br><span class="line">      ipsam</span><br><span class="line">      iste minima modi omnis provident quod rem, sequi sit tempora, totam ullam vel velit voluptatem?</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--粗体 b--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">b</span>&gt;</span>strong<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--斜体 i--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">i</span>&gt;</span>italics<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://mdlzcool.github.io&quot;</span>&gt;</span>My Blog<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--无序列表 ul--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--有序列表 ol--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--表格列表 table--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span>&gt;</span>姓名<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span>&gt;</span>邮箱<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span>&gt;</span>年龄<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>MDLZCOOL<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>mdlzcool@foxmail.com<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>19<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--表单 form--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--input text--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>名称：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>密码：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--textarea--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>备注：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">textarea</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--选择列表--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>性别：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">select</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;male&quot;</span>&gt;</span>男<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;female&quot;</span>&gt;</span>女<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;others&quot;</span>&gt;</span>其他<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--input submit--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--按钮 button--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>Click here<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--图片 img--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">alt</span>=<span class="string">&quot;图片加载出错&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">width</span>=<span class="string">&quot;600&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">height</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>最终效果</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202407222326299.png" alt="image-20240722232605140"></p>
+<h2 id="今日所学-2024-7-23"><a href="#今日所学-2024-7-23" class="headerlink" title="今日所学(2024&#x2F;7&#x2F;23)"></a>今日所学(2024&#x2F;7&#x2F;23)</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 这是我的第一个JS代码</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hello Console!&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// var, let, const 变量与常量</span></span><br><span class="line"><span class="comment">//     var -&gt; 很少使用，全局作用域，基本不使用</span></span><br><span class="line"><span class="comment">//     let -&gt; 声明变量，值可以被修改</span></span><br><span class="line"><span class="comment">//     const -&gt; 声明时必须被初始化。声明常量，值不可以被修改; 声明数组或对象时，可以改变，但是不能将整个数组完全更改，本质上const只能保证元素的指针不动</span></span><br><span class="line"><span class="keyword">let</span> age = <span class="number">19</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(age);</span><br><span class="line"></span><br><span class="line"><span class="comment">// String, Number, Boolean, Number, null, undefined 原生数据类型</span></span><br><span class="line"><span class="comment">// 加引号是String，数字是Number，true或者false是Boolean</span></span><br><span class="line"><span class="keyword">const</span> username = <span class="string">&#x27;MDLZCOOL&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> userage = <span class="number">19</span>;</span><br><span class="line"><span class="keyword">const</span> isCool = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">const</span> rate = <span class="number">4.8</span>; <span class="comment">// 在JS中没有浮点型，整型和浮点型都是Number</span></span><br><span class="line"><span class="keyword">const</span> x = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">const</span> y = <span class="literal">undefined</span>; <span class="comment">// null和undefined的区别是，null表示一个值被定义为空，undefined表示未定义</span></span><br><span class="line"><span class="keyword">let</span> z;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`My name is <span class="subst">$&#123;username&#125;</span> and I am <span class="subst">$&#123;userage&#125;</span>.`</span>);</span><br><span class="line"><span class="keyword">const</span> hello = <span class="string">`My name is <span class="subst">$&#123;username&#125;</span> and I am <span class="subst">$&#123;userage&#125;</span>.`</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(hello);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> s = <span class="string">&#x27;Hello World!&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s.<span class="property">length</span>);</span><br><span class="line"><span class="comment">// 转换成大写</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s.<span class="title function_">toUpperCase</span>()); <span class="comment">// 方法=对象函数有()，属性=对象里的变量没有()</span></span><br><span class="line"><span class="comment">// 转换成小写</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s.<span class="title function_">toLowerCase</span>());</span><br><span class="line"><span class="comment">// 分割String</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s.<span class="title function_">substring</span>(<span class="number">0</span>, <span class="number">5</span>));</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s.<span class="title function_">substring</span>(<span class="number">0</span>, <span class="number">5</span>).<span class="title function_">toUpperCase</span>());</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s.<span class="title function_">split</span>(<span class="string">&#x27;&#x27;</span>)) <span class="comment">// 字符串分割为数组的方法</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> str = <span class="string">&#x27;technology, computers, science&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">split</span>(<span class="string">&#x27;, &#x27;</span>));</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fruits = [<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;pear&#x27;</span>, <span class="string">&#x27;watermelon&#x27;</span>];</span><br><span class="line">fruits[<span class="number">0</span>] = <span class="string">&#x27;mango&#x27;</span>;</span><br><span class="line">fruits.<span class="title function_">push</span>(<span class="string">&#x27;lemon&#x27;</span>); <span class="comment">// 在数组后面push上一个新的元素</span></span><br><span class="line">fruits.<span class="title function_">unshift</span>(<span class="string">&#x27;grape&#x27;</span>); <span class="comment">// 在数组前面unshift上一个新的元素</span></span><br><span class="line">fruits.<span class="title function_">pop</span>(); <span class="comment">// 删除数组末尾的元素</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Array</span>.<span class="title function_">isArray</span>(fruits)); <span class="comment">// 判断是不是数组</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(fruits.<span class="title function_">indexOf</span>(<span class="string">&#x27;pear&#x27;</span>)); <span class="comment">// 查找数组里指定元素的索引，需要注意的是，如果有多个相同元素，那么就会返回第一个元素的索引</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;fruits&#125;</span>`</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对象 键值对</span></span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  <span class="attr">firstName</span>: <span class="string">&#x27;MDLZ&#x27;</span>,</span><br><span class="line">  <span class="attr">lastName</span>: <span class="string">&#x27;COOL&#x27;</span>,</span><br><span class="line">  <span class="attr">email</span>: <span class="string">&#x27;mdlzcool@foxmail.com&#x27;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">19</span>,</span><br><span class="line">  <span class="attr">hobbies</span>: [<span class="string">&#x27;coding&#x27;</span>, <span class="string">&#x27;movies&#x27;</span>, <span class="string">&#x27;music&#x27;</span>],</span><br><span class="line">  <span class="attr">address</span>: &#123;</span><br><span class="line">    <span class="attr">street</span>: <span class="string">&#x27;Renmin Rd&#x27;</span>,</span><br><span class="line">    <span class="attr">city</span>: <span class="string">&#x27;Yanliang&#x27;</span>,</span><br><span class="line">    <span class="attr">state</span>: <span class="string">&#x27;Shaanxi&#x27;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`name is <span class="subst">$&#123;person.firstName&#125;</span><span class="subst">$&#123;person.lastName&#125;</span>\r\nhobbies is <span class="subst">$&#123;person.hobbies&#125;</span>\r\nRoad is <span class="subst">$&#123;person.address.street&#125;</span>`</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123;firstName, lastName, <span class="attr">address</span>: &#123;city&#125;,&#125; = person;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(firstName);</span><br><span class="line"></span><br><span class="line">person.<span class="property">gender</span> = <span class="string">&#x27;male&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;person.gender&#125;</span>`</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对象数组和JSON</span></span><br><span class="line"><span class="keyword">const</span> todos = [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">id</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">text</span>: <span class="string">&#x27;Go to the airport&#x27;</span>,</span><br><span class="line">    <span class="attr">isCompleted</span>: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">id</span>: <span class="number">2</span>,</span><br><span class="line">    <span class="attr">text</span>: <span class="string">&#x27;Meet the teacher&#x27;</span>,</span><br><span class="line">    <span class="attr">isCompleted</span>: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">id</span>: <span class="number">3</span>,</span><br><span class="line">    <span class="attr">text</span>: <span class="string">&#x27;See the movie&#x27;</span>,</span><br><span class="line">    <span class="attr">isCompleted</span>: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> todoJSON = <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(todos); <span class="comment">// 对象数组JSON化</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(todos);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(todoJSON);</span><br><span class="line"></span><br><span class="line"><span class="comment">// if-else条件语句</span></span><br><span class="line"><span class="keyword">const</span> var_x = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> var_y = <span class="string">&#x27;10&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ==号不判断数据类型，只判断值的等于与否，===号既判断数据类型，也判断值的等于与否</span></span><br><span class="line"><span class="keyword">if</span> (<span class="number">10</span> == var_x) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;var_x is 10&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (<span class="number">10</span> === var_y) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;var_y is 10&#x27;</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">&#x27;10&#x27;</span> === var_y) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;var_y is String 10&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 三目运算符</span></span><br><span class="line"><span class="keyword">const</span> var_z = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> isTrue = var_z &gt; <span class="number">10</span> ? <span class="string">&#x27;true&#x27;</span> : <span class="string">&#x27;false&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(isTrue);</span><br><span class="line"></span><br><span class="line"><span class="comment">// switch条件语句</span></span><br><span class="line"><span class="keyword">switch</span> (isTrue) &#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">&#x27;true&#x27;</span>:</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;switch go into true&#x27;</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">&#x27;false&#x27;</span>:</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;switch go into false&#x27;</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="attr">default</span>:</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;switch neither go into true nor go into false&#x27;</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// for循环语句</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;for loop:&#x27;</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; todos.<span class="property">length</span>; i++) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(todos[i].<span class="property">text</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;增强for loop:&#x27;</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> todo <span class="keyword">of</span> todos) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(todo.<span class="property">text</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// while循环语句</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;while loop:&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> j = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span> (j &lt; todos.<span class="property">length</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(todos[j].<span class="property">text</span>);</span><br><span class="line">  j++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>今天学了点JavaScript相关的东西，发现很多东西都是和C语言一样的，怪不得有句话这样说</p>
+<blockquote>
+<p>机器码生汇编，汇编生C，C生万物</p>
+</blockquote>
+<p>有了C的基础，感觉JavaScript的语法不难掌握，而且JS的语法相当灵活，不过想要学精恐怕肯定是不容易的。</p>
+<p>最终效果</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202407231321532.png" alt="image-20240723132108407"></p>
+<p>CSS优先级：行内样式 &gt; 内部样式 &#x3D; 外部样式，其中内部样式与外部样式有先后关系，同一个样式表（stylesheet）内部优先级相同，同一元素与出现的先后有关系，后出现的会顶替掉先出现的。</p>
+<p><strong>前端开发一般都用外部样式，结构与样式完全分离，样式可以复用，触发浏览器缓存机制，便于维护</strong></p>
+<h2 id="今日所学-2024-7-24"><a href="#今日所学-2024-7-24" class="headerlink" title="今日所学(2024&#x2F;7&#x2F;24)"></a>今日所学(2024&#x2F;7&#x2F;24)</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>CSS study<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">href</span>=<span class="string">&quot;styles/style.css&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--多个class可以写在一起中间用空格隔开--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">&quot;projectName&quot;</span>&gt;</span>项目：应用于xxx的基于yyy的zzz<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">&quot;author&quot;</span>&gt;</span>作者：aaa<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span> <span class="attr">class</span>=<span class="string">&quot;unit&quot;</span>&gt;</span>单位：西北工业大学<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;passage&quot;</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias asperiores atque</span><br><span class="line">      consequuntur cum</span><br><span class="line">      deleniti dignissimos dolore esse fuga id illo na m nihil nostrum, quas, quod saepe tempora, vel vero?<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--多个元素的id值不能一样--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--一个元素可以同时拥有id和class--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span> <span class="attr">id</span>=<span class="string">&quot;acknowledgements&quot;</span>&gt;</span>鸣谢<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span> <span class="attr">class</span>=<span class="string">&quot;afterword&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">id</span>=<span class="string">&quot;postscript&quot;</span>&gt;</span>后记<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span> <span class="attr">class</span>=<span class="string">&quot;a&quot;</span>&gt;</span>just for test<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span> <span class="attr">class</span>=<span class="string">&quot;b&quot;</span>&gt;</span>just for test<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span> <span class="attr">class</span>=<span class="string">&quot;c&quot;</span>&gt;</span>just for test<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span> <span class="attr">id</span>=<span class="string">&quot;sheep&quot;</span>&gt;</span>小羊苏西<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;www.baidu.com&quot;</span>&gt;</span>百度<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>查资料<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*h1 &#123;*/</span></span><br><span class="line"><span class="comment">/*    color: green;*/</span></span><br><span class="line"><span class="comment">/*    font-size: 40px;*/</span></span><br><span class="line"><span class="comment">/*&#125;*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*h2 &#123;*/</span></span><br><span class="line"><span class="comment">/*    color: red;*/</span></span><br><span class="line"><span class="comment">/*    font-size: 60px;*/</span></span><br><span class="line"><span class="comment">/*&#125;*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*p &#123;*/</span></span><br><span class="line"><span class="comment">/*    color: blue;*/</span></span><br><span class="line"><span class="comment">/*    font-size: 80px;*/</span></span><br><span class="line"><span class="comment">/*&#125;*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*img &#123;*/</span></span><br><span class="line"><span class="comment">/*    width: 200px;*/</span></span><br><span class="line"><span class="comment">/*&#125;*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 星号 *标签可以选中所有HTML元素，对于清除样式有用 */</span></span><br><span class="line"><span class="comment">/** &#123;*/</span></span><br><span class="line"><span class="comment">/*    color: orange;*/</span></span><br><span class="line"><span class="comment">/*    font-size: 40px;*/</span></span><br><span class="line"><span class="comment">/*&#125;*/</span></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.author</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: blue;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.projectName</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: chocolate;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">60px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: aquamarine;</span><br><span class="line">    <span class="comment">/*width: 16em;*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.passage</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: brown;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.unit</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#acknowledgements</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: green;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">30px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*交集选择器 且*/</span></span><br><span class="line"><span class="selector-tag">h4</span><span class="selector-class">.afterword</span><span class="selector-id">#postscript</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: deeppink;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">30px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*并集选择器 或*/</span></span><br><span class="line"><span class="selector-class">.a</span>,</span><br><span class="line"><span class="selector-class">.b</span>,</span><br><span class="line"><span class="selector-class">.c</span>,</span><br><span class="line"><span class="selector-id">#sheep</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: green;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">30px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*后代选择器 xxx中的yyy...*/</span></span><br><span class="line"><span class="comment">/*ul中的li中的a*/</span></span><br><span class="line"><span class="selector-tag">ul</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: brown;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*ul中的li*/</span></span><br><span class="line"><span class="selector-tag">ul</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: cadetblue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最终效果</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202407241806340.png" alt="image-20240724180628176"></p>
+<h2 id="今日所学-2024-7-25"><a href="#今日所学-2024-7-25" class="headerlink" title="今日所学(2024&#x2F;7&#x2F;25)"></a>今日所学(2024&#x2F;7&#x2F;25)</h2><p>感觉基本入门了前端，用HTML+CSS+JS写了个小网页</p>
+<p>最终效果</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202407251743937.gif" alt="gif1"></p>
+<p>可能会把这个小项目放到Github上，以后维护下去。</p>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常用工具性网站&amp;工具</title>
+    <url>/post/5788685f.html</url>
+    <content><![CDATA[<h2 id="工具网站"><a href="#工具网站" class="headerlink" title="工具网站"></a>工具网站</h2><p>🎁此处列出的网站均来源于互联网，请注意不要在这些网站上输入任何个人敏感信息（如有可能）</p>
+<p>🌎某些网站可能需要国际网络</p>
+<p>🌈欢迎贡献</p>
+<ul>
+<li>添加站点</li>
+<li>反馈站点失效</li>
+<li>更多(todo)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>网站</th>
+<th>添加时间</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><a href="https://www.runoob.com/">https://www.runoob.com/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>菜鸟教程</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="https://serial.keysking.com/">https://serial.keysking.com/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>网页版串口助手</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>阿里巴巴矢量图标库</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="https://book.openmv.cc/">https://book.openmv.cc/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>OpenMV中文入门教程</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="https://www.3dcontentcentral.com/">https://www.3dcontentcentral.com/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>3D模型下载站</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="https://www2.futureware.at/KiCad/">https://www2.futureware.at/KiCad/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>Altium Designe转KiCad</td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="https://www.nerdfonts.com/font-downloads">https://www.nerdfonts.com/font-downloads</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>艺术字体下载</td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="https://fontawesome.p2hp.com/icons-ui.html">https://fontawesome.p2hp.com/icons-ui.html</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>The Icons矢量图标库</td>
+</tr>
+<tr>
+<td>9</td>
+<td><a href="http://network-science.de/ascii/">http://network-science.de/ascii/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>终端立体字生成</td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="https://tableconvert.com/zh-cn/latex-to-latex">https://tableconvert.com/zh-cn/latex-to-latex</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>Latex表格在线编辑和转Excel</td>
+</tr>
+<tr>
+<td>11</td>
+<td><a href="https://www.niupizhiyuan.com/download.html">https://www.niupizhiyuan.com/download.html</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>CSDN文章和文件下载</td>
+</tr>
+<tr>
+<td>12</td>
+<td><a href="http://1.94.138.197/bangumi">http://1.94.138.197/bangumi</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>百度云不限速，配合油猴</td>
+</tr>
+<tr>
+<td>13</td>
+<td><a href="https://limestart.cn/">https://limestart.cn</a></td>
+<td>2024&#x2F;7&#x2F;22</td>
+<td>青柠起始页，优雅的浏览器主页</td>
+</tr>
+<tr>
+<td>14</td>
+<td><a href="https://skillicons.dev/">https://skillicons.dev/</a></td>
+<td>2024&#x2F;7&#x2F;24</td>
+<td>Skill Icons，技术栈图标</td>
+</tr>
+<tr>
+<td>15</td>
+<td><a href="https://bing.img.run/api.html">https://bing.img.run/api.html</a></td>
+<td>2024&#x2F;7&#x2F;25</td>
+<td>获取每日Bing壁纸API，有多种选择</td>
+</tr>
+<tr>
+<td>16</td>
+<td><a href="https://ai.97866.com/">https://ai.97866.com/</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>AI 工具合集</td>
+</tr>
+<tr>
+<td>17</td>
+<td><a href="https://tools.miku.ac/">https://tools.miku.ac/</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>轻量的工具集合</td>
+</tr>
+<tr>
+<td>18</td>
+<td><a href="https://star-history.com/">https://star-history.com/</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>Github Star历史图</td>
+</tr>
+<tr>
+<td>19</td>
+<td><a href="https://github.com/2016rshah/githubchart-api">https://github.com/2016rshah/githubchart-api</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>Github Commit频率图API</td>
+</tr>
+<tr>
+<td>20</td>
+<td><a href="https://shields.io/">https://shields.io/</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>在线统计工具，支持多种徽章样式</td>
+</tr>
+<tr>
+<td>21</td>
+<td><a href="https://carbon.now.sh/">https://carbon.now.sh</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>代码图片工具</td>
+</tr>
+<tr>
+<td>22</td>
+<td><a href="https://ray.so/">https://ray.so</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>代码图片工具</td>
+</tr>
+<tr>
+<td>23</td>
+<td><a href="https://codeimg.io/">https://codeimg.io</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>代码图片工具</td>
+</tr>
+<tr>
+<td>24</td>
+<td><a href="http://www.autolabor.com.cn/book/ROSTutorials/index.html">http://www.autolabor.com.cn/book/ROSTutorials/index.html</a></td>
+<td>2024&#x2F;9&#x2F;2</td>
+<td>ROS中文教程</td>
+</tr>
+<tr>
+<td>25</td>
+<td><a href="https://unsplash.com/wallpapers/screen/4k">https://unsplash.com/wallpapers/screen/4k</a></td>
+<td>2024&#x2F;9&#x2F;3</td>
+<td>免费4K壁纸</td>
+</tr>
+<tr>
+<td>26</td>
+<td><a href="https://kicanvas.org/">https://kicanvas.org/</a></td>
+<td>2024&#x2F;9&#x2F;9</td>
+<td>KiCad原理图或PCB在线查看</td>
+</tr>
+</tbody></table>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>🎁此处列出的工具均来源于互联网，请注意不要在这些工具上输入任何个人敏感信息（如有可能）</p>
+<p>🌈欢迎贡献</p>
+<ul>
+<li>添加工具</li>
+<li>更多(todo)</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>Tools</tag>
       </tags>
   </entry>
   <entry>
@@ -269,295 +536,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Git&amp;&amp;Github使用Tricks</title>
-    <url>/post/4bb6437a.html</url>
-    <content><![CDATA[<h2 id="Tricks"><a href="#Tricks" class="headerlink" title="Tricks"></a>Tricks</h2><h3 id="经历了一次错误的commit，想要撤回"><a href="#经历了一次错误的commit，想要撤回" class="headerlink" title="经历了一次错误的commit，想要撤回"></a>经历了一次错误的commit，想要撤回</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span> <span class="comment"># 查看上次commit的完整hash字串</span></span><br><span class="line">git reset &lt;arg1&gt; &lt;<span class="built_in">hash</span>字串&gt; <span class="comment"># 撤回commit，&lt;arg1&gt;有参数--soft、--hard、--mixed可选，区别为</span></span><br><span class="line"><span class="comment"># --soft 文件还保存在git里，可以再reset回来</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)        (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B-C</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># --hard 文件直接被删去，慎用！！！</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)        (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># --mixed 文件未被删去，就在本地workspace里，处于未被add的状态(推荐)</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)          (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B-C</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 注：(F)指的是磁盘里此时实际的文件处于哪个版本</span></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>舵机多功能测试程序说明</title>
-    <url>/post/cee333e2.html</url>
-    <content><![CDATA[<p><strong>写在前面：基地一直都有对舵机快捷测试的需求，但是每次都得改源码，很麻烦，也不能实现舵机的精准角度控制，最近忙完期中考试，抽时间写了这个程序，也算是对学到的东西的一点小小的应用吧</strong></p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本程序运行在大疆开发板C型，基于STM32 HAL平台开发，具有极其优良的可移植性，可以快速迁移至其他MCU，本程序依托串口与上位机通信，使用时接串口线和电池即可</p>
-<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404301832725.png" alt="image-20240430183243677"></p>
-<p>对主菜单的解释，每个指令串口都会输出对应的注解，<strong>注意输入任何指令都需要以回车结尾！</strong></p>
-<table>
-<thead>
-<tr>
-<th>功能</th>
-<th>解释</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Plain Servo Test</td>
-<td>朴素舵机测试（控制舵机转到特定角度）</td>
-</tr>
-<tr>
-<td>Interval Servo Test</td>
-<td>区间舵机测试（控制舵机在特定区间转动）</td>
-</tr>
-<tr>
-<td>Quick Servo Test</td>
-<td>快速舵机测试（快速测试舵机好坏）</td>
-</tr>
-<tr>
-<td>Use Multi Channels</td>
-<td>使用多个PWM通道，可以一次测试多个舵机</td>
-</tr>
-<tr>
-<td>Direct PWM Ctrl (20240709更新)</td>
-<td>直接输入PWM Compare值控制舵机</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>常用工具性网站&amp;工具</title>
-    <url>/post/5788685f.html</url>
-    <content><![CDATA[<h2 id="工具网站"><a href="#工具网站" class="headerlink" title="工具网站"></a>工具网站</h2><p>🎁此处列出的网站均来源于互联网，请注意不要在这些网站上输入任何个人敏感信息（如有可能）</p>
-<p>🌎某些网站可能需要国际网络</p>
-<p>🌈欢迎贡献</p>
-<ul>
-<li>添加站点</li>
-<li>反馈站点失效</li>
-<li>更多(todo)</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>序号</th>
-<th>网站</th>
-<th>添加时间</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td><a href="https://www.runoob.com/">https://www.runoob.com/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>菜鸟教程</td>
-</tr>
-<tr>
-<td>2</td>
-<td><a href="https://serial.keysking.com/">https://serial.keysking.com/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>网页版串口助手</td>
-</tr>
-<tr>
-<td>3</td>
-<td><a href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>阿里巴巴矢量图标库</td>
-</tr>
-<tr>
-<td>4</td>
-<td><a href="https://book.openmv.cc/">https://book.openmv.cc/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>OpenMV中文入门教程</td>
-</tr>
-<tr>
-<td>5</td>
-<td><a href="https://www.3dcontentcentral.com/">https://www.3dcontentcentral.com/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>3D模型下载站</td>
-</tr>
-<tr>
-<td>6</td>
-<td><a href="https://www2.futureware.at/KiCad/">https://www2.futureware.at/KiCad/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>Altium Designe转KiCad</td>
-</tr>
-<tr>
-<td>7</td>
-<td><a href="https://www.nerdfonts.com/font-downloads">https://www.nerdfonts.com/font-downloads</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>艺术字体下载</td>
-</tr>
-<tr>
-<td>8</td>
-<td><a href="https://fontawesome.p2hp.com/icons-ui.html">https://fontawesome.p2hp.com/icons-ui.html</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>The Icons矢量图标库</td>
-</tr>
-<tr>
-<td>9</td>
-<td><a href="http://network-science.de/ascii/">http://network-science.de/ascii/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>终端立体字生成</td>
-</tr>
-<tr>
-<td>10</td>
-<td><a href="https://tableconvert.com/zh-cn/latex-to-latex">https://tableconvert.com/zh-cn/latex-to-latex</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>Latex表格在线编辑和转Excel</td>
-</tr>
-<tr>
-<td>11</td>
-<td><a href="https://www.niupizhiyuan.com/download.html">https://www.niupizhiyuan.com/download.html</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>CSDN文章和文件下载</td>
-</tr>
-<tr>
-<td>12</td>
-<td><a href="http://1.94.138.197/bangumi">http://1.94.138.197/bangumi</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>百度云不限速，配合油猴</td>
-</tr>
-<tr>
-<td>13</td>
-<td><a href="https://limestart.cn/">https://limestart.cn</a></td>
-<td>2024&#x2F;7&#x2F;22</td>
-<td>青柠起始页，优雅的浏览器主页</td>
-</tr>
-<tr>
-<td>14</td>
-<td><a href="https://skillicons.dev/">https://skillicons.dev/</a></td>
-<td>2024&#x2F;7&#x2F;24</td>
-<td>Skill Icons，技术栈图标</td>
-</tr>
-<tr>
-<td>15</td>
-<td><a href="https://bing.img.run/api.html">https://bing.img.run/api.html</a></td>
-<td>2024&#x2F;7&#x2F;25</td>
-<td>获取每日Bing壁纸API，有多种选择</td>
-</tr>
-<tr>
-<td>16</td>
-<td><a href="https://ai.97866.com/">https://ai.97866.com/</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>AI 工具合集</td>
-</tr>
-<tr>
-<td>17</td>
-<td><a href="https://tools.miku.ac/">https://tools.miku.ac/</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>轻量的工具集合</td>
-</tr>
-<tr>
-<td>18</td>
-<td><a href="https://star-history.com/">https://star-history.com/</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>Github Star历史图</td>
-</tr>
-<tr>
-<td>19</td>
-<td><a href="https://github.com/2016rshah/githubchart-api">https://github.com/2016rshah/githubchart-api</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>Github Commit频率图API</td>
-</tr>
-<tr>
-<td>20</td>
-<td><a href="https://shields.io/">https://shields.io/</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>在线统计工具，支持多种徽章样式</td>
-</tr>
-<tr>
-<td>21</td>
-<td><a href="https://carbon.now.sh/">https://carbon.now.sh</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>代码图片工具</td>
-</tr>
-<tr>
-<td>22</td>
-<td><a href="https://ray.so/">https://ray.so</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>代码图片工具</td>
-</tr>
-<tr>
-<td>23</td>
-<td><a href="https://codeimg.io/">https://codeimg.io</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>代码图片工具</td>
-</tr>
-<tr>
-<td>24</td>
-<td><a href="http://www.autolabor.com.cn/book/ROSTutorials/index.html">http://www.autolabor.com.cn/book/ROSTutorials/index.html</a></td>
-<td>2024&#x2F;9&#x2F;2</td>
-<td>ROS中文教程</td>
-</tr>
-<tr>
-<td>25</td>
-<td><a href="https://unsplash.com/wallpapers/screen/4k">https://unsplash.com/wallpapers/screen/4k</a></td>
-<td>2024&#x2F;9&#x2F;3</td>
-<td>免费4K壁纸</td>
-</tr>
-<tr>
-<td>26</td>
-<td><a href="https://kicanvas.org/">https://kicanvas.org/</a></td>
-<td>2024&#x2F;9&#x2F;9</td>
-<td>KiCad原理图或PCB在线查看</td>
-</tr>
-</tbody></table>
-<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>🎁此处列出的工具均来源于互联网，请注意不要在这些工具上输入任何个人敏感信息（如有可能）</p>
-<p>🌈欢迎贡献</p>
-<ul>
-<li>添加工具</li>
-<li>更多(todo)</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Tools</category>
-      </categories>
-      <tags>
-        <tag>Tools</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>嵌入式驱动接口在C语言里的实现</title>
-    <url>/post/cdb42980.html</url>
-    <content><![CDATA[<h2 id="为什么要实现接口"><a href="#为什么要实现接口" class="headerlink" title="为什么要实现接口"></a>为什么要实现接口</h2><p>接口，可以是硬件与硬件之间连接的桥梁，可以是软件与软件之间沟通的窗户，也可以是硬件与软件之间通信的枢纽。其中硬件与硬件之间的桥梁，比如I2C、UART、CANFD、等等，软件与软件之间沟通的窗户，比如操作系统提供的各种API、等等。我实现的这套“接口”，连接了硬件与软件，它可以实现软硬件的完全解耦合，引入了<strong>平台无关性</strong>，提供了尽可能简化的逻辑，这有点类似于开汽车，一个人一旦学会了开汽车，那开什么牌子的汽车都基本是一个道理，实现了一套驱动，一套接口，对于不同系统、硬件平台的支持，这无疑会大大提高代码的易用性、复用性，大大减少重复的造轮子。</p>
-<h2 id="我所实现的接口"><a href="#我所实现的接口" class="headerlink" title="我所实现的接口"></a>我所实现的接口</h2><ul>
-<li>首先，需要一个结构体来存放系统接口，不妨叫system_interface_t，它用来存放系统的函数实现，是我们将驱动对接到不同平台的关键</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">generic_err_t</span> (*send)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*receive)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*delay_ms)(<span class="type">uint32_t</span> nms);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*delay_us)(<span class="type">uint32_t</span> nus);</span><br><span class="line">&#125; <span class="type">system_interface_t</span>;</span><br></pre></td></tr></table></figure>
-
-<p>推荐将上述代码放在一个.h文件里，这样不同的驱动只需要这一套接口即可</p>
-<ul>
-<li>接下来，需要一个结构体来存放system_interface_t（这样做的目的是实现不同驱动可以复用同一套接口），以及驱动内部实现的各种函数，比如对于aht20温度计而言，则除了对接系统的system_interface_t结构体，还应存放用于读取温度的函数</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">float</span> temperature;</span><br><span class="line">    <span class="type">float</span> humidity;</span><br><span class="line"></span><br><span class="line">    <span class="type">system_interface_t</span> *pfsystem_interface;</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*pfinit)(<span class="type">void</span> *pfdev);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*pfmeasure)(<span class="type">void</span> *pfdev);</span><br><span class="line">&#125; <span class="type">generic_sensor_aht20_driver_interface_t</span>;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>然后可以构建一个whoami函数，用于对底层驱动的对接写入，以及对设备调用函数的暴露</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">generic_err_t</span> <span class="title function_">generic_sensor_aht20_whoami</span><span class="params">(<span class="type">generic_sensor_aht20_driver_interface_t</span> *pfdev,</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*generic_send_func)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len),</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*generic_receive_func)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len),</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*delay_ms_func)(<span class="type">uint32_t</span> nms),</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*delay_us_func)(<span class="type">uint32_t</span> nus))</span> &#123;</span><br><span class="line">    pfdev-&gt;pfsystem_interface = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">system_interface_t</span>));</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;send = generic_send_func;</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;receive = generic_receive_func;</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;delay_ms = delay_ms_func;</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;delay_us = delay_us_func;</span><br><span class="line">    pfdev-&gt;pfinit = generic_sensor_aht20_init;</span><br><span class="line">    pfdev-&gt;pfmeasure = generic_sensor_aht20_measure;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> GENERIC_OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>注意这里要先给generic_sensor_aht20_driver_interface_t下的system_interface_t申请一块内存，否则直接调用pfdev-&gt;pfsystem_interface会指向非法内存，造成段错误</p>
-<h2 id="关于调用"><a href="#关于调用" class="headerlink" title="关于调用"></a>关于调用</h2><p>可以在初始化的时候进行驱动程序的注册，不要忘记申请内存</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">generic_sensor_aht20_driver_interface_t</span> *aht20_device = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">generic_sensor_aht20_driver_interface_t</span>));</span><br></pre></td></tr></table></figure>
-
-<p>然后调用whoami函数，对接系统底层到驱动层</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">generic_sensor_aht20_whoami(aht20_device,</span><br><span class="line">                          i2c_master_send,</span><br><span class="line">                          i2c_master_receive,</span><br><span class="line">                          HAL_Delay,</span><br><span class="line">                          <span class="literal">NULL</span>);</span><br></pre></td></tr></table></figure>
-
-<p>接着，便可以通过下面这种方式调用驱动暴露出来的API</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">aht20_device-&gt;pfinit(aht20_device); <span class="comment">// 如pfinit(void *pfdev)</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="删除设备"><a href="#删除设备" class="headerlink" title="删除设备"></a>删除设备</h2><p>我们前面通过malloc为设备的系统驱动以及设备暴露的接口分配了内存，下面通过释放这两块内存来删除设备</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">generic_err_t</span> <span class="title function_">generic_sensor_aht20_del</span><span class="params">(<span class="type">generic_sensor_aht20_driver_interface_t</span> *pfdev)</span> &#123;</span><br><span class="line">    <span class="built_in">free</span>(pfdev-&gt;pfsystem_interface); <span class="comment">// 先释放系统驱动</span></span><br><span class="line">    pfdev-&gt;pfsystem_interface = <span class="literal">NULL</span>; <span class="comment">// 避免悬挂指针</span></span><br><span class="line">    <span class="built_in">free</span>(pfdev); <span class="comment">// 再释放暴露的接口</span></span><br><span class="line">    pfdev = <span class="literal">NULL</span>; <span class="comment">// 避免悬挂指针</span></span><br><span class="line">    <span class="keyword">return</span> GENERIC_OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="驱动编写"><a href="#驱动编写" class="headerlink" title="驱动编写"></a>驱动编写</h2><p>驱动编写中，注意每个驱动内部的API都需要一个void *类型的指针，用来调用generic_sensor_aht20_driver_interface_t的驱动接口</p>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>Dev</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>用CLion优雅地调试和开发STM32(CubeMX)</title>
     <url>/post/63adfc20.html</url>
     <content><![CDATA[<h2 id="Why-CLion"><a href="#Why-CLion" class="headerlink" title="Why CLion?"></a>Why CLion?</h2><p>Keil操作简单，容易上手，而且可以很方便地进行调试，不过其古老的界面，不符合人类直觉的操作，不符合现代的编程习惯，必然会被逐渐淘汰。</p>
@@ -640,60 +618,82 @@
       </tags>
   </entry>
   <entry>
-    <title>【前端学习笔记】 HTML+JavaScript+CSS</title>
-    <url>/post/64aca0a5.html</url>
-    <content><![CDATA[<h2 id="为什么要学"><a href="#为什么要学" class="headerlink" title="为什么要学"></a>为什么要学</h2><p>最近在学长的建议下准备开始接触前端开发，学习路线预计是先HTML，再JavaScript，再CSS。因为我之前自己在树莓派上建过服务器，搭建过WordPress和NAS等服务，可能算有一丁点基础，所以日后可能会负责维护基地的Git和Docs等服务。也产生过些一套自己的博客主题或者浏览器主页之类的想法，一个比较好的例子是<a href="https://limestart.cn/">青柠起始页</a>，之后可能会仿照着做一个。</p>
-<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><p>HTML的全称为超文本标记语言，是一种标记语言。它包括一系列标签，通过这些标签可以将网络上的文档格式统一，使分散的Internet资源连接为一个逻辑整体。HTML文本是由HTML命令组成的描述性文本，HTML命令可以说明文字，图形、动画、声音、表格、链接等。<strong>值得注意的是，HTML不是一种编程语言，因其不具有逻辑处理的能力。</strong></p>
-<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><p>JavaScript（简称“JS”）是一种具有函数优先的轻量级，解释型或即时编译型的编程语言。虽然它是作为开发Web页面的脚本语言而出名，但是它也被用到了很多非浏览器环境中，JavaScript基于原型编程、多范式的动态脚本语言，并且支持面向对象、命令式、声明式、函数式编程范式。</p>
-<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><p>层叠样式表(英文全称：Cascading Style Sheets)是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言。CSS不仅可以静态地修饰网页，还可以配合各种脚本语言动态地对网页各元素进行格式化。</p>
-<blockquote>
-<p>简单理解：CSS可以美化HTML，让HTML更漂亮，JavaScript可以给页面带来生命力，让其具有逻辑性。</p>
-<p>CSS、HTML、JavaScript使页面的构建更加模块化，单元化。</p>
-</blockquote>
-<h2 id="编辑器IDE"><a href="#编辑器IDE" class="headerlink" title="编辑器IDE"></a>编辑器IDE</h2><p>我用的是Jetbrains的<code>WebStorm</code>编辑器，主要原因是写C代码用的是<code>CLion</code>，使用下来体验感很好，而且JB家的IDE设置可以无损在各种IDE迁移，这点很爽，对于一个新的IDE完全没有上手难度</p>
-<h2 id="今日所学-2024-7-22"><a href="#今日所学-2024-7-22" class="headerlink" title="今日所学(2024&#x2F;7&#x2F;22)"></a>今日所学(2024&#x2F;7&#x2F;22)</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>HTML study<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--标题标签 h--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Heading<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>Heading<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span>Heading<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span>&gt;</span>Heading<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h5</span>&gt;</span>Heading<span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h6</span>&gt;</span>Heading<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--段落文本 p--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, deleniti exercitationem facere fugit id</span><br><span class="line">      ipsam</span><br><span class="line">      iste minima modi omnis provident quod rem, sequi sit tempora, totam ullam vel velit voluptatem?</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--粗体 b--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">b</span>&gt;</span>strong<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--斜体 i--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">i</span>&gt;</span>italics<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://mdlzcool.github.io&quot;</span>&gt;</span>My Blog<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--无序列表 ul--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--有序列表 ol--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--表格列表 table--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span>&gt;</span>姓名<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span>&gt;</span>邮箱<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span>&gt;</span>年龄<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>MDLZCOOL<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>mdlzcool@foxmail.com<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>19<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--表单 form--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--input text--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>名称：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>密码：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--textarea--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>备注：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">textarea</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--选择列表--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>性别：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">select</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;male&quot;</span>&gt;</span>男<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;female&quot;</span>&gt;</span>女<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;others&quot;</span>&gt;</span>其他<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--input submit--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--按钮 button--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>Click here<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--图片 img--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">alt</span>=<span class="string">&quot;图片加载出错&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">width</span>=<span class="string">&quot;600&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">height</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>最终效果</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202407222326299.png" alt="image-20240722232605140"></p>
-<h2 id="今日所学-2024-7-23"><a href="#今日所学-2024-7-23" class="headerlink" title="今日所学(2024&#x2F;7&#x2F;23)"></a>今日所学(2024&#x2F;7&#x2F;23)</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 这是我的第一个JS代码</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hello Console!&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// var, let, const 变量与常量</span></span><br><span class="line"><span class="comment">//     var -&gt; 很少使用，全局作用域，基本不使用</span></span><br><span class="line"><span class="comment">//     let -&gt; 声明变量，值可以被修改</span></span><br><span class="line"><span class="comment">//     const -&gt; 声明时必须被初始化。声明常量，值不可以被修改; 声明数组或对象时，可以改变，但是不能将整个数组完全更改，本质上const只能保证元素的指针不动</span></span><br><span class="line"><span class="keyword">let</span> age = <span class="number">19</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(age);</span><br><span class="line"></span><br><span class="line"><span class="comment">// String, Number, Boolean, Number, null, undefined 原生数据类型</span></span><br><span class="line"><span class="comment">// 加引号是String，数字是Number，true或者false是Boolean</span></span><br><span class="line"><span class="keyword">const</span> username = <span class="string">&#x27;MDLZCOOL&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> userage = <span class="number">19</span>;</span><br><span class="line"><span class="keyword">const</span> isCool = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">const</span> rate = <span class="number">4.8</span>; <span class="comment">// 在JS中没有浮点型，整型和浮点型都是Number</span></span><br><span class="line"><span class="keyword">const</span> x = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">const</span> y = <span class="literal">undefined</span>; <span class="comment">// null和undefined的区别是，null表示一个值被定义为空，undefined表示未定义</span></span><br><span class="line"><span class="keyword">let</span> z;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`My name is <span class="subst">$&#123;username&#125;</span> and I am <span class="subst">$&#123;userage&#125;</span>.`</span>);</span><br><span class="line"><span class="keyword">const</span> hello = <span class="string">`My name is <span class="subst">$&#123;username&#125;</span> and I am <span class="subst">$&#123;userage&#125;</span>.`</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(hello);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> s = <span class="string">&#x27;Hello World!&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s.<span class="property">length</span>);</span><br><span class="line"><span class="comment">// 转换成大写</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s.<span class="title function_">toUpperCase</span>()); <span class="comment">// 方法=对象函数有()，属性=对象里的变量没有()</span></span><br><span class="line"><span class="comment">// 转换成小写</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s.<span class="title function_">toLowerCase</span>());</span><br><span class="line"><span class="comment">// 分割String</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s.<span class="title function_">substring</span>(<span class="number">0</span>, <span class="number">5</span>));</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s.<span class="title function_">substring</span>(<span class="number">0</span>, <span class="number">5</span>).<span class="title function_">toUpperCase</span>());</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s.<span class="title function_">split</span>(<span class="string">&#x27;&#x27;</span>)) <span class="comment">// 字符串分割为数组的方法</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> str = <span class="string">&#x27;technology, computers, science&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">split</span>(<span class="string">&#x27;, &#x27;</span>));</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fruits = [<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;pear&#x27;</span>, <span class="string">&#x27;watermelon&#x27;</span>];</span><br><span class="line">fruits[<span class="number">0</span>] = <span class="string">&#x27;mango&#x27;</span>;</span><br><span class="line">fruits.<span class="title function_">push</span>(<span class="string">&#x27;lemon&#x27;</span>); <span class="comment">// 在数组后面push上一个新的元素</span></span><br><span class="line">fruits.<span class="title function_">unshift</span>(<span class="string">&#x27;grape&#x27;</span>); <span class="comment">// 在数组前面unshift上一个新的元素</span></span><br><span class="line">fruits.<span class="title function_">pop</span>(); <span class="comment">// 删除数组末尾的元素</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Array</span>.<span class="title function_">isArray</span>(fruits)); <span class="comment">// 判断是不是数组</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(fruits.<span class="title function_">indexOf</span>(<span class="string">&#x27;pear&#x27;</span>)); <span class="comment">// 查找数组里指定元素的索引，需要注意的是，如果有多个相同元素，那么就会返回第一个元素的索引</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;fruits&#125;</span>`</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对象 键值对</span></span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  <span class="attr">firstName</span>: <span class="string">&#x27;MDLZ&#x27;</span>,</span><br><span class="line">  <span class="attr">lastName</span>: <span class="string">&#x27;COOL&#x27;</span>,</span><br><span class="line">  <span class="attr">email</span>: <span class="string">&#x27;mdlzcool@foxmail.com&#x27;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">19</span>,</span><br><span class="line">  <span class="attr">hobbies</span>: [<span class="string">&#x27;coding&#x27;</span>, <span class="string">&#x27;movies&#x27;</span>, <span class="string">&#x27;music&#x27;</span>],</span><br><span class="line">  <span class="attr">address</span>: &#123;</span><br><span class="line">    <span class="attr">street</span>: <span class="string">&#x27;Renmin Rd&#x27;</span>,</span><br><span class="line">    <span class="attr">city</span>: <span class="string">&#x27;Yanliang&#x27;</span>,</span><br><span class="line">    <span class="attr">state</span>: <span class="string">&#x27;Shaanxi&#x27;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`name is <span class="subst">$&#123;person.firstName&#125;</span><span class="subst">$&#123;person.lastName&#125;</span>\r\nhobbies is <span class="subst">$&#123;person.hobbies&#125;</span>\r\nRoad is <span class="subst">$&#123;person.address.street&#125;</span>`</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123;firstName, lastName, <span class="attr">address</span>: &#123;city&#125;,&#125; = person;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(firstName);</span><br><span class="line"></span><br><span class="line">person.<span class="property">gender</span> = <span class="string">&#x27;male&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;person.gender&#125;</span>`</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对象数组和JSON</span></span><br><span class="line"><span class="keyword">const</span> todos = [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">id</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">text</span>: <span class="string">&#x27;Go to the airport&#x27;</span>,</span><br><span class="line">    <span class="attr">isCompleted</span>: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">id</span>: <span class="number">2</span>,</span><br><span class="line">    <span class="attr">text</span>: <span class="string">&#x27;Meet the teacher&#x27;</span>,</span><br><span class="line">    <span class="attr">isCompleted</span>: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">id</span>: <span class="number">3</span>,</span><br><span class="line">    <span class="attr">text</span>: <span class="string">&#x27;See the movie&#x27;</span>,</span><br><span class="line">    <span class="attr">isCompleted</span>: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> todoJSON = <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(todos); <span class="comment">// 对象数组JSON化</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(todos);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(todoJSON);</span><br><span class="line"></span><br><span class="line"><span class="comment">// if-else条件语句</span></span><br><span class="line"><span class="keyword">const</span> var_x = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> var_y = <span class="string">&#x27;10&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ==号不判断数据类型，只判断值的等于与否，===号既判断数据类型，也判断值的等于与否</span></span><br><span class="line"><span class="keyword">if</span> (<span class="number">10</span> == var_x) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;var_x is 10&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (<span class="number">10</span> === var_y) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;var_y is 10&#x27;</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">&#x27;10&#x27;</span> === var_y) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;var_y is String 10&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 三目运算符</span></span><br><span class="line"><span class="keyword">const</span> var_z = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> isTrue = var_z &gt; <span class="number">10</span> ? <span class="string">&#x27;true&#x27;</span> : <span class="string">&#x27;false&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(isTrue);</span><br><span class="line"></span><br><span class="line"><span class="comment">// switch条件语句</span></span><br><span class="line"><span class="keyword">switch</span> (isTrue) &#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">&#x27;true&#x27;</span>:</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;switch go into true&#x27;</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">&#x27;false&#x27;</span>:</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;switch go into false&#x27;</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="attr">default</span>:</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;switch neither go into true nor go into false&#x27;</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// for循环语句</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;for loop:&#x27;</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; todos.<span class="property">length</span>; i++) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(todos[i].<span class="property">text</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;增强for loop:&#x27;</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> todo <span class="keyword">of</span> todos) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(todo.<span class="property">text</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// while循环语句</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;while loop:&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> j = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span> (j &lt; todos.<span class="property">length</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(todos[j].<span class="property">text</span>);</span><br><span class="line">  j++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>今天学了点JavaScript相关的东西，发现很多东西都是和C语言一样的，怪不得有句话这样说</p>
-<blockquote>
-<p>机器码生汇编，汇编生C，C生万物</p>
-</blockquote>
-<p>有了C的基础，感觉JavaScript的语法不难掌握，而且JS的语法相当灵活，不过想要学精恐怕肯定是不容易的。</p>
-<p>最终效果</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202407231321532.png" alt="image-20240723132108407"></p>
-<p>CSS优先级：行内样式 &gt; 内部样式 &#x3D; 外部样式，其中内部样式与外部样式有先后关系，同一个样式表（stylesheet）内部优先级相同，同一元素与出现的先后有关系，后出现的会顶替掉先出现的。</p>
-<p><strong>前端开发一般都用外部样式，结构与样式完全分离，样式可以复用，触发浏览器缓存机制，便于维护</strong></p>
-<h2 id="今日所学-2024-7-24"><a href="#今日所学-2024-7-24" class="headerlink" title="今日所学(2024&#x2F;7&#x2F;24)"></a>今日所学(2024&#x2F;7&#x2F;24)</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>CSS study<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">href</span>=<span class="string">&quot;styles/style.css&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--多个class可以写在一起中间用空格隔开--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">&quot;projectName&quot;</span>&gt;</span>项目：应用于xxx的基于yyy的zzz<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">&quot;author&quot;</span>&gt;</span>作者：aaa<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span> <span class="attr">class</span>=<span class="string">&quot;unit&quot;</span>&gt;</span>单位：西北工业大学<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;passage&quot;</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias asperiores atque</span><br><span class="line">      consequuntur cum</span><br><span class="line">      deleniti dignissimos dolore esse fuga id illo na m nihil nostrum, quas, quod saepe tempora, vel vero?<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--多个元素的id值不能一样--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--一个元素可以同时拥有id和class--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span> <span class="attr">id</span>=<span class="string">&quot;acknowledgements&quot;</span>&gt;</span>鸣谢<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span> <span class="attr">class</span>=<span class="string">&quot;afterword&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">id</span>=<span class="string">&quot;postscript&quot;</span>&gt;</span>后记<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span> <span class="attr">class</span>=<span class="string">&quot;a&quot;</span>&gt;</span>just for test<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span> <span class="attr">class</span>=<span class="string">&quot;b&quot;</span>&gt;</span>just for test<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span> <span class="attr">class</span>=<span class="string">&quot;c&quot;</span>&gt;</span>just for test<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span> <span class="attr">id</span>=<span class="string">&quot;sheep&quot;</span>&gt;</span>小羊苏西<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;www.baidu.com&quot;</span>&gt;</span>百度<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>查资料<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*h1 &#123;*/</span></span><br><span class="line"><span class="comment">/*    color: green;*/</span></span><br><span class="line"><span class="comment">/*    font-size: 40px;*/</span></span><br><span class="line"><span class="comment">/*&#125;*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*h2 &#123;*/</span></span><br><span class="line"><span class="comment">/*    color: red;*/</span></span><br><span class="line"><span class="comment">/*    font-size: 60px;*/</span></span><br><span class="line"><span class="comment">/*&#125;*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*p &#123;*/</span></span><br><span class="line"><span class="comment">/*    color: blue;*/</span></span><br><span class="line"><span class="comment">/*    font-size: 80px;*/</span></span><br><span class="line"><span class="comment">/*&#125;*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*img &#123;*/</span></span><br><span class="line"><span class="comment">/*    width: 200px;*/</span></span><br><span class="line"><span class="comment">/*&#125;*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 星号 *标签可以选中所有HTML元素，对于清除样式有用 */</span></span><br><span class="line"><span class="comment">/** &#123;*/</span></span><br><span class="line"><span class="comment">/*    color: orange;*/</span></span><br><span class="line"><span class="comment">/*    font-size: 40px;*/</span></span><br><span class="line"><span class="comment">/*&#125;*/</span></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.author</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: blue;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.projectName</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: chocolate;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">60px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: aquamarine;</span><br><span class="line">    <span class="comment">/*width: 16em;*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.passage</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: brown;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.unit</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#acknowledgements</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: green;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">30px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*交集选择器 且*/</span></span><br><span class="line"><span class="selector-tag">h4</span><span class="selector-class">.afterword</span><span class="selector-id">#postscript</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: deeppink;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">30px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*并集选择器 或*/</span></span><br><span class="line"><span class="selector-class">.a</span>,</span><br><span class="line"><span class="selector-class">.b</span>,</span><br><span class="line"><span class="selector-class">.c</span>,</span><br><span class="line"><span class="selector-id">#sheep</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: green;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">30px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*后代选择器 xxx中的yyy...*/</span></span><br><span class="line"><span class="comment">/*ul中的li中的a*/</span></span><br><span class="line"><span class="selector-tag">ul</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: brown;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*ul中的li*/</span></span><br><span class="line"><span class="selector-tag">ul</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: cadetblue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>最终效果</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202407241806340.png" alt="image-20240724180628176"></p>
-<h2 id="今日所学-2024-7-25"><a href="#今日所学-2024-7-25" class="headerlink" title="今日所学(2024&#x2F;7&#x2F;25)"></a>今日所学(2024&#x2F;7&#x2F;25)</h2><p>感觉基本入门了前端，用HTML+CSS+JS写了个小网页</p>
-<p>最终效果</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202407251743937.gif" alt="gif1"></p>
-<p>可能会把这个小项目放到Github上，以后维护下去。</p>
+    <title>舵机多功能测试程序说明</title>
+    <url>/post/cee333e2.html</url>
+    <content><![CDATA[<p><strong>写在前面：基地一直都有对舵机快捷测试的需求，但是每次都得改源码，很麻烦，也不能实现舵机的精准角度控制，最近忙完期中考试，抽时间写了这个程序，也算是对学到的东西的一点小小的应用吧</strong></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本程序运行在大疆开发板C型，基于STM32 HAL平台开发，具有极其优良的可移植性，可以快速迁移至其他MCU，本程序依托串口与上位机通信，使用时接串口线和电池即可</p>
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404301832725.png" alt="image-20240430183243677"></p>
+<p>对主菜单的解释，每个指令串口都会输出对应的注解，<strong>注意输入任何指令都需要以回车结尾！</strong></p>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Plain Servo Test</td>
+<td>朴素舵机测试（控制舵机转到特定角度）</td>
+</tr>
+<tr>
+<td>Interval Servo Test</td>
+<td>区间舵机测试（控制舵机在特定区间转动）</td>
+</tr>
+<tr>
+<td>Quick Servo Test</td>
+<td>快速舵机测试（快速测试舵机好坏）</td>
+</tr>
+<tr>
+<td>Use Multi Channels</td>
+<td>使用多个PWM通道，可以一次测试多个舵机</td>
+</tr>
+<tr>
+<td>Direct PWM Ctrl (20240709更新)</td>
+<td>直接输入PWM Compare值控制舵机</td>
+</tr>
+</tbody></table>
 ]]></content>
       <categories>
         <category>Dev</category>
       </categories>
       <tags>
-        <tag>前端</tag>
+        <tag>STM32</tag>
       </tags>
   </entry>
   <entry>
-    <title>Jetbrains系IDE使用小技巧</title>
-    <url>/post/af86e289.html</url>
-    <content><![CDATA[<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><ul>
-<li>One Dark</li>
+    <title>嵌入式驱动接口在C语言里的实现</title>
+    <url>/post/cdb42980.html</url>
+    <content><![CDATA[<h2 id="为什么要实现接口"><a href="#为什么要实现接口" class="headerlink" title="为什么要实现接口"></a>为什么要实现接口</h2><p>接口，可以是硬件与硬件之间连接的桥梁，可以是软件与软件之间沟通的窗户，也可以是硬件与软件之间通信的枢纽。其中硬件与硬件之间的桥梁，比如I2C、UART、CANFD、等等，软件与软件之间沟通的窗户，比如操作系统提供的各种API、等等。我实现的这套“接口”，连接了硬件与软件，它可以实现软硬件的完全解耦合，引入了<strong>平台无关性</strong>，提供了尽可能简化的逻辑，这有点类似于开汽车，一个人一旦学会了开汽车，那开什么牌子的汽车都基本是一个道理，实现了一套驱动，一套接口，对于不同系统、硬件平台的支持，这无疑会大大提高代码的易用性、复用性，大大减少重复的造轮子。</p>
+<h2 id="我所实现的接口"><a href="#我所实现的接口" class="headerlink" title="我所实现的接口"></a>我所实现的接口</h2><ul>
+<li>首先，需要一个结构体来存放系统接口，不妨叫system_interface_t，它用来存放系统的函数实现，是我们将驱动对接到不同平台的关键</li>
 </ul>
-<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><ul>
-<li>Chinese (Simplified) Language Pack &#x2F; 中文语言包</li>
-<li>CodeGlance Pro &#x2F; 侧栏代码缩略</li>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">generic_err_t</span> (*send)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*receive)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*delay_ms)(<span class="type">uint32_t</span> nms);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*delay_us)(<span class="type">uint32_t</span> nus);</span><br><span class="line">&#125; <span class="type">system_interface_t</span>;</span><br></pre></td></tr></table></figure>
+
+<p>推荐将上述代码放在一个.h文件里，这样不同的驱动只需要这一套接口即可</p>
+<ul>
+<li>接下来，需要一个结构体来存放system_interface_t（这样做的目的是实现不同驱动可以复用同一套接口），以及驱动内部实现的各种函数，比如对于aht20温度计而言，则除了对接系统的system_interface_t结构体，还应存放用于读取温度的函数</li>
 </ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">float</span> temperature;</span><br><span class="line">    <span class="type">float</span> humidity;</span><br><span class="line"></span><br><span class="line">    <span class="type">system_interface_t</span> *pfsystem_interface;</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*pfinit)(<span class="type">void</span> *pfdev);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*pfmeasure)(<span class="type">void</span> *pfdev);</span><br><span class="line">&#125; <span class="type">generic_sensor_aht20_driver_interface_t</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>然后可以构建一个whoami函数，用于对底层驱动的对接写入，以及对设备调用函数的暴露</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">generic_err_t</span> <span class="title function_">generic_sensor_aht20_whoami</span><span class="params">(<span class="type">generic_sensor_aht20_driver_interface_t</span> *pfdev,</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*generic_send_func)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len),</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*generic_receive_func)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len),</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*delay_ms_func)(<span class="type">uint32_t</span> nms),</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*delay_us_func)(<span class="type">uint32_t</span> nus))</span> &#123;</span><br><span class="line">    pfdev-&gt;pfsystem_interface = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">system_interface_t</span>));</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;send = generic_send_func;</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;receive = generic_receive_func;</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;delay_ms = delay_ms_func;</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;delay_us = delay_us_func;</span><br><span class="line">    pfdev-&gt;pfinit = generic_sensor_aht20_init;</span><br><span class="line">    pfdev-&gt;pfmeasure = generic_sensor_aht20_measure;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> GENERIC_OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意这里要先给generic_sensor_aht20_driver_interface_t下的system_interface_t申请一块内存，否则直接调用pfdev-&gt;pfsystem_interface会指向非法内存，造成段错误</p>
+<h2 id="关于调用"><a href="#关于调用" class="headerlink" title="关于调用"></a>关于调用</h2><p>可以在初始化的时候进行驱动程序的注册，不要忘记申请内存</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">generic_sensor_aht20_driver_interface_t</span> *aht20_device = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">generic_sensor_aht20_driver_interface_t</span>));</span><br></pre></td></tr></table></figure>
+
+<p>然后调用whoami函数，对接系统底层到驱动层</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">generic_sensor_aht20_whoami(aht20_device,</span><br><span class="line">                          i2c_master_send,</span><br><span class="line">                          i2c_master_receive,</span><br><span class="line">                          HAL_Delay,</span><br><span class="line">                          <span class="literal">NULL</span>);</span><br></pre></td></tr></table></figure>
+
+<p>接着，便可以通过下面这种方式调用驱动暴露出来的API</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">aht20_device-&gt;pfinit(aht20_device); <span class="comment">// 如pfinit(void *pfdev)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="删除设备"><a href="#删除设备" class="headerlink" title="删除设备"></a>删除设备</h2><p>我们前面通过malloc为设备的系统驱动以及设备暴露的接口分配了内存，下面通过释放这两块内存来删除设备</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">generic_err_t</span> <span class="title function_">generic_sensor_aht20_del</span><span class="params">(<span class="type">generic_sensor_aht20_driver_interface_t</span> *pfdev)</span> &#123;</span><br><span class="line">    <span class="built_in">free</span>(pfdev-&gt;pfsystem_interface); <span class="comment">// 先释放系统驱动</span></span><br><span class="line">    pfdev-&gt;pfsystem_interface = <span class="literal">NULL</span>; <span class="comment">// 避免悬挂指针</span></span><br><span class="line">    <span class="built_in">free</span>(pfdev); <span class="comment">// 再释放暴露的接口</span></span><br><span class="line">    pfdev = <span class="literal">NULL</span>; <span class="comment">// 避免悬挂指针</span></span><br><span class="line">    <span class="keyword">return</span> GENERIC_OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="驱动编写"><a href="#驱动编写" class="headerlink" title="驱动编写"></a>驱动编写</h2><p>驱动编写中，注意每个驱动内部的API都需要一个void *类型的指针，用来调用generic_sensor_aht20_driver_interface_t的驱动接口</p>
 ]]></content>
       <categories>
         <category>Dev</category>
