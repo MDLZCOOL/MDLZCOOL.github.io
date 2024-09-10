@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Git&amp;&amp;Github使用Tricks</title>
+    <url>/post/4bb6437a.html</url>
+    <content><![CDATA[<h2 id="Tricks"><a href="#Tricks" class="headerlink" title="Tricks"></a>Tricks</h2><h3 id="经历了一次错误的commit，想要撤回"><a href="#经历了一次错误的commit，想要撤回" class="headerlink" title="经历了一次错误的commit，想要撤回"></a>经历了一次错误的commit，想要撤回</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span> <span class="comment"># 查看上次commit的完整hash字串</span></span><br><span class="line">git reset &lt;arg1&gt; &lt;<span class="built_in">hash</span>字串&gt; <span class="comment"># 撤回commit，&lt;arg1&gt;有参数--soft、--hard、--mixed可选，区别为</span></span><br><span class="line"><span class="comment"># --soft 文件还保存在git里，可以再reset回来</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)        (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B-C</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># --hard 文件直接被删去，慎用！！！</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)        (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># --mixed 文件未被删去，就在本地workspace里，处于未被add的状态(推荐)</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)          (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B-C</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 注：(F)指的是磁盘里此时实际的文件处于哪个版本</span></span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Jetbrains系IDE使用小技巧</title>
     <url>/post/af86e289.html</url>
     <content><![CDATA[<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><ul>
@@ -30,22 +43,6 @@
       <tags>
         <tag>PCB</tag>
       </tags>
-  </entry>
-  <entry>
-    <title></title>
-    <url>/post/0.html</url>
-    <content><![CDATA[<h1 id="STM32-BootLoader的实现"><a href="#STM32-BootLoader的实现" class="headerlink" title="STM32 BootLoader的实现"></a>STM32 BootLoader的实现</h1><blockquote>
-<p>本文硬件环境为STM32F407VET6，ARM Cortex-M4内核，不同硬件环境可能需要修改内存地址，但整个实现过程大差不大。</p>
-<p>You can use any STM32 boards. But use the addresses and flash size based on your controller.</p>
-</blockquote>
-<h2 id="0-Bootloader-Basics"><a href="#0-Bootloader-Basics" class="headerlink" title="0 Bootloader Basics"></a>0 Bootloader Basics</h2><p>BootLoader在任何操作系统中都是非常重要的组件，也称为引导程序或引导加载程序。它是一种<strong>特殊的操作系统软件</strong>，在启动后加载到计算机的工作内存中。The term <strong>bootloader</strong> is a shortened form of the words <strong>bootstrap loader</strong> .</p>
-<h2 id="1-How-does-the-bootloader-work"><a href="#1-How-does-the-bootloader-work" class="headerlink" title="1 How does the bootloader work"></a>1 How does the bootloader work</h2><p>BootLoader就是系统启动之前执行的操作，比如现代电脑的BIOS。它负责把电脑的内存指向正确的地址，以启动某些程序，一旦完成这些操作，BootLoader就会把硬件的所有权交给启动的程序。</p>
-<blockquote>
-<p>可以说BootLoader就是酒店的前台，只有前台给了房卡（内存地址），才能进入对应的房间（程序）。</p>
-</blockquote>
-<h2 id="2-在STM32实现BootLoader"><a href="#2-在STM32实现BootLoader" class="headerlink" title="2 在STM32实现BootLoader"></a>2 在STM32实现BootLoader</h2><h3 id="2-0-新建CubeMX工程，配置时钟树，打开SWD、LED和UART外设。"><a href="#2-0-新建CubeMX工程，配置时钟树，打开SWD、LED和UART外设。" class="headerlink" title="2.0 新建CubeMX工程，配置时钟树，打开SWD、LED和UART外设。"></a>2.0 新建CubeMX工程，配置时钟树，打开SWD、LED和UART外设。</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240906121441465.png" alt="image-20240906121441465"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240906121358637.png" alt="image-20240906121358637"></p>
-<h3 id="2-1"><a href="#2-1" class="headerlink" title="2.1"></a>2.1</h3>]]></content>
   </entry>
   <entry>
     <title>【前端学习笔记】 HTML+JavaScript+CSS</title>
@@ -348,6 +345,88 @@
       </tags>
   </entry>
   <entry>
+    <title>用CLion优雅地调试和开发STM32(CubeMX)</title>
+    <url>/post/63adfc20.html</url>
+    <content><![CDATA[<h2 id="Why-CLion"><a href="#Why-CLion" class="headerlink" title="Why CLion?"></a>Why CLion?</h2><p>Keil操作简单，容易上手，而且可以很方便地进行调试，不过其古老的界面，不符合人类直觉的操作，不符合现代的编程习惯，必然会被逐渐淘汰。</p>
+<p>Jetbrains系IDE具有强大的代码补全、界面风格、各种插件、流畅性等众多优点，毫无疑问能够极大提高开发效率，其中CLion就是专门面向C&#x2F;C++开发的IDE。</p>
+<h2 id="工具链Toolchains"><a href="#工具链Toolchains" class="headerlink" title="工具链Toolchains"></a>工具链Toolchains</h2><ul>
+<li><p>代码编辑器：CLion</p>
+</li>
+<li><p>编译器：MinGW、arm-none-eabi-gcc</p>
+</li>
+<li><p>调试器：OpenOCD</p>
+</li>
+<li><p>HAL代码生成器：STM32CubeMX</p>
+</li>
+</ul>
+<h2 id="Debugger"><a href="#Debugger" class="headerlink" title="Debugger"></a>Debugger</h2><ul>
+<li><p>cmsis-dap</p>
+</li>
+<li><p>stlink</p>
+</li>
+<li><p>jlink</p>
+</li>
+<li><p>etc.</p>
+</li>
+</ul>
+<h2 id="工具安装"><a href="#工具安装" class="headerlink" title="工具安装"></a>工具安装</h2><ol>
+<li><a href="https://www.st.com/en/development-tools/stm32cubemx.html">STM32CubeMX</a></li>
+<li><a href="https://gnutoolchains.com/arm-eabi/openocd/">OpenOCD</a> <em>或者用<a href="https://xpack.github.io/dev-tools/openocd/releases">xpack-openocd</a></em></li>
+<li><a href="https://osdn.net/projects/mingw/releases/">MinGW</a>（这是MinGW的在线安装器）</li>
+<li><a href="https://www.jetbrains.com.cn/clion/">CLion</a></li>
+<li><a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads">arm-none-eabi-gcc</a></li>
+</ol>
+<p><strong>几点注意</strong>：</p>
+<ol>
+<li><p>建议OpenOCD、MinGW、arm-none-eabi-gcc解压 &#x2F; 安装到一个特定的目录（eg. &#x2F;program-tools&#x2F;）</p>
+</li>
+<li><p>MinGW可能安装过程中会由于网络原因卡死，可以尝试离线安装或连接到国际互联网</p>
+</li>
+<li><p>Jetbrains学生账号可以免费使用CLion等IDE，请抵制盗版</p>
+</li>
+<li><p>完成安装 &#x2F; 解压后，将OpenOCD、arm-none-eabi-gcc、MinGW对应文件夹下的bin添加到系统环境变量Path里</p>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727221710143.png" alt="image-20240727221710143"></p>
+<h2 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h2><p>在CMD或PowerShell中，</p>
+<ol>
+<li>输入gcc -v，有输出则说明MinGW安装正确</li>
+<li>输入arm-none-eabi-gcc -v，有输出则说明arm-none-eabi-gcc配置正确</li>
+<li>输入openocd -v，有输出则说明OpenOCD配置正确</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727221618827.png" alt="image-20240727221618827"></p>
+<h2 id="CLion配置"><a href="#CLion配置" class="headerlink" title="CLion配置"></a>CLion配置</h2><p>进入设置-构建、执行、部署-工具链，设置一下MinGW相关的配置，注意调试器不要改，不然后面会无法连接到Debugger<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727222254196.png" alt="image-20240727222254196"></p>
+<p>在设置-构建、执行、部署-嵌入式开发里配置一下OpenOCD、STM32CubeMX的路径</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727222617731.png" alt="image-20240727222617731"></p>
+<h2 id="新建项目（CubeMX）"><a href="#新建项目（CubeMX）" class="headerlink" title="新建项目（CubeMX）"></a>新建项目（CubeMX）</h2><p>打开STM32CubeMX，随便选个芯片，按照下图配置创建项目</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727222942789.png" alt="image-20240727222942789"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727223013152.png" alt="image-20240727223013152"></p>
+<p>进入生成项目代码的目录，右键在CLion中打开</p>
+<p>进来后选复制到项目并使用</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727223541302.png" alt="image-20240727223541302"></p>
+<p>现在构建、编译、调试烧录代码应该都可以了</p>
+<h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><ul>
+<li><p>编译时报错 collect2.exe: error: ld returned 1 exit status</p>
+<p>解决方法：打开STM32XXX_FLASH.Id文件，删除所有的(READONLY)关键字，重新编译。</p>
+</li>
+<li><p>重定向printf到uart</p>
+<p>添加<a href="https://github.com/cnoviello/mastering-stm32/blob/master/nucleo-f030R8/system/src/retarget/retarget.c">retarget.c</a>、<a href="https://github.com/cnoviello/mastering-stm32/blob/master/nucleo-f030R8/system/include/retarget/retarget.h">retarget.h</a>到工程，在syscalls.c中把冲突的几个函数注释掉，在main.c串口初始化之后调用RetargetInit(UART_HandleTypeDef *huart)函数。</p>
+</li>
+<li><p>打开硬件浮点数支持</p>
+<p>在CmakeLists.txt里取消这三行的注释。</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240728191654029.png" alt="image-20240728191654029"></p>
+<h2 id="stm32-openocd-cfg-template"><a href="#stm32-openocd-cfg-template" class="headerlink" title="stm32-openocd-cfg-template"></a>stm32-openocd-cfg-template</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#设置使用的调试烧录器为ST-Link</span><br><span class="line">#source [find interface/stlink.cfg]</span><br><span class="line"></span><br><span class="line">#设置使用的调试烧录器为J-link</span><br><span class="line">#source [find interface/jlink.cfg]</span><br><span class="line"></span><br><span class="line">#设置使用的调试烧录器为DAP-Link</span><br><span class="line">#source [find interface/cmsis-dap.cfg]</span><br><span class="line"></span><br><span class="line">#调试接口选择swd，此类型是ST-Link专用的</span><br><span class="line">#transport select hla_swd</span><br><span class="line"></span><br><span class="line">#调试接口选择swd，此类型是J-link，DAP-Link通用</span><br><span class="line">#transport select swd</span><br><span class="line"></span><br><span class="line">#指明调试速率</span><br><span class="line">#adapter speed 5000</span><br><span class="line"></span><br><span class="line">#设置目标芯片，选择stm32f1x，如果是f4系列的换成f4就行了其他系列以此类推</span><br><span class="line">#source [find target/stm32f1x.cfg]</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>Dev</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>常用工具性网站&amp;工具</title>
     <url>/post/5788685f.html</url>
     <content><![CDATA[<h2 id="工具网站"><a href="#工具网站" class="headerlink" title="工具网站"></a>工具网站</h2><p>🎁此处列出的网站均来源于互联网，请注意不要在这些网站上输入任何个人敏感信息（如有可能）</p>
@@ -536,88 +615,6 @@
       </categories>
       <tags>
         <tag>Tools</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>用CLion优雅地调试和开发STM32(CubeMX)</title>
-    <url>/post/63adfc20.html</url>
-    <content><![CDATA[<h2 id="Why-CLion"><a href="#Why-CLion" class="headerlink" title="Why CLion?"></a>Why CLion?</h2><p>Keil操作简单，容易上手，而且可以很方便地进行调试，不过其古老的界面，不符合人类直觉的操作，不符合现代的编程习惯，必然会被逐渐淘汰。</p>
-<p>Jetbrains系IDE具有强大的代码补全、界面风格、各种插件、流畅性等众多优点，毫无疑问能够极大提高开发效率，其中CLion就是专门面向C&#x2F;C++开发的IDE。</p>
-<h2 id="工具链Toolchains"><a href="#工具链Toolchains" class="headerlink" title="工具链Toolchains"></a>工具链Toolchains</h2><ul>
-<li><p>代码编辑器：CLion</p>
-</li>
-<li><p>编译器：MinGW、arm-none-eabi-gcc</p>
-</li>
-<li><p>调试器：OpenOCD</p>
-</li>
-<li><p>HAL代码生成器：STM32CubeMX</p>
-</li>
-</ul>
-<h2 id="Debugger"><a href="#Debugger" class="headerlink" title="Debugger"></a>Debugger</h2><ul>
-<li><p>cmsis-dap</p>
-</li>
-<li><p>stlink</p>
-</li>
-<li><p>jlink</p>
-</li>
-<li><p>etc.</p>
-</li>
-</ul>
-<h2 id="工具安装"><a href="#工具安装" class="headerlink" title="工具安装"></a>工具安装</h2><ol>
-<li><a href="https://www.st.com/en/development-tools/stm32cubemx.html">STM32CubeMX</a></li>
-<li><a href="https://gnutoolchains.com/arm-eabi/openocd/">OpenOCD</a> <em>或者用<a href="https://xpack.github.io/dev-tools/openocd/releases">xpack-openocd</a></em></li>
-<li><a href="https://osdn.net/projects/mingw/releases/">MinGW</a>（这是MinGW的在线安装器）</li>
-<li><a href="https://www.jetbrains.com.cn/clion/">CLion</a></li>
-<li><a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads">arm-none-eabi-gcc</a></li>
-</ol>
-<p><strong>几点注意</strong>：</p>
-<ol>
-<li><p>建议OpenOCD、MinGW、arm-none-eabi-gcc解压 &#x2F; 安装到一个特定的目录（eg. &#x2F;program-tools&#x2F;）</p>
-</li>
-<li><p>MinGW可能安装过程中会由于网络原因卡死，可以尝试离线安装或连接到国际互联网</p>
-</li>
-<li><p>Jetbrains学生账号可以免费使用CLion等IDE，请抵制盗版</p>
-</li>
-<li><p>完成安装 &#x2F; 解压后，将OpenOCD、arm-none-eabi-gcc、MinGW对应文件夹下的bin添加到系统环境变量Path里</p>
-</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727221710143.png" alt="image-20240727221710143"></p>
-<h2 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h2><p>在CMD或PowerShell中，</p>
-<ol>
-<li>输入gcc -v，有输出则说明MinGW安装正确</li>
-<li>输入arm-none-eabi-gcc -v，有输出则说明arm-none-eabi-gcc配置正确</li>
-<li>输入openocd -v，有输出则说明OpenOCD配置正确</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727221618827.png" alt="image-20240727221618827"></p>
-<h2 id="CLion配置"><a href="#CLion配置" class="headerlink" title="CLion配置"></a>CLion配置</h2><p>进入设置-构建、执行、部署-工具链，设置一下MinGW相关的配置，注意调试器不要改，不然后面会无法连接到Debugger<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727222254196.png" alt="image-20240727222254196"></p>
-<p>在设置-构建、执行、部署-嵌入式开发里配置一下OpenOCD、STM32CubeMX的路径</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727222617731.png" alt="image-20240727222617731"></p>
-<h2 id="新建项目（CubeMX）"><a href="#新建项目（CubeMX）" class="headerlink" title="新建项目（CubeMX）"></a>新建项目（CubeMX）</h2><p>打开STM32CubeMX，随便选个芯片，按照下图配置创建项目</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727222942789.png" alt="image-20240727222942789"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727223013152.png" alt="image-20240727223013152"></p>
-<p>进入生成项目代码的目录，右键在CLion中打开</p>
-<p>进来后选复制到项目并使用</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727223541302.png" alt="image-20240727223541302"></p>
-<p>现在构建、编译、调试烧录代码应该都可以了</p>
-<h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><ul>
-<li><p>编译时报错 collect2.exe: error: ld returned 1 exit status</p>
-<p>解决方法：打开STM32XXX_FLASH.Id文件，删除所有的(READONLY)关键字，重新编译。</p>
-</li>
-<li><p>重定向printf到uart</p>
-<p>添加<a href="https://github.com/cnoviello/mastering-stm32/blob/master/nucleo-f030R8/system/src/retarget/retarget.c">retarget.c</a>、<a href="https://github.com/cnoviello/mastering-stm32/blob/master/nucleo-f030R8/system/include/retarget/retarget.h">retarget.h</a>到工程，在syscalls.c中把冲突的几个函数注释掉，在main.c串口初始化之后调用RetargetInit(UART_HandleTypeDef *huart)函数。</p>
-</li>
-<li><p>打开硬件浮点数支持</p>
-<p>在CmakeLists.txt里取消这三行的注释。</p>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240728191654029.png" alt="image-20240728191654029"></p>
-<h2 id="stm32-openocd-cfg-template"><a href="#stm32-openocd-cfg-template" class="headerlink" title="stm32-openocd-cfg-template"></a>stm32-openocd-cfg-template</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#设置使用的调试烧录器为ST-Link</span><br><span class="line">#source [find interface/stlink.cfg]</span><br><span class="line"></span><br><span class="line">#设置使用的调试烧录器为J-link</span><br><span class="line">#source [find interface/jlink.cfg]</span><br><span class="line"></span><br><span class="line">#设置使用的调试烧录器为DAP-Link</span><br><span class="line">#source [find interface/cmsis-dap.cfg]</span><br><span class="line"></span><br><span class="line">#调试接口选择swd，此类型是ST-Link专用的</span><br><span class="line">#transport select hla_swd</span><br><span class="line"></span><br><span class="line">#调试接口选择swd，此类型是J-link，DAP-Link通用</span><br><span class="line">#transport select swd</span><br><span class="line"></span><br><span class="line">#指明调试速率</span><br><span class="line">#adapter speed 5000</span><br><span class="line"></span><br><span class="line">#设置目标芯片，选择stm32f1x，如果是f4系列的换成f4就行了其他系列以此类推</span><br><span class="line">#source [find target/stm32f1x.cfg]</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>Dev</tag>
       </tags>
   </entry>
   <entry>
