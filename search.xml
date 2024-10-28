@@ -43,6 +43,19 @@
       </tags>
   </entry>
   <entry>
+    <title>KiCad导出Gerber图形文件</title>
+    <url>/post/ef2c5f04.html</url>
+    <content><![CDATA[<h3 id="KiCad导出Gerber图形文件"><a href="#KiCad导出Gerber图形文件" class="headerlink" title="KiCad导出Gerber图形文件"></a>KiCad导出Gerber图形文件</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png" alt="image-20240527171958427"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271720173.png" alt="image-20240527172047054"></p>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>PCB</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【前端学习笔记】 HTML+JavaScript+CSS</title>
     <url>/post/64aca0a5.html</url>
     <content><![CDATA[<h2 id="为什么要学"><a href="#为什么要学" class="headerlink" title="为什么要学"></a>为什么要学</h2><p>最近在学长的建议下准备开始接触前端开发，学习路线预计是先HTML，再JavaScript，再CSS。因为我之前自己在树莓派上建过服务器，搭建过WordPress和NAS等服务，可能算有一丁点基础，所以日后可能会负责维护基地的Git和Docs等服务。也产生过些一套自己的博客主题或者浏览器主页之类的想法，一个比较好的例子是<a href="https://limestart.cn/">青柠起始页</a>，之后可能会仿照着做一个。</p>
@@ -106,207 +119,76 @@
       </tags>
   </entry>
   <entry>
-    <title>KiCad导出Gerber图形文件</title>
-    <url>/post/ef2c5f04.html</url>
-    <content><![CDATA[<h3 id="KiCad导出Gerber图形文件"><a href="#KiCad导出Gerber图形文件" class="headerlink" title="KiCad导出Gerber图形文件"></a>KiCad导出Gerber图形文件</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png" alt="image-20240527171958427"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271720173.png" alt="image-20240527172047054"></p>
+    <title>在CLion上搭建LVGL模拟器</title>
+    <url>/post/90c7d419.html</url>
+    <content><![CDATA[<blockquote>
+<p>注：本文默认已经安装好了CLion，目标LVGL的版本为8.3，当然新版本也是可以的，都差不多。</p>
+</blockquote>
+<h2 id="需要准备的文件"><a href="#需要准备的文件" class="headerlink" title="需要准备的文件"></a>需要准备的文件</h2><ul>
+<li><p><a href="https://github.com/lvgl/lv_port_pc_eclipse">lv_port_pc_eclipse</a></p>
+<p>使用下列命令克隆仓库到本地（本文以8.3版本为例）</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b release/v8.3 --recursive http://10.1.1.11/service/tmall-service.git</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><a href="https://github.com/niXman/mingw-builds-binaries/releases">mingw-builds-binaries</a></p>
+<p><em>注意下载13.2.0-rt_v11-rev1或之前的版本，新版本CLion暂时不支持</em></p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028130733571.png" alt="image-20241028130733571"></p>
+<ul>
+<li><a href="https://github.com/libsdl-org/SDL/releases">SDL</a></li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028130851970.png" alt="image-20241028130851970"></p>
+<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><ol>
+<li>解压下载的mingw64，得到如下文件</li>
+</ol>
+<p><img src="C:/Users/MDLZ/AppData/Roaming/Typora/typora-user-images/image-20241028183539520.png" alt="image-20241028183539520"></p>
+<ol start="2">
+<li>解压下载的SDL2，得到如下文件</li>
+</ol>
+<p><img src="C:/Users/MDLZ/AppData/Roaming/Typora/typora-user-images/image-20241028183713461.png" alt="image-20241028183713461"></p>
+<p>将<code>SDL2/x86_64_w64-mingw32/include/SDL2</code>复制到<code>mingw64/x86_64_w64-mingw32/include</code>文件夹中</p>
+<p>将<code>SDL2/x86_64_w64-mingw32/lib</code>所有的文件复制到<code>mingw64/x86_64_w64-mingw32/lib</code>中</p>
+<ol start="3">
+<li>CLion配置工具链</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028184123222.png" alt="image-20241028184123222"></p>
+<p>在<code>设置 - 构建、执行、部署 - 工具链</code>新建如上工具链，注意所有工具都参考上图设置成对应的，用内部集成的会报错。</p>
+<ol start="4">
+<li>工程</li>
+</ol>
+<p>用CLion打开lv_port_pc_eclipse为CMake项目，然后即可进行开发。</p>
+<h2 id="一些报错"><a href="#一些报错" class="headerlink" title="一些报错"></a>一些报错</h2><ol>
+<li>CMake找不到SDL2库</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028184609315.png" alt="image-20241028184609315"></p>
+<p>解决办法：在CMakeLists.txt里添加如下语句，注意不要照抄，请将自己的本地文件目录添加进来</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SET</span>(SDL2_DIR D:/program-tools/mingw64/x86_64-w64-mingw32/lib/cmake/SDL2)</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>编译成功，但是运行程序会直接退出，没有GUI界面出现</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028185226640.png" alt="image-20241028185226640"></p>
+<p>解决办法：将下载的SDL2库的SDL2.dll复制到lv_port_pc_eclipse下的bin文件夹里</p>
+<ol start="3">
+<li>分辨率可在<code>lv_drv_conf.h</code>里修改</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028190804549.png" alt="image-20241028190804549"></p>
+<h2 id="与SquareLine-Studio联合开发"><a href="#与SquareLine-Studio联合开发" class="headerlink" title="与SquareLine Studio联合开发"></a>与SquareLine Studio联合开发</h2><p>将SquareLine Studio生成的ui文件夹复制到lv_port_pc_eclipse下，在CmakeLists.txt里添加如下语句，注意不要照抄，请将自己的本地文件目录添加进来</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 递归引用ui下的源文件</span></span><br><span class="line"><span class="keyword">FILE</span>(GLOB_RECURSE UI_Sources CONFIGURE_DEPENDS ui/*.c ui/*.cpp)</span><br><span class="line"><span class="comment"># 将$&#123;UI_Sources&#125;添加到add_executable以对main这个target使用</span></span><br><span class="line"><span class="keyword">add_executable</span>(main main.c mouse_cursor_icon.c <span class="variable">$&#123;SOURCES&#125;</span> <span class="variable">$&#123;INCLUDES&#125;</span> <span class="variable">$&#123;UI_Sources&#125;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>在main.c里添加如下代码：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;ui.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span> &#123;</span><br><span class="line">    (<span class="type">void</span>) argc; <span class="comment">/*Unused*/</span></span><br><span class="line">    (<span class="type">void</span>) argv; <span class="comment">/*Unused*/</span></span><br><span class="line">    ...</span><br><span class="line">    ui_init();</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>记得注释掉lvgl自带的示例代码，编译即可运行SquareLine Studio生成的代码</p>
 ]]></content>
       <categories>
         <category>Dev</category>
       </categories>
       <tags>
-        <tag>PCB</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>常用工具性网站&amp;工具</title>
-    <url>/post/5788685f.html</url>
-    <content><![CDATA[<h2 id="工具网站"><a href="#工具网站" class="headerlink" title="工具网站"></a>工具网站</h2><p>🎁此处列出的网站均来源于互联网，请注意不要在这些网站上输入任何个人敏感信息（如有可能）</p>
-<p>🌎某些网站可能需要国际网络</p>
-<p>🌈欢迎贡献</p>
-<ul>
-<li>添加站点</li>
-<li>反馈站点失效</li>
-<li>更多(todo)</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>序号</th>
-<th>网站</th>
-<th>添加时间</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td><a href="https://www.runoob.com/">https://www.runoob.com/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>菜鸟教程</td>
-</tr>
-<tr>
-<td>2</td>
-<td><a href="https://serial.keysking.com/">https://serial.keysking.com/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>网页版串口助手</td>
-</tr>
-<tr>
-<td>3</td>
-<td><a href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>阿里巴巴矢量图标库</td>
-</tr>
-<tr>
-<td>4</td>
-<td><a href="https://book.openmv.cc/">https://book.openmv.cc/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>OpenMV中文入门教程</td>
-</tr>
-<tr>
-<td>5</td>
-<td><a href="https://www.3dcontentcentral.com/">https://www.3dcontentcentral.com/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>3D模型下载站</td>
-</tr>
-<tr>
-<td>6</td>
-<td><a href="https://www2.futureware.at/KiCad/">https://www2.futureware.at/KiCad/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>Altium Designe转KiCad</td>
-</tr>
-<tr>
-<td>7</td>
-<td><a href="https://www.nerdfonts.com/font-downloads">https://www.nerdfonts.com/font-downloads</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>艺术字体下载</td>
-</tr>
-<tr>
-<td>8</td>
-<td><a href="https://fontawesome.p2hp.com/icons-ui.html">https://fontawesome.p2hp.com/icons-ui.html</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>The Icons矢量图标库</td>
-</tr>
-<tr>
-<td>9</td>
-<td><a href="http://network-science.de/ascii/">http://network-science.de/ascii/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>终端立体字生成</td>
-</tr>
-<tr>
-<td>10</td>
-<td><a href="https://tableconvert.com/zh-cn/latex-to-latex">https://tableconvert.com/zh-cn/latex-to-latex</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>Latex表格在线编辑和转Excel</td>
-</tr>
-<tr>
-<td>11</td>
-<td><a href="https://www.niupizhiyuan.com/download.html">https://www.niupizhiyuan.com/download.html</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>CSDN文章和文件下载</td>
-</tr>
-<tr>
-<td>12</td>
-<td><a href="http://1.94.138.197/bangumi">http://1.94.138.197/bangumi</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>百度云不限速，配合油猴</td>
-</tr>
-<tr>
-<td>13</td>
-<td><a href="https://limestart.cn/">https://limestart.cn</a></td>
-<td>2024&#x2F;7&#x2F;22</td>
-<td>青柠起始页，优雅的浏览器主页</td>
-</tr>
-<tr>
-<td>14</td>
-<td><a href="https://skillicons.dev/">https://skillicons.dev/</a></td>
-<td>2024&#x2F;7&#x2F;24</td>
-<td>Skill Icons，技术栈图标</td>
-</tr>
-<tr>
-<td>15</td>
-<td><a href="https://bing.img.run/api.html">https://bing.img.run/api.html</a></td>
-<td>2024&#x2F;7&#x2F;25</td>
-<td>获取每日Bing壁纸API，有多种选择</td>
-</tr>
-<tr>
-<td>16</td>
-<td><a href="https://ai.97866.com/">https://ai.97866.com/</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>AI 工具合集</td>
-</tr>
-<tr>
-<td>17</td>
-<td><a href="https://tools.miku.ac/">https://tools.miku.ac/</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>轻量的工具集合</td>
-</tr>
-<tr>
-<td>18</td>
-<td><a href="https://star-history.com/">https://star-history.com/</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>Github Star历史图</td>
-</tr>
-<tr>
-<td>19</td>
-<td><a href="https://github.com/2016rshah/githubchart-api">https://github.com/2016rshah/githubchart-api</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>Github Commit频率图API</td>
-</tr>
-<tr>
-<td>20</td>
-<td><a href="https://shields.io/">https://shields.io/</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>在线统计工具，支持多种徽章样式</td>
-</tr>
-<tr>
-<td>21</td>
-<td><a href="https://carbon.now.sh/">https://carbon.now.sh</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>代码图片工具</td>
-</tr>
-<tr>
-<td>22</td>
-<td><a href="https://ray.so/">https://ray.so</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>代码图片工具</td>
-</tr>
-<tr>
-<td>23</td>
-<td><a href="https://codeimg.io/">https://codeimg.io</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>代码图片工具</td>
-</tr>
-<tr>
-<td>24</td>
-<td><a href="http://www.autolabor.com.cn/book/ROSTutorials/index.html">http://www.autolabor.com.cn/book/ROSTutorials/index.html</a></td>
-<td>2024&#x2F;9&#x2F;2</td>
-<td>ROS中文教程</td>
-</tr>
-<tr>
-<td>25</td>
-<td><a href="https://unsplash.com/wallpapers/screen/4k">https://unsplash.com/wallpapers/screen/4k</a></td>
-<td>2024&#x2F;9&#x2F;3</td>
-<td>免费4K壁纸</td>
-</tr>
-<tr>
-<td>26</td>
-<td><a href="https://kicanvas.org/">https://kicanvas.org/</a></td>
-<td>2024&#x2F;9&#x2F;9</td>
-<td>KiCad原理图或PCB在线查看</td>
-</tr>
-</tbody></table>
-<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>🎁此处列出的工具均来源于互联网，请注意不要在这些工具上输入任何个人敏感信息（如有可能）</p>
-<p>🌈欢迎贡献</p>
-<ul>
-<li>添加工具</li>
-<li>更多(todo)</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Tools</category>
-      </categories>
-      <tags>
-        <tag>Tools</tag>
+        <tag>Dev</tag>
       </tags>
   </entry>
   <entry>
@@ -565,49 +447,6 @@
       </tags>
   </entry>
   <entry>
-    <title>舵机多功能测试程序说明</title>
-    <url>/post/cee333e2.html</url>
-    <content><![CDATA[<p><strong>写在前面：基地一直都有对舵机快捷测试的需求，但是每次都得改源码，很麻烦，也不能实现舵机的精准角度控制，最近忙完期中考试，抽时间写了这个程序，也算是对学到的东西的一点小小的应用吧</strong></p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本程序运行在大疆开发板C型，基于STM32 HAL平台开发，具有极其优良的可移植性，可以快速迁移至其他MCU，本程序依托串口与上位机通信，使用时接串口线和电池即可</p>
-<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404301832725.png" alt="image-20240430183243677"></p>
-<p>对主菜单的解释，每个指令串口都会输出对应的注解，<strong>注意输入任何指令都需要以回车结尾！</strong></p>
-<table>
-<thead>
-<tr>
-<th>功能</th>
-<th>解释</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Plain Servo Test</td>
-<td>朴素舵机测试（控制舵机转到特定角度）</td>
-</tr>
-<tr>
-<td>Interval Servo Test</td>
-<td>区间舵机测试（控制舵机在特定区间转动）</td>
-</tr>
-<tr>
-<td>Quick Servo Test</td>
-<td>快速舵机测试（快速测试舵机好坏）</td>
-</tr>
-<tr>
-<td>Use Multi Channels</td>
-<td>使用多个PWM通道，可以一次测试多个舵机</td>
-</tr>
-<tr>
-<td>Direct PWM Ctrl (20240709更新)</td>
-<td>直接输入PWM Compare值控制舵机</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>用CLion优雅地调试和开发STM32(CubeMX)</title>
     <url>/post/63adfc20.html</url>
     <content><![CDATA[<h2 id="Why-CLion"><a href="#Why-CLion" class="headerlink" title="Why CLion?"></a>Why CLion?</h2><p>Keil操作简单，容易上手，而且可以很方便地进行调试，不过其古老的界面，不符合人类直觉的操作，不符合现代的编程习惯，必然会被逐渐淘汰。</p>
@@ -690,6 +529,197 @@
       </tags>
   </entry>
   <entry>
+    <title>常用工具性网站&amp;工具</title>
+    <url>/post/5788685f.html</url>
+    <content><![CDATA[<h2 id="工具网站"><a href="#工具网站" class="headerlink" title="工具网站"></a>工具网站</h2><p>🎁此处列出的网站均来源于互联网，请注意不要在这些网站上输入任何个人敏感信息（如有可能）</p>
+<p>🌎某些网站可能需要国际网络</p>
+<p>🌈欢迎贡献</p>
+<ul>
+<li>添加站点</li>
+<li>反馈站点失效</li>
+<li>更多(todo)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>网站</th>
+<th>添加时间</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><a href="https://www.runoob.com/">https://www.runoob.com/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>菜鸟教程</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="https://serial.keysking.com/">https://serial.keysking.com/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>网页版串口助手</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>阿里巴巴矢量图标库</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="https://book.openmv.cc/">https://book.openmv.cc/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>OpenMV中文入门教程</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="https://www.3dcontentcentral.com/">https://www.3dcontentcentral.com/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>3D模型下载站</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="https://www2.futureware.at/KiCad/">https://www2.futureware.at/KiCad/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>Altium Designe转KiCad</td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="https://www.nerdfonts.com/font-downloads">https://www.nerdfonts.com/font-downloads</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>艺术字体下载</td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="https://fontawesome.p2hp.com/icons-ui.html">https://fontawesome.p2hp.com/icons-ui.html</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>The Icons矢量图标库</td>
+</tr>
+<tr>
+<td>9</td>
+<td><a href="http://network-science.de/ascii/">http://network-science.de/ascii/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>终端立体字生成</td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="https://tableconvert.com/zh-cn/latex-to-latex">https://tableconvert.com/zh-cn/latex-to-latex</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>Latex表格在线编辑和转Excel</td>
+</tr>
+<tr>
+<td>11</td>
+<td><a href="https://www.niupizhiyuan.com/download.html">https://www.niupizhiyuan.com/download.html</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>CSDN文章和文件下载</td>
+</tr>
+<tr>
+<td>12</td>
+<td><a href="http://1.94.138.197/bangumi">http://1.94.138.197/bangumi</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>百度云不限速，配合油猴</td>
+</tr>
+<tr>
+<td>13</td>
+<td><a href="https://limestart.cn/">https://limestart.cn</a></td>
+<td>2024&#x2F;7&#x2F;22</td>
+<td>青柠起始页，优雅的浏览器主页</td>
+</tr>
+<tr>
+<td>14</td>
+<td><a href="https://skillicons.dev/">https://skillicons.dev/</a></td>
+<td>2024&#x2F;7&#x2F;24</td>
+<td>Skill Icons，技术栈图标</td>
+</tr>
+<tr>
+<td>15</td>
+<td><a href="https://bing.img.run/api.html">https://bing.img.run/api.html</a></td>
+<td>2024&#x2F;7&#x2F;25</td>
+<td>获取每日Bing壁纸API，有多种选择</td>
+</tr>
+<tr>
+<td>16</td>
+<td><a href="https://ai.97866.com/">https://ai.97866.com/</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>AI 工具合集</td>
+</tr>
+<tr>
+<td>17</td>
+<td><a href="https://tools.miku.ac/">https://tools.miku.ac/</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>轻量的工具集合</td>
+</tr>
+<tr>
+<td>18</td>
+<td><a href="https://star-history.com/">https://star-history.com/</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>Github Star历史图</td>
+</tr>
+<tr>
+<td>19</td>
+<td><a href="https://github.com/2016rshah/githubchart-api">https://github.com/2016rshah/githubchart-api</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>Github Commit频率图API</td>
+</tr>
+<tr>
+<td>20</td>
+<td><a href="https://shields.io/">https://shields.io/</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>在线统计工具，支持多种徽章样式</td>
+</tr>
+<tr>
+<td>21</td>
+<td><a href="https://carbon.now.sh/">https://carbon.now.sh</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>代码图片工具</td>
+</tr>
+<tr>
+<td>22</td>
+<td><a href="https://ray.so/">https://ray.so</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>代码图片工具</td>
+</tr>
+<tr>
+<td>23</td>
+<td><a href="https://codeimg.io/">https://codeimg.io</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>代码图片工具</td>
+</tr>
+<tr>
+<td>24</td>
+<td><a href="http://www.autolabor.com.cn/book/ROSTutorials/index.html">http://www.autolabor.com.cn/book/ROSTutorials/index.html</a></td>
+<td>2024&#x2F;9&#x2F;2</td>
+<td>ROS中文教程</td>
+</tr>
+<tr>
+<td>25</td>
+<td><a href="https://unsplash.com/wallpapers/screen/4k">https://unsplash.com/wallpapers/screen/4k</a></td>
+<td>2024&#x2F;9&#x2F;3</td>
+<td>免费4K壁纸</td>
+</tr>
+<tr>
+<td>26</td>
+<td><a href="https://kicanvas.org/">https://kicanvas.org/</a></td>
+<td>2024&#x2F;9&#x2F;9</td>
+<td>KiCad原理图或PCB在线查看</td>
+</tr>
+</tbody></table>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><p>🎁此处列出的工具均来源于互联网，请注意不要在这些工具上输入任何个人敏感信息（如有可能）</p>
+<p>🌈欢迎贡献</p>
+<ul>
+<li>添加工具</li>
+<li>更多(todo)</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>Tools</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>设计自己的Bootloader</title>
     <url>/post/b7a5b9c8.html</url>
     <content><![CDATA[<p>最近闲来无事（其实忙的要死），想实现一个STM32的bootloader，再写一个上位机来实现OTA，有这个想法其实很久了，现在正式入坑，计划用1-2个月写完全部。</p>
@@ -699,6 +729,49 @@
       </categories>
       <tags>
         <tag>Dev</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>舵机多功能测试程序说明</title>
+    <url>/post/cee333e2.html</url>
+    <content><![CDATA[<p><strong>写在前面：基地一直都有对舵机快捷测试的需求，但是每次都得改源码，很麻烦，也不能实现舵机的精准角度控制，最近忙完期中考试，抽时间写了这个程序，也算是对学到的东西的一点小小的应用吧</strong></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本程序运行在大疆开发板C型，基于STM32 HAL平台开发，具有极其优良的可移植性，可以快速迁移至其他MCU，本程序依托串口与上位机通信，使用时接串口线和电池即可</p>
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404301832725.png" alt="image-20240430183243677"></p>
+<p>对主菜单的解释，每个指令串口都会输出对应的注解，<strong>注意输入任何指令都需要以回车结尾！</strong></p>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Plain Servo Test</td>
+<td>朴素舵机测试（控制舵机转到特定角度）</td>
+</tr>
+<tr>
+<td>Interval Servo Test</td>
+<td>区间舵机测试（控制舵机在特定区间转动）</td>
+</tr>
+<tr>
+<td>Quick Servo Test</td>
+<td>快速舵机测试（快速测试舵机好坏）</td>
+</tr>
+<tr>
+<td>Use Multi Channels</td>
+<td>使用多个PWM通道，可以一次测试多个舵机</td>
+</tr>
+<tr>
+<td>Direct PWM Ctrl (20240709更新)</td>
+<td>直接输入PWM Compare值控制舵机</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
       </tags>
   </entry>
   <entry>
