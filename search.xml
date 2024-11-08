@@ -20,24 +20,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Jetbrains系IDE使用小技巧</title>
-    <url>/post/af86e289.html</url>
-    <content><![CDATA[<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><ul>
-<li>One Dark</li>
-</ul>
-<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><ul>
-<li>Chinese (Simplified) Language Pack &#x2F; 中文语言包</li>
-<li>CodeGlance Pro &#x2F; 侧栏代码缩略</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>Dev</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>IDM脚本和谐破解注册</title>
     <url>/post/5983f199.html</url>
     <content><![CDATA[<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>一、在官网下载安装IDM</p>
@@ -64,6 +46,37 @@
       </categories>
       <tags>
         <tag>Tools</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Jetbrains系IDE使用小技巧</title>
+    <url>/post/af86e289.html</url>
+    <content><![CDATA[<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><ul>
+<li>One Dark</li>
+</ul>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><ul>
+<li>Chinese (Simplified) Language Pack &#x2F; 中文语言包</li>
+<li>CodeGlance Pro &#x2F; 侧栏代码缩略</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>Dev</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>KiCad导出Gerber图形文件</title>
+    <url>/post/ef2c5f04.html</url>
+    <content><![CDATA[<h3 id="KiCad导出Gerber图形文件"><a href="#KiCad导出Gerber图形文件" class="headerlink" title="KiCad导出Gerber图形文件"></a>KiCad导出Gerber图形文件</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png" alt="image-20240527171958427"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271720173.png" alt="image-20240527172047054"></p>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>PCB</tag>
       </tags>
   </entry>
   <entry>
@@ -109,19 +122,6 @@
       </categories>
       <tags>
         <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>KiCad导出Gerber图形文件</title>
-    <url>/post/ef2c5f04.html</url>
-    <content><![CDATA[<h3 id="KiCad导出Gerber图形文件"><a href="#KiCad导出Gerber图形文件" class="headerlink" title="KiCad导出Gerber图形文件"></a>KiCad导出Gerber图形文件</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png" alt="image-20240527171958427"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271720173.png" alt="image-20240527172047054"></p>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>PCB</tag>
       </tags>
   </entry>
   <entry>
@@ -717,6 +717,10 @@
 <h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><ul>
 <li><p>编译时报错 collect2.exe: error: ld returned 1 exit status</p>
 <p>解决方法：打开STM32XXX_FLASH.Id文件，删除所有的(READONLY)关键字，重新编译。</p>
+<blockquote>
+<p>原因：The “READONLY” keyword is only supported in GCC11 and later, remove it if using GCC10 or earlier.</p>
+<p>GCC10或之前版本不支持“READONLY”关键字，GCC11才支持，删掉该关键词即可正常编译。</p>
+</blockquote>
 </li>
 <li><p>重定向printf到uart</p>
 <p>添加<a href="https://github.com/cnoviello/mastering-stm32/blob/master/nucleo-f030R8/system/src/retarget/retarget.c">retarget.c</a>、<a href="https://github.com/cnoviello/mastering-stm32/blob/master/nucleo-f030R8/system/include/retarget/retarget.h">retarget.h</a>到工程，在syscalls.c中把冲突的几个函数注释掉，在main.c串口初始化之后调用RetargetInit(UART_HandleTypeDef *huart)函数。</p>
