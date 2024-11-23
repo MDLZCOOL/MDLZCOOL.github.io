@@ -1,25 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Git使用小技巧Tricks</title>
-    <url>/post/4bb6437a.html</url>
-    <content><![CDATA[<h3 id="经历了一次错误的commit，想要撤回"><a href="#经历了一次错误的commit，想要撤回" class="headerlink" title="经历了一次错误的commit，想要撤回"></a>经历了一次错误的commit，想要撤回</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span> <span class="comment"># 查看上次commit的完整hash字串</span></span><br><span class="line">git reset &lt;arg1&gt; &lt;<span class="built_in">hash</span>字串&gt; <span class="comment"># 撤回commit，&lt;arg1&gt;有参数--soft、--hard、--mixed可选，区别为</span></span><br><span class="line"><span class="comment"># --soft 文件还保存在git里，可以再reset回来</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)        (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B-C</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># --hard 文件直接被删去，慎用！！！</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)        (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># --mixed 文件未被删去，就在本地workspace里，处于未被add的状态(推荐)</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)          (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B-C</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 注：(F)指的是磁盘里此时实际的文件处于哪个版本</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="清除本地对远端已经不存在的分支的引用"><a href="#清除本地对远端已经不存在的分支的引用" class="headerlink" title="清除本地对远端已经不存在的分支的引用"></a>清除本地对远端已经不存在的分支的引用</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote prune origin</span><br></pre></td></tr></table></figure>
-
-<h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><ul>
-<li><code>origin</code> 是默认的远程仓库名称，如果有其他远程仓库，可以用相应的名字替换 <code>origin</code>。</li>
-<li>该命令__不会删除本地的任何分支或数据__，只会移除本地对那些已经在远程仓库中删除的分支的引用。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>IDM脚本和谐破解注册</title>
     <url>/post/5983f199.html</url>
     <content><![CDATA[<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>一、在官网下载安装IDM</p>
@@ -49,16 +30,22 @@
       </tags>
   </entry>
   <entry>
-    <title>KiCad导出Gerber图形文件</title>
-    <url>/post/ef2c5f04.html</url>
-    <content><![CDATA[<h3 id="KiCad导出Gerber图形文件"><a href="#KiCad导出Gerber图形文件" class="headerlink" title="KiCad导出Gerber图形文件"></a>KiCad导出Gerber图形文件</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png" alt="image-20240527171958427"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271720173.png" alt="image-20240527172047054"></p>
+    <title>Git使用小技巧Tricks</title>
+    <url>/post/4bb6437a.html</url>
+    <content><![CDATA[<h3 id="经历了一次错误的commit，想要撤回"><a href="#经历了一次错误的commit，想要撤回" class="headerlink" title="经历了一次错误的commit，想要撤回"></a>经历了一次错误的commit，想要撤回</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span> <span class="comment"># 查看上次commit的完整hash字串</span></span><br><span class="line">git reset &lt;arg1&gt; &lt;<span class="built_in">hash</span>字串&gt; <span class="comment"># 撤回commit，&lt;arg1&gt;有参数--soft、--hard、--mixed可选，区别为</span></span><br><span class="line"><span class="comment"># --soft 文件还保存在git里，可以再reset回来</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)        (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B-C</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># --hard 文件直接被删去，慎用！！！</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)        (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># --mixed 文件未被删去，就在本地workspace里，处于未被add的状态(推荐)</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)          (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B-C</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 注：(F)指的是磁盘里此时实际的文件处于哪个版本</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="清除本地对远端已经不存在的分支的引用"><a href="#清除本地对远端已经不存在的分支的引用" class="headerlink" title="清除本地对远端已经不存在的分支的引用"></a>清除本地对远端已经不存在的分支的引用</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote prune origin</span><br></pre></td></tr></table></figure>
+
+<h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><ul>
+<li><code>origin</code> 是默认的远程仓库名称，如果有其他远程仓库，可以用相应的名字替换 <code>origin</code>。</li>
+<li>该命令__不会删除本地的任何分支或数据__，只会移除本地对那些已经在远程仓库中删除的分支的引用。</li>
+</ul>
 ]]></content>
       <categories>
         <category>Dev</category>
       </categories>
       <tags>
-        <tag>PCB</tag>
+        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
@@ -77,6 +64,19 @@
       </categories>
       <tags>
         <tag>Dev</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>KiCad导出Gerber图形文件</title>
+    <url>/post/ef2c5f04.html</url>
+    <content><![CDATA[<h3 id="KiCad导出Gerber图形文件"><a href="#KiCad导出Gerber图形文件" class="headerlink" title="KiCad导出Gerber图形文件"></a>KiCad导出Gerber图形文件</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png" alt="image-20240527171958427"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271720173.png" alt="image-20240527172047054"></p>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>PCB</tag>
       </tags>
   </entry>
   <entry>
@@ -654,6 +654,45 @@
       </tags>
   </entry>
   <entry>
+    <title>百度网盘不限速</title>
+    <url>/post/900d6e7c.html</url>
+    <content><![CDATA[<p><em>最近不太稳定了 20241123</em></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>浏览器：Firefox &#x2F; Chromium</li>
+<li>脚本管理器：Tampermonkey Beta（注意：只能用Beta版本）</li>
+<li><a href="https://motrix.app/">Motrix下载器</a></li>
+</ul>
+<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="STEP-1-安装插件"><a href="#STEP-1-安装插件" class="headerlink" title="STEP 1 安装插件"></a>STEP 1 安装插件</h3><ol>
+<li>打开Tampermonkey Beta的「管理面板」</li>
+<li>进入「实用工具」选项卡</li>
+<li>复制粘贴安装地址到「从URL安装」进行安装<blockquote>
+<p>安装地址：<a href="http://1.94.138.197/tampermonkey/min.baidu.user.js">http://1.94.138.197/tampermonkey/min.baidu.user.js</a></p>
+</blockquote>
+</li>
+</ol>
+<h3 id="STEP-2-使用"><a href="#STEP-2-使用" class="headerlink" title="STEP 2 使用"></a>STEP 2 使用</h3><ol>
+<li>脚本会在网盘根目录自动创建一个文件夹并设置为永久分享，把需要下载的资源转移到这个文件夹里操作。</li>
+<li>注意Motrix必须提前在后台打开，否则无法正常拉起。</li>
+</ol>
+<p><img src="C:/Users/MDLZ/AppData/Roaming/Typora/typora-user-images/image-20241112173125588.png" alt="image-20241112173125588"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241112173455348.png" alt="image-20241112173455348"></p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>这个方法目前来看应该是最稳定的，速度可以基本跑满，作者规则更新很频繁。相当于免费，不过对于特大文件（比如&gt;30G的文件，好像还没办法下载）</p>
+<ol>
+<li><p>解析下载时根据每个文件的大小扣减解析点数，不足1G的文件消耗1点，1G到2G的文件需要消耗2点，2G至3G的文件消耗3点，以此类推。</p>
+</li>
+<li><p>获取解析点数的方式目前有「签到」和「视频点赞」两种，点赞列表中的每个视频只有第一次点赞会增加点数，取消点赞则扣除相应点数。</p>
+</li>
+</ol>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>插件主页链接：<a href="https://1.94.138.197/bangumi">hd2a</a></p>
+]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>Tools</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>用CLion优雅地调试和开发STM32(CubeMX)</title>
     <url>/post/63adfc20.html</url>
     <content><![CDATA[<h2 id="Why-CLion"><a href="#Why-CLion" class="headerlink" title="Why CLion?"></a>Why CLion?</h2><p>Keil操作简单，容易上手，而且可以很方便地进行调试，不过其古老的界面，不符合人类直觉的操作，不符合现代的编程习惯，必然会被逐渐淘汰。</p>
@@ -737,45 +776,6 @@
       </categories>
       <tags>
         <tag>Dev</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>百度网盘不限速</title>
-    <url>/post/900d6e7c.html</url>
-    <content><![CDATA[<p><em>最近不太稳定了 20241123</em></p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
-<li>浏览器：Firefox &#x2F; Chromium</li>
-<li>脚本管理器：Tampermonkey Beta（注意：只能用Beta版本）</li>
-<li><a href="https://motrix.app/">Motrix下载器</a></li>
-</ul>
-<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="STEP-1-安装插件"><a href="#STEP-1-安装插件" class="headerlink" title="STEP 1 安装插件"></a>STEP 1 安装插件</h3><ol>
-<li>打开Tampermonkey Beta的「管理面板」</li>
-<li>进入「实用工具」选项卡</li>
-<li>复制粘贴安装地址到「从URL安装」进行安装<blockquote>
-<p>安装地址：<a href="http://1.94.138.197/tampermonkey/min.baidu.user.js">http://1.94.138.197/tampermonkey/min.baidu.user.js</a></p>
-</blockquote>
-</li>
-</ol>
-<h3 id="STEP-2-使用"><a href="#STEP-2-使用" class="headerlink" title="STEP 2 使用"></a>STEP 2 使用</h3><ol>
-<li>脚本会在网盘根目录自动创建一个文件夹并设置为永久分享，把需要下载的资源转移到这个文件夹里操作。</li>
-<li>注意Motrix必须提前在后台打开，否则无法正常拉起。</li>
-</ol>
-<p><img src="C:/Users/MDLZ/AppData/Roaming/Typora/typora-user-images/image-20241112173125588.png" alt="image-20241112173125588"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241112173455348.png" alt="image-20241112173455348"></p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>这个方法目前来看应该是最稳定的，速度可以基本跑满，作者规则更新很频繁。相当于免费，不过对于特大文件（比如&gt;30G的文件，好像还没办法下载）</p>
-<ol>
-<li><p>解析下载时根据每个文件的大小扣减解析点数，不足1G的文件消耗1点，1G到2G的文件需要消耗2点，2G至3G的文件消耗3点，以此类推。</p>
-</li>
-<li><p>获取解析点数的方式目前有「签到」和「视频点赞」两种，点赞列表中的每个视频只有第一次点赞会增加点数，取消点赞则扣除相应点数。</p>
-</li>
-</ol>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>插件主页链接：<a href="https://1.94.138.197/bangumi">hd2a</a></p>
-]]></content>
-      <categories>
-        <category>Tools</category>
-      </categories>
-      <tags>
-        <tag>Tools</tag>
       </tags>
   </entry>
   <entry>
