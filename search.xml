@@ -67,6 +67,19 @@
       </tags>
   </entry>
   <entry>
+    <title>KiCad导出Gerber图形文件</title>
+    <url>/post/ef2c5f04.html</url>
+    <content><![CDATA[<h3 id="KiCad导出Gerber图形文件"><a href="#KiCad导出Gerber图形文件" class="headerlink" title="KiCad导出Gerber图形文件"></a>KiCad导出Gerber图形文件</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png" alt="image-20240527171958427"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271720173.png" alt="image-20240527172047054"></p>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>PCB</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【前端学习笔记】 HTML+JavaScript+CSS</title>
     <url>/post/64aca0a5.html</url>
     <content><![CDATA[<h2 id="为什么要学"><a href="#为什么要学" class="headerlink" title="为什么要学"></a>为什么要学</h2><p>最近在学长的建议下准备开始接触前端开发，学习路线预计是先HTML，再JavaScript，再CSS。因为我之前自己在树莓派上建过服务器，搭建过WordPress和NAS等服务，可能算有一丁点基础，所以日后可能会负责维护基地的Git和Docs等服务。也产生过些一套自己的博客主题或者浏览器主页之类的想法，一个比较好的例子是<a href="https://limestart.cn/">青柠起始页</a>，之后可能会仿照着做一个。</p>
@@ -109,87 +122,6 @@
       </categories>
       <tags>
         <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在CLion上搭建LVGL模拟器</title>
-    <url>/post/90c7d419.html</url>
-    <content><![CDATA[<blockquote>
-<p>注：本文默认已经安装好了CLion，目标LVGL的版本为8.3，当然新版本也是可以的，都差不多。</p>
-</blockquote>
-<h2 id="需要准备的文件"><a href="#需要准备的文件" class="headerlink" title="需要准备的文件"></a>需要准备的文件</h2><ul>
-<li><p><a href="https://github.com/lvgl/lv_port_pc_eclipse">lv_port_pc_eclipse</a></p>
-<p>使用下列命令克隆仓库到本地（本文以8.3版本为例）</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b release/v8.3 --recursive https://github.com/lvgl/lv_port_pc_eclipse.git</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p><a href="https://github.com/niXman/mingw-builds-binaries/releases">mingw-builds-binaries</a></p>
-<p><em>注意下载13.2.0-rt_v11-rev1或之前的版本，新版本CLion暂时不支持</em></p>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028130733571.png" alt="image-20241028130733571"></p>
-<ul>
-<li><a href="https://github.com/libsdl-org/SDL/releases">SDL</a></li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028130851970.png" alt="image-20241028130851970"></p>
-<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><ol>
-<li>解压下载的mingw64，得到如下文件</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028183539520.png" alt="image-20241028183539520"></p>
-<ol start="2">
-<li>解压下载的SDL2，得到如下文件</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028183713461.png" alt="image-20241028183713461"></p>
-<p>将<code>SDL2/x86_64_w64-mingw32/include/SDL2</code>复制到<code>mingw64/x86_64_w64-mingw32/include</code>文件夹中</p>
-<p>将<code>SDL2/x86_64_w64-mingw32/lib</code>所有的文件复制到<code>mingw64/x86_64_w64-mingw32/lib</code>中</p>
-<ol start="3">
-<li>CLion配置工具链</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028184123222.png" alt="image-20241028184123222"></p>
-<p>在<code>设置 - 构建、执行、部署 - 工具链</code>新建如上工具链，注意所有工具都参考上图设置成对应的，用内部集成的会报错。</p>
-<ol start="4">
-<li>工程</li>
-</ol>
-<p>用CLion打开lv_port_pc_eclipse为CMake项目，然后即可进行开发。</p>
-<h2 id="一些报错"><a href="#一些报错" class="headerlink" title="一些报错"></a>一些报错</h2><ol>
-<li>CMake找不到SDL2库</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028184609315.png" alt="image-20241028184609315"></p>
-<p>解决办法：在CMakeLists.txt里添加如下语句，注意不要照抄，请将自己的本地文件目录添加进来</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SET</span>(SDL2_DIR D:/program-tools/mingw64/x86_64-w64-mingw32/lib/cmake/SDL2)</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>编译成功，但是运行程序会直接退出，没有GUI界面出现</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028185226640.png" alt="image-20241028185226640"></p>
-<p>解决办法：将下载的SDL2库的SDL2.dll复制到lv_port_pc_eclipse下的bin文件夹里</p>
-<ol start="3">
-<li>分辨率可在<code>lv_drv_conf.h</code>里修改</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028190804549.png" alt="image-20241028190804549"></p>
-<h2 id="与SquareLine-Studio联合开发"><a href="#与SquareLine-Studio联合开发" class="headerlink" title="与SquareLine Studio联合开发"></a>与SquareLine Studio联合开发</h2><p>将SquareLine Studio生成的ui文件夹复制到lv_port_pc_eclipse下，在CmakeLists.txt里添加如下语句，注意不要照抄，请将自己的本地文件目录添加进来</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 递归引用ui下的源文件</span></span><br><span class="line"><span class="keyword">FILE</span>(GLOB_RECURSE UI_Sources CONFIGURE_DEPENDS ui/*.c ui/*.cpp)</span><br><span class="line"><span class="comment"># 将$&#123;UI_Sources&#125;添加到add_executable以对main这个target使用</span></span><br><span class="line"><span class="keyword">add_executable</span>(main main.c mouse_cursor_icon.c <span class="variable">$&#123;SOURCES&#125;</span> <span class="variable">$&#123;INCLUDES&#125;</span> <span class="variable">$&#123;UI_Sources&#125;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>在main.c里添加如下代码：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;ui.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span> &#123;</span><br><span class="line">    (<span class="type">void</span>) argc; <span class="comment">/*Unused*/</span></span><br><span class="line">    (<span class="type">void</span>) argv; <span class="comment">/*Unused*/</span></span><br><span class="line">    ...</span><br><span class="line">    ui_init();</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>记得注释掉lvgl自带的示例代码，编译即可运行SquareLine Studio生成的代码</p>
-<h2 id="LVGL学习资料"><a href="#LVGL学习资料" class="headerlink" title="LVGL学习资料"></a>LVGL学习资料</h2><ul>
-<li><p><a href="https://lvgl-chinese-doc.readthedocs.io/zh-cn/latest/index.html">官方手册</a></p>
-</li>
-<li><p><a href="https://github.com/lvgl/lvgl">源码仓库</a></p>
-</li>
-<li><p><a href="https://lvgl.100ask.net/8.2/">百问网LVGL中文教程文档</a> <em>- 20241028这个暂时只汉化到v8.2</em></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>Dev</tag>
       </tags>
   </entry>
   <entry>
@@ -384,19 +316,6 @@
       </tags>
   </entry>
   <entry>
-    <title>KiCad导出Gerber图形文件</title>
-    <url>/post/ef2c5f04.html</url>
-    <content><![CDATA[<h3 id="KiCad导出Gerber图形文件"><a href="#KiCad导出Gerber图形文件" class="headerlink" title="KiCad导出Gerber图形文件"></a>KiCad导出Gerber图形文件</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png" alt="image-20240527171958427"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271720173.png" alt="image-20240527172047054"></p>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>PCB</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>用CLion优雅地调试和开发STM32(CubeMX)</title>
     <url>/post/63adfc20.html</url>
     <content><![CDATA[<h2 id="Why-CLion"><a href="#Why-CLion" class="headerlink" title="Why CLion?"></a>Why CLion?</h2><p>Keil操作简单，容易上手，而且可以很方便地进行调试，不过其古老的界面，不符合人类直觉的操作，不符合现代的编程习惯，必然会被逐渐淘汰。</p>
@@ -483,42 +402,84 @@
       </tags>
   </entry>
   <entry>
-    <title>百度网盘不限速</title>
-    <url>/post/900d6e7c.html</url>
-    <content><![CDATA[<p><em>最近不太稳定了 20241123</em></p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
-<li>浏览器：Firefox &#x2F; Chromium</li>
-<li>脚本管理器：Tampermonkey Beta（注意：只能用Beta版本）</li>
-<li><a href="https://motrix.app/">Motrix下载器</a></li>
-</ul>
-<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="STEP-1-安装插件"><a href="#STEP-1-安装插件" class="headerlink" title="STEP 1 安装插件"></a>STEP 1 安装插件</h3><ol>
-<li>打开Tampermonkey Beta的「管理面板」</li>
-<li>进入「实用工具」选项卡</li>
-<li>复制粘贴安装地址到「从URL安装」进行安装<blockquote>
-<p>安装地址：<a href="http://1.94.138.197/tampermonkey/min.baidu.user.js">http://1.94.138.197/tampermonkey/min.baidu.user.js</a></p>
+    <title>在CLion上搭建LVGL模拟器</title>
+    <url>/post/90c7d419.html</url>
+    <content><![CDATA[<blockquote>
+<p>注：本文默认已经安装好了CLion，目标LVGL的版本为8.3，当然新版本也是可以的，都差不多。</p>
 </blockquote>
+<h2 id="需要准备的文件"><a href="#需要准备的文件" class="headerlink" title="需要准备的文件"></a>需要准备的文件</h2><ul>
+<li><p><a href="https://github.com/lvgl/lv_port_pc_eclipse">lv_port_pc_eclipse</a></p>
+<p>使用下列命令克隆仓库到本地（本文以8.3版本为例）</p>
 </li>
-</ol>
-<h3 id="STEP-2-使用"><a href="#STEP-2-使用" class="headerlink" title="STEP 2 使用"></a>STEP 2 使用</h3><ol>
-<li>脚本会在网盘根目录自动创建一个文件夹并设置为永久分享，把需要下载的资源转移到这个文件夹里操作。</li>
-<li>注意Motrix必须提前在后台打开，否则无法正常拉起。</li>
-</ol>
-<p><img src="C:/Users/MDLZ/AppData/Roaming/Typora/typora-user-images/image-20241112173125588.png" alt="image-20241112173125588"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241112173455348.png" alt="image-20241112173455348"></p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>这个方法目前来看应该是最稳定的，速度可以基本跑满，作者规则更新很频繁。相当于免费，不过对于特大文件（比如&gt;30G的文件，好像还没办法下载）</p>
-<ol>
-<li><p>解析下载时根据每个文件的大小扣减解析点数，不足1G的文件消耗1点，1G到2G的文件需要消耗2点，2G至3G的文件消耗3点，以此类推。</p>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b release/v8.3 --recursive https://github.com/lvgl/lv_port_pc_eclipse.git</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><a href="https://github.com/niXman/mingw-builds-binaries/releases">mingw-builds-binaries</a></p>
+<p><em>注意下载13.2.0-rt_v11-rev1或之前的版本，新版本CLion暂时不支持</em></p>
 </li>
-<li><p>获取解析点数的方式目前有「签到」和「视频点赞」两种，点赞列表中的每个视频只有第一次点赞会增加点数，取消点赞则扣除相应点数。</p>
-</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028130733571.png" alt="image-20241028130733571"></p>
+<ul>
+<li><a href="https://github.com/libsdl-org/SDL/releases">SDL</a></li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028130851970.png" alt="image-20241028130851970"></p>
+<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><ol>
+<li>解压下载的mingw64，得到如下文件</li>
 </ol>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>插件主页链接：<a href="https://1.94.138.197/bangumi">hd2a</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028183539520.png" alt="image-20241028183539520"></p>
+<ol start="2">
+<li>解压下载的SDL2，得到如下文件</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028183713461.png" alt="image-20241028183713461"></p>
+<p>将<code>SDL2/x86_64_w64-mingw32/include/SDL2</code>复制到<code>mingw64/x86_64_w64-mingw32/include</code>文件夹中</p>
+<p>将<code>SDL2/x86_64_w64-mingw32/lib</code>所有的文件复制到<code>mingw64/x86_64_w64-mingw32/lib</code>中</p>
+<ol start="3">
+<li>CLion配置工具链</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028184123222.png" alt="image-20241028184123222"></p>
+<p>在<code>设置 - 构建、执行、部署 - 工具链</code>新建如上工具链，注意所有工具都参考上图设置成对应的，用内部集成的会报错。</p>
+<ol start="4">
+<li>工程</li>
+</ol>
+<p>用CLion打开lv_port_pc_eclipse为CMake项目，然后即可进行开发。</p>
+<h2 id="一些报错"><a href="#一些报错" class="headerlink" title="一些报错"></a>一些报错</h2><ol>
+<li>CMake找不到SDL2库</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028184609315.png" alt="image-20241028184609315"></p>
+<p>解决办法：在CMakeLists.txt里添加如下语句，注意不要照抄，请将自己的本地文件目录添加进来</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SET</span>(SDL2_DIR D:/program-tools/mingw64/x86_64-w64-mingw32/lib/cmake/SDL2)</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>编译成功，但是运行程序会直接退出，没有GUI界面出现</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028185226640.png" alt="image-20241028185226640"></p>
+<p>解决办法：将下载的SDL2库的SDL2.dll复制到lv_port_pc_eclipse下的bin文件夹里</p>
+<ol start="3">
+<li>分辨率可在<code>lv_drv_conf.h</code>里修改</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028190804549.png" alt="image-20241028190804549"></p>
+<h2 id="与SquareLine-Studio联合开发"><a href="#与SquareLine-Studio联合开发" class="headerlink" title="与SquareLine Studio联合开发"></a>与SquareLine Studio联合开发</h2><p>将SquareLine Studio生成的ui文件夹复制到lv_port_pc_eclipse下，在CmakeLists.txt里添加如下语句，注意不要照抄，请将自己的本地文件目录添加进来</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 递归引用ui下的源文件</span></span><br><span class="line"><span class="keyword">FILE</span>(GLOB_RECURSE UI_Sources CONFIGURE_DEPENDS ui/*.c ui/*.cpp)</span><br><span class="line"><span class="comment"># 将$&#123;UI_Sources&#125;添加到add_executable以对main这个target使用</span></span><br><span class="line"><span class="keyword">add_executable</span>(main main.c mouse_cursor_icon.c <span class="variable">$&#123;SOURCES&#125;</span> <span class="variable">$&#123;INCLUDES&#125;</span> <span class="variable">$&#123;UI_Sources&#125;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>在main.c里添加如下代码：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;ui.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span> &#123;</span><br><span class="line">    (<span class="type">void</span>) argc; <span class="comment">/*Unused*/</span></span><br><span class="line">    (<span class="type">void</span>) argv; <span class="comment">/*Unused*/</span></span><br><span class="line">    ...</span><br><span class="line">    ui_init();</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>记得注释掉lvgl自带的示例代码，编译即可运行SquareLine Studio生成的代码</p>
+<h2 id="LVGL学习资料"><a href="#LVGL学习资料" class="headerlink" title="LVGL学习资料"></a>LVGL学习资料</h2><ul>
+<li><p><a href="https://lvgl-chinese-doc.readthedocs.io/zh-cn/latest/index.html">官方手册</a></p>
+</li>
+<li><p><a href="https://github.com/lvgl/lvgl">源码仓库</a></p>
+</li>
+<li><p><a href="https://lvgl.100ask.net/8.2/">百问网LVGL中文教程文档</a> <em>- 20241028这个暂时只汉化到v8.2</em></p>
+</li>
+</ul>
 ]]></content>
       <categories>
-        <category>Tools</category>
+        <category>Dev</category>
       </categories>
       <tags>
-        <tag>Tools</tag>
+        <tag>Dev</tag>
       </tags>
   </entry>
   <entry>
@@ -776,6 +737,45 @@
         <tag>ESP32</tag>
         <tag>LVGL</tag>
         <tag>ESP-IDF</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>百度网盘不限速</title>
+    <url>/post/900d6e7c.html</url>
+    <content><![CDATA[<p><em>最近不太稳定了 20241123</em></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>浏览器：Firefox &#x2F; Chromium</li>
+<li>脚本管理器：Tampermonkey Beta（注意：只能用Beta版本）</li>
+<li><a href="https://motrix.app/">Motrix下载器</a></li>
+</ul>
+<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="STEP-1-安装插件"><a href="#STEP-1-安装插件" class="headerlink" title="STEP 1 安装插件"></a>STEP 1 安装插件</h3><ol>
+<li>打开Tampermonkey Beta的「管理面板」</li>
+<li>进入「实用工具」选项卡</li>
+<li>复制粘贴安装地址到「从URL安装」进行安装<blockquote>
+<p>安装地址：<a href="http://1.94.138.197/tampermonkey/min.baidu.user.js">http://1.94.138.197/tampermonkey/min.baidu.user.js</a></p>
+</blockquote>
+</li>
+</ol>
+<h3 id="STEP-2-使用"><a href="#STEP-2-使用" class="headerlink" title="STEP 2 使用"></a>STEP 2 使用</h3><ol>
+<li>脚本会在网盘根目录自动创建一个文件夹并设置为永久分享，把需要下载的资源转移到这个文件夹里操作。</li>
+<li>注意Motrix必须提前在后台打开，否则无法正常拉起。</li>
+</ol>
+<p><img src="C:/Users/MDLZ/AppData/Roaming/Typora/typora-user-images/image-20241112173125588.png" alt="image-20241112173125588"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241112173455348.png" alt="image-20241112173455348"></p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>这个方法目前来看应该是最稳定的，速度可以基本跑满，作者规则更新很频繁。相当于免费，不过对于特大文件（比如&gt;30G的文件，好像还没办法下载）</p>
+<ol>
+<li><p>解析下载时根据每个文件的大小扣减解析点数，不足1G的文件消耗1点，1G到2G的文件需要消耗2点，2G至3G的文件消耗3点，以此类推。</p>
+</li>
+<li><p>获取解析点数的方式目前有「签到」和「视频点赞」两种，点赞列表中的每个视频只有第一次点赞会增加点数，取消点赞则扣除相应点数。</p>
+</li>
+</ol>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>插件主页链接：<a href="https://1.94.138.197/bangumi">hd2a</a></p>
+]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>Tools</tag>
       </tags>
   </entry>
   <entry>
