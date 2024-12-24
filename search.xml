@@ -30,24 +30,16 @@
       </tags>
   </entry>
   <entry>
-    <title>Git使用小技巧Tricks</title>
-    <url>/post/4bb6437a.html</url>
-    <content><![CDATA[<h3 id="经历了一次错误的commit，想要撤回"><a href="#经历了一次错误的commit，想要撤回" class="headerlink" title="经历了一次错误的commit，想要撤回"></a>经历了一次错误的commit，想要撤回</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span> <span class="comment"># 查看上次commit的完整hash字串</span></span><br><span class="line">git reset &lt;arg1&gt; &lt;<span class="built_in">hash</span>字串&gt; <span class="comment"># 撤回commit，&lt;arg1&gt;有参数--soft、--hard、--mixed可选。</span></span><br><span class="line"><span class="comment"># 注意注意：一般可以忽略&lt;arg1&gt;。</span></span><br><span class="line"><span class="comment"># 区别为</span></span><br><span class="line"><span class="comment"># --soft 文件还保存在git里，可以再reset回来</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)        (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B-C</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># --hard 文件直接被删去，慎用！！！</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)        (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># --mixed 文件未被删去，就在本地workspace里，处于未被add的状态(推荐)</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)          (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B-C</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 注：(F)指的是磁盘里此时实际的文件处于哪个版本</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="清除本地对远端已经不存在的分支的引用"><a href="#清除本地对远端已经不存在的分支的引用" class="headerlink" title="清除本地对远端已经不存在的分支的引用"></a>清除本地对远端已经不存在的分支的引用</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote prune origin</span><br></pre></td></tr></table></figure>
-
-<h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><ul>
-<li><code>origin</code> 是默认的远程仓库名称，如果有其他远程仓库，可以用相应的名字替换 <code>origin</code>。</li>
-<li>该命令__不会删除本地的任何分支或数据__，只会移除本地对那些已经在远程仓库中删除的分支的引用。</li>
-</ul>
-<h3 id="更新子模块"><a href="#更新子模块" class="headerlink" title="更新子模块"></a>更新子模块</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git submodule --update --init --recursive</span><br></pre></td></tr></table></figure>
-
+    <title>KiCad导出Gerber图形文件</title>
+    <url>/post/ef2c5f04.html</url>
+    <content><![CDATA[<h3 id="KiCad导出Gerber图形文件"><a href="#KiCad导出Gerber图形文件" class="headerlink" title="KiCad导出Gerber图形文件"></a>KiCad导出Gerber图形文件</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png" alt="image-20240527171958427"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271720173.png" alt="image-20240527172047054"></p>
 ]]></content>
       <categories>
         <category>Dev</category>
       </categories>
       <tags>
-        <tag>Git</tag>
+        <tag>PCB</tag>
       </tags>
   </entry>
   <entry>
@@ -96,21 +88,24 @@
       </tags>
   </entry>
   <entry>
-    <title>Jetbrains系IDE使用小技巧</title>
-    <url>/post/af86e289.html</url>
-    <content><![CDATA[<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><ul>
-<li>One Dark</li>
+    <title>Git使用小技巧Tricks</title>
+    <url>/post/4bb6437a.html</url>
+    <content><![CDATA[<h3 id="经历了一次错误的commit，想要撤回"><a href="#经历了一次错误的commit，想要撤回" class="headerlink" title="经历了一次错误的commit，想要撤回"></a>经历了一次错误的commit，想要撤回</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span> <span class="comment"># 查看上次commit的完整hash字串</span></span><br><span class="line">git reset &lt;arg1&gt; &lt;<span class="built_in">hash</span>字串&gt; <span class="comment"># 撤回commit，&lt;arg1&gt;有参数--soft、--hard、--mixed可选。</span></span><br><span class="line"><span class="comment"># 注意注意：一般可以忽略&lt;arg1&gt;。</span></span><br><span class="line"><span class="comment"># 区别为</span></span><br><span class="line"><span class="comment"># --soft 文件还保存在git里，可以再reset回来</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)        (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B-C</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># --hard 文件直接被删去，慎用！！！</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)        (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># --mixed 文件未被删去，就在本地workspace里，处于未被add的状态(推荐)</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)          (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B-C</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 注：(F)指的是磁盘里此时实际的文件处于哪个版本</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="清除本地对远端已经不存在的分支的引用"><a href="#清除本地对远端已经不存在的分支的引用" class="headerlink" title="清除本地对远端已经不存在的分支的引用"></a>清除本地对远端已经不存在的分支的引用</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote prune origin</span><br></pre></td></tr></table></figure>
+
+<h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><ul>
+<li><code>origin</code> 是默认的远程仓库名称，如果有其他远程仓库，可以用相应的名字替换 <code>origin</code>。</li>
+<li>该命令__不会删除本地的任何分支或数据__，只会移除本地对那些已经在远程仓库中删除的分支的引用。</li>
 </ul>
-<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><ul>
-<li>Chinese (Simplified) Language Pack &#x2F; 中文语言包</li>
-<li>CodeGlance Pro &#x2F; 侧栏代码缩略</li>
-</ul>
+<h3 id="更新子模块"><a href="#更新子模块" class="headerlink" title="更新子模块"></a>更新子模块</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git submodule --update --init --recursive</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>Dev</category>
       </categories>
       <tags>
-        <tag>Dev</tag>
+        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
@@ -192,19 +187,6 @@
       </categories>
       <tags>
         <tag>Dev</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>KiCad导出Gerber图形文件</title>
-    <url>/post/ef2c5f04.html</url>
-    <content><![CDATA[<h3 id="KiCad导出Gerber图形文件"><a href="#KiCad导出Gerber图形文件" class="headerlink" title="KiCad导出Gerber图形文件"></a>KiCad导出Gerber图形文件</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png" alt="image-20240527171958427"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271720173.png" alt="image-20240527172047054"></p>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>PCB</tag>
       </tags>
   </entry>
   <entry>
@@ -312,6 +294,24 @@
         <tag>Dev</tag>
         <tag>STM32</tag>
         <tag>ROS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Jetbrains系IDE使用小技巧</title>
+    <url>/post/af86e289.html</url>
+    <content><![CDATA[<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><ul>
+<li>One Dark</li>
+</ul>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><ul>
+<li>Chinese (Simplified) Language Pack &#x2F; 中文语言包</li>
+<li>CodeGlance Pro &#x2F; 侧栏代码缩略</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>Dev</tag>
       </tags>
   </entry>
   <entry>
@@ -503,6 +503,176 @@
       </categories>
       <tags>
         <tag>Tools</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>百度网盘不限速</title>
+    <url>/post/900d6e7c.html</url>
+    <content><![CDATA[<p><em>最近不太稳定了 20241123</em></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>浏览器：Firefox &#x2F; Chromium</li>
+<li>脚本管理器：Tampermonkey Beta（注意：只能用Beta版本）</li>
+<li><a href="https://motrix.app/">Motrix下载器</a></li>
+</ul>
+<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="STEP-1-安装插件"><a href="#STEP-1-安装插件" class="headerlink" title="STEP 1 安装插件"></a>STEP 1 安装插件</h3><ol>
+<li>打开Tampermonkey Beta的「管理面板」</li>
+<li>进入「实用工具」选项卡</li>
+<li>复制粘贴安装地址到「从URL安装」进行安装<blockquote>
+<p>安装地址：<a href="http://1.94.138.197/tampermonkey/min.baidu.user.js">http://1.94.138.197/tampermonkey/min.baidu.user.js</a></p>
+</blockquote>
+</li>
+</ol>
+<h3 id="STEP-2-使用"><a href="#STEP-2-使用" class="headerlink" title="STEP 2 使用"></a>STEP 2 使用</h3><ol>
+<li>脚本会在网盘根目录自动创建一个文件夹并设置为永久分享，把需要下载的资源转移到这个文件夹里操作。</li>
+<li>注意Motrix必须提前在后台打开，否则无法正常拉起。</li>
+</ol>
+<p><img src="C:/Users/MDLZ/AppData/Roaming/Typora/typora-user-images/image-20241112173125588.png" alt="image-20241112173125588"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241112173455348.png" alt="image-20241112173455348"></p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>这个方法目前来看应该是最稳定的，速度可以基本跑满，作者规则更新很频繁。相当于免费，不过对于特大文件（比如&gt;30G的文件，好像还没办法下载）</p>
+<ol>
+<li><p>解析下载时根据每个文件的大小扣减解析点数，不足1G的文件消耗1点，1G到2G的文件需要消耗2点，2G至3G的文件消耗3点，以此类推。</p>
+</li>
+<li><p>获取解析点数的方式目前有「签到」和「视频点赞」两种，点赞列表中的每个视频只有第一次点赞会增加点数，取消点赞则扣除相应点数。</p>
+</li>
+</ol>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>插件主页链接：<a href="https://1.94.138.197/bangumi">hd2a</a></p>
+]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>Tools</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>用CLion优雅地调试和开发STM32(CubeMX)</title>
+    <url>/post/63adfc20.html</url>
+    <content><![CDATA[<h2 id="Why-CLion"><a href="#Why-CLion" class="headerlink" title="Why CLion?"></a>Why CLion?</h2><p>Keil操作简单，容易上手，而且可以很方便地进行调试，不过其古老的界面，不符合人类直觉的操作，不符合现代的编程习惯，必然会被逐渐淘汰。</p>
+<p>Jetbrains系IDE具有强大的代码补全、界面风格、各种插件、流畅性等众多优点，毫无疑问能够极大提高开发效率，其中CLion就是专门面向C&#x2F;C++开发的IDE。</p>
+<h2 id="工具链Toolchains"><a href="#工具链Toolchains" class="headerlink" title="工具链Toolchains"></a>工具链Toolchains</h2><ul>
+<li><p>代码编辑器：CLion</p>
+</li>
+<li><p>编译器：MinGW、arm-none-eabi-gcc</p>
+</li>
+<li><p>调试器：OpenOCD</p>
+</li>
+<li><p>HAL代码生成器：STM32CubeMX</p>
+</li>
+</ul>
+<h2 id="Debugger"><a href="#Debugger" class="headerlink" title="Debugger"></a>Debugger</h2><ul>
+<li><p>cmsis-dap</p>
+</li>
+<li><p>stlink</p>
+</li>
+<li><p>jlink</p>
+</li>
+<li><p>etc.</p>
+</li>
+</ul>
+<h2 id="工具安装"><a href="#工具安装" class="headerlink" title="工具安装"></a>工具安装</h2><ol>
+<li><a href="https://www.st.com/en/development-tools/stm32cubemx.html">STM32CubeMX</a></li>
+<li><a href="https://gnutoolchains.com/arm-eabi/openocd/">OpenOCD</a> <em>或者用<a href="https://xpack.github.io/dev-tools/openocd/releases">xpack-openocd</a></em></li>
+<li><a href="https://osdn.net/projects/mingw/releases/">MinGW</a>（这是MinGW的在线安装器）</li>
+<li><a href="https://www.jetbrains.com.cn/clion/">CLion</a></li>
+<li><a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads">arm-none-eabi-gcc</a></li>
+</ol>
+<p><strong>几点注意</strong>：</p>
+<ol>
+<li><p>建议OpenOCD、MinGW、arm-none-eabi-gcc解压 &#x2F; 安装到一个特定的目录（eg. &#x2F;program-tools&#x2F;）</p>
+</li>
+<li><p>MinGW可能安装过程中会由于网络原因卡死，可以尝试离线安装或连接到国际互联网</p>
+</li>
+<li><p>Jetbrains学生账号可以免费使用CLion等IDE，请抵制盗版</p>
+</li>
+<li><p>完成安装 &#x2F; 解压后，将OpenOCD、arm-none-eabi-gcc、MinGW对应文件夹下的bin添加到系统环境变量Path里</p>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727221710143.png" alt="image-20240727221710143"></p>
+<h2 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h2><p>在CMD或PowerShell中，</p>
+<ol>
+<li>输入gcc -v，有输出则说明MinGW安装正确</li>
+<li>输入arm-none-eabi-gcc -v，有输出则说明arm-none-eabi-gcc配置正确</li>
+<li>输入openocd -v，有输出则说明OpenOCD配置正确</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727221618827.png" alt="image-20240727221618827"></p>
+<h2 id="CLion配置"><a href="#CLion配置" class="headerlink" title="CLion配置"></a>CLion配置</h2><p>进入设置-构建、执行、部署-工具链，设置一下MinGW相关的配置，注意调试器不要改，不然后面会无法连接到Debugger<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727222254196.png" alt="image-20240727222254196"></p>
+<p>在设置-构建、执行、部署-嵌入式开发里配置一下OpenOCD、STM32CubeMX的路径</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727222617731.png" alt="image-20240727222617731"></p>
+<h2 id="新建项目（CubeMX）"><a href="#新建项目（CubeMX）" class="headerlink" title="新建项目（CubeMX）"></a>新建项目（CubeMX）</h2><p>打开STM32CubeMX，随便选个芯片，按照下图配置创建项目</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727222942789.png" alt="image-20240727222942789"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727223013152.png" alt="image-20240727223013152"></p>
+<p>进入生成项目代码的目录，右键在CLion中打开</p>
+<p>进来后选复制到项目并使用</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727223541302.png" alt="image-20240727223541302"></p>
+<p>现在构建、编译、调试烧录代码应该都可以了</p>
+<h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><ul>
+<li><p>编译时报错 collect2.exe: error: ld returned 1 exit status</p>
+<p>解决方法：打开STM32XXX_FLASH.Id文件，删除所有的(READONLY)关键字，重新编译。</p>
+<blockquote>
+<p>原因：The “READONLY” keyword is only supported in GCC11 and later, remove it if using GCC10 or earlier.</p>
+<p>GCC10或之前版本不支持“READONLY”关键字，GCC11才支持，删掉该关键词即可正常编译。</p>
+</blockquote>
+</li>
+<li><p>重定向printf到uart</p>
+<p>添加<a href="https://github.com/cnoviello/mastering-stm32/blob/master/nucleo-f030R8/system/src/retarget/retarget.c">retarget.c</a>、<a href="https://github.com/cnoviello/mastering-stm32/blob/master/nucleo-f030R8/system/include/retarget/retarget.h">retarget.h</a>到工程，在syscalls.c中把冲突的几个函数注释掉，在main.c串口初始化之后调用RetargetInit(UART_HandleTypeDef *huart)函数。</p>
+</li>
+<li><p>打开硬件浮点数支持</p>
+<p>在CmakeLists.txt里取消这三行的注释。</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240728191654029.png" alt="image-20240728191654029"></p>
+<h2 id="stm32-openocd-cfg-template"><a href="#stm32-openocd-cfg-template" class="headerlink" title="stm32-openocd-cfg-template"></a>stm32-openocd-cfg-template</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#设置使用的调试烧录器为ST-Link</span><br><span class="line">#source [find interface/stlink.cfg]</span><br><span class="line"></span><br><span class="line">#设置使用的调试烧录器为J-link</span><br><span class="line">#source [find interface/jlink.cfg]</span><br><span class="line"></span><br><span class="line">#设置使用的调试烧录器为DAP-Link</span><br><span class="line">#source [find interface/cmsis-dap.cfg]</span><br><span class="line"></span><br><span class="line">#调试接口选择swd，此类型是ST-Link专用的</span><br><span class="line">#transport select hla_swd</span><br><span class="line"></span><br><span class="line">#调试接口选择swd，此类型是J-link，DAP-Link通用</span><br><span class="line">#transport select swd</span><br><span class="line"></span><br><span class="line">#指明调试速率</span><br><span class="line">#adapter speed 5000</span><br><span class="line"></span><br><span class="line">#设置目标芯片，选择stm32f1x，如果是f4系列的换成f4就行了其他系列以此类推</span><br><span class="line">#source [find target/stm32f1x.cfg]</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>Dev</tag>
+        <tag>STM32</tag>
+        <tag>ROS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>舵机多功能测试程序说明</title>
+    <url>/post/cee333e2.html</url>
+    <content><![CDATA[<p><strong>写在前面：基地一直都有对舵机快捷测试的需求，但是每次都得改源码，很麻烦，也不能实现舵机的精准角度控制，最近忙完期中考试，抽时间写了这个程序，也算是对学到的东西的一点小小的应用吧</strong></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本程序运行在大疆开发板C型，基于STM32 HAL平台开发，具有极其优良的可移植性，可以快速迁移至其他MCU，本程序依托串口与上位机通信，使用时接串口线和电池即可</p>
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404301832725.png" alt="image-20240430183243677"></p>
+<p>对主菜单的解释，每个指令串口都会输出对应的注解，<strong>注意输入任何指令都需要以回车结尾！</strong></p>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Plain Servo Test</td>
+<td>朴素舵机测试（控制舵机转到特定角度）</td>
+</tr>
+<tr>
+<td>Interval Servo Test</td>
+<td>区间舵机测试（控制舵机在特定区间转动）</td>
+</tr>
+<tr>
+<td>Quick Servo Test</td>
+<td>快速舵机测试（快速测试舵机好坏）</td>
+</tr>
+<tr>
+<td>Use Multi Channels</td>
+<td>使用多个PWM通道，可以一次测试多个舵机</td>
+</tr>
+<tr>
+<td>Direct PWM Ctrl (20240709更新)</td>
+<td>直接输入PWM Compare值控制舵机</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
       </tags>
   </entry>
   <entry>
@@ -763,91 +933,45 @@
       </tags>
   </entry>
   <entry>
-    <title>用CLion优雅地调试和开发STM32(CubeMX)</title>
-    <url>/post/63adfc20.html</url>
-    <content><![CDATA[<h2 id="Why-CLion"><a href="#Why-CLion" class="headerlink" title="Why CLion?"></a>Why CLion?</h2><p>Keil操作简单，容易上手，而且可以很方便地进行调试，不过其古老的界面，不符合人类直觉的操作，不符合现代的编程习惯，必然会被逐渐淘汰。</p>
-<p>Jetbrains系IDE具有强大的代码补全、界面风格、各种插件、流畅性等众多优点，毫无疑问能够极大提高开发效率，其中CLion就是专门面向C&#x2F;C++开发的IDE。</p>
-<h2 id="工具链Toolchains"><a href="#工具链Toolchains" class="headerlink" title="工具链Toolchains"></a>工具链Toolchains</h2><ul>
-<li><p>代码编辑器：CLion</p>
-</li>
-<li><p>编译器：MinGW、arm-none-eabi-gcc</p>
-</li>
-<li><p>调试器：OpenOCD</p>
-</li>
-<li><p>HAL代码生成器：STM32CubeMX</p>
-</li>
+    <title>嵌入式驱动接口在C语言里的实现</title>
+    <url>/post/cdb42980.html</url>
+    <content><![CDATA[<h2 id="为什么要实现接口"><a href="#为什么要实现接口" class="headerlink" title="为什么要实现接口"></a>为什么要实现接口</h2><p>接口，可以是硬件与硬件之间连接的桥梁，可以是软件与软件之间沟通的窗户，也可以是硬件与软件之间通信的枢纽。其中硬件与硬件之间的桥梁，比如I2C、UART、CANFD、等等，软件与软件之间沟通的窗户，比如操作系统提供的各种API、等等。我实现的这套“接口”，连接了硬件与软件，它可以实现软硬件的完全解耦合，引入了<strong>平台无关性</strong>，提供了尽可能简化的逻辑，这有点类似于开汽车，一个人一旦学会了开汽车，那开什么牌子的汽车都基本是一个道理，实现了一套驱动，一套接口，对于不同系统、硬件平台的支持，这无疑会大大提高代码的易用性、复用性，大大减少重复的造轮子。</p>
+<h2 id="我所实现的接口"><a href="#我所实现的接口" class="headerlink" title="我所实现的接口"></a>我所实现的接口</h2><ul>
+<li>首先，需要一个结构体来存放系统接口，不妨叫system_interface_t，它用来存放系统的函数实现，是我们将驱动对接到不同平台的关键</li>
 </ul>
-<h2 id="Debugger"><a href="#Debugger" class="headerlink" title="Debugger"></a>Debugger</h2><ul>
-<li><p>cmsis-dap</p>
-</li>
-<li><p>stlink</p>
-</li>
-<li><p>jlink</p>
-</li>
-<li><p>etc.</p>
-</li>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">generic_err_t</span> (*send)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*receive)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*delay_ms)(<span class="type">uint32_t</span> nms);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*delay_us)(<span class="type">uint32_t</span> nus);</span><br><span class="line">&#125; <span class="type">system_interface_t</span>;</span><br></pre></td></tr></table></figure>
+
+<p>推荐将上述代码放在一个.h文件里，这样不同的驱动只需要这一套接口即可</p>
+<ul>
+<li>接下来，需要一个结构体来存放system_interface_t（这样做的目的是实现不同驱动可以复用同一套接口），以及驱动内部实现的各种函数，比如对于aht20温度计而言，则除了对接系统的system_interface_t结构体，还应存放用于读取温度的函数</li>
 </ul>
-<h2 id="工具安装"><a href="#工具安装" class="headerlink" title="工具安装"></a>工具安装</h2><ol>
-<li><a href="https://www.st.com/en/development-tools/stm32cubemx.html">STM32CubeMX</a></li>
-<li><a href="https://gnutoolchains.com/arm-eabi/openocd/">OpenOCD</a> <em>或者用<a href="https://xpack.github.io/dev-tools/openocd/releases">xpack-openocd</a></em></li>
-<li><a href="https://osdn.net/projects/mingw/releases/">MinGW</a>（这是MinGW的在线安装器）</li>
-<li><a href="https://www.jetbrains.com.cn/clion/">CLion</a></li>
-<li><a href="https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads">arm-none-eabi-gcc</a></li>
-</ol>
-<p><strong>几点注意</strong>：</p>
-<ol>
-<li><p>建议OpenOCD、MinGW、arm-none-eabi-gcc解压 &#x2F; 安装到一个特定的目录（eg. &#x2F;program-tools&#x2F;）</p>
-</li>
-<li><p>MinGW可能安装过程中会由于网络原因卡死，可以尝试离线安装或连接到国际互联网</p>
-</li>
-<li><p>Jetbrains学生账号可以免费使用CLion等IDE，请抵制盗版</p>
-</li>
-<li><p>完成安装 &#x2F; 解压后，将OpenOCD、arm-none-eabi-gcc、MinGW对应文件夹下的bin添加到系统环境变量Path里</p>
-</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727221710143.png" alt="image-20240727221710143"></p>
-<h2 id="验证安装"><a href="#验证安装" class="headerlink" title="验证安装"></a>验证安装</h2><p>在CMD或PowerShell中，</p>
-<ol>
-<li>输入gcc -v，有输出则说明MinGW安装正确</li>
-<li>输入arm-none-eabi-gcc -v，有输出则说明arm-none-eabi-gcc配置正确</li>
-<li>输入openocd -v，有输出则说明OpenOCD配置正确</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727221618827.png" alt="image-20240727221618827"></p>
-<h2 id="CLion配置"><a href="#CLion配置" class="headerlink" title="CLion配置"></a>CLion配置</h2><p>进入设置-构建、执行、部署-工具链，设置一下MinGW相关的配置，注意调试器不要改，不然后面会无法连接到Debugger<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727222254196.png" alt="image-20240727222254196"></p>
-<p>在设置-构建、执行、部署-嵌入式开发里配置一下OpenOCD、STM32CubeMX的路径</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727222617731.png" alt="image-20240727222617731"></p>
-<h2 id="新建项目（CubeMX）"><a href="#新建项目（CubeMX）" class="headerlink" title="新建项目（CubeMX）"></a>新建项目（CubeMX）</h2><p>打开STM32CubeMX，随便选个芯片，按照下图配置创建项目</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727222942789.png" alt="image-20240727222942789"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727223013152.png" alt="image-20240727223013152"></p>
-<p>进入生成项目代码的目录，右键在CLion中打开</p>
-<p>进来后选复制到项目并使用</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240727223541302.png" alt="image-20240727223541302"></p>
-<p>现在构建、编译、调试烧录代码应该都可以了</p>
-<h2 id="其他问题"><a href="#其他问题" class="headerlink" title="其他问题"></a>其他问题</h2><ul>
-<li><p>编译时报错 collect2.exe: error: ld returned 1 exit status</p>
-<p>解决方法：打开STM32XXX_FLASH.Id文件，删除所有的(READONLY)关键字，重新编译。</p>
-<blockquote>
-<p>原因：The “READONLY” keyword is only supported in GCC11 and later, remove it if using GCC10 or earlier.</p>
-<p>GCC10或之前版本不支持“READONLY”关键字，GCC11才支持，删掉该关键词即可正常编译。</p>
-</blockquote>
-</li>
-<li><p>重定向printf到uart</p>
-<p>添加<a href="https://github.com/cnoviello/mastering-stm32/blob/master/nucleo-f030R8/system/src/retarget/retarget.c">retarget.c</a>、<a href="https://github.com/cnoviello/mastering-stm32/blob/master/nucleo-f030R8/system/include/retarget/retarget.h">retarget.h</a>到工程，在syscalls.c中把冲突的几个函数注释掉，在main.c串口初始化之后调用RetargetInit(UART_HandleTypeDef *huart)函数。</p>
-</li>
-<li><p>打开硬件浮点数支持</p>
-<p>在CmakeLists.txt里取消这三行的注释。</p>
-</li>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">float</span> temperature;</span><br><span class="line">    <span class="type">float</span> humidity;</span><br><span class="line"></span><br><span class="line">    <span class="type">system_interface_t</span> *pfsystem_interface;</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*pfinit)(<span class="type">void</span> *pfdev);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*pfmeasure)(<span class="type">void</span> *pfdev);</span><br><span class="line">&#125; <span class="type">generic_sensor_aht20_driver_interface_t</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>然后可以构建一个whoami函数，用于对底层驱动的对接写入，以及对设备调用函数的暴露</li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20240728191654029.png" alt="image-20240728191654029"></p>
-<h2 id="stm32-openocd-cfg-template"><a href="#stm32-openocd-cfg-template" class="headerlink" title="stm32-openocd-cfg-template"></a>stm32-openocd-cfg-template</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#设置使用的调试烧录器为ST-Link</span><br><span class="line">#source [find interface/stlink.cfg]</span><br><span class="line"></span><br><span class="line">#设置使用的调试烧录器为J-link</span><br><span class="line">#source [find interface/jlink.cfg]</span><br><span class="line"></span><br><span class="line">#设置使用的调试烧录器为DAP-Link</span><br><span class="line">#source [find interface/cmsis-dap.cfg]</span><br><span class="line"></span><br><span class="line">#调试接口选择swd，此类型是ST-Link专用的</span><br><span class="line">#transport select hla_swd</span><br><span class="line"></span><br><span class="line">#调试接口选择swd，此类型是J-link，DAP-Link通用</span><br><span class="line">#transport select swd</span><br><span class="line"></span><br><span class="line">#指明调试速率</span><br><span class="line">#adapter speed 5000</span><br><span class="line"></span><br><span class="line">#设置目标芯片，选择stm32f1x，如果是f4系列的换成f4就行了其他系列以此类推</span><br><span class="line">#source [find target/stm32f1x.cfg]</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">generic_err_t</span> <span class="title function_">generic_sensor_aht20_whoami</span><span class="params">(<span class="type">generic_sensor_aht20_driver_interface_t</span> *pfdev,</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*generic_send_func)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len),</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*generic_receive_func)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len),</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*delay_ms_func)(<span class="type">uint32_t</span> nms),</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*delay_us_func)(<span class="type">uint32_t</span> nus))</span> &#123;</span><br><span class="line">    pfdev-&gt;pfsystem_interface = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">system_interface_t</span>));</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;send = generic_send_func;</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;receive = generic_receive_func;</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;delay_ms = delay_ms_func;</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;delay_us = delay_us_func;</span><br><span class="line">    pfdev-&gt;pfinit = generic_sensor_aht20_init;</span><br><span class="line">    pfdev-&gt;pfmeasure = generic_sensor_aht20_measure;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> GENERIC_OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意这里要先给generic_sensor_aht20_driver_interface_t下的system_interface_t申请一块内存，否则直接调用pfdev-&gt;pfsystem_interface会指向非法内存，造成段错误</p>
+<h2 id="关于调用"><a href="#关于调用" class="headerlink" title="关于调用"></a>关于调用</h2><p>可以在初始化的时候进行驱动程序的注册，不要忘记申请内存</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">generic_sensor_aht20_driver_interface_t</span> *aht20_device = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">generic_sensor_aht20_driver_interface_t</span>));</span><br></pre></td></tr></table></figure>
+
+<p>然后调用whoami函数，对接系统底层到驱动层</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">generic_sensor_aht20_whoami(aht20_device,</span><br><span class="line">                          i2c_master_send,</span><br><span class="line">                          i2c_master_receive,</span><br><span class="line">                          HAL_Delay,</span><br><span class="line">                          <span class="literal">NULL</span>);</span><br></pre></td></tr></table></figure>
+
+<p>接着，便可以通过下面这种方式调用驱动暴露出来的API</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">aht20_device-&gt;pfinit(aht20_device); <span class="comment">// 如pfinit(void *pfdev)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="删除设备"><a href="#删除设备" class="headerlink" title="删除设备"></a>删除设备</h2><p>我们前面通过malloc为设备的系统驱动以及设备暴露的接口分配了内存，下面通过释放这两块内存来删除设备</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">generic_err_t</span> <span class="title function_">generic_sensor_aht20_del</span><span class="params">(<span class="type">generic_sensor_aht20_driver_interface_t</span> *pfdev)</span> &#123;</span><br><span class="line">    <span class="built_in">free</span>(pfdev-&gt;pfsystem_interface); <span class="comment">// 先释放系统驱动</span></span><br><span class="line">    pfdev-&gt;pfsystem_interface = <span class="literal">NULL</span>; <span class="comment">// 避免悬挂指针</span></span><br><span class="line">    <span class="built_in">free</span>(pfdev); <span class="comment">// 再释放暴露的接口</span></span><br><span class="line">    pfdev = <span class="literal">NULL</span>; <span class="comment">// 避免悬挂指针</span></span><br><span class="line">    <span class="keyword">return</span> GENERIC_OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="驱动编写"><a href="#驱动编写" class="headerlink" title="驱动编写"></a>驱动编写</h2><p>驱动编写中，注意每个驱动内部的API都需要一个void *类型的指针，用来调用generic_sensor_aht20_driver_interface_t的驱动接口</p>
 ]]></content>
       <categories>
         <category>Dev</category>
       </categories>
       <tags>
         <tag>Dev</tag>
-        <tag>STM32</tag>
-        <tag>ROS</tag>
       </tags>
   </entry>
   <entry>
@@ -894,7 +1018,7 @@
 </li>
 <li><p>pico板进入bootloader，然后打开zadig，勾选<code>Options</code>里的<code>List All Devices</code>；</p>
 </li>
-<li><p>为<strong>RP2 Boot(Interface 1)设备安装WinUSB驱动</strong>；</p>
+<li><p>为<strong>RP2 Boot(Interface 1)<strong>安装</strong>WinUSB驱动</strong>；</p>
 <p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224155601520.png" alt="image-20241224155601520"></p>
 </li>
 <li><p>进入CLion，为pico随便编译一个程序，在<code>./.pio/build/pico/</code>里找到<code>firmware.uf2</code>，复制进pico的MSV设备里；</p>
@@ -910,130 +1034,6 @@
       <tags>
         <tag>Dev</tag>
         <tag>Arduino</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>百度网盘不限速</title>
-    <url>/post/900d6e7c.html</url>
-    <content><![CDATA[<p><em>最近不太稳定了 20241123</em></p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
-<li>浏览器：Firefox &#x2F; Chromium</li>
-<li>脚本管理器：Tampermonkey Beta（注意：只能用Beta版本）</li>
-<li><a href="https://motrix.app/">Motrix下载器</a></li>
-</ul>
-<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="STEP-1-安装插件"><a href="#STEP-1-安装插件" class="headerlink" title="STEP 1 安装插件"></a>STEP 1 安装插件</h3><ol>
-<li>打开Tampermonkey Beta的「管理面板」</li>
-<li>进入「实用工具」选项卡</li>
-<li>复制粘贴安装地址到「从URL安装」进行安装<blockquote>
-<p>安装地址：<a href="http://1.94.138.197/tampermonkey/min.baidu.user.js">http://1.94.138.197/tampermonkey/min.baidu.user.js</a></p>
-</blockquote>
-</li>
-</ol>
-<h3 id="STEP-2-使用"><a href="#STEP-2-使用" class="headerlink" title="STEP 2 使用"></a>STEP 2 使用</h3><ol>
-<li>脚本会在网盘根目录自动创建一个文件夹并设置为永久分享，把需要下载的资源转移到这个文件夹里操作。</li>
-<li>注意Motrix必须提前在后台打开，否则无法正常拉起。</li>
-</ol>
-<p><img src="C:/Users/MDLZ/AppData/Roaming/Typora/typora-user-images/image-20241112173125588.png" alt="image-20241112173125588"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241112173455348.png" alt="image-20241112173455348"></p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>这个方法目前来看应该是最稳定的，速度可以基本跑满，作者规则更新很频繁。相当于免费，不过对于特大文件（比如&gt;30G的文件，好像还没办法下载）</p>
-<ol>
-<li><p>解析下载时根据每个文件的大小扣减解析点数，不足1G的文件消耗1点，1G到2G的文件需要消耗2点，2G至3G的文件消耗3点，以此类推。</p>
-</li>
-<li><p>获取解析点数的方式目前有「签到」和「视频点赞」两种，点赞列表中的每个视频只有第一次点赞会增加点数，取消点赞则扣除相应点数。</p>
-</li>
-</ol>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>插件主页链接：<a href="https://1.94.138.197/bangumi">hd2a</a></p>
-]]></content>
-      <categories>
-        <category>Tools</category>
-      </categories>
-      <tags>
-        <tag>Tools</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>舵机多功能测试程序说明</title>
-    <url>/post/cee333e2.html</url>
-    <content><![CDATA[<p><strong>写在前面：基地一直都有对舵机快捷测试的需求，但是每次都得改源码，很麻烦，也不能实现舵机的精准角度控制，最近忙完期中考试，抽时间写了这个程序，也算是对学到的东西的一点小小的应用吧</strong></p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本程序运行在大疆开发板C型，基于STM32 HAL平台开发，具有极其优良的可移植性，可以快速迁移至其他MCU，本程序依托串口与上位机通信，使用时接串口线和电池即可</p>
-<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404301832725.png" alt="image-20240430183243677"></p>
-<p>对主菜单的解释，每个指令串口都会输出对应的注解，<strong>注意输入任何指令都需要以回车结尾！</strong></p>
-<table>
-<thead>
-<tr>
-<th>功能</th>
-<th>解释</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Plain Servo Test</td>
-<td>朴素舵机测试（控制舵机转到特定角度）</td>
-</tr>
-<tr>
-<td>Interval Servo Test</td>
-<td>区间舵机测试（控制舵机在特定区间转动）</td>
-</tr>
-<tr>
-<td>Quick Servo Test</td>
-<td>快速舵机测试（快速测试舵机好坏）</td>
-</tr>
-<tr>
-<td>Use Multi Channels</td>
-<td>使用多个PWM通道，可以一次测试多个舵机</td>
-</tr>
-<tr>
-<td>Direct PWM Ctrl (20240709更新)</td>
-<td>直接输入PWM Compare值控制舵机</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>嵌入式驱动接口在C语言里的实现</title>
-    <url>/post/cdb42980.html</url>
-    <content><![CDATA[<h2 id="为什么要实现接口"><a href="#为什么要实现接口" class="headerlink" title="为什么要实现接口"></a>为什么要实现接口</h2><p>接口，可以是硬件与硬件之间连接的桥梁，可以是软件与软件之间沟通的窗户，也可以是硬件与软件之间通信的枢纽。其中硬件与硬件之间的桥梁，比如I2C、UART、CANFD、等等，软件与软件之间沟通的窗户，比如操作系统提供的各种API、等等。我实现的这套“接口”，连接了硬件与软件，它可以实现软硬件的完全解耦合，引入了<strong>平台无关性</strong>，提供了尽可能简化的逻辑，这有点类似于开汽车，一个人一旦学会了开汽车，那开什么牌子的汽车都基本是一个道理，实现了一套驱动，一套接口，对于不同系统、硬件平台的支持，这无疑会大大提高代码的易用性、复用性，大大减少重复的造轮子。</p>
-<h2 id="我所实现的接口"><a href="#我所实现的接口" class="headerlink" title="我所实现的接口"></a>我所实现的接口</h2><ul>
-<li>首先，需要一个结构体来存放系统接口，不妨叫system_interface_t，它用来存放系统的函数实现，是我们将驱动对接到不同平台的关键</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">generic_err_t</span> (*send)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*receive)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*delay_ms)(<span class="type">uint32_t</span> nms);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*delay_us)(<span class="type">uint32_t</span> nus);</span><br><span class="line">&#125; <span class="type">system_interface_t</span>;</span><br></pre></td></tr></table></figure>
-
-<p>推荐将上述代码放在一个.h文件里，这样不同的驱动只需要这一套接口即可</p>
-<ul>
-<li>接下来，需要一个结构体来存放system_interface_t（这样做的目的是实现不同驱动可以复用同一套接口），以及驱动内部实现的各种函数，比如对于aht20温度计而言，则除了对接系统的system_interface_t结构体，还应存放用于读取温度的函数</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">float</span> temperature;</span><br><span class="line">    <span class="type">float</span> humidity;</span><br><span class="line"></span><br><span class="line">    <span class="type">system_interface_t</span> *pfsystem_interface;</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*pfinit)(<span class="type">void</span> *pfdev);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*pfmeasure)(<span class="type">void</span> *pfdev);</span><br><span class="line">&#125; <span class="type">generic_sensor_aht20_driver_interface_t</span>;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>然后可以构建一个whoami函数，用于对底层驱动的对接写入，以及对设备调用函数的暴露</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">generic_err_t</span> <span class="title function_">generic_sensor_aht20_whoami</span><span class="params">(<span class="type">generic_sensor_aht20_driver_interface_t</span> *pfdev,</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*generic_send_func)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len),</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*generic_receive_func)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len),</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*delay_ms_func)(<span class="type">uint32_t</span> nms),</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*delay_us_func)(<span class="type">uint32_t</span> nus))</span> &#123;</span><br><span class="line">    pfdev-&gt;pfsystem_interface = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">system_interface_t</span>));</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;send = generic_send_func;</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;receive = generic_receive_func;</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;delay_ms = delay_ms_func;</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;delay_us = delay_us_func;</span><br><span class="line">    pfdev-&gt;pfinit = generic_sensor_aht20_init;</span><br><span class="line">    pfdev-&gt;pfmeasure = generic_sensor_aht20_measure;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> GENERIC_OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>注意这里要先给generic_sensor_aht20_driver_interface_t下的system_interface_t申请一块内存，否则直接调用pfdev-&gt;pfsystem_interface会指向非法内存，造成段错误</p>
-<h2 id="关于调用"><a href="#关于调用" class="headerlink" title="关于调用"></a>关于调用</h2><p>可以在初始化的时候进行驱动程序的注册，不要忘记申请内存</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">generic_sensor_aht20_driver_interface_t</span> *aht20_device = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">generic_sensor_aht20_driver_interface_t</span>));</span><br></pre></td></tr></table></figure>
-
-<p>然后调用whoami函数，对接系统底层到驱动层</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">generic_sensor_aht20_whoami(aht20_device,</span><br><span class="line">                          i2c_master_send,</span><br><span class="line">                          i2c_master_receive,</span><br><span class="line">                          HAL_Delay,</span><br><span class="line">                          <span class="literal">NULL</span>);</span><br></pre></td></tr></table></figure>
-
-<p>接着，便可以通过下面这种方式调用驱动暴露出来的API</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">aht20_device-&gt;pfinit(aht20_device); <span class="comment">// 如pfinit(void *pfdev)</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="删除设备"><a href="#删除设备" class="headerlink" title="删除设备"></a>删除设备</h2><p>我们前面通过malloc为设备的系统驱动以及设备暴露的接口分配了内存，下面通过释放这两块内存来删除设备</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">generic_err_t</span> <span class="title function_">generic_sensor_aht20_del</span><span class="params">(<span class="type">generic_sensor_aht20_driver_interface_t</span> *pfdev)</span> &#123;</span><br><span class="line">    <span class="built_in">free</span>(pfdev-&gt;pfsystem_interface); <span class="comment">// 先释放系统驱动</span></span><br><span class="line">    pfdev-&gt;pfsystem_interface = <span class="literal">NULL</span>; <span class="comment">// 避免悬挂指针</span></span><br><span class="line">    <span class="built_in">free</span>(pfdev); <span class="comment">// 再释放暴露的接口</span></span><br><span class="line">    pfdev = <span class="literal">NULL</span>; <span class="comment">// 避免悬挂指针</span></span><br><span class="line">    <span class="keyword">return</span> GENERIC_OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="驱动编写"><a href="#驱动编写" class="headerlink" title="驱动编写"></a>驱动编写</h2><p>驱动编写中，注意每个驱动内部的API都需要一个void *类型的指针，用来调用generic_sensor_aht20_driver_interface_t的驱动接口</p>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>Dev</tag>
       </tags>
   </entry>
 </search>
