@@ -22,6 +22,19 @@
       </tags>
   </entry>
   <entry>
+    <title>KiCad导出Gerber图形文件</title>
+    <url>/post/ef2c5f04.html</url>
+    <content><![CDATA[<h3 id="KiCad导出Gerber图形文件"><a href="#KiCad导出Gerber图形文件" class="headerlink" title="KiCad导出Gerber图形文件"></a>KiCad导出Gerber图形文件</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png" alt="image-20240527171958427"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271720173.png" alt="image-20240527172047054"></p>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>PCB</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>IDM脚本和谐破解注册</title>
     <url>/post/5983f199.html</url>
     <content><![CDATA[<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>一、在官网下载安装IDM</p>
@@ -48,6 +61,24 @@
       </categories>
       <tags>
         <tag>Tools</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Jetbrains系IDE使用小技巧</title>
+    <url>/post/af86e289.html</url>
+    <content><![CDATA[<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><ul>
+<li>One Dark</li>
+</ul>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><ul>
+<li>Chinese (Simplified) Language Pack &#x2F; 中文语言包</li>
+<li>CodeGlance Pro &#x2F; 侧栏代码缩略</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>Dev</tag>
       </tags>
   </entry>
   <entry>
@@ -96,16 +127,110 @@
       </tags>
   </entry>
   <entry>
-    <title>KiCad导出Gerber图形文件</title>
-    <url>/post/ef2c5f04.html</url>
-    <content><![CDATA[<h3 id="KiCad导出Gerber图形文件"><a href="#KiCad导出Gerber图形文件" class="headerlink" title="KiCad导出Gerber图形文件"></a>KiCad导出Gerber图形文件</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png" alt="image-20240527171958427"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271720173.png" alt="image-20240527172047054"></p>
+    <title>在STM32里使用rosserial</title>
+    <url>/post/f3ad7b3e.html</url>
+    <content><![CDATA[<blockquote>
+<p>我使用的是Ubuntu 20.04 ROS Noetic搭配STM32F407开发板，不同STM32芯片之间使用起来差异不大</p>
+</blockquote>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>Ubuntu安装软件包</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install ros-noetic-rosserial ros-noetic-rosserial-arduino</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>（已经配置好的库）<a href="https://github.com/MDLZCOOL/rosserial_stm32">MDLZCOOL&#x2F;rosserial_stm32</a></li>
+</ul>
+<h2 id="开始配置"><a href="#开始配置" class="headerlink" title="开始配置"></a>开始配置</h2><ol>
+<li>新建STM32工程，配置RCC等步骤省略。</li>
+<li>打开串口，配置中断和DMA，波特率推荐115200。具体配置见下图</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129190705711.png" alt="image-20241129190705711"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129190741215.png" alt="image-20241129190741215"></p>
+<ol start="3">
+<li><p>生成代码，将<code>rosserial_stm32_lib</code>复制到<code>Core/Inc</code>，并添加进工程里。</p>
+</li>
+<li><p>在<code>Core/Src</code>添加一个<code>mainpp.cpp</code>，添加以下代码</p>
+</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ros.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;std_msgs/String.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;mainpp.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;main.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">messageCallback</span><span class="params">(<span class="type">const</span> std_msgs::String &amp;msg)</span> &#123;</span><br><span class="line">    <span class="comment">// Callback</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ros::NodeHandle nh;</span><br><span class="line">ros::Subscriber&lt;std_msgs::String&gt; <span class="title function_">sub</span><span class="params">(<span class="string">&quot;/stm32_ros_bridge&quot;</span>, &amp;messageCallback)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">HAL_UART_TxCpltCallback</span><span class="params">(UART_HandleTypeDef *huart)</span> &#123;</span><br><span class="line">    nh.getHardware()-&gt;flush();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">HAL_UART_RxCpltCallback</span><span class="params">(UART_HandleTypeDef *huart)</span> &#123;</span><br><span class="line">    nh.getHardware()-&gt;reset_rbuf();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    nh.initNode();</span><br><span class="line">    nh.subscribe(sub);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    nh.spinOnce();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>在<code>Core/Inc</code>添加<code>mainpp.h</code>，添加以下代码</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> MAINPP_H_</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAINPP_H_</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> __cplusplus</span></span><br><span class="line"><span class="keyword">extern</span> <span class="string">&quot;C&quot;</span> &#123;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> __cplusplus</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span> <span class="comment">/* MAINPP_H_ */</span></span></span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>修改<code>main.c</code></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span>&#123;</span><br><span class="line">...</span><br><span class="line">  <span class="comment">/* USER CODE BEGIN 2 */</span></span><br><span class="line">  setup();</span><br><span class="line">  <span class="comment">/* USER CODE END 2 */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Infinite loop */</span></span><br><span class="line">  <span class="comment">/* USER CODE BEGIN WHILE */</span></span><br><span class="line">  <span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">/* USER CODE END WHILE */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* USER CODE BEGIN 3 */</span></span><br><span class="line">    loop();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">/* USER CODE END 3 */</span></span><br><span class="line">...</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li><p>修改<code>STM32Hardware.h</code>，具体为：</p>
+<ul>
+<li>定义自己的设备头（如果预处理部分没有你的设备，请自己加上）</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129193813695.png" alt="image-20241129193813695"></p>
+<ul>
+<li>将所有的huart句柄改为你自己的，比如在<code>STM32Hardware.h</code>里默认handler名字叫<code>huart1</code></li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129194059681.png" alt="image-20241129194059681"></p>
+<ol start="7">
+<li>至此STM32就配好了</li>
+<li>用串口工具连接STM32和电脑USB_HOST，使用以下命令查看USB文件位置（Linux里万物皆为文件）</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ls</span> /dev/ttyUSB*</span><br><span class="line">或者</span><br><span class="line">dmesg | grep <span class="built_in">tty</span></span><br></pre></td></tr></table></figure>
+
+<p>比如这里我的USB位置就是<code>/dev/ttyUSB0</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129195247309.png" alt="image-20241129195247309"></p>
+<ol start="9">
+<li>执行下面命令使ROS连接上STM32，别忘了先roscore</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rosrun rosserial_python serial_node.py _baud:=115200 _port:=/dev/ttyUSB0</span><br></pre></td></tr></table></figure>
+
+<p>不出所料的话，现在已经成功连接上设备了</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129195651213.png" alt="image-20241129195651213"></p>
+<h2 id="STM32执行ROS发来的指令"><a href="#STM32执行ROS发来的指令" class="headerlink" title="STM32执行ROS发来的指令"></a>STM32执行ROS发来的指令</h2><ol>
+<li>在<code>mainpp.cpp</code>实现下面测试代码：</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">messageCallback</span><span class="params">(<span class="type">const</span> std_msgs::String &amp;msg)</span> &#123;</span><br><span class="line">    SEGGER_RTT_WriteString(<span class="number">0</span>, <span class="string">&quot;\r\nmessageCallback occurred!\r\nYour message is &quot;</span>);</span><br><span class="line">    SEGGER_RTT_WriteString(<span class="number">0</span>, msg.data);</span><br><span class="line">    SEGGER_RTT_WriteString(<span class="number">0</span>, <span class="string">&quot;\r\n&quot;</span>);</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">strcmp</span>(<span class="string">&quot;servo_1&quot;</span>, msg.data) == <span class="number">0</span>) &#123;</span><br><span class="line">        SEGGER_RTT_WriteString(<span class="number">0</span>, <span class="string">&quot;Action &#x27;servo_1&#x27; begin!\r\n&quot;</span>);</span><br><span class="line">        __HAL_TIM_SET_COMPARE(&amp;htim1, TIM_CHANNEL_1, <span class="number">1500</span>);</span><br><span class="line">        SEGGER_RTT_WriteString(<span class="number">0</span>, <span class="string">&quot;Action &#x27;servo_1&#x27; complete!\r\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>写入固件，连接电脑测试</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129200940086.png" alt="image-20241129200940086"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129201020932.png" alt="image-20241129201020932"></p>
+<p>可以看到，回调函数正常触发，至此实现了ROS对STM32 publish 消息，并成功接收。</p>
+<h2 id="STM32向ROS发送话题"><a href="#STM32向ROS发送话题" class="headerlink" title="STM32向ROS发送话题"></a>STM32向ROS发送话题</h2><ol>
+<li>在<code>mainpp.cpp</code>实现下面测试代码：</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ros.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;std_msgs/String.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;mainpp.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;main.h&quot;</span></span></span><br><span class="line"></span><br><span class="line">std_msgs::String str_msg;</span><br><span class="line">ros::NodeHandle nh;</span><br><span class="line">ros::Publisher <span class="title function_">pub</span><span class="params">(<span class="string">&quot;stm32_ros_bridge_pub&quot;</span>, &amp;str_msg)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">HAL_UART_TxCpltCallback</span><span class="params">(UART_HandleTypeDef *huart)</span> &#123;</span><br><span class="line">    nh.getHardware()-&gt;flush();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">HAL_UART_RxCpltCallback</span><span class="params">(UART_HandleTypeDef *huart)</span> &#123;</span><br><span class="line">    nh.getHardware()-&gt;reset_rbuf();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    nh.initNode();</span><br><span class="line">    str_msg.data = <span class="string">&quot;Hello, ROS!&quot;</span>;</span><br><span class="line">    nh.advertise(pub);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    pub.publish(&amp;str_msg);</span><br><span class="line">    nh.spinOnce();</span><br><span class="line">    HAL_Delay(<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129203923631.png" alt="image-20241129203923631"></p>
+<blockquote>
+<p>注意：这里有一个问题，我们用的波特率是115200，发送数据的频率是有限制的，如果超过这个上限，ROS拿到的数据就会丢包，没法通过完整性校验，所以这里在loop()里写了一个delay，但是这种做法不是通常推荐的，<strong>更加一般的做法是把publish写在某个定时器里，这样就不会占用CPU时间去等待。</strong></p>
+</blockquote>
+<p>贴一张图，发送频率不能太高</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129204312643.png" alt="image-20241129204312643"></p>
+<p>至此实现了STM32与ROS的<strong>双向通信</strong>，后面可以拿来做一些好玩的东西了。</p>
+<hr>
+<p>测试STM32F103C8Tx单片机，其FLASH为64K，无法装下程序，故推荐FLASH大小为80K左右。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241130185002474.png" alt="image-20241130185002474"></p>
+<hr>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://wiki.ros.org/rosserial/Overview/">rosserial&#x2F;Overview</a></li>
+</ol>
+<hr>
 ]]></content>
       <categories>
         <category>Dev</category>
       </categories>
       <tags>
-        <tag>PCB</tag>
+        <tag>Dev</tag>
+        <tag>STM32</tag>
+        <tag>ROS</tag>
       </tags>
   </entry>
   <entry>
@@ -190,21 +315,194 @@
       </tags>
   </entry>
   <entry>
-    <title>Jetbrains系IDE使用小技巧</title>
-    <url>/post/af86e289.html</url>
-    <content><![CDATA[<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><ul>
-<li>One Dark</li>
+    <title>常用工具性网站&amp;工具</title>
+    <url>/post/5788685f.html</url>
+    <content><![CDATA[<h2 id="工具网站"><a href="#工具网站" class="headerlink" title="工具网站"></a>工具网站</h2><p>🎁此处列出的网站均来源于互联网，请注意不要在这些网站上输入任何个人敏感信息（如有可能）</p>
+<p>🌎某些网站可能需要国际网络</p>
+<p>🌈欢迎贡献</p>
+<ul>
+<li>添加站点</li>
+<li>反馈站点失效</li>
+<li>更多(todo)</li>
 </ul>
-<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><ul>
-<li>Chinese (Simplified) Language Pack &#x2F; 中文语言包</li>
-<li>CodeGlance Pro &#x2F; 侧栏代码缩略</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>网站</th>
+<th>添加时间</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><a href="https://www.runoob.com/">https://www.runoob.com/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>菜鸟教程</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="https://serial.keysking.com/">https://serial.keysking.com/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>网页版串口助手</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>阿里巴巴矢量图标库</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="https://book.openmv.cc/">https://book.openmv.cc/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>OpenMV中文入门教程</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="https://www.3dcontentcentral.com/">https://www.3dcontentcentral.com/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>3D模型下载站</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="https://www2.futureware.at/KiCad/">https://www2.futureware.at/KiCad/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>Altium Designe转KiCad</td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="https://www.nerdfonts.com/font-downloads">https://www.nerdfonts.com/font-downloads</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>艺术字体下载</td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="https://fontawesome.p2hp.com/icons-ui.html">https://fontawesome.p2hp.com/icons-ui.html</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>The Icons矢量图标库</td>
+</tr>
+<tr>
+<td>9</td>
+<td><a href="http://network-science.de/ascii/">http://network-science.de/ascii/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>终端立体字生成</td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="https://tableconvert.com/zh-cn/latex-to-latex">https://tableconvert.com/zh-cn/latex-to-latex</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>Latex表格在线编辑和转Excel</td>
+</tr>
+<tr>
+<td>11</td>
+<td><a href="https://www.niupizhiyuan.com/download.html">https://www.niupizhiyuan.com/download.html</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>CSDN文章和文件下载</td>
+</tr>
+<tr>
+<td>12</td>
+<td><a href="http://1.94.138.197/bangumi">http://1.94.138.197/bangumi</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>百度云不限速，配合油猴</td>
+</tr>
+<tr>
+<td>13</td>
+<td><a href="https://limestart.cn/">https://limestart.cn</a></td>
+<td>2024&#x2F;7&#x2F;22</td>
+<td>青柠起始页，优雅的浏览器主页</td>
+</tr>
+<tr>
+<td>14</td>
+<td><a href="https://skillicons.dev/">https://skillicons.dev/</a></td>
+<td>2024&#x2F;7&#x2F;24</td>
+<td>Skill Icons，技术栈图标</td>
+</tr>
+<tr>
+<td>15</td>
+<td><a href="https://bing.img.run/api.html">https://bing.img.run/api.html</a></td>
+<td>2024&#x2F;7&#x2F;25</td>
+<td>获取每日Bing壁纸API，有多种选择</td>
+</tr>
+<tr>
+<td>16</td>
+<td><a href="https://ai.97866.com/">https://ai.97866.com/</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>AI 工具合集</td>
+</tr>
+<tr>
+<td>17</td>
+<td><a href="https://tools.miku.ac/">https://tools.miku.ac/</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>轻量的工具集合</td>
+</tr>
+<tr>
+<td>18</td>
+<td><a href="https://star-history.com/">https://star-history.com/</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>Github Star历史图</td>
+</tr>
+<tr>
+<td>19</td>
+<td><a href="https://github.com/2016rshah/githubchart-api">https://github.com/2016rshah/githubchart-api</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>Github Commit频率图API</td>
+</tr>
+<tr>
+<td>20</td>
+<td><a href="https://shields.io/">https://shields.io/</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>在线统计工具，支持多种徽章样式</td>
+</tr>
+<tr>
+<td>21</td>
+<td><a href="https://carbon.now.sh/">https://carbon.now.sh</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>代码图片工具</td>
+</tr>
+<tr>
+<td>22</td>
+<td><a href="https://ray.so/">https://ray.so</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>代码图片工具</td>
+</tr>
+<tr>
+<td>23</td>
+<td><a href="https://codeimg.io/">https://codeimg.io</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>代码图片工具</td>
+</tr>
+<tr>
+<td>24</td>
+<td><a href="http://www.autolabor.com.cn/book/ROSTutorials/index.html">http://www.autolabor.com.cn/book/ROSTutorials/index.html</a></td>
+<td>2024&#x2F;9&#x2F;2</td>
+<td>ROS中文教程</td>
+</tr>
+<tr>
+<td>25</td>
+<td><a href="https://unsplash.com/wallpapers/screen/4k">https://unsplash.com/wallpapers/screen/4k</a></td>
+<td>2024&#x2F;9&#x2F;3</td>
+<td>免费4K壁纸</td>
+</tr>
+<tr>
+<td>26</td>
+<td><a href="https://kicanvas.org/">https://kicanvas.org/</a></td>
+<td>2024&#x2F;9&#x2F;9</td>
+<td>KiCad原理图或PCB在线查看</td>
+</tr>
+<tr>
+<td>27</td>
+<td><a href="https://www.snapeda.com/">https://www.snapeda.com/</a></td>
+<td>2025&#x2F;1&#x2F;29</td>
+<td>在线器件封装库，很全</td>
+</tr>
+</tbody></table>
 ]]></content>
       <categories>
-        <category>Dev</category>
+        <category>Tools</category>
       </categories>
       <tags>
-        <tag>Dev</tag>
+        <tag>Tools</tag>
       </tags>
   </entry>
   <entry>
@@ -465,113 +763,6 @@
       </tags>
   </entry>
   <entry>
-    <title>在STM32里使用rosserial</title>
-    <url>/post/f3ad7b3e.html</url>
-    <content><![CDATA[<blockquote>
-<p>我使用的是Ubuntu 20.04 ROS Noetic搭配STM32F407开发板，不同STM32芯片之间使用起来差异不大</p>
-</blockquote>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
-<li>Ubuntu安装软件包</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install ros-noetic-rosserial ros-noetic-rosserial-arduino</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>（已经配置好的库）<a href="https://github.com/MDLZCOOL/rosserial_stm32">MDLZCOOL&#x2F;rosserial_stm32</a></li>
-</ul>
-<h2 id="开始配置"><a href="#开始配置" class="headerlink" title="开始配置"></a>开始配置</h2><ol>
-<li>新建STM32工程，配置RCC等步骤省略。</li>
-<li>打开串口，配置中断和DMA，波特率推荐115200。具体配置见下图</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129190705711.png" alt="image-20241129190705711"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129190741215.png" alt="image-20241129190741215"></p>
-<ol start="3">
-<li><p>生成代码，将<code>rosserial_stm32_lib</code>复制到<code>Core/Inc</code>，并添加进工程里。</p>
-</li>
-<li><p>在<code>Core/Src</code>添加一个<code>mainpp.cpp</code>，添加以下代码</p>
-</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ros.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;std_msgs/String.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;mainpp.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;main.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">messageCallback</span><span class="params">(<span class="type">const</span> std_msgs::String &amp;msg)</span> &#123;</span><br><span class="line">    <span class="comment">// Callback</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ros::NodeHandle nh;</span><br><span class="line">ros::Subscriber&lt;std_msgs::String&gt; <span class="title function_">sub</span><span class="params">(<span class="string">&quot;/stm32_ros_bridge&quot;</span>, &amp;messageCallback)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">HAL_UART_TxCpltCallback</span><span class="params">(UART_HandleTypeDef *huart)</span> &#123;</span><br><span class="line">    nh.getHardware()-&gt;flush();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">HAL_UART_RxCpltCallback</span><span class="params">(UART_HandleTypeDef *huart)</span> &#123;</span><br><span class="line">    nh.getHardware()-&gt;reset_rbuf();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    nh.initNode();</span><br><span class="line">    nh.subscribe(sub);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    nh.spinOnce();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol start="6">
-<li>在<code>Core/Inc</code>添加<code>mainpp.h</code>，添加以下代码</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> MAINPP_H_</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAINPP_H_</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> __cplusplus</span></span><br><span class="line"><span class="keyword">extern</span> <span class="string">&quot;C&quot;</span> &#123;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> __cplusplus</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span> <span class="comment">/* MAINPP_H_ */</span></span></span><br></pre></td></tr></table></figure>
-
-<ol start="5">
-<li>修改<code>main.c</code></li>
-</ol>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span>&#123;</span><br><span class="line">...</span><br><span class="line">  <span class="comment">/* USER CODE BEGIN 2 */</span></span><br><span class="line">  setup();</span><br><span class="line">  <span class="comment">/* USER CODE END 2 */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Infinite loop */</span></span><br><span class="line">  <span class="comment">/* USER CODE BEGIN WHILE */</span></span><br><span class="line">  <span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">/* USER CODE END WHILE */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* USER CODE BEGIN 3 */</span></span><br><span class="line">    loop();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">/* USER CODE END 3 */</span></span><br><span class="line">...</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ol start="6">
-<li><p>修改<code>STM32Hardware.h</code>，具体为：</p>
-<ul>
-<li>定义自己的设备头（如果预处理部分没有你的设备，请自己加上）</li>
-</ul>
-</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129193813695.png" alt="image-20241129193813695"></p>
-<ul>
-<li>将所有的huart句柄改为你自己的，比如在<code>STM32Hardware.h</code>里默认handler名字叫<code>huart1</code></li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129194059681.png" alt="image-20241129194059681"></p>
-<ol start="7">
-<li>至此STM32就配好了</li>
-<li>用串口工具连接STM32和电脑USB_HOST，使用以下命令查看USB文件位置（Linux里万物皆为文件）</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ls</span> /dev/ttyUSB*</span><br><span class="line">或者</span><br><span class="line">dmesg | grep <span class="built_in">tty</span></span><br></pre></td></tr></table></figure>
-
-<p>比如这里我的USB位置就是<code>/dev/ttyUSB0</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129195247309.png" alt="image-20241129195247309"></p>
-<ol start="9">
-<li>执行下面命令使ROS连接上STM32，别忘了先roscore</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rosrun rosserial_python serial_node.py _baud:=115200 _port:=/dev/ttyUSB0</span><br></pre></td></tr></table></figure>
-
-<p>不出所料的话，现在已经成功连接上设备了</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129195651213.png" alt="image-20241129195651213"></p>
-<h2 id="STM32执行ROS发来的指令"><a href="#STM32执行ROS发来的指令" class="headerlink" title="STM32执行ROS发来的指令"></a>STM32执行ROS发来的指令</h2><ol>
-<li>在<code>mainpp.cpp</code>实现下面测试代码：</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">messageCallback</span><span class="params">(<span class="type">const</span> std_msgs::String &amp;msg)</span> &#123;</span><br><span class="line">    SEGGER_RTT_WriteString(<span class="number">0</span>, <span class="string">&quot;\r\nmessageCallback occurred!\r\nYour message is &quot;</span>);</span><br><span class="line">    SEGGER_RTT_WriteString(<span class="number">0</span>, msg.data);</span><br><span class="line">    SEGGER_RTT_WriteString(<span class="number">0</span>, <span class="string">&quot;\r\n&quot;</span>);</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">strcmp</span>(<span class="string">&quot;servo_1&quot;</span>, msg.data) == <span class="number">0</span>) &#123;</span><br><span class="line">        SEGGER_RTT_WriteString(<span class="number">0</span>, <span class="string">&quot;Action &#x27;servo_1&#x27; begin!\r\n&quot;</span>);</span><br><span class="line">        __HAL_TIM_SET_COMPARE(&amp;htim1, TIM_CHANNEL_1, <span class="number">1500</span>);</span><br><span class="line">        SEGGER_RTT_WriteString(<span class="number">0</span>, <span class="string">&quot;Action &#x27;servo_1&#x27; complete!\r\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>写入固件，连接电脑测试</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129200940086.png" alt="image-20241129200940086"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129201020932.png" alt="image-20241129201020932"></p>
-<p>可以看到，回调函数正常触发，至此实现了ROS对STM32 publish 消息，并成功接收。</p>
-<h2 id="STM32向ROS发送话题"><a href="#STM32向ROS发送话题" class="headerlink" title="STM32向ROS发送话题"></a>STM32向ROS发送话题</h2><ol>
-<li>在<code>mainpp.cpp</code>实现下面测试代码：</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ros.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;std_msgs/String.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;mainpp.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;main.h&quot;</span></span></span><br><span class="line"></span><br><span class="line">std_msgs::String str_msg;</span><br><span class="line">ros::NodeHandle nh;</span><br><span class="line">ros::Publisher <span class="title function_">pub</span><span class="params">(<span class="string">&quot;stm32_ros_bridge_pub&quot;</span>, &amp;str_msg)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">HAL_UART_TxCpltCallback</span><span class="params">(UART_HandleTypeDef *huart)</span> &#123;</span><br><span class="line">    nh.getHardware()-&gt;flush();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">HAL_UART_RxCpltCallback</span><span class="params">(UART_HandleTypeDef *huart)</span> &#123;</span><br><span class="line">    nh.getHardware()-&gt;reset_rbuf();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    nh.initNode();</span><br><span class="line">    str_msg.data = <span class="string">&quot;Hello, ROS!&quot;</span>;</span><br><span class="line">    nh.advertise(pub);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    pub.publish(&amp;str_msg);</span><br><span class="line">    nh.spinOnce();</span><br><span class="line">    HAL_Delay(<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129203923631.png" alt="image-20241129203923631"></p>
-<blockquote>
-<p>注意：这里有一个问题，我们用的波特率是115200，发送数据的频率是有限制的，如果超过这个上限，ROS拿到的数据就会丢包，没法通过完整性校验，所以这里在loop()里写了一个delay，但是这种做法不是通常推荐的，<strong>更加一般的做法是把publish写在某个定时器里，这样就不会占用CPU时间去等待。</strong></p>
-</blockquote>
-<p>贴一张图，发送频率不能太高</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129204312643.png" alt="image-20241129204312643"></p>
-<p>至此实现了STM32与ROS的<strong>双向通信</strong>，后面可以拿来做一些好玩的东西了。</p>
-<hr>
-<p>测试STM32F103C8Tx单片机，其FLASH为64K，无法装下程序，故推荐FLASH大小为80K左右。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241130185002474.png" alt="image-20241130185002474"></p>
-<hr>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://wiki.ros.org/rosserial/Overview/">rosserial&#x2F;Overview</a></li>
-</ol>
-<hr>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>Dev</tag>
-        <tag>STM32</tag>
-        <tag>ROS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>用CLion优雅地调试和开发STM32(CubeMX)</title>
     <url>/post/63adfc20.html</url>
     <content><![CDATA[<h2 id="Why-CLion"><a href="#Why-CLion" class="headerlink" title="Why CLion?"></a>Why CLion?</h2><p>Keil操作简单，容易上手，而且可以很方便地进行调试，不过其古老的界面，不符合人类直觉的操作，不符合现代的编程习惯，必然会被逐渐淘汰。</p>
@@ -660,6 +851,45 @@
       </tags>
   </entry>
   <entry>
+    <title>百度网盘不限速</title>
+    <url>/post/900d6e7c.html</url>
+    <content><![CDATA[<p><em>最近不太稳定了 20241123</em></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>浏览器：Firefox &#x2F; Chromium</li>
+<li>脚本管理器：Tampermonkey Beta（注意：只能用Beta版本）</li>
+<li><a href="https://motrix.app/">Motrix下载器</a></li>
+</ul>
+<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="STEP-1-安装插件"><a href="#STEP-1-安装插件" class="headerlink" title="STEP 1 安装插件"></a>STEP 1 安装插件</h3><ol>
+<li>打开Tampermonkey Beta的「管理面板」</li>
+<li>进入「实用工具」选项卡</li>
+<li>复制粘贴安装地址到「从URL安装」进行安装<blockquote>
+<p>安装地址：<a href="http://1.94.138.197/tampermonkey/min.baidu.user.js">http://1.94.138.197/tampermonkey/min.baidu.user.js</a></p>
+</blockquote>
+</li>
+</ol>
+<h3 id="STEP-2-使用"><a href="#STEP-2-使用" class="headerlink" title="STEP 2 使用"></a>STEP 2 使用</h3><ol>
+<li>脚本会在网盘根目录自动创建一个文件夹并设置为永久分享，把需要下载的资源转移到这个文件夹里操作。</li>
+<li>注意Motrix必须提前在后台打开，否则无法正常拉起。</li>
+</ol>
+<p><img src="C:/Users/MDLZ/AppData/Roaming/Typora/typora-user-images/image-20241112173125588.png" alt="image-20241112173125588"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241112173455348.png" alt="image-20241112173455348"></p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>这个方法目前来看应该是最稳定的，速度可以基本跑满，作者规则更新很频繁。相当于免费，不过对于特大文件（比如&gt;30G的文件，好像还没办法下载）</p>
+<ol>
+<li><p>解析下载时根据每个文件的大小扣减解析点数，不足1G的文件消耗1点，1G到2G的文件需要消耗2点，2G至3G的文件消耗3点，以此类推。</p>
+</li>
+<li><p>获取解析点数的方式目前有「签到」和「视频点赞」两种，点赞列表中的每个视频只有第一次点赞会增加点数，取消点赞则扣除相应点数。</p>
+</li>
+</ol>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>插件主页链接：<a href="https://1.94.138.197/bangumi">hd2a</a></p>
+]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>Tools</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>用CLion配合PlatformIO开发树莓派Pico(RP2040)</title>
     <url>/post/672d89ba.html</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
@@ -722,197 +952,6 @@
       </tags>
   </entry>
   <entry>
-    <title>常用工具性网站&amp;工具</title>
-    <url>/post/5788685f.html</url>
-    <content><![CDATA[<h2 id="工具网站"><a href="#工具网站" class="headerlink" title="工具网站"></a>工具网站</h2><p>🎁此处列出的网站均来源于互联网，请注意不要在这些网站上输入任何个人敏感信息（如有可能）</p>
-<p>🌎某些网站可能需要国际网络</p>
-<p>🌈欢迎贡献</p>
-<ul>
-<li>添加站点</li>
-<li>反馈站点失效</li>
-<li>更多(todo)</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>序号</th>
-<th>网站</th>
-<th>添加时间</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td><a href="https://www.runoob.com/">https://www.runoob.com/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>菜鸟教程</td>
-</tr>
-<tr>
-<td>2</td>
-<td><a href="https://serial.keysking.com/">https://serial.keysking.com/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>网页版串口助手</td>
-</tr>
-<tr>
-<td>3</td>
-<td><a href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>阿里巴巴矢量图标库</td>
-</tr>
-<tr>
-<td>4</td>
-<td><a href="https://book.openmv.cc/">https://book.openmv.cc/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>OpenMV中文入门教程</td>
-</tr>
-<tr>
-<td>5</td>
-<td><a href="https://www.3dcontentcentral.com/">https://www.3dcontentcentral.com/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>3D模型下载站</td>
-</tr>
-<tr>
-<td>6</td>
-<td><a href="https://www2.futureware.at/KiCad/">https://www2.futureware.at/KiCad/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>Altium Designe转KiCad</td>
-</tr>
-<tr>
-<td>7</td>
-<td><a href="https://www.nerdfonts.com/font-downloads">https://www.nerdfonts.com/font-downloads</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>艺术字体下载</td>
-</tr>
-<tr>
-<td>8</td>
-<td><a href="https://fontawesome.p2hp.com/icons-ui.html">https://fontawesome.p2hp.com/icons-ui.html</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>The Icons矢量图标库</td>
-</tr>
-<tr>
-<td>9</td>
-<td><a href="http://network-science.de/ascii/">http://network-science.de/ascii/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>终端立体字生成</td>
-</tr>
-<tr>
-<td>10</td>
-<td><a href="https://tableconvert.com/zh-cn/latex-to-latex">https://tableconvert.com/zh-cn/latex-to-latex</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>Latex表格在线编辑和转Excel</td>
-</tr>
-<tr>
-<td>11</td>
-<td><a href="https://www.niupizhiyuan.com/download.html">https://www.niupizhiyuan.com/download.html</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>CSDN文章和文件下载</td>
-</tr>
-<tr>
-<td>12</td>
-<td><a href="http://1.94.138.197/bangumi">http://1.94.138.197/bangumi</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>百度云不限速，配合油猴</td>
-</tr>
-<tr>
-<td>13</td>
-<td><a href="https://limestart.cn/">https://limestart.cn</a></td>
-<td>2024&#x2F;7&#x2F;22</td>
-<td>青柠起始页，优雅的浏览器主页</td>
-</tr>
-<tr>
-<td>14</td>
-<td><a href="https://skillicons.dev/">https://skillicons.dev/</a></td>
-<td>2024&#x2F;7&#x2F;24</td>
-<td>Skill Icons，技术栈图标</td>
-</tr>
-<tr>
-<td>15</td>
-<td><a href="https://bing.img.run/api.html">https://bing.img.run/api.html</a></td>
-<td>2024&#x2F;7&#x2F;25</td>
-<td>获取每日Bing壁纸API，有多种选择</td>
-</tr>
-<tr>
-<td>16</td>
-<td><a href="https://ai.97866.com/">https://ai.97866.com/</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>AI 工具合集</td>
-</tr>
-<tr>
-<td>17</td>
-<td><a href="https://tools.miku.ac/">https://tools.miku.ac/</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>轻量的工具集合</td>
-</tr>
-<tr>
-<td>18</td>
-<td><a href="https://star-history.com/">https://star-history.com/</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>Github Star历史图</td>
-</tr>
-<tr>
-<td>19</td>
-<td><a href="https://github.com/2016rshah/githubchart-api">https://github.com/2016rshah/githubchart-api</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>Github Commit频率图API</td>
-</tr>
-<tr>
-<td>20</td>
-<td><a href="https://shields.io/">https://shields.io/</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>在线统计工具，支持多种徽章样式</td>
-</tr>
-<tr>
-<td>21</td>
-<td><a href="https://carbon.now.sh/">https://carbon.now.sh</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>代码图片工具</td>
-</tr>
-<tr>
-<td>22</td>
-<td><a href="https://ray.so/">https://ray.so</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>代码图片工具</td>
-</tr>
-<tr>
-<td>23</td>
-<td><a href="https://codeimg.io/">https://codeimg.io</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>代码图片工具</td>
-</tr>
-<tr>
-<td>24</td>
-<td><a href="http://www.autolabor.com.cn/book/ROSTutorials/index.html">http://www.autolabor.com.cn/book/ROSTutorials/index.html</a></td>
-<td>2024&#x2F;9&#x2F;2</td>
-<td>ROS中文教程</td>
-</tr>
-<tr>
-<td>25</td>
-<td><a href="https://unsplash.com/wallpapers/screen/4k">https://unsplash.com/wallpapers/screen/4k</a></td>
-<td>2024&#x2F;9&#x2F;3</td>
-<td>免费4K壁纸</td>
-</tr>
-<tr>
-<td>26</td>
-<td><a href="https://kicanvas.org/">https://kicanvas.org/</a></td>
-<td>2024&#x2F;9&#x2F;9</td>
-<td>KiCad原理图或PCB在线查看</td>
-</tr>
-<tr>
-<td>27</td>
-<td><a href="https://www.snapeda.com/">https://www.snapeda.com/</a></td>
-<td>2025&#x2F;1&#x2F;29</td>
-<td>在线器件封装库，很全</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>Tools</category>
-      </categories>
-      <tags>
-        <tag>Tools</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>舵机多功能测试程序说明</title>
     <url>/post/cee333e2.html</url>
     <content><![CDATA[<p><strong>写在前面：基地一直都有对舵机快捷测试的需求，但是每次都得改源码，很麻烦，也不能实现舵机的精准角度控制，最近忙完期中考试，抽时间写了这个程序，也算是对学到的东西的一点小小的应用吧</strong></p>
@@ -953,45 +992,6 @@
       </categories>
       <tags>
         <tag>STM32</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>百度网盘不限速</title>
-    <url>/post/900d6e7c.html</url>
-    <content><![CDATA[<p><em>最近不太稳定了 20241123</em></p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
-<li>浏览器：Firefox &#x2F; Chromium</li>
-<li>脚本管理器：Tampermonkey Beta（注意：只能用Beta版本）</li>
-<li><a href="https://motrix.app/">Motrix下载器</a></li>
-</ul>
-<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="STEP-1-安装插件"><a href="#STEP-1-安装插件" class="headerlink" title="STEP 1 安装插件"></a>STEP 1 安装插件</h3><ol>
-<li>打开Tampermonkey Beta的「管理面板」</li>
-<li>进入「实用工具」选项卡</li>
-<li>复制粘贴安装地址到「从URL安装」进行安装<blockquote>
-<p>安装地址：<a href="http://1.94.138.197/tampermonkey/min.baidu.user.js">http://1.94.138.197/tampermonkey/min.baidu.user.js</a></p>
-</blockquote>
-</li>
-</ol>
-<h3 id="STEP-2-使用"><a href="#STEP-2-使用" class="headerlink" title="STEP 2 使用"></a>STEP 2 使用</h3><ol>
-<li>脚本会在网盘根目录自动创建一个文件夹并设置为永久分享，把需要下载的资源转移到这个文件夹里操作。</li>
-<li>注意Motrix必须提前在后台打开，否则无法正常拉起。</li>
-</ol>
-<p><img src="C:/Users/MDLZ/AppData/Roaming/Typora/typora-user-images/image-20241112173125588.png" alt="image-20241112173125588"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241112173455348.png" alt="image-20241112173455348"></p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>这个方法目前来看应该是最稳定的，速度可以基本跑满，作者规则更新很频繁。相当于免费，不过对于特大文件（比如&gt;30G的文件，好像还没办法下载）</p>
-<ol>
-<li><p>解析下载时根据每个文件的大小扣减解析点数，不足1G的文件消耗1点，1G到2G的文件需要消耗2点，2G至3G的文件消耗3点，以此类推。</p>
-</li>
-<li><p>获取解析点数的方式目前有「签到」和「视频点赞」两种，点赞列表中的每个视频只有第一次点赞会增加点数，取消点赞则扣除相应点数。</p>
-</li>
-</ol>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>插件主页链接：<a href="https://1.94.138.197/bangumi">hd2a</a></p>
-]]></content>
-      <categories>
-        <category>Tools</category>
-      </categories>
-      <tags>
-        <tag>Tools</tag>
       </tags>
   </entry>
   <entry>
