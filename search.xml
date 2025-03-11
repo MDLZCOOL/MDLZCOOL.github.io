@@ -1,6 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Jetbrains系IDE使用小技巧</title>
+    <url>/post/af86e289.html</url>
+    <content><![CDATA[<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><ul>
+<li>One Dark</li>
+</ul>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><ul>
+<li>Chinese (Simplified) Language Pack &#x2F; 中文语言包</li>
+<li>CodeGlance Pro &#x2F; 侧栏代码缩略</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>Dev</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>IDM脚本和谐破解注册</title>
+    <url>/post/5983f199.html</url>
+    <content><![CDATA[<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>一、在官网下载安装IDM</p>
+<p><a href="https://www.internetdownloadmanager.com/">Internet Download Manager</a></p>
+<p>二、在PowerShell里粘贴以下脚本</p>
+<ul>
+<li>方法1（Recommended）</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">irm https://massgrave.dev/ias | iex</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>方法2（Traditional）</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Check the instructions here on how to use it https://massgrave.dev/idm-activation-script</span></span><br><span class="line"> </span><br><span class="line"><span class="variable">$ErrorActionPreference</span> = <span class="string">&quot;Stop&quot;</span></span><br><span class="line"><span class="comment"># Enable TLSv1.2 for compatibility with older clients</span></span><br><span class="line">[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12</span><br><span class="line"> </span><br><span class="line"><span class="variable">$DownloadURL</span> = <span class="string">&#x27;https://raw.githubusercontent.com/WindowsAddict/IDM-Activation-Script/main/IAS.cmd&#x27;</span></span><br><span class="line"><span class="variable">$DownloadURL2</span> = <span class="string">&#x27;https://bitbucket.org/WindowsAddict/idm-activation-script/raw/main/IAS.cmd&#x27;</span></span><br><span class="line"> </span><br><span class="line"><span class="variable">$rand</span> = Get-Random -Maximum 99999999</span><br><span class="line"><span class="variable">$isAdmin</span> = [bool]([Security.Principal.WindowsIdentity]::GetCurrent().Groups -match <span class="string">&#x27;S-1-5-32-544&#x27;</span>)</span><br><span class="line"><span class="variable">$FilePath</span> = <span class="keyword">if</span> (<span class="variable">$isAdmin</span>) &#123; <span class="string">&quot;<span class="variable">$env</span>:SystemRoot\Temp\IAS_<span class="variable">$rand</span>.cmd&quot;</span> &#125; <span class="keyword">else</span> &#123; <span class="string">&quot;<span class="variable">$env</span>:TEMP\IAS_<span class="variable">$rand</span>.cmd&quot;</span> &#125;</span><br><span class="line"> </span><br><span class="line">try &#123;</span><br><span class="line">    <span class="variable">$response</span> = Invoke-WebRequest -Uri <span class="variable">$DownloadURL</span> -UseBasicParsing</span><br><span class="line">&#125;</span><br><span class="line">catch &#123;</span><br><span class="line">    <span class="variable">$response</span> = Invoke-WebRequest -Uri <span class="variable">$DownloadURL2</span> -UseBasicParsing</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="variable">$ScriptArgs</span> = <span class="string">&quot;<span class="variable">$args</span> &quot;</span></span><br><span class="line"><span class="variable">$prefix</span> = <span class="string">&quot;@REM <span class="variable">$rand</span> `r`n&quot;</span></span><br><span class="line"><span class="variable">$content</span> = <span class="variable">$prefix</span> + <span class="variable">$response</span></span><br><span class="line">Set-Content -Path <span class="variable">$FilePath</span> -Value <span class="variable">$content</span></span><br><span class="line"> </span><br><span class="line">Start-Process <span class="variable">$FilePath</span> <span class="variable">$ScriptArgs</span> -Wait</span><br><span class="line"> </span><br><span class="line"><span class="variable">$FilePaths</span> = @(<span class="string">&quot;<span class="variable">$env</span>:TEMP\IAS*.cmd&quot;</span>, <span class="string">&quot;<span class="variable">$env</span>:SystemRoot\Temp\IAS*.cmd&quot;</span>)</span><br><span class="line">foreach (<span class="variable">$FilePath</span> <span class="keyword">in</span> <span class="variable">$FilePaths</span>) &#123; Get-Item <span class="variable">$FilePath</span> | Remove-Item &#125;</span><br></pre></td></tr></table></figure>
+
+<p>等待一会，出现下面界面</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241002180500615.png" alt="image-20241002180500615"></p>
+<p>选择1或者2都可，出现如下界面表示成功</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241002181148701.png" alt="image-20241002181148701"></p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>可能在一段时间后会失效，重新来一遍即可</p>
+]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>Tools</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>KiCad导出Gerber图形文件</title>
+    <url>/post/ef2c5f04.html</url>
+    <content><![CDATA[<h3 id="KiCad导出Gerber图形文件"><a href="#KiCad导出Gerber图形文件" class="headerlink" title="KiCad导出Gerber图形文件"></a>KiCad导出Gerber图形文件</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png" alt="image-20240527171958427"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271720173.png" alt="image-20240527172047054"></p>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>PCB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为什么你的Github总是无法正常clone或者push</title>
+    <url>/post/2f28be0b.html</url>
+    <content><![CDATA[<h2 id="产生原因"><a href="#产生原因" class="headerlink" title="产生原因"></a>产生原因</h2><p><strong>代理服务器</strong><br>你的电脑和互联网的中介。当访问外网时（如<a href="http://google.com)/">http://google.com）</a>, 你的请求首先转发到代理服务器，然后代理服务器替你访问外网，并将结果原封不动的给你的电脑，这样你的电脑就可以看到外网的内容。</p>
+<p>网络路径如下：<br>你的电脑-&gt;代理服务器-&gt;外网<br>外网-&gt;代理服务器-&gt;你的电脑</p>
+<p>配置代理之后，可以正常访问github网页了，但是发现在本地克隆github仓库（git clone xxx）或者进行push操作时还是报网络错误（Failed to connect to server …）。</p>
+<p><strong>那是因为git clone没有走代理，所以需要设置git走代理才行</strong></p>
+<h2 id="设置代理"><a href="#设置代理" class="headerlink" title="设置代理"></a>设置代理</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:7890</span><br><span class="line">git config --global https.proxy https://127.0.0.1:7890</span><br></pre></td></tr></table></figure>
+
+<h2 id="Git查看现有配置"><a href="#Git查看现有配置" class="headerlink" title="Git查看现有配置"></a>Git查看现有配置</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global -l</span><br></pre></td></tr></table></figure>
+
+<h2 id="取消代理"><a href="#取消代理" class="headerlink" title="取消代理"></a>取消代理</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Git使用小技巧Tricks</title>
     <url>/post/4bb6437a.html</url>
     <content><![CDATA[<h2 id="经历了一次错误的commit，想要撤回"><a href="#经历了一次错误的commit，想要撤回" class="headerlink" title="经历了一次错误的commit，想要撤回"></a>经历了一次错误的commit，想要撤回</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span> <span class="comment"># 查看上次commit的完整hash字串</span></span><br><span class="line">git reset &lt;arg1&gt; &lt;<span class="built_in">hash</span>字串&gt; <span class="comment"># 撤回commit，&lt;arg1&gt;有参数--soft、--hard、--mixed可选。</span></span><br><span class="line"><span class="comment"># 注意注意：一般可以忽略&lt;arg1&gt;。</span></span><br><span class="line"><span class="comment"># 区别为</span></span><br><span class="line"><span class="comment"># --soft 文件还保存在git里，可以再reset回来</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)        (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B-C</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># --hard 文件直接被删去，慎用！！！</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)        (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># --mixed 文件未被删去，就在本地workspace里，处于未被add的状态(推荐)</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)          (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B-C</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 注：(F)指的是磁盘里此时实际的文件处于哪个版本</span></span><br></pre></td></tr></table></figure>
@@ -67,66 +146,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Jetbrains系IDE使用小技巧</title>
-    <url>/post/af86e289.html</url>
-    <content><![CDATA[<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><ul>
-<li>One Dark</li>
-</ul>
-<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><ul>
-<li>Chinese (Simplified) Language Pack &#x2F; 中文语言包</li>
-<li>CodeGlance Pro &#x2F; 侧栏代码缩略</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>Dev</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>IDM脚本和谐破解注册</title>
-    <url>/post/5983f199.html</url>
-    <content><![CDATA[<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>一、在官网下载安装IDM</p>
-<p><a href="https://www.internetdownloadmanager.com/">Internet Download Manager</a></p>
-<p>二、在PowerShell里粘贴以下脚本</p>
-<ul>
-<li>方法1（Recommended）</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">irm https://massgrave.dev/ias | iex</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>方法2（Traditional）</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Check the instructions here on how to use it https://massgrave.dev/idm-activation-script</span></span><br><span class="line"> </span><br><span class="line"><span class="variable">$ErrorActionPreference</span> = <span class="string">&quot;Stop&quot;</span></span><br><span class="line"><span class="comment"># Enable TLSv1.2 for compatibility with older clients</span></span><br><span class="line">[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12</span><br><span class="line"> </span><br><span class="line"><span class="variable">$DownloadURL</span> = <span class="string">&#x27;https://raw.githubusercontent.com/WindowsAddict/IDM-Activation-Script/main/IAS.cmd&#x27;</span></span><br><span class="line"><span class="variable">$DownloadURL2</span> = <span class="string">&#x27;https://bitbucket.org/WindowsAddict/idm-activation-script/raw/main/IAS.cmd&#x27;</span></span><br><span class="line"> </span><br><span class="line"><span class="variable">$rand</span> = Get-Random -Maximum 99999999</span><br><span class="line"><span class="variable">$isAdmin</span> = [bool]([Security.Principal.WindowsIdentity]::GetCurrent().Groups -match <span class="string">&#x27;S-1-5-32-544&#x27;</span>)</span><br><span class="line"><span class="variable">$FilePath</span> = <span class="keyword">if</span> (<span class="variable">$isAdmin</span>) &#123; <span class="string">&quot;<span class="variable">$env</span>:SystemRoot\Temp\IAS_<span class="variable">$rand</span>.cmd&quot;</span> &#125; <span class="keyword">else</span> &#123; <span class="string">&quot;<span class="variable">$env</span>:TEMP\IAS_<span class="variable">$rand</span>.cmd&quot;</span> &#125;</span><br><span class="line"> </span><br><span class="line">try &#123;</span><br><span class="line">    <span class="variable">$response</span> = Invoke-WebRequest -Uri <span class="variable">$DownloadURL</span> -UseBasicParsing</span><br><span class="line">&#125;</span><br><span class="line">catch &#123;</span><br><span class="line">    <span class="variable">$response</span> = Invoke-WebRequest -Uri <span class="variable">$DownloadURL2</span> -UseBasicParsing</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="variable">$ScriptArgs</span> = <span class="string">&quot;<span class="variable">$args</span> &quot;</span></span><br><span class="line"><span class="variable">$prefix</span> = <span class="string">&quot;@REM <span class="variable">$rand</span> `r`n&quot;</span></span><br><span class="line"><span class="variable">$content</span> = <span class="variable">$prefix</span> + <span class="variable">$response</span></span><br><span class="line">Set-Content -Path <span class="variable">$FilePath</span> -Value <span class="variable">$content</span></span><br><span class="line"> </span><br><span class="line">Start-Process <span class="variable">$FilePath</span> <span class="variable">$ScriptArgs</span> -Wait</span><br><span class="line"> </span><br><span class="line"><span class="variable">$FilePaths</span> = @(<span class="string">&quot;<span class="variable">$env</span>:TEMP\IAS*.cmd&quot;</span>, <span class="string">&quot;<span class="variable">$env</span>:SystemRoot\Temp\IAS*.cmd&quot;</span>)</span><br><span class="line">foreach (<span class="variable">$FilePath</span> <span class="keyword">in</span> <span class="variable">$FilePaths</span>) &#123; Get-Item <span class="variable">$FilePath</span> | Remove-Item &#125;</span><br></pre></td></tr></table></figure>
-
-<p>等待一会，出现下面界面</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241002180500615.png" alt="image-20241002180500615"></p>
-<p>选择1或者2都可，出现如下界面表示成功</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241002181148701.png" alt="image-20241002181148701"></p>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>可能在一段时间后会失效，重新来一遍即可</p>
-]]></content>
-      <categories>
-        <category>Tools</category>
-      </categories>
-      <tags>
-        <tag>Tools</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>KiCad导出Gerber图形文件</title>
-    <url>/post/ef2c5f04.html</url>
-    <content><![CDATA[<h3 id="KiCad导出Gerber图形文件"><a href="#KiCad导出Gerber图形文件" class="headerlink" title="KiCad导出Gerber图形文件"></a>KiCad导出Gerber图形文件</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png" alt="image-20240527171958427"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271720173.png" alt="image-20240527172047054"></p>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>PCB</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>克隆远端很大的仓库出现early EOF</title>
     <url>/post/c93388c7.html</url>
     <content><![CDATA[<h2 id="一般做法"><a href="#一般做法" class="headerlink" title="一般做法"></a>一般做法</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">设置缓存为1G</span></span><br><span class="line">git config --global http.postBuffer 1048576000</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">设置缓存为1G</span></span><br><span class="line">git config --global https.postBuffer 1048576000</span><br></pre></td></tr></table></figure>
@@ -152,87 +171,6 @@
       </categories>
       <tags>
         <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在CLion上搭建LVGL模拟器</title>
-    <url>/post/90c7d419.html</url>
-    <content><![CDATA[<blockquote>
-<p>注：本文默认已经安装好了CLion，目标LVGL的版本为8.3，当然新版本也是可以的，都差不多。</p>
-</blockquote>
-<h2 id="需要准备的文件"><a href="#需要准备的文件" class="headerlink" title="需要准备的文件"></a>需要准备的文件</h2><ul>
-<li><p><a href="https://github.com/lvgl/lv_port_pc_eclipse">lv_port_pc_eclipse</a></p>
-<p>使用下列命令克隆仓库到本地（本文以8.3版本为例）</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b release/v8.3 --recursive https://github.com/lvgl/lv_port_pc_eclipse.git</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p><a href="https://github.com/niXman/mingw-builds-binaries/releases">mingw-builds-binaries</a></p>
-<p><em>注意下载13.2.0-rt_v11-rev1或之前的版本，新版本CLion暂时不支持</em></p>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028130733571.png" alt="image-20241028130733571"></p>
-<ul>
-<li><a href="https://github.com/libsdl-org/SDL/releases">SDL</a></li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028130851970.png" alt="image-20241028130851970"></p>
-<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><ol>
-<li>解压下载的mingw64，得到如下文件</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028183539520.png" alt="image-20241028183539520"></p>
-<ol start="2">
-<li>解压下载的SDL2，得到如下文件</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028183713461.png" alt="image-20241028183713461"></p>
-<p>将<code>SDL2/x86_64_w64-mingw32/include/SDL2</code>复制到<code>mingw64/x86_64_w64-mingw32/include</code>文件夹中</p>
-<p>将<code>SDL2/x86_64_w64-mingw32/lib</code>所有的文件复制到<code>mingw64/x86_64_w64-mingw32/lib</code>中</p>
-<ol start="3">
-<li>CLion配置工具链</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028184123222.png" alt="image-20241028184123222"></p>
-<p>在<code>设置 - 构建、执行、部署 - 工具链</code>新建如上工具链，注意所有工具都参考上图设置成对应的，用内部集成的会报错。</p>
-<ol start="4">
-<li>工程</li>
-</ol>
-<p>用CLion打开lv_port_pc_eclipse为CMake项目，然后即可进行开发。</p>
-<h2 id="一些报错"><a href="#一些报错" class="headerlink" title="一些报错"></a>一些报错</h2><ol>
-<li>CMake找不到SDL2库</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028184609315.png" alt="image-20241028184609315"></p>
-<p>解决办法：在CMakeLists.txt里添加如下语句，注意不要照抄，请将自己的本地文件目录添加进来</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SET</span>(SDL2_DIR D:/program-tools/mingw64/x86_64-w64-mingw32/lib/cmake/SDL2)</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>编译成功，但是运行程序会直接退出，没有GUI界面出现</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028185226640.png" alt="image-20241028185226640"></p>
-<p>解决办法：将下载的SDL2库的SDL2.dll复制到lv_port_pc_eclipse下的bin文件夹里</p>
-<ol start="3">
-<li>分辨率可在<code>lv_drv_conf.h</code>里修改</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028190804549.png" alt="image-20241028190804549"></p>
-<h2 id="与SquareLine-Studio联合开发"><a href="#与SquareLine-Studio联合开发" class="headerlink" title="与SquareLine Studio联合开发"></a>与SquareLine Studio联合开发</h2><p>将SquareLine Studio生成的ui文件夹复制到lv_port_pc_eclipse下，在CmakeLists.txt里添加如下语句，注意不要照抄，请将自己的本地文件目录添加进来</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 递归引用ui下的源文件</span></span><br><span class="line"><span class="keyword">FILE</span>(GLOB_RECURSE UI_Sources CONFIGURE_DEPENDS ui/*.c ui/*.cpp)</span><br><span class="line"><span class="comment"># 将$&#123;UI_Sources&#125;添加到add_executable以对main这个target使用</span></span><br><span class="line"><span class="keyword">add_executable</span>(main main.c mouse_cursor_icon.c <span class="variable">$&#123;SOURCES&#125;</span> <span class="variable">$&#123;INCLUDES&#125;</span> <span class="variable">$&#123;UI_Sources&#125;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>在main.c里添加如下代码：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;ui.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span> &#123;</span><br><span class="line">    (<span class="type">void</span>) argc; <span class="comment">/*Unused*/</span></span><br><span class="line">    (<span class="type">void</span>) argv; <span class="comment">/*Unused*/</span></span><br><span class="line">    ...</span><br><span class="line">    ui_init();</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>记得注释掉lvgl自带的示例代码，编译即可运行SquareLine Studio生成的代码</p>
-<h2 id="LVGL学习资料"><a href="#LVGL学习资料" class="headerlink" title="LVGL学习资料"></a>LVGL学习资料</h2><ul>
-<li><p><a href="https://lvgl-chinese-doc.readthedocs.io/zh-cn/latest/index.html">官方手册</a></p>
-</li>
-<li><p><a href="https://github.com/lvgl/lvgl">源码仓库</a></p>
-</li>
-<li><p><a href="https://lvgl.100ask.net/8.2/">百问网LVGL中文教程文档</a> <em>- 20241028这个暂时只汉化到v8.2</em></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>Dev</tag>
       </tags>
   </entry>
   <entry>
@@ -343,22 +281,84 @@
       </tags>
   </entry>
   <entry>
-    <title>为什么你的Github总是无法正常clone或者push</title>
-    <url>/post/2f28be0b.html</url>
-    <content><![CDATA[<h2 id="产生原因"><a href="#产生原因" class="headerlink" title="产生原因"></a>产生原因</h2><p><strong>代理服务器</strong><br>你的电脑和互联网的中介。当访问外网时（如<a href="http://google.com)/">http://google.com）</a>, 你的请求首先转发到代理服务器，然后代理服务器替你访问外网，并将结果原封不动的给你的电脑，这样你的电脑就可以看到外网的内容。</p>
-<p>网络路径如下：<br>你的电脑-&gt;代理服务器-&gt;外网<br>外网-&gt;代理服务器-&gt;你的电脑</p>
-<p>配置代理之后，可以正常访问github网页了，但是发现在本地克隆github仓库（git clone xxx）或者进行push操作时还是报网络错误（Failed to connect to server …）。</p>
-<p><strong>那是因为git clone没有走代理，所以需要设置git走代理才行</strong></p>
-<h2 id="设置代理"><a href="#设置代理" class="headerlink" title="设置代理"></a>设置代理</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:7890</span><br><span class="line">git config --global https.proxy https://127.0.0.1:7890</span><br></pre></td></tr></table></figure>
+    <title>在CLion上搭建LVGL模拟器</title>
+    <url>/post/90c7d419.html</url>
+    <content><![CDATA[<blockquote>
+<p>注：本文默认已经安装好了CLion，目标LVGL的版本为8.3，当然新版本也是可以的，都差不多。</p>
+</blockquote>
+<h2 id="需要准备的文件"><a href="#需要准备的文件" class="headerlink" title="需要准备的文件"></a>需要准备的文件</h2><ul>
+<li><p><a href="https://github.com/lvgl/lv_port_pc_eclipse">lv_port_pc_eclipse</a></p>
+<p>使用下列命令克隆仓库到本地（本文以8.3版本为例）</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b release/v8.3 --recursive https://github.com/lvgl/lv_port_pc_eclipse.git</span><br></pre></td></tr></table></figure>
 
-<h2 id="Git查看现有配置"><a href="#Git查看现有配置" class="headerlink" title="Git查看现有配置"></a>Git查看现有配置</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global -l</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><a href="https://github.com/niXman/mingw-builds-binaries/releases">mingw-builds-binaries</a></p>
+<p><em>注意下载13.2.0-rt_v11-rev1或之前的版本，新版本CLion暂时不支持</em></p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028130733571.png" alt="image-20241028130733571"></p>
+<ul>
+<li><a href="https://github.com/libsdl-org/SDL/releases">SDL</a></li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028130851970.png" alt="image-20241028130851970"></p>
+<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><ol>
+<li>解压下载的mingw64，得到如下文件</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028183539520.png" alt="image-20241028183539520"></p>
+<ol start="2">
+<li>解压下载的SDL2，得到如下文件</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028183713461.png" alt="image-20241028183713461"></p>
+<p>将<code>SDL2/x86_64_w64-mingw32/include/SDL2</code>复制到<code>mingw64/x86_64_w64-mingw32/include</code>文件夹中</p>
+<p>将<code>SDL2/x86_64_w64-mingw32/lib</code>所有的文件复制到<code>mingw64/x86_64_w64-mingw32/lib</code>中</p>
+<ol start="3">
+<li>CLion配置工具链</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028184123222.png" alt="image-20241028184123222"></p>
+<p>在<code>设置 - 构建、执行、部署 - 工具链</code>新建如上工具链，注意所有工具都参考上图设置成对应的，用内部集成的会报错。</p>
+<ol start="4">
+<li>工程</li>
+</ol>
+<p>用CLion打开lv_port_pc_eclipse为CMake项目，然后即可进行开发。</p>
+<h2 id="一些报错"><a href="#一些报错" class="headerlink" title="一些报错"></a>一些报错</h2><ol>
+<li>CMake找不到SDL2库</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028184609315.png" alt="image-20241028184609315"></p>
+<p>解决办法：在CMakeLists.txt里添加如下语句，注意不要照抄，请将自己的本地文件目录添加进来</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SET</span>(SDL2_DIR D:/program-tools/mingw64/x86_64-w64-mingw32/lib/cmake/SDL2)</span><br></pre></td></tr></table></figure>
 
-<h2 id="取消代理"><a href="#取消代理" class="headerlink" title="取消代理"></a>取消代理</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>]]></content>
+<ol start="2">
+<li>编译成功，但是运行程序会直接退出，没有GUI界面出现</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028185226640.png" alt="image-20241028185226640"></p>
+<p>解决办法：将下载的SDL2库的SDL2.dll复制到lv_port_pc_eclipse下的bin文件夹里</p>
+<ol start="3">
+<li>分辨率可在<code>lv_drv_conf.h</code>里修改</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028190804549.png" alt="image-20241028190804549"></p>
+<h2 id="与SquareLine-Studio联合开发"><a href="#与SquareLine-Studio联合开发" class="headerlink" title="与SquareLine Studio联合开发"></a>与SquareLine Studio联合开发</h2><p>将SquareLine Studio生成的ui文件夹复制到lv_port_pc_eclipse下，在CmakeLists.txt里添加如下语句，注意不要照抄，请将自己的本地文件目录添加进来</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 递归引用ui下的源文件</span></span><br><span class="line"><span class="keyword">FILE</span>(GLOB_RECURSE UI_Sources CONFIGURE_DEPENDS ui/*.c ui/*.cpp)</span><br><span class="line"><span class="comment"># 将$&#123;UI_Sources&#125;添加到add_executable以对main这个target使用</span></span><br><span class="line"><span class="keyword">add_executable</span>(main main.c mouse_cursor_icon.c <span class="variable">$&#123;SOURCES&#125;</span> <span class="variable">$&#123;INCLUDES&#125;</span> <span class="variable">$&#123;UI_Sources&#125;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>在main.c里添加如下代码：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;ui.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span> &#123;</span><br><span class="line">    (<span class="type">void</span>) argc; <span class="comment">/*Unused*/</span></span><br><span class="line">    (<span class="type">void</span>) argv; <span class="comment">/*Unused*/</span></span><br><span class="line">    ...</span><br><span class="line">    ui_init();</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>记得注释掉lvgl自带的示例代码，编译即可运行SquareLine Studio生成的代码</p>
+<h2 id="LVGL学习资料"><a href="#LVGL学习资料" class="headerlink" title="LVGL学习资料"></a>LVGL学习资料</h2><ul>
+<li><p><a href="https://lvgl-chinese-doc.readthedocs.io/zh-cn/latest/index.html">官方手册</a></p>
+</li>
+<li><p><a href="https://github.com/lvgl/lvgl">源码仓库</a></p>
+</li>
+<li><p><a href="https://lvgl.100ask.net/8.2/">百问网LVGL中文教程文档</a> <em>- 20241028这个暂时只汉化到v8.2</em></p>
+</li>
+</ul>
+]]></content>
       <categories>
         <category>Dev</category>
       </categories>
       <tags>
-        <tag>Git</tag>
+        <tag>Dev</tag>
       </tags>
   </entry>
   <entry>
@@ -707,6 +707,69 @@
       </tags>
   </entry>
   <entry>
+    <title>用CLion配合PlatformIO开发树莓派Pico(RP2040)</title>
+    <url>/post/672d89ba.html</url>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
+<li>Windows 11</li>
+<li>CLion 2024.3</li>
+<li>Python 3.12.3</li>
+</ul>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="安装PlatformIO"><a href="#安装PlatformIO" class="headerlink" title="安装PlatformIO"></a>安装PlatformIO</h3><ol>
+<li><p>下载<a href="https://raw.githubusercontent.com/platformio/platformio-core-installer/master/get-platformio.py">get-platformio.py</a></p>
+</li>
+<li><p>执行如下命令</p>
+</li>
+</ol>
+ <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"># change directory to the folder where is located downloaded &quot;get-platformio.py&quot;</span><br><span class="line"><span class="built_in">cd</span> C:/<span class="built_in">path</span>-to-<span class="built_in">dir</span>/where/get-platformio.py/is-located</span><br><span class="line">   </span><br><span class="line"># run it</span><br><span class="line">python.exe get-platformio.py</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>编辑名为 <code>Path</code> 的系统环境变量并追加 <code>C:\Users\UserName\.platformio\penv\Scripts\</code> 列表开头的路径（请将<code>UserName</code>替换为帐户名）。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224153641139.png" alt="image-20241224153641139"></p>
+</li>
+</ol>
+<h3 id="安装PlatformIO插件"><a href="#安装PlatformIO插件" class="headerlink" title="安装PlatformIO插件"></a>安装PlatformIO插件</h3><ol>
+<li><p>Go to <strong>Settings | Plugins</strong> and switch to <strong>Marketplace</strong>.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224153936338.png" alt="image-20241224153936338"></p>
+</li>
+<li><p>Search for <strong>PlatformIO for CLion</strong> and click <strong>Install</strong>.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224154022748.png" alt="image-20241224154022748"></p>
+</li>
+<li><p>After the installation is finished, click <strong>Restart IDE</strong>.</p>
+</li>
+</ol>
+<h3 id="创建PlatformIO项目"><a href="#创建PlatformIO项目" class="headerlink" title="创建PlatformIO项目"></a>创建PlatformIO项目</h3><ol>
+<li><p>选择自己的board或者framework，创建项目；</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224154343595.png" alt="image-20241224154343595"></p>
+</li>
+<li><p>经过较长时间的等待后，成功创建工程，并生成了Arduino的”stub code”。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224154819663.png" alt="image-20241224154819663"></p>
+</li>
+</ol>
+<h3 id="实现upload自动上传项目（坑）"><a href="#实现upload自动上传项目（坑）" class="headerlink" title="实现upload自动上传项目（坑）"></a>实现upload自动上传项目（坑）</h3><p>一直报错Error 1，最后摸索出来以下这个步骤，百分百成功。</p>
+<ol>
+<li><p>下载<a href="https://zadig.akeo.ie/downloads/">zadig 2.5</a>版本，注意一定要是2.5版本，不能太新；</p>
+</li>
+<li><p>pico板进入bootloader，然后打开zadig，勾选<code>Options</code>里的<code>List All Devices</code>；</p>
+</li>
+<li><p>为<strong>RP2 Boot(Interface 1)<strong>安装</strong>WinUSB驱动</strong>；</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224155601520.png" alt="image-20241224155601520"></p>
+</li>
+<li><p>进入CLion，为pico随便编译一个程序，在<code>./.pio/build/pico/</code>里找到<code>firmware.uf2</code>，复制进pico的MSV设备里；</p>
+</li>
+<li><p>然后再使用PlatformIO里的upload就不会报错了。</p>
+</li>
+</ol>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://www.jetbrains.com/help/clion/platformio.html">PlatformIO | CLion Documentation</a><br><a href="https://docs.platformio.org/en/latest/core/installation/methods/installer-script.html">Installer Script (Recommended) — PlatformIO latest documentation</a></p>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>Dev</tag>
+        <tag>Arduino</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>常用工具性网站&amp;工具</title>
     <url>/post/5788685f.html</url>
     <content><![CDATA[<h2 id="工具网站"><a href="#工具网站" class="headerlink" title="工具网站"></a>工具网站</h2><p>🎁此处列出的网站均来源于互联网，请注意不要在这些网站上输入任何个人敏感信息（如有可能）</p>
@@ -898,111 +961,6 @@
       </tags>
   </entry>
   <entry>
-    <title>用CLion配合PlatformIO开发树莓派Pico(RP2040)</title>
-    <url>/post/672d89ba.html</url>
-    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
-<li>Windows 11</li>
-<li>CLion 2024.3</li>
-<li>Python 3.12.3</li>
-</ul>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="安装PlatformIO"><a href="#安装PlatformIO" class="headerlink" title="安装PlatformIO"></a>安装PlatformIO</h3><ol>
-<li><p>下载<a href="https://raw.githubusercontent.com/platformio/platformio-core-installer/master/get-platformio.py">get-platformio.py</a></p>
-</li>
-<li><p>执行如下命令</p>
-</li>
-</ol>
- <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"># change directory to the folder where is located downloaded &quot;get-platformio.py&quot;</span><br><span class="line"><span class="built_in">cd</span> C:/<span class="built_in">path</span>-to-<span class="built_in">dir</span>/where/get-platformio.py/is-located</span><br><span class="line">   </span><br><span class="line"># run it</span><br><span class="line">python.exe get-platformio.py</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li><p>编辑名为 <code>Path</code> 的系统环境变量并追加 <code>C:\Users\UserName\.platformio\penv\Scripts\</code> 列表开头的路径（请将<code>UserName</code>替换为帐户名）。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224153641139.png" alt="image-20241224153641139"></p>
-</li>
-</ol>
-<h3 id="安装PlatformIO插件"><a href="#安装PlatformIO插件" class="headerlink" title="安装PlatformIO插件"></a>安装PlatformIO插件</h3><ol>
-<li><p>Go to <strong>Settings | Plugins</strong> and switch to <strong>Marketplace</strong>.</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224153936338.png" alt="image-20241224153936338"></p>
-</li>
-<li><p>Search for <strong>PlatformIO for CLion</strong> and click <strong>Install</strong>.</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224154022748.png" alt="image-20241224154022748"></p>
-</li>
-<li><p>After the installation is finished, click <strong>Restart IDE</strong>.</p>
-</li>
-</ol>
-<h3 id="创建PlatformIO项目"><a href="#创建PlatformIO项目" class="headerlink" title="创建PlatformIO项目"></a>创建PlatformIO项目</h3><ol>
-<li><p>选择自己的board或者framework，创建项目；</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224154343595.png" alt="image-20241224154343595"></p>
-</li>
-<li><p>经过较长时间的等待后，成功创建工程，并生成了Arduino的”stub code”。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224154819663.png" alt="image-20241224154819663"></p>
-</li>
-</ol>
-<h3 id="实现upload自动上传项目（坑）"><a href="#实现upload自动上传项目（坑）" class="headerlink" title="实现upload自动上传项目（坑）"></a>实现upload自动上传项目（坑）</h3><p>一直报错Error 1，最后摸索出来以下这个步骤，百分百成功。</p>
-<ol>
-<li><p>下载<a href="https://zadig.akeo.ie/downloads/">zadig 2.5</a>版本，注意一定要是2.5版本，不能太新；</p>
-</li>
-<li><p>pico板进入bootloader，然后打开zadig，勾选<code>Options</code>里的<code>List All Devices</code>；</p>
-</li>
-<li><p>为<strong>RP2 Boot(Interface 1)<strong>安装</strong>WinUSB驱动</strong>；</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224155601520.png" alt="image-20241224155601520"></p>
-</li>
-<li><p>进入CLion，为pico随便编译一个程序，在<code>./.pio/build/pico/</code>里找到<code>firmware.uf2</code>，复制进pico的MSV设备里；</p>
-</li>
-<li><p>然后再使用PlatformIO里的upload就不会报错了。</p>
-</li>
-</ol>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://www.jetbrains.com/help/clion/platformio.html">PlatformIO | CLion Documentation</a><br><a href="https://docs.platformio.org/en/latest/core/installation/methods/installer-script.html">Installer Script (Recommended) — PlatformIO latest documentation</a></p>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>Dev</tag>
-        <tag>Arduino</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>嵌入式驱动接口在C语言里的实现</title>
-    <url>/post/cdb42980.html</url>
-    <content><![CDATA[<h2 id="为什么要实现接口"><a href="#为什么要实现接口" class="headerlink" title="为什么要实现接口"></a>为什么要实现接口</h2><p>接口，可以是硬件与硬件之间连接的桥梁，可以是软件与软件之间沟通的窗户，也可以是硬件与软件之间通信的枢纽。其中硬件与硬件之间的桥梁，比如I2C、UART、CANFD、等等，软件与软件之间沟通的窗户，比如操作系统提供的各种API、等等。我实现的这套“接口”，连接了硬件与软件，它可以实现软硬件的完全解耦合，引入了<strong>平台无关性</strong>，提供了尽可能简化的逻辑，这有点类似于开汽车，一个人一旦学会了开汽车，那开什么牌子的汽车都基本是一个道理，实现了一套驱动，一套接口，对于不同系统、硬件平台的支持，这无疑会大大提高代码的易用性、复用性，大大减少重复的造轮子。</p>
-<h2 id="我所实现的接口"><a href="#我所实现的接口" class="headerlink" title="我所实现的接口"></a>我所实现的接口</h2><ul>
-<li>首先，需要一个结构体来存放系统接口，不妨叫system_interface_t，它用来存放系统的函数实现，是我们将驱动对接到不同平台的关键</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">generic_err_t</span> (*send)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*receive)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*delay_ms)(<span class="type">uint32_t</span> nms);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*delay_us)(<span class="type">uint32_t</span> nus);</span><br><span class="line">&#125; <span class="type">system_interface_t</span>;</span><br></pre></td></tr></table></figure>
-
-<p>推荐将上述代码放在一个.h文件里，这样不同的驱动只需要这一套接口即可</p>
-<ul>
-<li>接下来，需要一个结构体来存放system_interface_t（这样做的目的是实现不同驱动可以复用同一套接口），以及驱动内部实现的各种函数，比如对于aht20温度计而言，则除了对接系统的system_interface_t结构体，还应存放用于读取温度的函数</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">float</span> temperature;</span><br><span class="line">    <span class="type">float</span> humidity;</span><br><span class="line"></span><br><span class="line">    <span class="type">system_interface_t</span> *pfsystem_interface;</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*pfinit)(<span class="type">void</span> *pfdev);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*pfmeasure)(<span class="type">void</span> *pfdev);</span><br><span class="line">&#125; <span class="type">generic_sensor_aht20_driver_interface_t</span>;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>然后可以构建一个whoami函数，用于对底层驱动的对接写入，以及对设备调用函数的暴露</li>
-</ul>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">generic_err_t</span> <span class="title function_">generic_sensor_aht20_whoami</span><span class="params">(<span class="type">generic_sensor_aht20_driver_interface_t</span> *pfdev,</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*generic_send_func)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len),</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*generic_receive_func)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len),</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*delay_ms_func)(<span class="type">uint32_t</span> nms),</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*delay_us_func)(<span class="type">uint32_t</span> nus))</span> &#123;</span><br><span class="line">    pfdev-&gt;pfsystem_interface = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">system_interface_t</span>));</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;send = generic_send_func;</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;receive = generic_receive_func;</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;delay_ms = delay_ms_func;</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;delay_us = delay_us_func;</span><br><span class="line">    pfdev-&gt;pfinit = generic_sensor_aht20_init;</span><br><span class="line">    pfdev-&gt;pfmeasure = generic_sensor_aht20_measure;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> GENERIC_OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>注意这里要先给generic_sensor_aht20_driver_interface_t下的system_interface_t申请一块内存，否则直接调用pfdev-&gt;pfsystem_interface会指向非法内存，造成段错误</p>
-<h2 id="关于调用"><a href="#关于调用" class="headerlink" title="关于调用"></a>关于调用</h2><p>可以在初始化的时候进行驱动程序的注册，不要忘记申请内存</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">generic_sensor_aht20_driver_interface_t</span> *aht20_device = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">generic_sensor_aht20_driver_interface_t</span>));</span><br></pre></td></tr></table></figure>
-
-<p>然后调用whoami函数，对接系统底层到驱动层</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">generic_sensor_aht20_whoami(aht20_device,</span><br><span class="line">                          i2c_master_send,</span><br><span class="line">                          i2c_master_receive,</span><br><span class="line">                          HAL_Delay,</span><br><span class="line">                          <span class="literal">NULL</span>);</span><br></pre></td></tr></table></figure>
-
-<p>接着，便可以通过下面这种方式调用驱动暴露出来的API</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">aht20_device-&gt;pfinit(aht20_device); <span class="comment">// 如pfinit(void *pfdev)</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="删除设备"><a href="#删除设备" class="headerlink" title="删除设备"></a>删除设备</h2><p>我们前面通过malloc为设备的系统驱动以及设备暴露的接口分配了内存，下面通过释放这两块内存来删除设备</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">generic_err_t</span> <span class="title function_">generic_sensor_aht20_del</span><span class="params">(<span class="type">generic_sensor_aht20_driver_interface_t</span> *pfdev)</span> &#123;</span><br><span class="line">    <span class="built_in">free</span>(pfdev-&gt;pfsystem_interface); <span class="comment">// 先释放系统驱动</span></span><br><span class="line">    pfdev-&gt;pfsystem_interface = <span class="literal">NULL</span>; <span class="comment">// 避免悬挂指针</span></span><br><span class="line">    <span class="built_in">free</span>(pfdev); <span class="comment">// 再释放暴露的接口</span></span><br><span class="line">    pfdev = <span class="literal">NULL</span>; <span class="comment">// 避免悬挂指针</span></span><br><span class="line">    <span class="keyword">return</span> GENERIC_OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="驱动编写"><a href="#驱动编写" class="headerlink" title="驱动编写"></a>驱动编写</h2><p>驱动编写中，注意每个驱动内部的API都需要一个void *类型的指针，用来调用generic_sensor_aht20_driver_interface_t的驱动接口</p>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>Dev</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>百度网盘不限速</title>
     <url>/post/900d6e7c.html</url>
     <content><![CDATA[<p><em>最近不太稳定了 20241123</em></p>
@@ -1082,6 +1040,48 @@
       </categories>
       <tags>
         <tag>STM32</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>嵌入式驱动接口在C语言里的实现</title>
+    <url>/post/cdb42980.html</url>
+    <content><![CDATA[<h2 id="为什么要实现接口"><a href="#为什么要实现接口" class="headerlink" title="为什么要实现接口"></a>为什么要实现接口</h2><p>接口，可以是硬件与硬件之间连接的桥梁，可以是软件与软件之间沟通的窗户，也可以是硬件与软件之间通信的枢纽。其中硬件与硬件之间的桥梁，比如I2C、UART、CANFD、等等，软件与软件之间沟通的窗户，比如操作系统提供的各种API、等等。我实现的这套“接口”，连接了硬件与软件，它可以实现软硬件的完全解耦合，引入了<strong>平台无关性</strong>，提供了尽可能简化的逻辑，这有点类似于开汽车，一个人一旦学会了开汽车，那开什么牌子的汽车都基本是一个道理，实现了一套驱动，一套接口，对于不同系统、硬件平台的支持，这无疑会大大提高代码的易用性、复用性，大大减少重复的造轮子。</p>
+<h2 id="我所实现的接口"><a href="#我所实现的接口" class="headerlink" title="我所实现的接口"></a>我所实现的接口</h2><ul>
+<li>首先，需要一个结构体来存放系统接口，不妨叫system_interface_t，它用来存放系统的函数实现，是我们将驱动对接到不同平台的关键</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">generic_err_t</span> (*send)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*receive)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*delay_ms)(<span class="type">uint32_t</span> nms);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*delay_us)(<span class="type">uint32_t</span> nus);</span><br><span class="line">&#125; <span class="type">system_interface_t</span>;</span><br></pre></td></tr></table></figure>
+
+<p>推荐将上述代码放在一个.h文件里，这样不同的驱动只需要这一套接口即可</p>
+<ul>
+<li>接下来，需要一个结构体来存放system_interface_t（这样做的目的是实现不同驱动可以复用同一套接口），以及驱动内部实现的各种函数，比如对于aht20温度计而言，则除了对接系统的system_interface_t结构体，还应存放用于读取温度的函数</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">float</span> temperature;</span><br><span class="line">    <span class="type">float</span> humidity;</span><br><span class="line"></span><br><span class="line">    <span class="type">system_interface_t</span> *pfsystem_interface;</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*pfinit)(<span class="type">void</span> *pfdev);</span><br><span class="line"></span><br><span class="line">    <span class="type">generic_err_t</span> (*pfmeasure)(<span class="type">void</span> *pfdev);</span><br><span class="line">&#125; <span class="type">generic_sensor_aht20_driver_interface_t</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>然后可以构建一个whoami函数，用于对底层驱动的对接写入，以及对设备调用函数的暴露</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">generic_err_t</span> <span class="title function_">generic_sensor_aht20_whoami</span><span class="params">(<span class="type">generic_sensor_aht20_driver_interface_t</span> *pfdev,</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*generic_send_func)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len),</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*generic_receive_func)(<span class="type">uint8_t</span> *data, <span class="type">size_t</span> len),</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*delay_ms_func)(<span class="type">uint32_t</span> nms),</span></span><br><span class="line"><span class="params">                                      <span class="type">generic_err_t</span> (*delay_us_func)(<span class="type">uint32_t</span> nus))</span> &#123;</span><br><span class="line">    pfdev-&gt;pfsystem_interface = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">system_interface_t</span>));</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;send = generic_send_func;</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;receive = generic_receive_func;</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;delay_ms = delay_ms_func;</span><br><span class="line">    pfdev-&gt;pfsystem_interface-&gt;delay_us = delay_us_func;</span><br><span class="line">    pfdev-&gt;pfinit = generic_sensor_aht20_init;</span><br><span class="line">    pfdev-&gt;pfmeasure = generic_sensor_aht20_measure;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> GENERIC_OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意这里要先给generic_sensor_aht20_driver_interface_t下的system_interface_t申请一块内存，否则直接调用pfdev-&gt;pfsystem_interface会指向非法内存，造成段错误</p>
+<h2 id="关于调用"><a href="#关于调用" class="headerlink" title="关于调用"></a>关于调用</h2><p>可以在初始化的时候进行驱动程序的注册，不要忘记申请内存</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">generic_sensor_aht20_driver_interface_t</span> *aht20_device = <span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(<span class="type">generic_sensor_aht20_driver_interface_t</span>));</span><br></pre></td></tr></table></figure>
+
+<p>然后调用whoami函数，对接系统底层到驱动层</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">generic_sensor_aht20_whoami(aht20_device,</span><br><span class="line">                          i2c_master_send,</span><br><span class="line">                          i2c_master_receive,</span><br><span class="line">                          HAL_Delay,</span><br><span class="line">                          <span class="literal">NULL</span>);</span><br></pre></td></tr></table></figure>
+
+<p>接着，便可以通过下面这种方式调用驱动暴露出来的API</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">aht20_device-&gt;pfinit(aht20_device); <span class="comment">// 如pfinit(void *pfdev)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="删除设备"><a href="#删除设备" class="headerlink" title="删除设备"></a>删除设备</h2><p>我们前面通过malloc为设备的系统驱动以及设备暴露的接口分配了内存，下面通过释放这两块内存来删除设备</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">generic_err_t</span> <span class="title function_">generic_sensor_aht20_del</span><span class="params">(<span class="type">generic_sensor_aht20_driver_interface_t</span> *pfdev)</span> &#123;</span><br><span class="line">    <span class="built_in">free</span>(pfdev-&gt;pfsystem_interface); <span class="comment">// 先释放系统驱动</span></span><br><span class="line">    pfdev-&gt;pfsystem_interface = <span class="literal">NULL</span>; <span class="comment">// 避免悬挂指针</span></span><br><span class="line">    <span class="built_in">free</span>(pfdev); <span class="comment">// 再释放暴露的接口</span></span><br><span class="line">    pfdev = <span class="literal">NULL</span>; <span class="comment">// 避免悬挂指针</span></span><br><span class="line">    <span class="keyword">return</span> GENERIC_OK;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="驱动编写"><a href="#驱动编写" class="headerlink" title="驱动编写"></a>驱动编写</h2><p>驱动编写中，注意每个驱动内部的API都需要一个void *类型的指针，用来调用generic_sensor_aht20_driver_interface_t的驱动接口</p>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>Dev</tag>
       </tags>
   </entry>
 </search>
