@@ -1,27 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Git使用小技巧Tricks</title>
-    <url>/post/4bb6437a.html</url>
-    <content><![CDATA[<h2 id="经历了一次错误的commit，想要撤回"><a href="#经历了一次错误的commit，想要撤回" class="headerlink" title="经历了一次错误的commit，想要撤回"></a>经历了一次错误的commit，想要撤回</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span> <span class="comment"># 查看上次commit的完整hash字串</span></span><br><span class="line">git reset &lt;arg1&gt; &lt;<span class="built_in">hash</span>字串&gt; <span class="comment"># 撤回commit，&lt;arg1&gt;有参数--soft、--hard、--mixed可选。</span></span><br><span class="line"><span class="comment"># 注意注意：一般可以忽略&lt;arg1&gt;。</span></span><br><span class="line"><span class="comment"># 区别为</span></span><br><span class="line"><span class="comment"># --soft 文件还保存在git里，可以再reset回来</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)        (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B-C</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># --hard 文件直接被删去，慎用！！！</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)        (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># --mixed 文件未被删去，就在本地workspace里，处于未被add的状态(推荐)</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)          (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B-C</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 注：(F)指的是磁盘里此时实际的文件处于哪个版本</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="清除本地对远端已经不存在的分支的引用"><a href="#清除本地对远端已经不存在的分支的引用" class="headerlink" title="清除本地对远端已经不存在的分支的引用"></a>清除本地对远端已经不存在的分支的引用</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote prune origin</span><br></pre></td></tr></table></figure>
-
-<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><ul>
-<li><code>origin</code> 是默认的远程仓库名称，如果有其他远程仓库，可以用相应的名字替换 <code>origin</code>。</li>
-<li>该命令__不会删除本地的任何分支或数据__，只会移除本地对那些已经在远程仓库中删除的分支的引用。</li>
-</ul>
-<h2 id="更新子模块"><a href="#更新子模块" class="headerlink" title="更新子模块"></a>更新子模块</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git submodule --update --init --recursive</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>IDM脚本和谐破解注册</title>
     <url>/post/5983f199.html</url>
     <content><![CDATA[<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>一、在官网下载安装IDM</p>
@@ -51,6 +30,40 @@
       </tags>
   </entry>
   <entry>
+    <title>KiCad导出Gerber图形文件</title>
+    <url>/post/ef2c5f04.html</url>
+    <content><![CDATA[<h3 id="KiCad导出Gerber图形文件"><a href="#KiCad导出Gerber图形文件" class="headerlink" title="KiCad导出Gerber图形文件"></a>KiCad导出Gerber图形文件</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png" alt="image-20240527171958427"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271720173.png" alt="image-20240527172047054"></p>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>PCB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git使用小技巧Tricks</title>
+    <url>/post/4bb6437a.html</url>
+    <content><![CDATA[<h2 id="经历了一次错误的commit，想要撤回"><a href="#经历了一次错误的commit，想要撤回" class="headerlink" title="经历了一次错误的commit，想要撤回"></a>经历了一次错误的commit，想要撤回</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span> <span class="comment"># 查看上次commit的完整hash字串</span></span><br><span class="line">git reset &lt;arg1&gt; &lt;<span class="built_in">hash</span>字串&gt; <span class="comment"># 撤回commit，&lt;arg1&gt;有参数--soft、--hard、--mixed可选。</span></span><br><span class="line"><span class="comment"># 注意注意：一般可以忽略&lt;arg1&gt;。</span></span><br><span class="line"><span class="comment"># 区别为</span></span><br><span class="line"><span class="comment"># --soft 文件还保存在git里，可以再reset回来</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)        (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B-C</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># --hard 文件直接被删去，慎用！！！</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)        (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># --mixed 文件未被删去，就在本地workspace里，处于未被add的状态(推荐)</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)          (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B-C</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 注：(F)指的是磁盘里此时实际的文件处于哪个版本</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="清除本地对远端已经不存在的分支的引用"><a href="#清除本地对远端已经不存在的分支的引用" class="headerlink" title="清除本地对远端已经不存在的分支的引用"></a>清除本地对远端已经不存在的分支的引用</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote prune origin</span><br></pre></td></tr></table></figure>
+
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><ul>
+<li><code>origin</code> 是默认的远程仓库名称，如果有其他远程仓库，可以用相应的名字替换 <code>origin</code>。</li>
+<li>该命令__不会删除本地的任何分支或数据__，只会移除本地对那些已经在远程仓库中删除的分支的引用。</li>
+</ul>
+<h2 id="更新子模块"><a href="#更新子模块" class="headerlink" title="更新子模块"></a>更新子模块</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git submodule --update --init --recursive</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Jetbrains系IDE使用小技巧</title>
     <url>/post/af86e289.html</url>
     <content><![CDATA[<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><ul>
@@ -69,16 +82,50 @@
       </tags>
   </entry>
   <entry>
-    <title>KiCad导出Gerber图形文件</title>
-    <url>/post/ef2c5f04.html</url>
-    <content><![CDATA[<h3 id="KiCad导出Gerber图形文件"><a href="#KiCad导出Gerber图形文件" class="headerlink" title="KiCad导出Gerber图形文件"></a>KiCad导出Gerber图形文件</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png" alt="image-20240527171958427"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271720173.png" alt="image-20240527172047054"></p>
+    <title>为什么你的Github总是无法正常clone或者push</title>
+    <url>/post/2f28be0b.html</url>
+    <content><![CDATA[<h2 id="产生原因"><a href="#产生原因" class="headerlink" title="产生原因"></a>产生原因</h2><p><strong>代理服务器</strong><br>你的电脑和互联网的中介。当访问外网时（如<a href="http://google.com)/">http://google.com）</a>, 你的请求首先转发到代理服务器，然后代理服务器替你访问外网，并将结果原封不动的给你的电脑，这样你的电脑就可以看到外网的内容。</p>
+<p>网络路径如下：<br>你的电脑-&gt;代理服务器-&gt;外网<br>外网-&gt;代理服务器-&gt;你的电脑</p>
+<p>配置代理之后，可以正常访问github网页了，但是发现在本地克隆github仓库（git clone xxx）或者进行push操作时还是报网络错误（Failed to connect to server …）。</p>
+<p><strong>那是因为git clone没有走代理，所以需要设置git走代理才行</strong></p>
+<h2 id="设置代理"><a href="#设置代理" class="headerlink" title="设置代理"></a>设置代理</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:7890</span><br><span class="line">git config --global https.proxy https://127.0.0.1:7890</span><br></pre></td></tr></table></figure>
+
+<h2 id="Git查看现有配置"><a href="#Git查看现有配置" class="headerlink" title="Git查看现有配置"></a>Git查看现有配置</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global -l</span><br></pre></td></tr></table></figure>
+
+<h2 id="取消代理"><a href="#取消代理" class="headerlink" title="取消代理"></a>取消代理</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>克隆远端很大的仓库出现early EOF</title>
+    <url>/post/c93388c7.html</url>
+    <content><![CDATA[<h2 id="一般做法"><a href="#一般做法" class="headerlink" title="一般做法"></a>一般做法</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">设置缓存为1G</span></span><br><span class="line">git config --global http.postBuffer 1048576000</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">设置缓存为1G</span></span><br><span class="line">git config --global https.postBuffer 1048576000</span><br></pre></td></tr></table></figure>
+
+<p>上面的方法对我没用。</p>
+<h2 id="有用的方法"><a href="#有用的方法" class="headerlink" title="有用的方法"></a>有用的方法</h2><ol>
+<li>先浅层clone，只拉取最近的一次提交</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone --depth=1 http://xxx.git</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>浅层clone成功后，再完整拉取</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git fetch --unshallow</span><br><span class="line">git config remote.origin.fetch &quot;+refs/heads/*:refs/remotes/origin/*&quot;</span><br></pre></td></tr></table></figure>
+
+<p>3.然后执行以下命令获取所有分支</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git fetch -pv 或 $ git fetch -v</span><br></pre></td></tr></table></figure>
+
+<p>这种错误产生的原因其实还是网络问题</p>
 ]]></content>
       <categories>
         <category>Dev</category>
       </categories>
       <tags>
-        <tag>PCB</tag>
+        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
@@ -127,50 +174,110 @@
       </tags>
   </entry>
   <entry>
-    <title>为什么你的Github总是无法正常clone或者push</title>
-    <url>/post/2f28be0b.html</url>
-    <content><![CDATA[<h2 id="产生原因"><a href="#产生原因" class="headerlink" title="产生原因"></a>产生原因</h2><p><strong>代理服务器</strong><br>你的电脑和互联网的中介。当访问外网时（如<a href="http://google.com)/">http://google.com）</a>, 你的请求首先转发到代理服务器，然后代理服务器替你访问外网，并将结果原封不动的给你的电脑，这样你的电脑就可以看到外网的内容。</p>
-<p>网络路径如下：<br>你的电脑-&gt;代理服务器-&gt;外网<br>外网-&gt;代理服务器-&gt;你的电脑</p>
-<p>配置代理之后，可以正常访问github网页了，但是发现在本地克隆github仓库（git clone xxx）或者进行push操作时还是报网络错误（Failed to connect to server …）。</p>
-<p><strong>那是因为git clone没有走代理，所以需要设置git走代理才行</strong></p>
-<h2 id="设置代理"><a href="#设置代理" class="headerlink" title="设置代理"></a>设置代理</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:7890</span><br><span class="line">git config --global https.proxy https://127.0.0.1:7890</span><br></pre></td></tr></table></figure>
+    <title>在STM32里使用rosserial</title>
+    <url>/post/f3ad7b3e.html</url>
+    <content><![CDATA[<blockquote>
+<p>我使用的是Ubuntu 20.04 ROS Noetic搭配STM32F407开发板，不同STM32芯片之间使用起来差异不大</p>
+</blockquote>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>Ubuntu安装软件包</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install ros-noetic-rosserial ros-noetic-rosserial-arduino</span><br></pre></td></tr></table></figure>
 
-<h2 id="Git查看现有配置"><a href="#Git查看现有配置" class="headerlink" title="Git查看现有配置"></a>Git查看现有配置</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global -l</span><br></pre></td></tr></table></figure>
-
-<h2 id="取消代理"><a href="#取消代理" class="headerlink" title="取消代理"></a>取消代理</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>克隆远端很大的仓库出现early EOF</title>
-    <url>/post/c93388c7.html</url>
-    <content><![CDATA[<h2 id="一般做法"><a href="#一般做法" class="headerlink" title="一般做法"></a>一般做法</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">设置缓存为1G</span></span><br><span class="line">git config --global http.postBuffer 1048576000</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">设置缓存为1G</span></span><br><span class="line">git config --global https.postBuffer 1048576000</span><br></pre></td></tr></table></figure>
-
-<p>上面的方法对我没用。</p>
-<h2 id="有用的方法"><a href="#有用的方法" class="headerlink" title="有用的方法"></a>有用的方法</h2><ol>
-<li>先浅层clone，只拉取最近的一次提交</li>
+<ul>
+<li>（已经配置好的库）<a href="https://github.com/MDLZCOOL/rosserial_stm32">MDLZCOOL&#x2F;rosserial_stm32</a></li>
+</ul>
+<h2 id="开始配置"><a href="#开始配置" class="headerlink" title="开始配置"></a>开始配置</h2><ol>
+<li>新建STM32工程，配置RCC等步骤省略。</li>
+<li>打开串口，配置中断和DMA，波特率推荐115200。具体配置见下图</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone --depth=1 http://xxx.git</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129190705711.png" alt="image-20241129190705711"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129190741215.png" alt="image-20241129190741215"></p>
+<ol start="3">
+<li><p>生成代码，将<code>rosserial_stm32_lib</code>复制到<code>Core/Inc</code>，并添加进工程里。</p>
+</li>
+<li><p>在<code>Core/Src</code>添加一个<code>mainpp.cpp</code>，添加以下代码</p>
+</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ros.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;std_msgs/String.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;mainpp.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;main.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">messageCallback</span><span class="params">(<span class="type">const</span> std_msgs::String &amp;msg)</span> &#123;</span><br><span class="line">    <span class="comment">// Callback</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ros::NodeHandle nh;</span><br><span class="line">ros::Subscriber&lt;std_msgs::String&gt; <span class="title function_">sub</span><span class="params">(<span class="string">&quot;/stm32_ros_bridge&quot;</span>, &amp;messageCallback)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">HAL_UART_TxCpltCallback</span><span class="params">(UART_HandleTypeDef *huart)</span> &#123;</span><br><span class="line">    nh.getHardware()-&gt;flush();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">HAL_UART_RxCpltCallback</span><span class="params">(UART_HandleTypeDef *huart)</span> &#123;</span><br><span class="line">    nh.getHardware()-&gt;reset_rbuf();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    nh.initNode();</span><br><span class="line">    nh.subscribe(sub);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    nh.spinOnce();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>在<code>Core/Inc</code>添加<code>mainpp.h</code>，添加以下代码</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> MAINPP_H_</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAINPP_H_</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> __cplusplus</span></span><br><span class="line"><span class="keyword">extern</span> <span class="string">&quot;C&quot;</span> &#123;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> __cplusplus</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span> <span class="comment">/* MAINPP_H_ */</span></span></span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>修改<code>main.c</code></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span>&#123;</span><br><span class="line">...</span><br><span class="line">  <span class="comment">/* USER CODE BEGIN 2 */</span></span><br><span class="line">  setup();</span><br><span class="line">  <span class="comment">/* USER CODE END 2 */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Infinite loop */</span></span><br><span class="line">  <span class="comment">/* USER CODE BEGIN WHILE */</span></span><br><span class="line">  <span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">/* USER CODE END WHILE */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* USER CODE BEGIN 3 */</span></span><br><span class="line">    loop();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">/* USER CODE END 3 */</span></span><br><span class="line">...</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li><p>修改<code>STM32Hardware.h</code>，具体为：</p>
+<ul>
+<li>定义自己的设备头（如果预处理部分没有你的设备，请自己加上）</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129193813695.png" alt="image-20241129193813695"></p>
+<ul>
+<li>将所有的huart句柄改为你自己的，比如在<code>STM32Hardware.h</code>里默认handler名字叫<code>huart1</code></li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129194059681.png" alt="image-20241129194059681"></p>
+<ol start="7">
+<li>至此STM32就配好了</li>
+<li>用串口工具连接STM32和电脑USB_HOST，使用以下命令查看USB文件位置（Linux里万物皆为文件）</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ls</span> /dev/ttyUSB*</span><br><span class="line">或者</span><br><span class="line">dmesg | grep <span class="built_in">tty</span></span><br></pre></td></tr></table></figure>
+
+<p>比如这里我的USB位置就是<code>/dev/ttyUSB0</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129195247309.png" alt="image-20241129195247309"></p>
+<ol start="9">
+<li>执行下面命令使ROS连接上STM32，别忘了先roscore</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rosrun rosserial_python serial_node.py _baud:=115200 _port:=/dev/ttyUSB0</span><br></pre></td></tr></table></figure>
+
+<p>不出所料的话，现在已经成功连接上设备了</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129195651213.png" alt="image-20241129195651213"></p>
+<h2 id="STM32执行ROS发来的指令"><a href="#STM32执行ROS发来的指令" class="headerlink" title="STM32执行ROS发来的指令"></a>STM32执行ROS发来的指令</h2><ol>
+<li>在<code>mainpp.cpp</code>实现下面测试代码：</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">messageCallback</span><span class="params">(<span class="type">const</span> std_msgs::String &amp;msg)</span> &#123;</span><br><span class="line">    SEGGER_RTT_WriteString(<span class="number">0</span>, <span class="string">&quot;\r\nmessageCallback occurred!\r\nYour message is &quot;</span>);</span><br><span class="line">    SEGGER_RTT_WriteString(<span class="number">0</span>, msg.data);</span><br><span class="line">    SEGGER_RTT_WriteString(<span class="number">0</span>, <span class="string">&quot;\r\n&quot;</span>);</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">strcmp</span>(<span class="string">&quot;servo_1&quot;</span>, msg.data) == <span class="number">0</span>) &#123;</span><br><span class="line">        SEGGER_RTT_WriteString(<span class="number">0</span>, <span class="string">&quot;Action &#x27;servo_1&#x27; begin!\r\n&quot;</span>);</span><br><span class="line">        __HAL_TIM_SET_COMPARE(&amp;htim1, TIM_CHANNEL_1, <span class="number">1500</span>);</span><br><span class="line">        SEGGER_RTT_WriteString(<span class="number">0</span>, <span class="string">&quot;Action &#x27;servo_1&#x27; complete!\r\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ol start="2">
-<li>浅层clone成功后，再完整拉取</li>
+<li>写入固件，连接电脑测试</li>
 </ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git fetch --unshallow</span><br><span class="line">git config remote.origin.fetch &quot;+refs/heads/*:refs/remotes/origin/*&quot;</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129200940086.png" alt="image-20241129200940086"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129201020932.png" alt="image-20241129201020932"></p>
+<p>可以看到，回调函数正常触发，至此实现了ROS对STM32 publish 消息，并成功接收。</p>
+<h2 id="STM32向ROS发送话题"><a href="#STM32向ROS发送话题" class="headerlink" title="STM32向ROS发送话题"></a>STM32向ROS发送话题</h2><ol>
+<li>在<code>mainpp.cpp</code>实现下面测试代码：</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ros.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;std_msgs/String.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;mainpp.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;main.h&quot;</span></span></span><br><span class="line"></span><br><span class="line">std_msgs::String str_msg;</span><br><span class="line">ros::NodeHandle nh;</span><br><span class="line">ros::Publisher <span class="title function_">pub</span><span class="params">(<span class="string">&quot;stm32_ros_bridge_pub&quot;</span>, &amp;str_msg)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">HAL_UART_TxCpltCallback</span><span class="params">(UART_HandleTypeDef *huart)</span> &#123;</span><br><span class="line">    nh.getHardware()-&gt;flush();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">HAL_UART_RxCpltCallback</span><span class="params">(UART_HandleTypeDef *huart)</span> &#123;</span><br><span class="line">    nh.getHardware()-&gt;reset_rbuf();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    nh.initNode();</span><br><span class="line">    str_msg.data = <span class="string">&quot;Hello, ROS!&quot;</span>;</span><br><span class="line">    nh.advertise(pub);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    pub.publish(&amp;str_msg);</span><br><span class="line">    nh.spinOnce();</span><br><span class="line">    HAL_Delay(<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>3.然后执行以下命令获取所有分支</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git fetch -pv 或 $ git fetch -v</span><br></pre></td></tr></table></figure>
-
-<p>这种错误产生的原因其实还是网络问题</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129203923631.png" alt="image-20241129203923631"></p>
+<blockquote>
+<p>注意：这里有一个问题，我们用的波特率是115200，发送数据的频率是有限制的，如果超过这个上限，ROS拿到的数据就会丢包，没法通过完整性校验，所以这里在loop()里写了一个delay，但是这种做法不是通常推荐的，<strong>更加一般的做法是把publish写在某个定时器里，这样就不会占用CPU时间去等待。</strong></p>
+</blockquote>
+<p>贴一张图，发送频率不能太高</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129204312643.png" alt="image-20241129204312643"></p>
+<p>至此实现了STM32与ROS的<strong>双向通信</strong>，后面可以拿来做一些好玩的东西了。</p>
+<hr>
+<p>测试STM32F103C8Tx单片机，其FLASH为64K，无法装下程序，故推荐FLASH大小为80K左右。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241130185002474.png" alt="image-20241130185002474"></p>
+<hr>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://wiki.ros.org/rosserial/Overview/">rosserial&#x2F;Overview</a></li>
+</ol>
+<hr>
 ]]></content>
       <categories>
         <category>Dev</category>
       </categories>
       <tags>
-        <tag>Git</tag>
+        <tag>Dev</tag>
+        <tag>STM32</tag>
+        <tag>ROS</tag>
       </tags>
   </entry>
   <entry>
@@ -357,370 +464,6 @@
       </categories>
       <tags>
         <tag>USB</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>基于ESP-IDF在ESP32S3上移植LVGL和显示触摸驱动</title>
-    <url>/post/64bc178b.html</url>
-    <content><![CDATA[<p>ESP32很久没搞了，这篇文章是基于VSCode写的，写的自认为很一般，不过对于初学者应该是有点帮助的，近期可能会用CLion再试试配置ESP-IDF环境 - 20241028更新</p>
-<p><strong>前言：之前基本一直在搞STM32的开发，想换到别的平台（比如ESP32）试试，也算对自己的一种锻炼和提升，注意到网上关于LVGL移植的教程非常多，但是大部分是基于Arduino平台的，基本没有基于ESP-IDF框架的（即使有也已经过时）。最近入手了几块ESP32的开发板和一块带CTP（电容触摸）的3.5寸IPS屏幕，可视角度和分辨率都不错，作为一个对GUI界面有执着追求的人，我想把当下很火的嵌入式GUI项目<a href="https://lvgl.io/">LVGL - Light and Versatile Embedded Graphics Library</a>移植到我的项目里，并实现一部分优化，让它即使在资源极端有限的情况下也能较为流畅地运行~</strong></p>
-<p><strong>进度:</strong></p>
-<ul>
-<li>（已完成）实现正确显示 - 20240412</li>
-<li>（已完成）跑demo、优化帧率 - 20240414</li>
-<li>（已完成）基于SquareLine平台设计UI - 很简单，可以看一下CLion实现的LVGL模拟器 20241028</li>
-<li>（已完成）接入各种传感器 - 很简单</li>
-</ul>
-<h2 id="物料选择"><a href="#物料选择" class="headerlink" title="物料选择"></a>物料选择</h2><ul>
-<li><p>ESP32S3开发板一块，比如我使用立创的ESP32-S3开发板（集成串口芯片）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404122139635.jpg" alt="087b0e76d0dc9852b9dd31fb43531fa"></p>
-</li>
-<li><p>3.5寸电容触摸屏（显示驱动为ST7796U，电容触摸驱动为gt911）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404122139803.jpg" alt="6dd6fbcc761ede3cc4c3065eba1070c"></p>
-</li>
-<li><p>杜邦线若干</p>
-</li>
-<li><p>Type-C数据线</p>
-</li>
-</ul>
-<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><ul>
-<li>电脑系统：<code>Windows 11</code></li>
-<li>开发环境：<code>Visual Studio Code</code>（至于为什么不用CLion，因为CLion上没配起来IDF框架（抽象））、<code>ESP-IDF_5.1.2</code></li>
-</ul>
-<blockquote>
-<p>2024&#x2F;10&#x2F;29更新，CLion官网出配置ESP-IDF教程了，好耶：<a href="https://www.jetbrains.com/help/clion/esp-idf.html">https://www.jetbrains.com/help/clion/esp-idf.html</a></p>
-</blockquote>
-<p><em>这里具体配置细节暂时略去，因为最近要重新装系统，到时候刚好重新配置一遍，写个教程补上 - 20240412</em></p>
-<h2 id="开工！"><a href="#开工！" class="headerlink" title="开工！"></a>开工！</h2><h3 id="文件准备"><a href="#文件准备" class="headerlink" title="文件准备"></a>文件准备</h3><ul>
-<li><p>先找到示例文件夹，在IDF的安装目录下<br><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121501913.png" alt="image-20240412150107877"></p>
-</li>
-<li><p>打开进入<code>./get-started/</code>，找到<code>hello_world</code>程序并复制出来</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121502899.png" alt="image-20240412150249861"></p>
-</li>
-<li><p>再在<code>./peripherals/i2c</code>中找到<code>i2c_tools</code>，也和刚才的<code>hello_world</code>放在一起<br><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121506011.png" alt="image-20240412150606976"></p>
-</li>
-<li><p>打开<code>Visual Studio Code</code>，选到hello_world目录</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121518948.png" alt="image-20240412151819885"></p>
-</li>
-<li><p>这里配置一下开发板的信息：<br>1. 插上开发板，点一下左下角的<code>COM1</code>，根据实际选择正确的<code>COM</code><br>1. 点左下角<code>esp32</code>，选择合适的esp芯片型号，比如我就选esp32s3<br>1. 选择<code>OpenOCD</code>的配置文件，一般选择<code>via ESP-PROG</code>就好<br>1. 点左下角的五角星，选择<code>UART</code>（我的开发板上带了TTL芯片）<br>最终配置好应该是这样的：<br><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121527778.png" alt="image-20240412152745759"></p>
-</li>
-<li><p>在main文件夹里新建一个<code>idf_component.yml</code>文件，并复制以下内容</p>
-<p><em><a href="https://docs.espressif.com/projects/idf-component-manager/en/latest/reference/manifest_file.html">这个网站</a>有<code>idf_component.yml</code>的编写规则，这里我就直接用里面的框架了</em></p>
-</li>
-</ul>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">dependencies:</span></span><br><span class="line">  <span class="attr">pkg_name:</span> <span class="string">&quot;pkg_version&quot;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>浏览器打开<a href="https://www.espressif.com/">乐鑫官网</a>，在<code>SDKs</code>下找到<code>IDF Component Manager</code>包管理器</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121535817.png" alt="image-20240412153510715"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121546289.png" alt="image-20240412154657218"></p>
-</li>
-<li><p>在<code>IDF Component Manager</code>中搜索<code>LVGL</code>，这次用的是<code>lvgl</code>和<code>esp_lvgl_port</code>，至于驱动为什么不用<code>lvgl_esp32_drivers</code>，是因为这玩意的代码已经很久没有维护了，不支持<code>IDF5.x</code>版本和较新的<code>LVGL</code></p>
-<p>这次用的是<code>1.4.0</code>版本的<code>esp_lvgl_port</code>，在<code>idf_component.yml</code>中把<code>pkg_name</code>换成<code>esp_lvgl_port</code>，因为我们这次移植的是<code>8.4.0</code>的<code>LVGL</code>，所以<code>pkg_version</code>改成<code>1.4.0</code>，把<code>LVGL</code>和<code>gt911触摸芯片</code>和<code>ST7796显示芯片</code>的驱动也加上，像下面这样</p>
-</li>
-</ul>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">dependencies:</span></span><br><span class="line">  <span class="attr">esp_lvgl_port:</span> <span class="string">&quot;1.4.0&quot;</span></span><br><span class="line">  <span class="attr">esp_lcd_touch_gt911:</span> <span class="string">&quot;1.1.0&quot;</span></span><br><span class="line">  <span class="attr">esp_lcd_st7796:</span> <span class="string">&quot;1.2.1&quot;</span></span><br><span class="line">  <span class="attr">lvgl/lvgl:</span> <span class="string">&quot;8.4.0&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>  然后编译一次就会自动下载相关依赖（这里即使最后编译报错了也没关系，因为依赖已经下好了，报错稍后再去解决）</p>
-<p>  待依赖下载完成之后，工作空间的根目录会出现<code>managed_components</code>文件夹，把这个文件夹改为<code>components</code>（这步是因为可能要修改某些依赖的源码，如果不这样的话修改后会报<code>哈希不匹配</code>的错），把里面的依赖整理一下，像这样<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121647535.png" alt="image-20240412164748491"></p>
-<p>  检查每个依赖中的其他关联依赖（<code>idf_component.yml</code>），把所有除了IDF以外的其他依赖全部删掉</p>
-<ul>
-<li><p>把<code>./esp_lvgl_port/examples/touchscreen/main/</code>下的<code>main.c</code>文件的全部内容复制到hello_world_main.c里<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121657456.png"></p>
-</li>
-<li><p>顺便说一下，如果VScode没法代码补全和代码跳转的话，按下<code>Ctrl+Shift+P</code>，搜索<code>IntelliSense</code>，选择第一个不带bootloader的，选好之后Full Clean，再点一下编译，就可以正常使用了</p>
-</li>
-<li><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121808911.png" alt="image-20240412180848835"></p>
-</li>
-<li><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121809959.png" alt="image-20240412180922880"></p>
-</li>
-<li><p>编译一下，看看报错</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121659815.png" alt="image-20240412165942792"></p>
-<p>可以看到找不到对应的头文件，这里示例文件默认用的触摸驱动是tt21100，与我用的gt911不一样，所以我们要包含gt911的驱动进去，故要做的就是修改头文件，把tt21100的驱动换成gt911的，并且把程序里调用的函数进行对应的更改</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;esp_lcd_touch_tt21100.h&quot;</span></span></span><br></pre></td></tr></table></figure>
-
-<p>更改为</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;esp_lcd_touch_gt911.h&quot;</span></span></span><br></pre></td></tr></table></figure>
-
-<p>对应的函数改为gt911</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121815198.png" alt="image-20240412181507168"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121816895.png" alt="image-20240412181658868"></p>
-<p>再次编译，看看报错</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121820971.png" alt="image-20240412182013943"></p>
-<p>注意到这里找不到<code>lvgl.h</code>的错误是<code>esp_lvgl_port</code>这个依赖发出的，所以进入该依赖的<code>CmakeLists.txt</code>，在<code>PRIV_REQUIRES</code>里加入<code>lvgl</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121821249.png" alt="image-20240412182143182"></p>
-<p>再次编译，看看报错</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121822908.png" alt="image-20240412182235878"></p>
-<p>这里gt911的驱动报错找不到<code>driver/gpio.h</code>，与上面类似地，修改gt911的驱动里的<code>CmakeLists.txt</code>，在<code>PRIV_REQUIRES</code>里加入<code>driver</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121824523.png" alt="image-20240412182412458"></p>
-<p>再编译，看看报错</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121825244.png" alt="image-20240412182513212"></p>
-<p>这里gt911的驱动报错找不到<code>esp_lcd_touch.h</code>，与上面类似地，修改gt911的驱动里的<code>CmakeLists.txt</code>，在<code>PRIV_REQUIRES</code>里加入<code>esp_lcd_touch</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121826592.png"></p>
-<p>再次编译，发现可以编译通过了！（好吧，其实离能用还有很远）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121827054.png" alt="image-20240412182738026"></p>
-<h3 id="硬件连线"><a href="#硬件连线" class="headerlink" title="硬件连线"></a>硬件连线</h3><p>查看开发板的原理图和乐鑫ESP32S3技术文档，应该按照下表接线</p>
-<table>
-<thead>
-<tr>
-<th align="center">屏幕+触摸</th>
-<th align="center">ESP32S3开发板</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">VDD</td>
-<td align="center">3V3</td>
-</tr>
-<tr>
-<td align="center">GND</td>
-<td align="center">GND</td>
-</tr>
-<tr>
-<td align="center">SCLK</td>
-<td align="center">GPIO_NUM_12</td>
-</tr>
-<tr>
-<td align="center">MOSI</td>
-<td align="center">GPIO_NUM_11</td>
-</tr>
-<tr>
-<td align="center">RST</td>
-<td align="center">GPIO_NUM_3</td>
-</tr>
-<tr>
-<td align="center">DC</td>
-<td align="center">GPIO_NUM_9</td>
-</tr>
-<tr>
-<td align="center">CS</td>
-<td align="center">GPIO_NUM_10</td>
-</tr>
-<tr>
-<td align="center">BL</td>
-<td align="center">GPIO_NUM_46</td>
-</tr>
-<tr>
-<td align="center">I2C_SCL</td>
-<td align="center">GPIO_NUM_2</td>
-</tr>
-<tr>
-<td align="center">I2C_SDA</td>
-<td align="center">GPIO_NUM_1</td>
-</tr>
-<tr>
-<td align="center">CTP_INT</td>
-<td align="center">GPIO_NUM_45</td>
-</tr>
-</tbody></table>
-</li>
-</ul>
-<p><strong>注意：VDD和GND千万不能接错，否则烧毁！</strong></p>
-<p>接好线后烧录刚才的程序试一下，然后…咦？屏幕怎么没反应呢？？？</p>
-<p>原来是接线没有在程序里映射出来，这里修改<code>hello_world_main.c</code>的第24-50行为，在不同硬件上需要做相应调整</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* LCD settings */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_SPI_NUM         (SPI3_HOST)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_PIXEL_CLK_HZ    (40 * 1000 * 1000)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_CMD_BITS        (8)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_PARAM_BITS      (8)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_COLOR_SPACE     (ESP_LCD_COLOR_SPACE_BGR)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_BITS_PER_PIXEL  (16)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_DRAW_BUFF_DOUBLE (1)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_DRAW_BUFF_HEIGHT (50)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_BL_ON_LEVEL     (1)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* LCD pins */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_GPIO_SCLK       (GPIO_NUM_12)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_GPIO_MOSI       (GPIO_NUM_11)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_GPIO_RST        (GPIO_NUM_3)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_GPIO_DC         (GPIO_NUM_9)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_GPIO_CS         (GPIO_NUM_10)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_GPIO_BL         (GPIO_NUM_46)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* Touch settings */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_TOUCH_I2C_NUM       (0)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_TOUCH_I2C_CLK_HZ    (400000)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* LCD touch pins */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_TOUCH_I2C_SCL       (GPIO_NUM_2)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_TOUCH_I2C_SDA       (GPIO_NUM_1)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_TOUCH_GPIO_INT      (GPIO_NUM_45)</span></span><br></pre></td></tr></table></figure>
-
-<p>改完之后再次烧录，发现屏幕不断滚动报错</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121851092.png" alt="image-20240412185134048"></p>
-<p>看红字知道报错是因为I2C总线上没有找到gt911，这就比较奇怪了，难道是因为I2C地址错了吗？幸好乐鑫提供了一个专门的I2C检测工具，可以遍历所有I2C地址，还记得和hello_world工程一起复制过来的i2c_tools工程吗，现在需要用到它了</p>
-<p>在VScode中打开<code>i2c_tools</code>工程，编译烧录，在终端中可以看到进入了<code>i2c_tools</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121938181.png" alt="image-20240412193813115"></p>
-<p>输入<code>i2cdetect</code>即可遍历总线上的地址</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121938576.png" alt="image-20240412193850546"></p>
-<p>这里出现了<code>0x14</code>，当前挂载在I2C总线上的只有一个设备，所以gt911的地址是<code>0x14</code>，然后我们回到hello_world程序，打开<code>/components/esp_lcd_touch_gt911/include/esp_lcd_touch_gt911.h</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121942008.png" alt="image-20240412194202971"></p>
-<p>可以看到定义了两个I2C地址，在结构体中调用了一个，这里看到调用的是<code>ESP_LCD_TOUCH_IO_I2C_gt911_ADDRESS</code>，值为<code>0x5D</code>，与实际地址<code>0x14</code>不符合，而<code>ESP_LCD_TOUCH_IO_I2C_gt911_ADDRESS_BACKUP</code>的值为<code>0x14</code>，所以结构体里改为<code>ESP_LCD_TOUCH_IO_I2C_gt911_ADDRESS_BACKUP</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121944838.png" alt="image-20240412194432812"></p>
-<h3 id="改代码"><a href="#改代码" class="headerlink" title="改代码"></a>改代码</h3><p>再次烧录，看看效果__结果还是不行，还是报I2C的错误，这里我们查看原理图，发现屏幕的I2C没有上拉__，所以我们需要打开芯片的内部上拉</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121954480.png" alt="image-20240412195427450"></p>
-<p>然后再次烧录，屏幕成功点亮，但是显示有点奇怪</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404122139981.jpg" alt="0f0e9dbd753c2ea81331be530d4058f"></p>
-<p>现在发现：</p>
-<ol>
-<li>长宽不对</li>
-<li>字显示不清晰</li>
-<li>屏幕镜像颠倒 </li>
-<li>触摸X、Y轴反向</li>
-</ol>
-<p>现在开始逐一解决：</p>
-<ol>
-<li>设置长宽，更改宏定义里的<code>EXAMPLE_LCD_H_RES</code>为320，<code>EXAMPLE_LCD_V_RES</code>为480</li>
-<li>点左下角小齿轮，进入<code>SDK Configuration editor</code>，搜索<code>Swap</code>，找到这个选项，打上勾（改完记得保存）<br> <img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404122005348.png" alt="image-20240412200541312"></li>
-<li>这两个<code>true</code>随便改一个为<code>false</code><br> <img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404122021990.png" alt="image-20240412202126956"></li>
-<li>把结构体里的<code>mirror_x</code>的1改为0，<code>mirror_y</code>的0改为1<br> <img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404122047197.png" alt="image-20240412204715167"></li>
-</ol>
-<p>然后再次烧录测试，发现颜色还是不对，背景是黑色的，但是理论上应该是白色<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404122138345.jpg" alt="c4ae5d37df49d5748cd673873cdaece"></p>
-<p>考虑到屏幕的面板是IPS的，而默认显示驱动可能支持的是TN屏，我这里选择魔改另外一款默认为IPS的显示驱动芯片（ili9341）的驱动程序，具体操作如下：</p>
-<ol>
-<li><p>通过<code>idf-component</code>下载<code>esp_lcd_ili9341</code>并移动到<code>components</code>目录下，并修改<code>esp_lcd_ili9341</code>的<code>idf-component.yml</code></p>
-</li>
-<li><p>修改<code>/esp_lcd_ili9341/esp_lcd_ili9341.c</code>的<code>vendor_specific_init_default</code>数组为（这里是参照屏幕厂商的驱动改的）</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"> <span class="type">const</span> <span class="type">ili9341_lcd_init_cmd_t</span> vendor_specific_init_default[] = &#123;</span><br><span class="line"><span class="comment">//  &#123;cmd, &#123; data &#125;, data_size, delay_ms&#125;</span></span><br><span class="line">    <span class="comment">/* Power contorl B, power control = 0, DC_ENA = 1 */</span></span><br><span class="line">    <span class="comment">// &#123;0x11, (uint8_t [])&#123;0x00&#125;, 0, 120&#125;,</span></span><br><span class="line">    &#123;<span class="number">0xB2</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x0C</span>, <span class="number">0x0C</span>, <span class="number">0x00</span>, <span class="number">0x33</span>, <span class="number">0x33</span>&#125;, <span class="number">5</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xB0</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x00</span>, <span class="number">0xE0</span>&#125;, <span class="number">2</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    <span class="comment">// &#123;0x36, (uint8_t [])&#123;0x00&#125;, 1, 0&#125;,</span></span><br><span class="line">    <span class="comment">// &#123;0x3A, (uint8_t [])&#123;0x05&#125;, 1, 0&#125;,</span></span><br><span class="line">    &#123;<span class="number">0xB7</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x56</span>&#125;, <span class="number">1</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xBB</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x14</span>&#125;, <span class="number">1</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xC0</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x2C</span>&#125;, <span class="number">1</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xC2</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x01</span>&#125;, <span class="number">1</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xC3</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x0B</span>&#125;, <span class="number">1</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xC4</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x10</span>&#125;, <span class="number">1</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xC6</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x0F</span>&#125;, <span class="number">1</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xD0</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0xA4</span>, <span class="number">0xA1</span>&#125;, <span class="number">2</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xD6</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0xA1</span>&#125;, <span class="number">1</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xE0</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0xD0</span>, <span class="number">0x08</span>, <span class="number">0x0A</span>, <span class="number">0x0D</span>, <span class="number">0x0B</span>, <span class="number">0x07</span>, <span class="number">0x21</span>, <span class="number">0x33</span>, <span class="number">0x39</span>, <span class="number">0x39</span>, <span class="number">0x16</span>, <span class="number">0x16</span>, <span class="number">0x1F</span>, <span class="number">0x3C</span>&#125;, <span class="number">14</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xE1</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0xD0</span>, <span class="number">0x00</span>, <span class="number">0x03</span>, <span class="number">0x01</span>, <span class="number">0x00</span>, <span class="number">0x10</span>, <span class="number">0x21</span>, <span class="number">0x32</span>, <span class="number">0x38</span>, <span class="number">0x16</span>, <span class="number">0x14</span>, <span class="number">0x14</span>, <span class="number">0x20</span>, <span class="number">0x3D</span>&#125;, <span class="number">14</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0x21</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x00</span>&#125;, <span class="number">0</span>, <span class="number">120</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0x29</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x00</span>&#125;, <span class="number">0</span>, <span class="number">1</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0x2C</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x00</span>&#125;, <span class="number">0</span>, <span class="number">1</span>&#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>至此驱动修改完毕，在<code>hello_world_main.c</code>中include一下<code>esp_lcd_ili9341.h</code>，把<code>esp_lcd_new_panel_st7796</code>函数改为<code>esp_lcd_new_panel_ili9341</code>，烧录看看效果</p>
-</li>
-</ol>
-<h3 id="正常显示-20240412"><a href="#正常显示-20240412" class="headerlink" title="正常显示 - 20240412"></a>正常显示 - 20240412</h3><p>可以看到，已经正确显示了（但其实旋转方向之后显示还是不太对，屏幕会镜像，不知道为什么，应该还是驱动的问题）<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404122138205.jpg" alt="61e5f02c1fdb5e1fd49e2a5a34a134b"></p>
-<h3 id="跑demo-20240414"><a href="#跑demo-20240414" class="headerlink" title="跑demo - 20240414"></a>跑demo - 20240414</h3><h4 id="Music音乐播放器demo"><a href="#Music音乐播放器demo" class="headerlink" title="Music音乐播放器demo"></a>Music音乐播放器demo</h4><p>点左下角小齿轮，进入<code>SDK Configuration editor</code>，找到LVGL相关的设置</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404141416848.png" alt="image-20240414141602770"></p>
-<p>在<code>Demos</code>里面勾选<code>Music player demo</code>，别忘了保存</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404141417085.png" alt="image-20240414141718058"></p>
-<p>然后回到hello_world_main.c里，找到函数<code>app_main_display()</code>，将里面的<code>Label</code>和<code>Button</code>注释掉，并在后面加上lv_demo_music函数的声明和调用</p>
-<p><em>这里补充一点，C语言可以在函数里面声明函数，格式与在函数之外相同。 声明后的函数只在本函数内调用有效。其他函数需要重新声明</em></p>
-<p>修改好后的app_main_display()函数如下</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">app_main_display</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">lv_obj_t</span> *scr = lv_scr_act();</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Task lock */</span></span><br><span class="line">    lvgl_port_lock(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Your LVGL objects code here .... */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// /* Label */</span></span><br><span class="line">    <span class="comment">// lv_obj_t *label = lv_label_create(scr);</span></span><br><span class="line">    <span class="comment">// lv_label_set_recolor(label, true);</span></span><br><span class="line">    <span class="comment">// lv_obj_set_width(label, EXAMPLE_LCD_H_RES);</span></span><br><span class="line">    <span class="comment">// lv_obj_set_style_text_align(label, LV_TEXT_ALIGN_CENTER, 0);</span></span><br><span class="line">    <span class="comment">// lv_label_set_text(label, &quot;#FF0000 &quot;LV_SYMBOL_BELL&quot; Hello world Espressif and LVGL &quot;LV_SYMBOL_BELL&quot;#\n#FF9400 &quot;LV_SYMBOL_WARNING&quot; For simplier initialization, use BSP &quot;LV_SYMBOL_WARNING&quot; #&quot;);</span></span><br><span class="line">    <span class="comment">// lv_obj_align(label, LV_ALIGN_CENTER, 0, -30);</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// /* Button */</span></span><br><span class="line">    <span class="comment">// lv_obj_t *btn = lv_btn_create(scr);</span></span><br><span class="line">    <span class="comment">// label = lv_label_create(btn);</span></span><br><span class="line">    <span class="comment">// lv_label_set_text_static(label, &quot;Rotate screen&quot;);</span></span><br><span class="line">    <span class="comment">// lv_obj_align(btn, LV_ALIGN_BOTTOM_MID, 0, -30);</span></span><br><span class="line">    <span class="comment">// lv_obj_add_event_cb(btn, _app_button_cb, LV_EVENT_CLICKED, NULL);</span></span><br><span class="line">    <span class="type">void</span> <span class="title function_">lv_demo_music</span><span class="params">(<span class="type">void</span>)</span>; </span><br><span class="line">    lv_demo_music();</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Task unlock */</span></span><br><span class="line">    lvgl_port_unlock();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>我们编译试试，看会不会报错<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404141423001.png" alt="image-20240414142329954"></p>
-<p>还真报错了，这里说的是找不到需要的字体，点左下角小齿轮进入LVGL的配置界面，在Font usage里勾选上12和16号字体，记得保存</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404141424111.png" alt="image-20240414142453070"></p>
-<p>再编译试试，可以看到已经编译过了<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404141429970.png" alt="image-20240414142923937"></p>
-<p>那就烧录看看效果吧（这里有可能触摸的X或者Y还会反，再去改tp_cfg结构体里的mirror_x或者mirror_y就行）<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404141435341.jpg" alt="0396dc12365b70b64f1728d4a349420"></p>
-<p>可以看到显示和触摸都正常了</p>
-<h3 id="跑组件（Widget）demo"><a href="#跑组件（Widget）demo" class="headerlink" title="跑组件（Widget）demo"></a>跑组件（Widget）demo</h3><h3 id="优化帧率-20240414"><a href="#优化帧率-20240414" class="headerlink" title="优化帧率 - 20240414"></a>优化帧率 - 20240414</h3><p>打开<a href="https://www.espressif.com/">乐鑫官网</a>，点顶部的Support，在找到ESP-FAQ，搜索LVGL，即可找到如下内容</p>
-<ul>
-<li><p>Taking ESP32-S3R8 as an example, the following ESP configuration items can improve the frame rate (ESP-IDF release&#x2F;v5.1):</p>
-<ul>
-<li><code>CONFIG_FREERTOS_HZ=1000</code></li>
-<li><code>CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_240=y</code></li>
-<li><code>CONFIG_ESPTOOLPY_FLASHMODE_QIO=y</code></li>
-<li><code>CONFIG_ESPTOOLPY_FLASHFREQ_120M=y</code> [should be consistent with PSRAM]</li>
-<li><code>CONFIG_SPIRAM_MODE_OCT=y</code></li>
-<li><code>CONFIG_IDF_EXPERIMENTAL_FEATURES=y</code> and <code>CONFIG_SPIRAM_SPEED_120M=y</code> [should be consistent with FLASH]</li>
-<li><code>CONFIG_SPIRAM_FETCH_INSTRUCTIONS=y</code></li>
-<li><code>CONFIG_SPIRAM_RODATA=y</code></li>
-<li><code>CONFIG_ESP32S3_DATA_CACHE_LINE_64B=y</code></li>
-<li><code>CONFIG_COMPILER_OPTIMIZATION_PERF=y</code></li>
-</ul>
-</li>
-<li><p>The following LVGL configuration items can improve the frame rate (LVGL v8.3):</p>
-<ul>
-<li><p><code>#define LV_MEM_CUSTOM 1</code> or <code>CONFIG_LV_MEM_CUSTOM=y</code></p>
-</li>
-<li><p><code>#define LV_MEMCPY_MEMSET_STD 1</code> or <code>CONFIG_LV_MEMCPY_MEMSET_STD=y</code></p>
-</li>
-<li><p><code>#define LV_ATTRIBUTE_FAST_MEM IRAM_ATTR</code> or <code>CONFIG_LV_ATTRIBUTE_FAST_MEM=y</code></p>
-</li>
-</ul>
-</li>
-</ul>
-<p>再加一个<code>LV_DISP_DEF_REFR_PERIOD</code>由30改为10</p>
-<p>注：如果要显示帧率和CPU占用，可以吧<code>Show CPU usage and FPS count</code>勾上</p>
-<p>这里就按照官网的推荐来进行修改，点左下角小齿轮，分别修改上面的这些参数（修改完记得保存），其中某些参数可能找不到，这是由于CSDK的版本和使用的MCU型号不同导致的，不用深究</p>
-<p>修改hello_world_main.c里的SPI频率到80M（实测这个影响帧率最为明显）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404141458859.png" alt="image-20240414145809827"></p>
-<p>改完以后再来编译烧录，发现帧率提升了很多，滑动较为丝滑了</p>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>ESP32</tag>
-        <tag>LVGL</tag>
-        <tag>ESP-IDF</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在STM32里使用rosserial</title>
-    <url>/post/f3ad7b3e.html</url>
-    <content><![CDATA[<blockquote>
-<p>我使用的是Ubuntu 20.04 ROS Noetic搭配STM32F407开发板，不同STM32芯片之间使用起来差异不大</p>
-</blockquote>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
-<li>Ubuntu安装软件包</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install ros-noetic-rosserial ros-noetic-rosserial-arduino</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>（已经配置好的库）<a href="https://github.com/MDLZCOOL/rosserial_stm32">MDLZCOOL&#x2F;rosserial_stm32</a></li>
-</ul>
-<h2 id="开始配置"><a href="#开始配置" class="headerlink" title="开始配置"></a>开始配置</h2><ol>
-<li>新建STM32工程，配置RCC等步骤省略。</li>
-<li>打开串口，配置中断和DMA，波特率推荐115200。具体配置见下图</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129190705711.png" alt="image-20241129190705711"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129190741215.png" alt="image-20241129190741215"></p>
-<ol start="3">
-<li><p>生成代码，将<code>rosserial_stm32_lib</code>复制到<code>Core/Inc</code>，并添加进工程里。</p>
-</li>
-<li><p>在<code>Core/Src</code>添加一个<code>mainpp.cpp</code>，添加以下代码</p>
-</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ros.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;std_msgs/String.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;mainpp.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;main.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">messageCallback</span><span class="params">(<span class="type">const</span> std_msgs::String &amp;msg)</span> &#123;</span><br><span class="line">    <span class="comment">// Callback</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ros::NodeHandle nh;</span><br><span class="line">ros::Subscriber&lt;std_msgs::String&gt; <span class="title function_">sub</span><span class="params">(<span class="string">&quot;/stm32_ros_bridge&quot;</span>, &amp;messageCallback)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">HAL_UART_TxCpltCallback</span><span class="params">(UART_HandleTypeDef *huart)</span> &#123;</span><br><span class="line">    nh.getHardware()-&gt;flush();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">HAL_UART_RxCpltCallback</span><span class="params">(UART_HandleTypeDef *huart)</span> &#123;</span><br><span class="line">    nh.getHardware()-&gt;reset_rbuf();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    nh.initNode();</span><br><span class="line">    nh.subscribe(sub);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    nh.spinOnce();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol start="6">
-<li>在<code>Core/Inc</code>添加<code>mainpp.h</code>，添加以下代码</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> MAINPP_H_</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAINPP_H_</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> __cplusplus</span></span><br><span class="line"><span class="keyword">extern</span> <span class="string">&quot;C&quot;</span> &#123;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> __cplusplus</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span> <span class="comment">/* MAINPP_H_ */</span></span></span><br></pre></td></tr></table></figure>
-
-<ol start="5">
-<li>修改<code>main.c</code></li>
-</ol>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span>&#123;</span><br><span class="line">...</span><br><span class="line">  <span class="comment">/* USER CODE BEGIN 2 */</span></span><br><span class="line">  setup();</span><br><span class="line">  <span class="comment">/* USER CODE END 2 */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Infinite loop */</span></span><br><span class="line">  <span class="comment">/* USER CODE BEGIN WHILE */</span></span><br><span class="line">  <span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">/* USER CODE END WHILE */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* USER CODE BEGIN 3 */</span></span><br><span class="line">    loop();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">/* USER CODE END 3 */</span></span><br><span class="line">...</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ol start="6">
-<li><p>修改<code>STM32Hardware.h</code>，具体为：</p>
-<ul>
-<li>定义自己的设备头（如果预处理部分没有你的设备，请自己加上）</li>
-</ul>
-</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129193813695.png" alt="image-20241129193813695"></p>
-<ul>
-<li>将所有的huart句柄改为你自己的，比如在<code>STM32Hardware.h</code>里默认handler名字叫<code>huart1</code></li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129194059681.png" alt="image-20241129194059681"></p>
-<ol start="7">
-<li>至此STM32就配好了</li>
-<li>用串口工具连接STM32和电脑USB_HOST，使用以下命令查看USB文件位置（Linux里万物皆为文件）</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ls</span> /dev/ttyUSB*</span><br><span class="line">或者</span><br><span class="line">dmesg | grep <span class="built_in">tty</span></span><br></pre></td></tr></table></figure>
-
-<p>比如这里我的USB位置就是<code>/dev/ttyUSB0</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129195247309.png" alt="image-20241129195247309"></p>
-<ol start="9">
-<li>执行下面命令使ROS连接上STM32，别忘了先roscore</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rosrun rosserial_python serial_node.py _baud:=115200 _port:=/dev/ttyUSB0</span><br></pre></td></tr></table></figure>
-
-<p>不出所料的话，现在已经成功连接上设备了</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129195651213.png" alt="image-20241129195651213"></p>
-<h2 id="STM32执行ROS发来的指令"><a href="#STM32执行ROS发来的指令" class="headerlink" title="STM32执行ROS发来的指令"></a>STM32执行ROS发来的指令</h2><ol>
-<li>在<code>mainpp.cpp</code>实现下面测试代码：</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">messageCallback</span><span class="params">(<span class="type">const</span> std_msgs::String &amp;msg)</span> &#123;</span><br><span class="line">    SEGGER_RTT_WriteString(<span class="number">0</span>, <span class="string">&quot;\r\nmessageCallback occurred!\r\nYour message is &quot;</span>);</span><br><span class="line">    SEGGER_RTT_WriteString(<span class="number">0</span>, msg.data);</span><br><span class="line">    SEGGER_RTT_WriteString(<span class="number">0</span>, <span class="string">&quot;\r\n&quot;</span>);</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">strcmp</span>(<span class="string">&quot;servo_1&quot;</span>, msg.data) == <span class="number">0</span>) &#123;</span><br><span class="line">        SEGGER_RTT_WriteString(<span class="number">0</span>, <span class="string">&quot;Action &#x27;servo_1&#x27; begin!\r\n&quot;</span>);</span><br><span class="line">        __HAL_TIM_SET_COMPARE(&amp;htim1, TIM_CHANNEL_1, <span class="number">1500</span>);</span><br><span class="line">        SEGGER_RTT_WriteString(<span class="number">0</span>, <span class="string">&quot;Action &#x27;servo_1&#x27; complete!\r\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>写入固件，连接电脑测试</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129200940086.png" alt="image-20241129200940086"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129201020932.png" alt="image-20241129201020932"></p>
-<p>可以看到，回调函数正常触发，至此实现了ROS对STM32 publish 消息，并成功接收。</p>
-<h2 id="STM32向ROS发送话题"><a href="#STM32向ROS发送话题" class="headerlink" title="STM32向ROS发送话题"></a>STM32向ROS发送话题</h2><ol>
-<li>在<code>mainpp.cpp</code>实现下面测试代码：</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ros.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;std_msgs/String.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;mainpp.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;main.h&quot;</span></span></span><br><span class="line"></span><br><span class="line">std_msgs::String str_msg;</span><br><span class="line">ros::NodeHandle nh;</span><br><span class="line">ros::Publisher <span class="title function_">pub</span><span class="params">(<span class="string">&quot;stm32_ros_bridge_pub&quot;</span>, &amp;str_msg)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">HAL_UART_TxCpltCallback</span><span class="params">(UART_HandleTypeDef *huart)</span> &#123;</span><br><span class="line">    nh.getHardware()-&gt;flush();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">HAL_UART_RxCpltCallback</span><span class="params">(UART_HandleTypeDef *huart)</span> &#123;</span><br><span class="line">    nh.getHardware()-&gt;reset_rbuf();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    nh.initNode();</span><br><span class="line">    str_msg.data = <span class="string">&quot;Hello, ROS!&quot;</span>;</span><br><span class="line">    nh.advertise(pub);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    pub.publish(&amp;str_msg);</span><br><span class="line">    nh.spinOnce();</span><br><span class="line">    HAL_Delay(<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129203923631.png" alt="image-20241129203923631"></p>
-<blockquote>
-<p>注意：这里有一个问题，我们用的波特率是115200，发送数据的频率是有限制的，如果超过这个上限，ROS拿到的数据就会丢包，没法通过完整性校验，所以这里在loop()里写了一个delay，但是这种做法不是通常推荐的，<strong>更加一般的做法是把publish写在某个定时器里，这样就不会占用CPU时间去等待。</strong></p>
-</blockquote>
-<p>贴一张图，发送频率不能太高</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129204312643.png" alt="image-20241129204312643"></p>
-<p>至此实现了STM32与ROS的<strong>双向通信</strong>，后面可以拿来做一些好玩的东西了。</p>
-<hr>
-<p>测试STM32F103C8Tx单片机，其FLASH为64K，无法装下程序，故推荐FLASH大小为80K左右。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241130185002474.png" alt="image-20241130185002474"></p>
-<hr>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://wiki.ros.org/rosserial/Overview/">rosserial&#x2F;Overview</a></li>
-</ol>
-<hr>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>Dev</tag>
-        <tag>STM32</tag>
-        <tag>ROS</tag>
       </tags>
   </entry>
   <entry>
@@ -1066,49 +809,6 @@
       </tags>
   </entry>
   <entry>
-    <title>舵机多功能测试程序说明</title>
-    <url>/post/cee333e2.html</url>
-    <content><![CDATA[<p><strong>写在前面：基地一直都有对舵机快捷测试的需求，但是每次都得改源码，很麻烦，也不能实现舵机的精准角度控制，最近忙完期中考试，抽时间写了这个程序，也算是对学到的东西的一点小小的应用吧</strong></p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本程序运行在大疆开发板C型，基于STM32 HAL平台开发，具有极其优良的可移植性，可以快速迁移至其他MCU，本程序依托串口与上位机通信，使用时接串口线和电池即可</p>
-<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404301832725.png" alt="image-20240430183243677"></p>
-<p>对主菜单的解释，每个指令串口都会输出对应的注解，<strong>注意输入任何指令都需要以回车结尾！</strong></p>
-<table>
-<thead>
-<tr>
-<th>功能</th>
-<th>解释</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Plain Servo Test</td>
-<td>朴素舵机测试（控制舵机转到特定角度）</td>
-</tr>
-<tr>
-<td>Interval Servo Test</td>
-<td>区间舵机测试（控制舵机在特定区间转动）</td>
-</tr>
-<tr>
-<td>Quick Servo Test</td>
-<td>快速舵机测试（快速测试舵机好坏）</td>
-</tr>
-<tr>
-<td>Use Multi Channels</td>
-<td>使用多个PWM通道，可以一次测试多个舵机</td>
-</tr>
-<tr>
-<td>Direct PWM Ctrl (20240709更新)</td>
-<td>直接输入PWM Compare值控制舵机</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>百度网盘不限速</title>
     <url>/post/900d6e7c.html</url>
     <content><![CDATA[<p><em>最近不太稳定了 20241123</em></p>
@@ -1187,6 +887,306 @@
       </categories>
       <tags>
         <tag>Dev</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>舵机多功能测试程序说明</title>
+    <url>/post/cee333e2.html</url>
+    <content><![CDATA[<p><strong>写在前面：基地一直都有对舵机快捷测试的需求，但是每次都得改源码，很麻烦，也不能实现舵机的精准角度控制，最近忙完期中考试，抽时间写了这个程序，也算是对学到的东西的一点小小的应用吧</strong></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本程序运行在大疆开发板C型，基于STM32 HAL平台开发，具有极其优良的可移植性，可以快速迁移至其他MCU，本程序依托串口与上位机通信，使用时接串口线和电池即可</p>
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404301832725.png" alt="image-20240430183243677"></p>
+<p>对主菜单的解释，每个指令串口都会输出对应的注解，<strong>注意输入任何指令都需要以回车结尾！</strong></p>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Plain Servo Test</td>
+<td>朴素舵机测试（控制舵机转到特定角度）</td>
+</tr>
+<tr>
+<td>Interval Servo Test</td>
+<td>区间舵机测试（控制舵机在特定区间转动）</td>
+</tr>
+<tr>
+<td>Quick Servo Test</td>
+<td>快速舵机测试（快速测试舵机好坏）</td>
+</tr>
+<tr>
+<td>Use Multi Channels</td>
+<td>使用多个PWM通道，可以一次测试多个舵机</td>
+</tr>
+<tr>
+<td>Direct PWM Ctrl (20240709更新)</td>
+<td>直接输入PWM Compare值控制舵机</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于ESP-IDF在ESP32S3上移植LVGL和显示触摸驱动</title>
+    <url>/post/64bc178b.html</url>
+    <content><![CDATA[<p>ESP32很久没搞了，这篇文章是基于VSCode写的，写的自认为很一般，不过对于初学者应该是有点帮助的，近期可能会用CLion再试试配置ESP-IDF环境 - 20241028更新</p>
+<p><strong>前言：之前基本一直在搞STM32的开发，想换到别的平台（比如ESP32）试试，也算对自己的一种锻炼和提升，注意到网上关于LVGL移植的教程非常多，但是大部分是基于Arduino平台的，基本没有基于ESP-IDF框架的（即使有也已经过时）。最近入手了几块ESP32的开发板和一块带CTP（电容触摸）的3.5寸IPS屏幕，可视角度和分辨率都不错，作为一个对GUI界面有执着追求的人，我想把当下很火的嵌入式GUI项目<a href="https://lvgl.io/">LVGL - Light and Versatile Embedded Graphics Library</a>移植到我的项目里，并实现一部分优化，让它即使在资源极端有限的情况下也能较为流畅地运行~</strong></p>
+<p><strong>进度:</strong></p>
+<ul>
+<li>（已完成）实现正确显示 - 20240412</li>
+<li>（已完成）跑demo、优化帧率 - 20240414</li>
+<li>（已完成）基于SquareLine平台设计UI - 很简单，可以看一下CLion实现的LVGL模拟器 20241028</li>
+<li>（已完成）接入各种传感器 - 很简单</li>
+</ul>
+<h2 id="物料选择"><a href="#物料选择" class="headerlink" title="物料选择"></a>物料选择</h2><ul>
+<li><p>ESP32S3开发板一块，比如我使用立创的ESP32-S3开发板（集成串口芯片）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404122139635.jpg" alt="087b0e76d0dc9852b9dd31fb43531fa"></p>
+</li>
+<li><p>3.5寸电容触摸屏（显示驱动为ST7796U，电容触摸驱动为gt911）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404122139803.jpg" alt="6dd6fbcc761ede3cc4c3065eba1070c"></p>
+</li>
+<li><p>杜邦线若干</p>
+</li>
+<li><p>Type-C数据线</p>
+</li>
+</ul>
+<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><ul>
+<li>电脑系统：<code>Windows 11</code></li>
+<li>开发环境：<code>Visual Studio Code</code>（至于为什么不用CLion，因为CLion上没配起来IDF框架（抽象））、<code>ESP-IDF_5.1.2</code></li>
+</ul>
+<blockquote>
+<p>2024&#x2F;10&#x2F;29更新，CLion官网出配置ESP-IDF教程了，好耶：<a href="https://www.jetbrains.com/help/clion/esp-idf.html">https://www.jetbrains.com/help/clion/esp-idf.html</a></p>
+</blockquote>
+<p><em>这里具体配置细节暂时略去，因为最近要重新装系统，到时候刚好重新配置一遍，写个教程补上 - 20240412</em></p>
+<h2 id="开工！"><a href="#开工！" class="headerlink" title="开工！"></a>开工！</h2><h3 id="文件准备"><a href="#文件准备" class="headerlink" title="文件准备"></a>文件准备</h3><ul>
+<li><p>先找到示例文件夹，在IDF的安装目录下<br><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121501913.png" alt="image-20240412150107877"></p>
+</li>
+<li><p>打开进入<code>./get-started/</code>，找到<code>hello_world</code>程序并复制出来</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121502899.png" alt="image-20240412150249861"></p>
+</li>
+<li><p>再在<code>./peripherals/i2c</code>中找到<code>i2c_tools</code>，也和刚才的<code>hello_world</code>放在一起<br><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121506011.png" alt="image-20240412150606976"></p>
+</li>
+<li><p>打开<code>Visual Studio Code</code>，选到hello_world目录</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121518948.png" alt="image-20240412151819885"></p>
+</li>
+<li><p>这里配置一下开发板的信息：<br>1. 插上开发板，点一下左下角的<code>COM1</code>，根据实际选择正确的<code>COM</code><br>1. 点左下角<code>esp32</code>，选择合适的esp芯片型号，比如我就选esp32s3<br>1. 选择<code>OpenOCD</code>的配置文件，一般选择<code>via ESP-PROG</code>就好<br>1. 点左下角的五角星，选择<code>UART</code>（我的开发板上带了TTL芯片）<br>最终配置好应该是这样的：<br><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121527778.png" alt="image-20240412152745759"></p>
+</li>
+<li><p>在main文件夹里新建一个<code>idf_component.yml</code>文件，并复制以下内容</p>
+<p><em><a href="https://docs.espressif.com/projects/idf-component-manager/en/latest/reference/manifest_file.html">这个网站</a>有<code>idf_component.yml</code>的编写规则，这里我就直接用里面的框架了</em></p>
+</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">dependencies:</span></span><br><span class="line">  <span class="attr">pkg_name:</span> <span class="string">&quot;pkg_version&quot;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>浏览器打开<a href="https://www.espressif.com/">乐鑫官网</a>，在<code>SDKs</code>下找到<code>IDF Component Manager</code>包管理器</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121535817.png" alt="image-20240412153510715"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121546289.png" alt="image-20240412154657218"></p>
+</li>
+<li><p>在<code>IDF Component Manager</code>中搜索<code>LVGL</code>，这次用的是<code>lvgl</code>和<code>esp_lvgl_port</code>，至于驱动为什么不用<code>lvgl_esp32_drivers</code>，是因为这玩意的代码已经很久没有维护了，不支持<code>IDF5.x</code>版本和较新的<code>LVGL</code></p>
+<p>这次用的是<code>1.4.0</code>版本的<code>esp_lvgl_port</code>，在<code>idf_component.yml</code>中把<code>pkg_name</code>换成<code>esp_lvgl_port</code>，因为我们这次移植的是<code>8.4.0</code>的<code>LVGL</code>，所以<code>pkg_version</code>改成<code>1.4.0</code>，把<code>LVGL</code>和<code>gt911触摸芯片</code>和<code>ST7796显示芯片</code>的驱动也加上，像下面这样</p>
+</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">dependencies:</span></span><br><span class="line">  <span class="attr">esp_lvgl_port:</span> <span class="string">&quot;1.4.0&quot;</span></span><br><span class="line">  <span class="attr">esp_lcd_touch_gt911:</span> <span class="string">&quot;1.1.0&quot;</span></span><br><span class="line">  <span class="attr">esp_lcd_st7796:</span> <span class="string">&quot;1.2.1&quot;</span></span><br><span class="line">  <span class="attr">lvgl/lvgl:</span> <span class="string">&quot;8.4.0&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>  然后编译一次就会自动下载相关依赖（这里即使最后编译报错了也没关系，因为依赖已经下好了，报错稍后再去解决）</p>
+<p>  待依赖下载完成之后，工作空间的根目录会出现<code>managed_components</code>文件夹，把这个文件夹改为<code>components</code>（这步是因为可能要修改某些依赖的源码，如果不这样的话修改后会报<code>哈希不匹配</code>的错），把里面的依赖整理一下，像这样<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121647535.png" alt="image-20240412164748491"></p>
+<p>  检查每个依赖中的其他关联依赖（<code>idf_component.yml</code>），把所有除了IDF以外的其他依赖全部删掉</p>
+<ul>
+<li><p>把<code>./esp_lvgl_port/examples/touchscreen/main/</code>下的<code>main.c</code>文件的全部内容复制到hello_world_main.c里<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121657456.png"></p>
+</li>
+<li><p>顺便说一下，如果VScode没法代码补全和代码跳转的话，按下<code>Ctrl+Shift+P</code>，搜索<code>IntelliSense</code>，选择第一个不带bootloader的，选好之后Full Clean，再点一下编译，就可以正常使用了</p>
+</li>
+<li><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121808911.png" alt="image-20240412180848835"></p>
+</li>
+<li><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121809959.png" alt="image-20240412180922880"></p>
+</li>
+<li><p>编译一下，看看报错</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121659815.png" alt="image-20240412165942792"></p>
+<p>可以看到找不到对应的头文件，这里示例文件默认用的触摸驱动是tt21100，与我用的gt911不一样，所以我们要包含gt911的驱动进去，故要做的就是修改头文件，把tt21100的驱动换成gt911的，并且把程序里调用的函数进行对应的更改</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;esp_lcd_touch_tt21100.h&quot;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>更改为</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;esp_lcd_touch_gt911.h&quot;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>对应的函数改为gt911</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121815198.png" alt="image-20240412181507168"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121816895.png" alt="image-20240412181658868"></p>
+<p>再次编译，看看报错</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121820971.png" alt="image-20240412182013943"></p>
+<p>注意到这里找不到<code>lvgl.h</code>的错误是<code>esp_lvgl_port</code>这个依赖发出的，所以进入该依赖的<code>CmakeLists.txt</code>，在<code>PRIV_REQUIRES</code>里加入<code>lvgl</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121821249.png" alt="image-20240412182143182"></p>
+<p>再次编译，看看报错</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121822908.png" alt="image-20240412182235878"></p>
+<p>这里gt911的驱动报错找不到<code>driver/gpio.h</code>，与上面类似地，修改gt911的驱动里的<code>CmakeLists.txt</code>，在<code>PRIV_REQUIRES</code>里加入<code>driver</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121824523.png" alt="image-20240412182412458"></p>
+<p>再编译，看看报错</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121825244.png" alt="image-20240412182513212"></p>
+<p>这里gt911的驱动报错找不到<code>esp_lcd_touch.h</code>，与上面类似地，修改gt911的驱动里的<code>CmakeLists.txt</code>，在<code>PRIV_REQUIRES</code>里加入<code>esp_lcd_touch</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121826592.png"></p>
+<p>再次编译，发现可以编译通过了！（好吧，其实离能用还有很远）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121827054.png" alt="image-20240412182738026"></p>
+<h3 id="硬件连线"><a href="#硬件连线" class="headerlink" title="硬件连线"></a>硬件连线</h3><p>查看开发板的原理图和乐鑫ESP32S3技术文档，应该按照下表接线</p>
+<table>
+<thead>
+<tr>
+<th align="center">屏幕+触摸</th>
+<th align="center">ESP32S3开发板</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">VDD</td>
+<td align="center">3V3</td>
+</tr>
+<tr>
+<td align="center">GND</td>
+<td align="center">GND</td>
+</tr>
+<tr>
+<td align="center">SCLK</td>
+<td align="center">GPIO_NUM_12</td>
+</tr>
+<tr>
+<td align="center">MOSI</td>
+<td align="center">GPIO_NUM_11</td>
+</tr>
+<tr>
+<td align="center">RST</td>
+<td align="center">GPIO_NUM_3</td>
+</tr>
+<tr>
+<td align="center">DC</td>
+<td align="center">GPIO_NUM_9</td>
+</tr>
+<tr>
+<td align="center">CS</td>
+<td align="center">GPIO_NUM_10</td>
+</tr>
+<tr>
+<td align="center">BL</td>
+<td align="center">GPIO_NUM_46</td>
+</tr>
+<tr>
+<td align="center">I2C_SCL</td>
+<td align="center">GPIO_NUM_2</td>
+</tr>
+<tr>
+<td align="center">I2C_SDA</td>
+<td align="center">GPIO_NUM_1</td>
+</tr>
+<tr>
+<td align="center">CTP_INT</td>
+<td align="center">GPIO_NUM_45</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<p><strong>注意：VDD和GND千万不能接错，否则烧毁！</strong></p>
+<p>接好线后烧录刚才的程序试一下，然后…咦？屏幕怎么没反应呢？？？</p>
+<p>原来是接线没有在程序里映射出来，这里修改<code>hello_world_main.c</code>的第24-50行为，在不同硬件上需要做相应调整</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* LCD settings */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_SPI_NUM         (SPI3_HOST)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_PIXEL_CLK_HZ    (40 * 1000 * 1000)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_CMD_BITS        (8)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_PARAM_BITS      (8)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_COLOR_SPACE     (ESP_LCD_COLOR_SPACE_BGR)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_BITS_PER_PIXEL  (16)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_DRAW_BUFF_DOUBLE (1)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_DRAW_BUFF_HEIGHT (50)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_BL_ON_LEVEL     (1)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* LCD pins */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_GPIO_SCLK       (GPIO_NUM_12)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_GPIO_MOSI       (GPIO_NUM_11)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_GPIO_RST        (GPIO_NUM_3)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_GPIO_DC         (GPIO_NUM_9)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_GPIO_CS         (GPIO_NUM_10)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_GPIO_BL         (GPIO_NUM_46)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* Touch settings */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_TOUCH_I2C_NUM       (0)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_TOUCH_I2C_CLK_HZ    (400000)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* LCD touch pins */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_TOUCH_I2C_SCL       (GPIO_NUM_2)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_TOUCH_I2C_SDA       (GPIO_NUM_1)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_TOUCH_GPIO_INT      (GPIO_NUM_45)</span></span><br></pre></td></tr></table></figure>
+
+<p>改完之后再次烧录，发现屏幕不断滚动报错</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121851092.png" alt="image-20240412185134048"></p>
+<p>看红字知道报错是因为I2C总线上没有找到gt911，这就比较奇怪了，难道是因为I2C地址错了吗？幸好乐鑫提供了一个专门的I2C检测工具，可以遍历所有I2C地址，还记得和hello_world工程一起复制过来的i2c_tools工程吗，现在需要用到它了</p>
+<p>在VScode中打开<code>i2c_tools</code>工程，编译烧录，在终端中可以看到进入了<code>i2c_tools</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121938181.png" alt="image-20240412193813115"></p>
+<p>输入<code>i2cdetect</code>即可遍历总线上的地址</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121938576.png" alt="image-20240412193850546"></p>
+<p>这里出现了<code>0x14</code>，当前挂载在I2C总线上的只有一个设备，所以gt911的地址是<code>0x14</code>，然后我们回到hello_world程序，打开<code>/components/esp_lcd_touch_gt911/include/esp_lcd_touch_gt911.h</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121942008.png" alt="image-20240412194202971"></p>
+<p>可以看到定义了两个I2C地址，在结构体中调用了一个，这里看到调用的是<code>ESP_LCD_TOUCH_IO_I2C_gt911_ADDRESS</code>，值为<code>0x5D</code>，与实际地址<code>0x14</code>不符合，而<code>ESP_LCD_TOUCH_IO_I2C_gt911_ADDRESS_BACKUP</code>的值为<code>0x14</code>，所以结构体里改为<code>ESP_LCD_TOUCH_IO_I2C_gt911_ADDRESS_BACKUP</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121944838.png" alt="image-20240412194432812"></p>
+<h3 id="改代码"><a href="#改代码" class="headerlink" title="改代码"></a>改代码</h3><p>再次烧录，看看效果__结果还是不行，还是报I2C的错误，这里我们查看原理图，发现屏幕的I2C没有上拉__，所以我们需要打开芯片的内部上拉</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121954480.png" alt="image-20240412195427450"></p>
+<p>然后再次烧录，屏幕成功点亮，但是显示有点奇怪</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404122139981.jpg" alt="0f0e9dbd753c2ea81331be530d4058f"></p>
+<p>现在发现：</p>
+<ol>
+<li>长宽不对</li>
+<li>字显示不清晰</li>
+<li>屏幕镜像颠倒 </li>
+<li>触摸X、Y轴反向</li>
+</ol>
+<p>现在开始逐一解决：</p>
+<ol>
+<li>设置长宽，更改宏定义里的<code>EXAMPLE_LCD_H_RES</code>为320，<code>EXAMPLE_LCD_V_RES</code>为480</li>
+<li>点左下角小齿轮，进入<code>SDK Configuration editor</code>，搜索<code>Swap</code>，找到这个选项，打上勾（改完记得保存）<br> <img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404122005348.png" alt="image-20240412200541312"></li>
+<li>这两个<code>true</code>随便改一个为<code>false</code><br> <img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404122021990.png" alt="image-20240412202126956"></li>
+<li>把结构体里的<code>mirror_x</code>的1改为0，<code>mirror_y</code>的0改为1<br> <img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404122047197.png" alt="image-20240412204715167"></li>
+</ol>
+<p>然后再次烧录测试，发现颜色还是不对，背景是黑色的，但是理论上应该是白色<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404122138345.jpg" alt="c4ae5d37df49d5748cd673873cdaece"></p>
+<p>考虑到屏幕的面板是IPS的，而默认显示驱动可能支持的是TN屏，我这里选择魔改另外一款默认为IPS的显示驱动芯片（ili9341）的驱动程序，具体操作如下：</p>
+<ol>
+<li><p>通过<code>idf-component</code>下载<code>esp_lcd_ili9341</code>并移动到<code>components</code>目录下，并修改<code>esp_lcd_ili9341</code>的<code>idf-component.yml</code></p>
+</li>
+<li><p>修改<code>/esp_lcd_ili9341/esp_lcd_ili9341.c</code>的<code>vendor_specific_init_default</code>数组为（这里是参照屏幕厂商的驱动改的）</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"> <span class="type">const</span> <span class="type">ili9341_lcd_init_cmd_t</span> vendor_specific_init_default[] = &#123;</span><br><span class="line"><span class="comment">//  &#123;cmd, &#123; data &#125;, data_size, delay_ms&#125;</span></span><br><span class="line">    <span class="comment">/* Power contorl B, power control = 0, DC_ENA = 1 */</span></span><br><span class="line">    <span class="comment">// &#123;0x11, (uint8_t [])&#123;0x00&#125;, 0, 120&#125;,</span></span><br><span class="line">    &#123;<span class="number">0xB2</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x0C</span>, <span class="number">0x0C</span>, <span class="number">0x00</span>, <span class="number">0x33</span>, <span class="number">0x33</span>&#125;, <span class="number">5</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xB0</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x00</span>, <span class="number">0xE0</span>&#125;, <span class="number">2</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    <span class="comment">// &#123;0x36, (uint8_t [])&#123;0x00&#125;, 1, 0&#125;,</span></span><br><span class="line">    <span class="comment">// &#123;0x3A, (uint8_t [])&#123;0x05&#125;, 1, 0&#125;,</span></span><br><span class="line">    &#123;<span class="number">0xB7</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x56</span>&#125;, <span class="number">1</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xBB</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x14</span>&#125;, <span class="number">1</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xC0</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x2C</span>&#125;, <span class="number">1</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xC2</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x01</span>&#125;, <span class="number">1</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xC3</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x0B</span>&#125;, <span class="number">1</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xC4</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x10</span>&#125;, <span class="number">1</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xC6</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x0F</span>&#125;, <span class="number">1</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xD0</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0xA4</span>, <span class="number">0xA1</span>&#125;, <span class="number">2</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xD6</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0xA1</span>&#125;, <span class="number">1</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xE0</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0xD0</span>, <span class="number">0x08</span>, <span class="number">0x0A</span>, <span class="number">0x0D</span>, <span class="number">0x0B</span>, <span class="number">0x07</span>, <span class="number">0x21</span>, <span class="number">0x33</span>, <span class="number">0x39</span>, <span class="number">0x39</span>, <span class="number">0x16</span>, <span class="number">0x16</span>, <span class="number">0x1F</span>, <span class="number">0x3C</span>&#125;, <span class="number">14</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xE1</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0xD0</span>, <span class="number">0x00</span>, <span class="number">0x03</span>, <span class="number">0x01</span>, <span class="number">0x00</span>, <span class="number">0x10</span>, <span class="number">0x21</span>, <span class="number">0x32</span>, <span class="number">0x38</span>, <span class="number">0x16</span>, <span class="number">0x14</span>, <span class="number">0x14</span>, <span class="number">0x20</span>, <span class="number">0x3D</span>&#125;, <span class="number">14</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0x21</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x00</span>&#125;, <span class="number">0</span>, <span class="number">120</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0x29</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x00</span>&#125;, <span class="number">0</span>, <span class="number">1</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0x2C</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x00</span>&#125;, <span class="number">0</span>, <span class="number">1</span>&#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>至此驱动修改完毕，在<code>hello_world_main.c</code>中include一下<code>esp_lcd_ili9341.h</code>，把<code>esp_lcd_new_panel_st7796</code>函数改为<code>esp_lcd_new_panel_ili9341</code>，烧录看看效果</p>
+</li>
+</ol>
+<h3 id="正常显示-20240412"><a href="#正常显示-20240412" class="headerlink" title="正常显示 - 20240412"></a>正常显示 - 20240412</h3><p>可以看到，已经正确显示了（但其实旋转方向之后显示还是不太对，屏幕会镜像，不知道为什么，应该还是驱动的问题）<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404122138205.jpg" alt="61e5f02c1fdb5e1fd49e2a5a34a134b"></p>
+<h3 id="跑demo-20240414"><a href="#跑demo-20240414" class="headerlink" title="跑demo - 20240414"></a>跑demo - 20240414</h3><h4 id="Music音乐播放器demo"><a href="#Music音乐播放器demo" class="headerlink" title="Music音乐播放器demo"></a>Music音乐播放器demo</h4><p>点左下角小齿轮，进入<code>SDK Configuration editor</code>，找到LVGL相关的设置</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404141416848.png" alt="image-20240414141602770"></p>
+<p>在<code>Demos</code>里面勾选<code>Music player demo</code>，别忘了保存</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404141417085.png" alt="image-20240414141718058"></p>
+<p>然后回到hello_world_main.c里，找到函数<code>app_main_display()</code>，将里面的<code>Label</code>和<code>Button</code>注释掉，并在后面加上lv_demo_music函数的声明和调用</p>
+<p><em>这里补充一点，C语言可以在函数里面声明函数，格式与在函数之外相同。 声明后的函数只在本函数内调用有效。其他函数需要重新声明</em></p>
+<p>修改好后的app_main_display()函数如下</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">app_main_display</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">lv_obj_t</span> *scr = lv_scr_act();</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Task lock */</span></span><br><span class="line">    lvgl_port_lock(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Your LVGL objects code here .... */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// /* Label */</span></span><br><span class="line">    <span class="comment">// lv_obj_t *label = lv_label_create(scr);</span></span><br><span class="line">    <span class="comment">// lv_label_set_recolor(label, true);</span></span><br><span class="line">    <span class="comment">// lv_obj_set_width(label, EXAMPLE_LCD_H_RES);</span></span><br><span class="line">    <span class="comment">// lv_obj_set_style_text_align(label, LV_TEXT_ALIGN_CENTER, 0);</span></span><br><span class="line">    <span class="comment">// lv_label_set_text(label, &quot;#FF0000 &quot;LV_SYMBOL_BELL&quot; Hello world Espressif and LVGL &quot;LV_SYMBOL_BELL&quot;#\n#FF9400 &quot;LV_SYMBOL_WARNING&quot; For simplier initialization, use BSP &quot;LV_SYMBOL_WARNING&quot; #&quot;);</span></span><br><span class="line">    <span class="comment">// lv_obj_align(label, LV_ALIGN_CENTER, 0, -30);</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// /* Button */</span></span><br><span class="line">    <span class="comment">// lv_obj_t *btn = lv_btn_create(scr);</span></span><br><span class="line">    <span class="comment">// label = lv_label_create(btn);</span></span><br><span class="line">    <span class="comment">// lv_label_set_text_static(label, &quot;Rotate screen&quot;);</span></span><br><span class="line">    <span class="comment">// lv_obj_align(btn, LV_ALIGN_BOTTOM_MID, 0, -30);</span></span><br><span class="line">    <span class="comment">// lv_obj_add_event_cb(btn, _app_button_cb, LV_EVENT_CLICKED, NULL);</span></span><br><span class="line">    <span class="type">void</span> <span class="title function_">lv_demo_music</span><span class="params">(<span class="type">void</span>)</span>; </span><br><span class="line">    lv_demo_music();</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Task unlock */</span></span><br><span class="line">    lvgl_port_unlock();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们编译试试，看会不会报错<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404141423001.png" alt="image-20240414142329954"></p>
+<p>还真报错了，这里说的是找不到需要的字体，点左下角小齿轮进入LVGL的配置界面，在Font usage里勾选上12和16号字体，记得保存</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404141424111.png" alt="image-20240414142453070"></p>
+<p>再编译试试，可以看到已经编译过了<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404141429970.png" alt="image-20240414142923937"></p>
+<p>那就烧录看看效果吧（这里有可能触摸的X或者Y还会反，再去改tp_cfg结构体里的mirror_x或者mirror_y就行）<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404141435341.jpg" alt="0396dc12365b70b64f1728d4a349420"></p>
+<p>可以看到显示和触摸都正常了</p>
+<h3 id="跑组件（Widget）demo"><a href="#跑组件（Widget）demo" class="headerlink" title="跑组件（Widget）demo"></a>跑组件（Widget）demo</h3><h3 id="优化帧率-20240414"><a href="#优化帧率-20240414" class="headerlink" title="优化帧率 - 20240414"></a>优化帧率 - 20240414</h3><p>打开<a href="https://www.espressif.com/">乐鑫官网</a>，点顶部的Support，在找到ESP-FAQ，搜索LVGL，即可找到如下内容</p>
+<ul>
+<li><p>Taking ESP32-S3R8 as an example, the following ESP configuration items can improve the frame rate (ESP-IDF release&#x2F;v5.1):</p>
+<ul>
+<li><code>CONFIG_FREERTOS_HZ=1000</code></li>
+<li><code>CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_240=y</code></li>
+<li><code>CONFIG_ESPTOOLPY_FLASHMODE_QIO=y</code></li>
+<li><code>CONFIG_ESPTOOLPY_FLASHFREQ_120M=y</code> [should be consistent with PSRAM]</li>
+<li><code>CONFIG_SPIRAM_MODE_OCT=y</code></li>
+<li><code>CONFIG_IDF_EXPERIMENTAL_FEATURES=y</code> and <code>CONFIG_SPIRAM_SPEED_120M=y</code> [should be consistent with FLASH]</li>
+<li><code>CONFIG_SPIRAM_FETCH_INSTRUCTIONS=y</code></li>
+<li><code>CONFIG_SPIRAM_RODATA=y</code></li>
+<li><code>CONFIG_ESP32S3_DATA_CACHE_LINE_64B=y</code></li>
+<li><code>CONFIG_COMPILER_OPTIMIZATION_PERF=y</code></li>
+</ul>
+</li>
+<li><p>The following LVGL configuration items can improve the frame rate (LVGL v8.3):</p>
+<ul>
+<li><p><code>#define LV_MEM_CUSTOM 1</code> or <code>CONFIG_LV_MEM_CUSTOM=y</code></p>
+</li>
+<li><p><code>#define LV_MEMCPY_MEMSET_STD 1</code> or <code>CONFIG_LV_MEMCPY_MEMSET_STD=y</code></p>
+</li>
+<li><p><code>#define LV_ATTRIBUTE_FAST_MEM IRAM_ATTR</code> or <code>CONFIG_LV_ATTRIBUTE_FAST_MEM=y</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>再加一个<code>LV_DISP_DEF_REFR_PERIOD</code>由30改为10</p>
+<p>注：如果要显示帧率和CPU占用，可以吧<code>Show CPU usage and FPS count</code>勾上</p>
+<p>这里就按照官网的推荐来进行修改，点左下角小齿轮，分别修改上面的这些参数（修改完记得保存），其中某些参数可能找不到，这是由于CSDK的版本和使用的MCU型号不同导致的，不用深究</p>
+<p>修改hello_world_main.c里的SPI频率到80M（实测这个影响帧率最为明显）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404141458859.png" alt="image-20240414145809827"></p>
+<p>改完以后再来编译烧录，发现帧率提升了很多，滑动较为丝滑了</p>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>ESP32</tag>
+        <tag>LVGL</tag>
+        <tag>ESP-IDF</tag>
       </tags>
   </entry>
 </search>
