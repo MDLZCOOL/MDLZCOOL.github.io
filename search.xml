@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Git使用小技巧Tricks</title>
+    <url>/post/4bb6437a.html</url>
+    <content><![CDATA[<h2 id="经历了一次错误的commit，想要撤回"><a href="#经历了一次错误的commit，想要撤回" class="headerlink" title="经历了一次错误的commit，想要撤回"></a>经历了一次错误的commit，想要撤回</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span> <span class="comment"># 查看上次commit的完整hash字串</span></span><br><span class="line">git reset &lt;arg1&gt; &lt;<span class="built_in">hash</span>字串&gt; <span class="comment"># 撤回commit，&lt;arg1&gt;有参数--soft、--hard、--mixed可选。</span></span><br><span class="line"><span class="comment"># 注意注意：一般可以忽略&lt;arg1&gt;。</span></span><br><span class="line"><span class="comment"># 区别为</span></span><br><span class="line"><span class="comment"># --soft 文件还保存在git里，可以再reset回来</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)        (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B-C</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># --hard 文件直接被删去，慎用！！！</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)        (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># --mixed 文件未被删去，就在本地workspace里，处于未被add的状态(推荐)</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)          (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B-C</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 注：(F)指的是磁盘里此时实际的文件处于哪个版本</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="清除本地对远端已经不存在的分支的引用"><a href="#清除本地对远端已经不存在的分支的引用" class="headerlink" title="清除本地对远端已经不存在的分支的引用"></a>清除本地对远端已经不存在的分支的引用</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote prune origin</span><br></pre></td></tr></table></figure>
+
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><ul>
+<li><code>origin</code> 是默认的远程仓库名称，如果有其他远程仓库，可以用相应的名字替换 <code>origin</code>。</li>
+<li>该命令__不会删除本地的任何分支或数据__，只会移除本地对那些已经在远程仓库中删除的分支的引用。</li>
+</ul>
+<h2 id="更新子模块"><a href="#更新子模块" class="headerlink" title="更新子模块"></a>更新子模块</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git submodule --update --init --recursive</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>IDM脚本和谐破解注册</title>
     <url>/post/5983f199.html</url>
     <content><![CDATA[<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>一、在官网下载安装IDM</p>
@@ -30,45 +51,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Git使用小技巧Tricks</title>
-    <url>/post/4bb6437a.html</url>
-    <content><![CDATA[<h2 id="经历了一次错误的commit，想要撤回"><a href="#经历了一次错误的commit，想要撤回" class="headerlink" title="经历了一次错误的commit，想要撤回"></a>经历了一次错误的commit，想要撤回</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span> <span class="comment"># 查看上次commit的完整hash字串</span></span><br><span class="line">git reset &lt;arg1&gt; &lt;<span class="built_in">hash</span>字串&gt; <span class="comment"># 撤回commit，&lt;arg1&gt;有参数--soft、--hard、--mixed可选。</span></span><br><span class="line"><span class="comment"># 注意注意：一般可以忽略&lt;arg1&gt;。</span></span><br><span class="line"><span class="comment"># 区别为</span></span><br><span class="line"><span class="comment"># --soft 文件还保存在git里，可以再reset回来</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)        (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B-C</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># --hard 文件直接被删去，慎用！！！</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)        (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># --mixed 文件未被删去，就在本地workspace里，处于未被add的状态(推荐)</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)          (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B-C</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 注：(F)指的是磁盘里此时实际的文件处于哪个版本</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="清除本地对远端已经不存在的分支的引用"><a href="#清除本地对远端已经不存在的分支的引用" class="headerlink" title="清除本地对远端已经不存在的分支的引用"></a>清除本地对远端已经不存在的分支的引用</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote prune origin</span><br></pre></td></tr></table></figure>
-
-<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><ul>
-<li><code>origin</code> 是默认的远程仓库名称，如果有其他远程仓库，可以用相应的名字替换 <code>origin</code>。</li>
-<li>该命令__不会删除本地的任何分支或数据__，只会移除本地对那些已经在远程仓库中删除的分支的引用。</li>
-</ul>
-<h2 id="更新子模块"><a href="#更新子模块" class="headerlink" title="更新子模块"></a>更新子模块</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git submodule --update --init --recursive</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Jetbrains系IDE使用小技巧</title>
-    <url>/post/af86e289.html</url>
-    <content><![CDATA[<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><ul>
-<li>One Dark</li>
-</ul>
-<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><ul>
-<li>Chinese (Simplified) Language Pack &#x2F; 中文语言包</li>
-<li>CodeGlance Pro &#x2F; 侧栏代码缩略</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>Dev</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>KiCad导出Gerber图形文件</title>
     <url>/post/ef2c5f04.html</url>
     <content><![CDATA[<h3 id="KiCad导出Gerber图形文件"><a href="#KiCad导出Gerber图形文件" class="headerlink" title="KiCad导出Gerber图形文件"></a>KiCad导出Gerber图形文件</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png" alt="image-20240527171958427"></p>
@@ -79,6 +61,25 @@
       </categories>
       <tags>
         <tag>PCB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为什么你的Github总是无法正常clone或者push</title>
+    <url>/post/2f28be0b.html</url>
+    <content><![CDATA[<h2 id="产生原因"><a href="#产生原因" class="headerlink" title="产生原因"></a>产生原因</h2><p><strong>代理服务器</strong><br>你的电脑和互联网的中介。当访问外网时（如<a href="http://google.com)/">http://google.com）</a>, 你的请求首先转发到代理服务器，然后代理服务器替你访问外网，并将结果原封不动的给你的电脑，这样你的电脑就可以看到外网的内容。</p>
+<p>网络路径如下：<br>你的电脑-&gt;代理服务器-&gt;外网<br>外网-&gt;代理服务器-&gt;你的电脑</p>
+<p>配置代理之后，可以正常访问github网页了，但是发现在本地克隆github仓库（git clone xxx）或者进行push操作时还是报网络错误（Failed to connect to server …）。</p>
+<p><strong>那是因为git clone没有走代理，所以需要设置git走代理才行</strong></p>
+<h2 id="设置代理"><a href="#设置代理" class="headerlink" title="设置代理"></a>设置代理</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:7890</span><br><span class="line">git config --global https.proxy https://127.0.0.1:7890</span><br></pre></td></tr></table></figure>
+
+<h2 id="Git查看现有配置"><a href="#Git查看现有配置" class="headerlink" title="Git查看现有配置"></a>Git查看现有配置</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global -l</span><br></pre></td></tr></table></figure>
+
+<h2 id="取消代理"><a href="#取消代理" class="headerlink" title="取消代理"></a>取消代理</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
@@ -155,22 +156,211 @@
       </tags>
   </entry>
   <entry>
-    <title>为什么你的Github总是无法正常clone或者push</title>
-    <url>/post/2f28be0b.html</url>
-    <content><![CDATA[<h2 id="产生原因"><a href="#产生原因" class="headerlink" title="产生原因"></a>产生原因</h2><p><strong>代理服务器</strong><br>你的电脑和互联网的中介。当访问外网时（如<a href="http://google.com)/">http://google.com）</a>, 你的请求首先转发到代理服务器，然后代理服务器替你访问外网，并将结果原封不动的给你的电脑，这样你的电脑就可以看到外网的内容。</p>
-<p>网络路径如下：<br>你的电脑-&gt;代理服务器-&gt;外网<br>外网-&gt;代理服务器-&gt;你的电脑</p>
-<p>配置代理之后，可以正常访问github网页了，但是发现在本地克隆github仓库（git clone xxx）或者进行push操作时还是报网络错误（Failed to connect to server …）。</p>
-<p><strong>那是因为git clone没有走代理，所以需要设置git走代理才行</strong></p>
-<h2 id="设置代理"><a href="#设置代理" class="headerlink" title="设置代理"></a>设置代理</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:7890</span><br><span class="line">git config --global https.proxy https://127.0.0.1:7890</span><br></pre></td></tr></table></figure>
+    <title>在STM32G4上移植CherryUSB协议栈（usb_device）</title>
+    <url>/post/fb4bb4c3.html</url>
+    <content><![CDATA[<blockquote>
+<p>本文实现了STM32G4模拟 usb hid 设备作为鼠标</p>
+<p>CherryUSB版本为v1.4.3</p>
+<p>ST的固件库为STM32Cube_FW_G4_V1.6.1</p>
+</blockquote>
+<h3 id="CherryUSB介绍（摘自CherryUSB的readme）"><a href="#CherryUSB介绍（摘自CherryUSB的readme）" class="headerlink" title="CherryUSB介绍（摘自CherryUSB的readme）"></a>CherryUSB介绍（摘自CherryUSB的readme）</h3><p>CherryUSB 是一个小而美的、可移植性高的、用于嵌入式系统的 USB 主从协议栈。同时 CherryUSB 具有以下优点：</p>
+<p><strong>易于学习 USB</strong></p>
+<p>为了方便用户学习 USB 基本知识、枚举、驱动加载、IP 驱动，因此，编写的代码具备以下优点：</p>
+<ul>
+<li>代码精简，逻辑简单，无复杂 C 语言语法</li>
+<li>树状化编程，代码层层递进</li>
+<li>Class 驱动和 porting 驱动模板化、精简化</li>
+<li>API 分类清晰（从机：初始化、注册类、命令回调类、数据收发类；主机：初始化、查找类、数据收发类）</li>
+</ul>
+<p><strong>易于使用 USB</strong></p>
+<p>为了方便用户使用 USB 接口，考虑到用户学习过 uart 和 dma，因此，设计的数据收发类接口具备以下优点：</p>
+<ul>
+<li>等价于使用 uart tx dma&#x2F;uart rx dma</li>
+<li>收发长度没有限制，用户不需要关心 USB 分包过程（porting 驱动做分包过程）</li>
+</ul>
+<p><strong>易于发挥 USB 性能</strong></p>
+<p>考虑到 USB 性能问题，尽量达到 USB 硬件理论带宽，因此，设计的数据收发类接口具备以下优点：</p>
+<ul>
+<li>Porting 驱动直接对接寄存器，无抽象层封装</li>
+<li>Memory zero copy</li>
+<li>IP 如果带 DMA 则使用 DMA 模式（DMA 带硬件分包功能）</li>
+<li>长度无限制，方便对接硬件 DMA 并且发挥 DMA 的优势</li>
+<li>分包功能在中断中处理</li>
+</ul>
+<p><strong>从机协议栈整体执行流程</strong></p>
+<p><img src="https://cherryusb.readthedocs.io/zh-cn/latest/_images/usbdev.svg" alt="usb-device"></p>
+<p><strong>主机协议栈整体执行流程</strong></p>
+<p><img src="https://cherryusb.readthedocs.io/zh-cn/latest/_images/usbhost.svg" alt="usb-host"></p>
+<h3 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h3><p><a href="https://github.com/cherry-embedded/CherryUSB/">cherry-embedded</a></p>
+<h3 id="开始移植"><a href="#开始移植" class="headerlink" title="开始移植"></a>开始移植</h3><ol>
+<li>使用 STM32CubeMX 创建工程，配置基本的 RCC、UART (作为 log 使用，但是我们移植的 G4 系列的 usb ip 核为 fsdev，基本没有配置项，故无 log)</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314221305123.png" alt="image-20250314221305123"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314221318104.png" alt="image-20250314221318104"></p>
+<ol start="2">
+<li>我们这里使用的是 fsdev ip，勾选 USB。开启 USB 中断，其他配置对我们没用，cherry 的代码中不会使用任何 ST 的 USB 库</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314221336698.png" alt="image-20250314221336698"></p>
+<ol start="3">
+<li><p>检查时钟树，保证 USB 时钟为 48MHz</p>
+<blockquote>
+<p>发现一个现象，如果用的是PLL出来的48M，后面注释MX自动生成的 usb init 似乎可有可无，但是用HSI的48M，则必须注释掉MX生成的 usb init，否则无法枚举</p>
+</blockquote>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250315111137942.png" alt="image-20250315111137942"></p>
+<ol start="4">
+<li>Generate CODE</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314221525860.png" alt="image-20250314221525860"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314221525860.png"></p>
+<p>在项目目录里拷进CherryUSB源码</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314221959758.png" alt="image-20250314221959758"></p>
+<ol start="5">
+<li>添加 CherryUSB 必须要的源码，以及想要使用的 class 驱动，可以将对应 class 的 demo template 添加方便测试，我这里就添加 hid 的 class 和 demo template 来测试。</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314235630850.png" alt="image-20250314235630850"></p>
+<ol start="6">
+<li>将 .&#x2F;CherryUSB&#x2F;cherryusb_config_template.h 复制到 .&#x2F;Core&#x2F;Inc 并重命名为 usb_config.h</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314234255893.png" alt="image-20250314234255893"></p>
+<ol start="7">
+<li>如果使用 fsdev ip，在 usb_config.h 中实现以下宏</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 以下细节不同芯片可能有出入，要改！！</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USBDEV_EP_NUM 8</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USBDEV_FSDEV_PMA_ACCESS 2</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="Git查看现有配置"><a href="#Git查看现有配置" class="headerlink" title="Git查看现有配置"></a>Git查看现有配置</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global -l</span><br></pre></td></tr></table></figure>
+<ol start="8">
+<li>拷贝 usb_xxx.c 里面的 HAL_PCD_MspInit 函数中的内容到 usb_dc_low_level_init 函数中，并屏蔽 ST 生成的 USB 初始化</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">usb_dc_low_level_init</span><span class="params">(<span class="type">uint8_t</span> busid)</span> &#123;</span><br><span class="line">    add something...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="取消代理"><a href="#取消代理" class="headerlink" title="取消代理"></a>取消代理</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>]]></content>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250315111125946.png" alt="image-20250315111125946"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314234942250.png" alt="image-20250314234942250"></p>
+<ol start="9">
+<li>在中断函数中调用 USBD_IRQHandler，并传入 busid</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314235159981.png" alt="image-20250314235159981"></p>
+<ol start="10">
+<li>调用 template 的内容初始化，并填入 busid 和 USB IP 的 reg base，busid 从 0 开始，不能超过CONFIG_USBDEV_MAX_BUS，这里 reg base 在 stm32xxx.h 里找。</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250315111248946.png" alt="image-20250315111248946"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314235723312.png" alt="image-20250314235723312"></p>
+<p>顺利的话，应该接上 USB 鼠标就开始转圈了，但是这里出现了没法枚举的情况。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250315110450418.png" alt="image-20250315110450418"></p>
+<p>由于 fsdev ip 本来就只有一个配置项，故怀疑是</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USBDEV_FSDEV_PMA_ACCESS 2 <span class="comment">// maybe 1 or 2, many chips may have a difference</span></span></span><br></pre></td></tr></table></figure>
+
+<p>这里的 define 不太合适，改为“1”后解决问题，鼠标开始转圈圈了。</p>
+<p><strong>注意注意：配置USB时钟的时候如果用HSI的48MHz频率，则必须不要忘了注释MX生成的 usb init。</strong></p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ol>
+<li><a href="https://cherryusb.readthedocs.io/zh-cn/latest/">CherryUSB 使用指南</a>——遇事不决先看官方文档，这是能找到的最好的资料，99%的问题文档里都提到过，感谢<a href="https://github.com/sakumisu">@sakumisu</a></li>
+<li><a href="https://club.rt-thread.org/ask/article/3e893614c58da7aa.html">APM32F407VGT6 DWC2移植 Port.A Full-Speed + Por.B High-Speed</a>——另一位大佬的帖子，看完受益匪浅</li>
+</ol>
+]]></content>
       <categories>
         <category>Dev</category>
       </categories>
       <tags>
-        <tag>Git</tag>
+        <tag>USB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Jetbrains系IDE使用小技巧</title>
+    <url>/post/af86e289.html</url>
+    <content><![CDATA[<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><ul>
+<li>One Dark</li>
+</ul>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><ul>
+<li>Chinese (Simplified) Language Pack &#x2F; 中文语言包</li>
+<li>CodeGlance Pro &#x2F; 侧栏代码缩略</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>Dev</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在CLion上搭建LVGL模拟器</title>
+    <url>/post/90c7d419.html</url>
+    <content><![CDATA[<blockquote>
+<p>注：本文默认已经安装好了CLion，目标LVGL的版本为8.3，当然新版本也是可以的，都差不多。</p>
+</blockquote>
+<h2 id="需要准备的文件"><a href="#需要准备的文件" class="headerlink" title="需要准备的文件"></a>需要准备的文件</h2><ul>
+<li><p><a href="https://github.com/lvgl/lv_port_pc_eclipse">lv_port_pc_eclipse</a></p>
+<p>使用下列命令克隆仓库到本地（本文以8.3版本为例）</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b release/v8.3 --recursive https://github.com/lvgl/lv_port_pc_eclipse.git</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><a href="https://github.com/niXman/mingw-builds-binaries/releases">mingw-builds-binaries</a></p>
+<p><em>注意下载13.2.0-rt_v11-rev1或之前的版本，新版本CLion暂时不支持</em></p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028130733571.png" alt="image-20241028130733571"></p>
+<ul>
+<li><a href="https://github.com/libsdl-org/SDL/releases">SDL</a></li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028130851970.png" alt="image-20241028130851970"></p>
+<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><ol>
+<li>解压下载的mingw64，得到如下文件</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028183539520.png" alt="image-20241028183539520"></p>
+<ol start="2">
+<li>解压下载的SDL2，得到如下文件</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028183713461.png" alt="image-20241028183713461"></p>
+<p>将<code>SDL2/x86_64_w64-mingw32/include/SDL2</code>复制到<code>mingw64/x86_64_w64-mingw32/include</code>文件夹中</p>
+<p>将<code>SDL2/x86_64_w64-mingw32/lib</code>所有的文件复制到<code>mingw64/x86_64_w64-mingw32/lib</code>中</p>
+<ol start="3">
+<li>CLion配置工具链</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028184123222.png" alt="image-20241028184123222"></p>
+<p>在<code>设置 - 构建、执行、部署 - 工具链</code>新建如上工具链，注意所有工具都参考上图设置成对应的，用内部集成的会报错。</p>
+<ol start="4">
+<li>工程</li>
+</ol>
+<p>用CLion打开lv_port_pc_eclipse为CMake项目，然后即可进行开发。</p>
+<h2 id="一些报错"><a href="#一些报错" class="headerlink" title="一些报错"></a>一些报错</h2><ol>
+<li>CMake找不到SDL2库</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028184609315.png" alt="image-20241028184609315"></p>
+<p>解决办法：在CMakeLists.txt里添加如下语句，注意不要照抄，请将自己的本地文件目录添加进来</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SET</span>(SDL2_DIR D:/program-tools/mingw64/x86_64-w64-mingw32/lib/cmake/SDL2)</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>编译成功，但是运行程序会直接退出，没有GUI界面出现</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028185226640.png" alt="image-20241028185226640"></p>
+<p>解决办法：将下载的SDL2库的SDL2.dll复制到lv_port_pc_eclipse下的bin文件夹里</p>
+<ol start="3">
+<li>分辨率可在<code>lv_drv_conf.h</code>里修改</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028190804549.png" alt="image-20241028190804549"></p>
+<h2 id="与SquareLine-Studio联合开发"><a href="#与SquareLine-Studio联合开发" class="headerlink" title="与SquareLine Studio联合开发"></a>与SquareLine Studio联合开发</h2><p>将SquareLine Studio生成的ui文件夹复制到lv_port_pc_eclipse下，在CmakeLists.txt里添加如下语句，注意不要照抄，请将自己的本地文件目录添加进来</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 递归引用ui下的源文件</span></span><br><span class="line"><span class="keyword">FILE</span>(GLOB_RECURSE UI_Sources CONFIGURE_DEPENDS ui/*.c ui/*.cpp)</span><br><span class="line"><span class="comment"># 将$&#123;UI_Sources&#125;添加到add_executable以对main这个target使用</span></span><br><span class="line"><span class="keyword">add_executable</span>(main main.c mouse_cursor_icon.c <span class="variable">$&#123;SOURCES&#125;</span> <span class="variable">$&#123;INCLUDES&#125;</span> <span class="variable">$&#123;UI_Sources&#125;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>在main.c里添加如下代码：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;ui.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span> &#123;</span><br><span class="line">    (<span class="type">void</span>) argc; <span class="comment">/*Unused*/</span></span><br><span class="line">    (<span class="type">void</span>) argv; <span class="comment">/*Unused*/</span></span><br><span class="line">    ...</span><br><span class="line">    ui_init();</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>记得注释掉lvgl自带的示例代码，编译即可运行SquareLine Studio生成的代码</p>
+<h2 id="LVGL学习资料"><a href="#LVGL学习资料" class="headerlink" title="LVGL学习资料"></a>LVGL学习资料</h2><ul>
+<li><p><a href="https://lvgl-chinese-doc.readthedocs.io/zh-cn/latest/index.html">官方手册</a></p>
+</li>
+<li><p><a href="https://github.com/lvgl/lvgl">源码仓库</a></p>
+</li>
+<li><p><a href="https://lvgl.100ask.net/8.2/">百问网LVGL中文教程文档</a> <em>- 20241028这个暂时只汉化到v8.2</em></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>Dev</tag>
       </tags>
   </entry>
   <entry>
@@ -278,383 +468,6 @@
         <tag>Dev</tag>
         <tag>STM32</tag>
         <tag>ROS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在CLion上搭建LVGL模拟器</title>
-    <url>/post/90c7d419.html</url>
-    <content><![CDATA[<blockquote>
-<p>注：本文默认已经安装好了CLion，目标LVGL的版本为8.3，当然新版本也是可以的，都差不多。</p>
-</blockquote>
-<h2 id="需要准备的文件"><a href="#需要准备的文件" class="headerlink" title="需要准备的文件"></a>需要准备的文件</h2><ul>
-<li><p><a href="https://github.com/lvgl/lv_port_pc_eclipse">lv_port_pc_eclipse</a></p>
-<p>使用下列命令克隆仓库到本地（本文以8.3版本为例）</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b release/v8.3 --recursive https://github.com/lvgl/lv_port_pc_eclipse.git</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p><a href="https://github.com/niXman/mingw-builds-binaries/releases">mingw-builds-binaries</a></p>
-<p><em>注意下载13.2.0-rt_v11-rev1或之前的版本，新版本CLion暂时不支持</em></p>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028130733571.png" alt="image-20241028130733571"></p>
-<ul>
-<li><a href="https://github.com/libsdl-org/SDL/releases">SDL</a></li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028130851970.png" alt="image-20241028130851970"></p>
-<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><ol>
-<li>解压下载的mingw64，得到如下文件</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028183539520.png" alt="image-20241028183539520"></p>
-<ol start="2">
-<li>解压下载的SDL2，得到如下文件</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028183713461.png" alt="image-20241028183713461"></p>
-<p>将<code>SDL2/x86_64_w64-mingw32/include/SDL2</code>复制到<code>mingw64/x86_64_w64-mingw32/include</code>文件夹中</p>
-<p>将<code>SDL2/x86_64_w64-mingw32/lib</code>所有的文件复制到<code>mingw64/x86_64_w64-mingw32/lib</code>中</p>
-<ol start="3">
-<li>CLion配置工具链</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028184123222.png" alt="image-20241028184123222"></p>
-<p>在<code>设置 - 构建、执行、部署 - 工具链</code>新建如上工具链，注意所有工具都参考上图设置成对应的，用内部集成的会报错。</p>
-<ol start="4">
-<li>工程</li>
-</ol>
-<p>用CLion打开lv_port_pc_eclipse为CMake项目，然后即可进行开发。</p>
-<h2 id="一些报错"><a href="#一些报错" class="headerlink" title="一些报错"></a>一些报错</h2><ol>
-<li>CMake找不到SDL2库</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028184609315.png" alt="image-20241028184609315"></p>
-<p>解决办法：在CMakeLists.txt里添加如下语句，注意不要照抄，请将自己的本地文件目录添加进来</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SET</span>(SDL2_DIR D:/program-tools/mingw64/x86_64-w64-mingw32/lib/cmake/SDL2)</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>编译成功，但是运行程序会直接退出，没有GUI界面出现</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028185226640.png" alt="image-20241028185226640"></p>
-<p>解决办法：将下载的SDL2库的SDL2.dll复制到lv_port_pc_eclipse下的bin文件夹里</p>
-<ol start="3">
-<li>分辨率可在<code>lv_drv_conf.h</code>里修改</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028190804549.png" alt="image-20241028190804549"></p>
-<h2 id="与SquareLine-Studio联合开发"><a href="#与SquareLine-Studio联合开发" class="headerlink" title="与SquareLine Studio联合开发"></a>与SquareLine Studio联合开发</h2><p>将SquareLine Studio生成的ui文件夹复制到lv_port_pc_eclipse下，在CmakeLists.txt里添加如下语句，注意不要照抄，请将自己的本地文件目录添加进来</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 递归引用ui下的源文件</span></span><br><span class="line"><span class="keyword">FILE</span>(GLOB_RECURSE UI_Sources CONFIGURE_DEPENDS ui/*.c ui/*.cpp)</span><br><span class="line"><span class="comment"># 将$&#123;UI_Sources&#125;添加到add_executable以对main这个target使用</span></span><br><span class="line"><span class="keyword">add_executable</span>(main main.c mouse_cursor_icon.c <span class="variable">$&#123;SOURCES&#125;</span> <span class="variable">$&#123;INCLUDES&#125;</span> <span class="variable">$&#123;UI_Sources&#125;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>在main.c里添加如下代码：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;ui.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span> &#123;</span><br><span class="line">    (<span class="type">void</span>) argc; <span class="comment">/*Unused*/</span></span><br><span class="line">    (<span class="type">void</span>) argv; <span class="comment">/*Unused*/</span></span><br><span class="line">    ...</span><br><span class="line">    ui_init();</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>记得注释掉lvgl自带的示例代码，编译即可运行SquareLine Studio生成的代码</p>
-<h2 id="LVGL学习资料"><a href="#LVGL学习资料" class="headerlink" title="LVGL学习资料"></a>LVGL学习资料</h2><ul>
-<li><p><a href="https://lvgl-chinese-doc.readthedocs.io/zh-cn/latest/index.html">官方手册</a></p>
-</li>
-<li><p><a href="https://github.com/lvgl/lvgl">源码仓库</a></p>
-</li>
-<li><p><a href="https://lvgl.100ask.net/8.2/">百问网LVGL中文教程文档</a> <em>- 20241028这个暂时只汉化到v8.2</em></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>Dev</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在STM32G4上移植CherryUSB协议栈（usb_device）</title>
-    <url>/post/fb4bb4c3.html</url>
-    <content><![CDATA[<blockquote>
-<p>本文实现了STM32G4模拟 usb hid 设备作为鼠标</p>
-<p>CherryUSB版本为v1.4.3</p>
-<p>ST的固件库为STM32Cube_FW_G4_V1.6.1</p>
-</blockquote>
-<h3 id="CherryUSB介绍（摘自CherryUSB的readme）"><a href="#CherryUSB介绍（摘自CherryUSB的readme）" class="headerlink" title="CherryUSB介绍（摘自CherryUSB的readme）"></a>CherryUSB介绍（摘自CherryUSB的readme）</h3><p>CherryUSB 是一个小而美的、可移植性高的、用于嵌入式系统的 USB 主从协议栈。同时 CherryUSB 具有以下优点：</p>
-<p><strong>易于学习 USB</strong></p>
-<p>为了方便用户学习 USB 基本知识、枚举、驱动加载、IP 驱动，因此，编写的代码具备以下优点：</p>
-<ul>
-<li>代码精简，逻辑简单，无复杂 C 语言语法</li>
-<li>树状化编程，代码层层递进</li>
-<li>Class 驱动和 porting 驱动模板化、精简化</li>
-<li>API 分类清晰（从机：初始化、注册类、命令回调类、数据收发类；主机：初始化、查找类、数据收发类）</li>
-</ul>
-<p><strong>易于使用 USB</strong></p>
-<p>为了方便用户使用 USB 接口，考虑到用户学习过 uart 和 dma，因此，设计的数据收发类接口具备以下优点：</p>
-<ul>
-<li>等价于使用 uart tx dma&#x2F;uart rx dma</li>
-<li>收发长度没有限制，用户不需要关心 USB 分包过程（porting 驱动做分包过程）</li>
-</ul>
-<p><strong>易于发挥 USB 性能</strong></p>
-<p>考虑到 USB 性能问题，尽量达到 USB 硬件理论带宽，因此，设计的数据收发类接口具备以下优点：</p>
-<ul>
-<li>Porting 驱动直接对接寄存器，无抽象层封装</li>
-<li>Memory zero copy</li>
-<li>IP 如果带 DMA 则使用 DMA 模式（DMA 带硬件分包功能）</li>
-<li>长度无限制，方便对接硬件 DMA 并且发挥 DMA 的优势</li>
-<li>分包功能在中断中处理</li>
-</ul>
-<p><strong>从机协议栈整体执行流程</strong></p>
-<p><img src="https://cherryusb.readthedocs.io/zh-cn/latest/_images/usbdev.svg" alt="usb-device"></p>
-<p><strong>主机协议栈整体执行流程</strong></p>
-<p><img src="https://cherryusb.readthedocs.io/zh-cn/latest/_images/usbhost.svg" alt="usb-host"></p>
-<h3 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h3><p><a href="https://github.com/cherry-embedded/CherryUSB/">cherry-embedded</a></p>
-<h3 id="开始移植"><a href="#开始移植" class="headerlink" title="开始移植"></a>开始移植</h3><ol>
-<li>使用 STM32CubeMX 创建工程，配置基本的 RCC、UART (作为 log 使用，但是我们移植的 G4 系列的 usb ip 核为 fsdev，基本没有配置项，故无 log)</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314221305123.png" alt="image-20250314221305123"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314221318104.png" alt="image-20250314221318104"></p>
-<ol start="2">
-<li>我们这里使用的是 fsdev ip，勾选 USB。开启 USB 中断，其他配置对我们没用，cherry 的代码中不会使用任何 ST 的 USB 库</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314221336698.png" alt="image-20250314221336698"></p>
-<ol start="3">
-<li>检查时钟树，保证 USB 时钟为 48MHz（这里还有个坑，不能用HSI的48MHz，必须用外部晶振锁相环出来的48MHz频率）</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250315111137942.png" alt="image-20250315111137942"></p>
-<ol start="4">
-<li>Generate CODE</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314221525860.png" alt="image-20250314221525860"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314221525860.png"></p>
-<p>在项目目录里拷进CherryUSB源码</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314221959758.png" alt="image-20250314221959758"></p>
-<ol start="5">
-<li>添加 CherryUSB 必须要的源码，以及想要使用的 class 驱动，可以将对应 class 的 demo template 添加方便测试，我这里就添加 hid 的 class 和 demo template 来测试。</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314235630850.png" alt="image-20250314235630850"></p>
-<ol start="6">
-<li>将 .&#x2F;CherryUSB&#x2F;cherryusb_config_template.h 复制到 .&#x2F;Core&#x2F;Inc 并重命名为 usb_config.h</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314234255893.png" alt="image-20250314234255893"></p>
-<ol start="7">
-<li>如果使用 fsdev ip，在 usb_config.h 中实现以下宏</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 以下细节不同芯片可能有出入，要改！！</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USBDEV_EP_NUM 8</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USBDEV_FSDEV_PMA_ACCESS 2</span></span><br></pre></td></tr></table></figure>
-
-<ol start="8">
-<li>拷贝 usb_xxx.c 里面的 HAL_PCD_MspInit 函数中的内容到 usb_dc_low_level_init 函数中，并屏蔽 ST 生成的 USB 初始化</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">usb_dc_low_level_init</span><span class="params">(<span class="type">uint8_t</span> busid)</span> &#123;</span><br><span class="line">    add something...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250315111125946.png" alt="image-20250315111125946"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314234942250.png" alt="image-20250314234942250"></p>
-<ol start="9">
-<li>在中断函数中调用 USBD_IRQHandler，并传入 busid</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314235159981.png" alt="image-20250314235159981"></p>
-<ol start="10">
-<li>调用 template 的内容初始化，并填入 busid 和 USB IP 的 reg base，busid 从 0 开始，不能超过CONFIG_USBDEV_MAX_BUS，这里 reg base 在 stm32xxx.h 里找。</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250315111248946.png" alt="image-20250315111248946"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314235723312.png" alt="image-20250314235723312"></p>
-<p>顺利的话，应该接上 USB 鼠标就开始转圈了，但是这里出现了没法枚举的情况。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250315110450418.png" alt="image-20250315110450418"></p>
-<p>由于 fsdev ip 本来就只有一个配置项，故怀疑是</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USBDEV_FSDEV_PMA_ACCESS 2 <span class="comment">// maybe 1 or 2, many chips may have a difference</span></span></span><br></pre></td></tr></table></figure>
-
-<p>这里的 define 不太合适，改为“1”后解决问题，鼠标开始转圈圈了。</p>
-<p><strong>注意注意：配置USB时钟的时候尽量不要用HSI的48MHz频率，否则可能出现枚举失败。</strong></p>
-<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ol>
-<li><a href="https://cherryusb.readthedocs.io/zh-cn/latest/">CherryUSB 使用指南</a>——遇事不决先看官方文档，这是能找到的最好的资料，99%的问题文档里都提到过，感谢<a href="https://github.com/sakumisu">@sakumisu</a></li>
-<li><a href="https://club.rt-thread.org/ask/article/3e893614c58da7aa.html">APM32F407VGT6 DWC2移植 Port.A Full-Speed + Por.B High-Speed</a>——另一位大佬的帖子，看完受益匪浅</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>USB</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>常用工具性网站&amp;工具</title>
-    <url>/post/5788685f.html</url>
-    <content><![CDATA[<h2 id="工具网站"><a href="#工具网站" class="headerlink" title="工具网站"></a>工具网站</h2><p>🎁此处列出的网站均来源于互联网，请注意不要在这些网站上输入任何个人敏感信息（如有可能）</p>
-<p>🌎某些网站可能需要国际网络</p>
-<p>🌈欢迎贡献</p>
-<ul>
-<li>添加站点</li>
-<li>反馈站点失效</li>
-<li>更多(todo)</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>序号</th>
-<th>网站</th>
-<th>添加时间</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td><a href="https://www.runoob.com/">https://www.runoob.com/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>菜鸟教程</td>
-</tr>
-<tr>
-<td>2</td>
-<td><a href="https://serial.keysking.com/">https://serial.keysking.com/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>网页版串口助手</td>
-</tr>
-<tr>
-<td>3</td>
-<td><a href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>阿里巴巴矢量图标库</td>
-</tr>
-<tr>
-<td>4</td>
-<td><a href="https://book.openmv.cc/">https://book.openmv.cc/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>OpenMV中文入门教程</td>
-</tr>
-<tr>
-<td>5</td>
-<td><a href="https://www.3dcontentcentral.com/">https://www.3dcontentcentral.com/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>3D模型下载站</td>
-</tr>
-<tr>
-<td>6</td>
-<td><a href="https://www2.futureware.at/KiCad/">https://www2.futureware.at/KiCad/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>Altium Designe转KiCad</td>
-</tr>
-<tr>
-<td>7</td>
-<td><a href="https://www.nerdfonts.com/font-downloads">https://www.nerdfonts.com/font-downloads</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>艺术字体下载</td>
-</tr>
-<tr>
-<td>8</td>
-<td><a href="https://fontawesome.p2hp.com/icons-ui.html">https://fontawesome.p2hp.com/icons-ui.html</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>The Icons矢量图标库</td>
-</tr>
-<tr>
-<td>9</td>
-<td><a href="http://network-science.de/ascii/">http://network-science.de/ascii/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>终端立体字生成</td>
-</tr>
-<tr>
-<td>10</td>
-<td><a href="https://tableconvert.com/zh-cn/latex-to-latex">https://tableconvert.com/zh-cn/latex-to-latex</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>Latex表格在线编辑和转Excel</td>
-</tr>
-<tr>
-<td>11</td>
-<td><a href="https://www.niupizhiyuan.com/download.html">https://www.niupizhiyuan.com/download.html</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>CSDN文章和文件下载</td>
-</tr>
-<tr>
-<td>12</td>
-<td><a href="http://1.94.138.197/bangumi">http://1.94.138.197/bangumi</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>百度云不限速，配合油猴</td>
-</tr>
-<tr>
-<td>13</td>
-<td><a href="https://limestart.cn/">https://limestart.cn</a></td>
-<td>2024&#x2F;7&#x2F;22</td>
-<td>青柠起始页，优雅的浏览器主页</td>
-</tr>
-<tr>
-<td>14</td>
-<td><a href="https://skillicons.dev/">https://skillicons.dev/</a></td>
-<td>2024&#x2F;7&#x2F;24</td>
-<td>Skill Icons，技术栈图标</td>
-</tr>
-<tr>
-<td>15</td>
-<td><a href="https://bing.img.run/api.html">https://bing.img.run/api.html</a></td>
-<td>2024&#x2F;7&#x2F;25</td>
-<td>获取每日Bing壁纸API，有多种选择</td>
-</tr>
-<tr>
-<td>16</td>
-<td><a href="https://ai.97866.com/">https://ai.97866.com/</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>AI 工具合集</td>
-</tr>
-<tr>
-<td>17</td>
-<td><a href="https://tools.miku.ac/">https://tools.miku.ac/</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>轻量的工具集合</td>
-</tr>
-<tr>
-<td>18</td>
-<td><a href="https://star-history.com/">https://star-history.com/</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>Github Star历史图</td>
-</tr>
-<tr>
-<td>19</td>
-<td><a href="https://github.com/2016rshah/githubchart-api">https://github.com/2016rshah/githubchart-api</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>Github Commit频率图API</td>
-</tr>
-<tr>
-<td>20</td>
-<td><a href="https://shields.io/">https://shields.io/</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>在线统计工具，支持多种徽章样式</td>
-</tr>
-<tr>
-<td>21</td>
-<td><a href="https://carbon.now.sh/">https://carbon.now.sh</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>代码图片工具</td>
-</tr>
-<tr>
-<td>22</td>
-<td><a href="https://ray.so/">https://ray.so</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>代码图片工具</td>
-</tr>
-<tr>
-<td>23</td>
-<td><a href="https://codeimg.io/">https://codeimg.io</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>代码图片工具</td>
-</tr>
-<tr>
-<td>24</td>
-<td><a href="http://www.autolabor.com.cn/book/ROSTutorials/index.html">http://www.autolabor.com.cn/book/ROSTutorials/index.html</a></td>
-<td>2024&#x2F;9&#x2F;2</td>
-<td>ROS中文教程</td>
-</tr>
-<tr>
-<td>25</td>
-<td><a href="https://unsplash.com/wallpapers/screen/4k">https://unsplash.com/wallpapers/screen/4k</a></td>
-<td>2024&#x2F;9&#x2F;3</td>
-<td>免费4K壁纸</td>
-</tr>
-<tr>
-<td>26</td>
-<td><a href="https://kicanvas.org/">https://kicanvas.org/</a></td>
-<td>2024&#x2F;9&#x2F;9</td>
-<td>KiCad原理图或PCB在线查看</td>
-</tr>
-<tr>
-<td>27</td>
-<td><a href="https://www.snapeda.com/">https://www.snapeda.com/</a></td>
-<td>2025&#x2F;1&#x2F;29</td>
-<td>在线器件封装库，很全</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>Tools</category>
-      </categories>
-      <tags>
-        <tag>Tools</tag>
       </tags>
   </entry>
   <entry>
@@ -915,6 +728,260 @@
       </tags>
   </entry>
   <entry>
+    <title>常用工具性网站&amp;工具</title>
+    <url>/post/5788685f.html</url>
+    <content><![CDATA[<h2 id="工具网站"><a href="#工具网站" class="headerlink" title="工具网站"></a>工具网站</h2><p>🎁此处列出的网站均来源于互联网，请注意不要在这些网站上输入任何个人敏感信息（如有可能）</p>
+<p>🌎某些网站可能需要国际网络</p>
+<p>🌈欢迎贡献</p>
+<ul>
+<li>添加站点</li>
+<li>反馈站点失效</li>
+<li>更多(todo)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>网站</th>
+<th>添加时间</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><a href="https://www.runoob.com/">https://www.runoob.com/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>菜鸟教程</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="https://serial.keysking.com/">https://serial.keysking.com/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>网页版串口助手</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>阿里巴巴矢量图标库</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="https://book.openmv.cc/">https://book.openmv.cc/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>OpenMV中文入门教程</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="https://www.3dcontentcentral.com/">https://www.3dcontentcentral.com/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>3D模型下载站</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="https://www2.futureware.at/KiCad/">https://www2.futureware.at/KiCad/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>Altium Designe转KiCad</td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="https://www.nerdfonts.com/font-downloads">https://www.nerdfonts.com/font-downloads</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>艺术字体下载</td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="https://fontawesome.p2hp.com/icons-ui.html">https://fontawesome.p2hp.com/icons-ui.html</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>The Icons矢量图标库</td>
+</tr>
+<tr>
+<td>9</td>
+<td><a href="http://network-science.de/ascii/">http://network-science.de/ascii/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>终端立体字生成</td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="https://tableconvert.com/zh-cn/latex-to-latex">https://tableconvert.com/zh-cn/latex-to-latex</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>Latex表格在线编辑和转Excel</td>
+</tr>
+<tr>
+<td>11</td>
+<td><a href="https://www.niupizhiyuan.com/download.html">https://www.niupizhiyuan.com/download.html</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>CSDN文章和文件下载</td>
+</tr>
+<tr>
+<td>12</td>
+<td><a href="http://1.94.138.197/bangumi">http://1.94.138.197/bangumi</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>百度云不限速，配合油猴</td>
+</tr>
+<tr>
+<td>13</td>
+<td><a href="https://limestart.cn/">https://limestart.cn</a></td>
+<td>2024&#x2F;7&#x2F;22</td>
+<td>青柠起始页，优雅的浏览器主页</td>
+</tr>
+<tr>
+<td>14</td>
+<td><a href="https://skillicons.dev/">https://skillicons.dev/</a></td>
+<td>2024&#x2F;7&#x2F;24</td>
+<td>Skill Icons，技术栈图标</td>
+</tr>
+<tr>
+<td>15</td>
+<td><a href="https://bing.img.run/api.html">https://bing.img.run/api.html</a></td>
+<td>2024&#x2F;7&#x2F;25</td>
+<td>获取每日Bing壁纸API，有多种选择</td>
+</tr>
+<tr>
+<td>16</td>
+<td><a href="https://ai.97866.com/">https://ai.97866.com/</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>AI 工具合集</td>
+</tr>
+<tr>
+<td>17</td>
+<td><a href="https://tools.miku.ac/">https://tools.miku.ac/</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>轻量的工具集合</td>
+</tr>
+<tr>
+<td>18</td>
+<td><a href="https://star-history.com/">https://star-history.com/</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>Github Star历史图</td>
+</tr>
+<tr>
+<td>19</td>
+<td><a href="https://github.com/2016rshah/githubchart-api">https://github.com/2016rshah/githubchart-api</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>Github Commit频率图API</td>
+</tr>
+<tr>
+<td>20</td>
+<td><a href="https://shields.io/">https://shields.io/</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>在线统计工具，支持多种徽章样式</td>
+</tr>
+<tr>
+<td>21</td>
+<td><a href="https://carbon.now.sh/">https://carbon.now.sh</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>代码图片工具</td>
+</tr>
+<tr>
+<td>22</td>
+<td><a href="https://ray.so/">https://ray.so</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>代码图片工具</td>
+</tr>
+<tr>
+<td>23</td>
+<td><a href="https://codeimg.io/">https://codeimg.io</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>代码图片工具</td>
+</tr>
+<tr>
+<td>24</td>
+<td><a href="http://www.autolabor.com.cn/book/ROSTutorials/index.html">http://www.autolabor.com.cn/book/ROSTutorials/index.html</a></td>
+<td>2024&#x2F;9&#x2F;2</td>
+<td>ROS中文教程</td>
+</tr>
+<tr>
+<td>25</td>
+<td><a href="https://unsplash.com/wallpapers/screen/4k">https://unsplash.com/wallpapers/screen/4k</a></td>
+<td>2024&#x2F;9&#x2F;3</td>
+<td>免费4K壁纸</td>
+</tr>
+<tr>
+<td>26</td>
+<td><a href="https://kicanvas.org/">https://kicanvas.org/</a></td>
+<td>2024&#x2F;9&#x2F;9</td>
+<td>KiCad原理图或PCB在线查看</td>
+</tr>
+<tr>
+<td>27</td>
+<td><a href="https://www.snapeda.com/">https://www.snapeda.com/</a></td>
+<td>2025&#x2F;1&#x2F;29</td>
+<td>在线器件封装库，很全</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>Tools</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>用CLion配合PlatformIO开发树莓派Pico(RP2040)</title>
+    <url>/post/672d89ba.html</url>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
+<li>Windows 11</li>
+<li>CLion 2024.3</li>
+<li>Python 3.12.3</li>
+</ul>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="安装PlatformIO"><a href="#安装PlatformIO" class="headerlink" title="安装PlatformIO"></a>安装PlatformIO</h3><ol>
+<li><p>下载<a href="https://raw.githubusercontent.com/platformio/platformio-core-installer/master/get-platformio.py">get-platformio.py</a></p>
+</li>
+<li><p>执行如下命令</p>
+</li>
+</ol>
+ <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"># change directory to the folder where is located downloaded &quot;get-platformio.py&quot;</span><br><span class="line"><span class="built_in">cd</span> C:/<span class="built_in">path</span>-to-<span class="built_in">dir</span>/where/get-platformio.py/is-located</span><br><span class="line">   </span><br><span class="line"># run it</span><br><span class="line">python.exe get-platformio.py</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>编辑名为 <code>Path</code> 的系统环境变量并追加 <code>C:\Users\UserName\.platformio\penv\Scripts\</code> 列表开头的路径（请将<code>UserName</code>替换为帐户名）。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224153641139.png" alt="image-20241224153641139"></p>
+</li>
+</ol>
+<h3 id="安装PlatformIO插件"><a href="#安装PlatformIO插件" class="headerlink" title="安装PlatformIO插件"></a>安装PlatformIO插件</h3><ol>
+<li><p>Go to <strong>Settings | Plugins</strong> and switch to <strong>Marketplace</strong>.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224153936338.png" alt="image-20241224153936338"></p>
+</li>
+<li><p>Search for <strong>PlatformIO for CLion</strong> and click <strong>Install</strong>.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224154022748.png" alt="image-20241224154022748"></p>
+</li>
+<li><p>After the installation is finished, click <strong>Restart IDE</strong>.</p>
+</li>
+</ol>
+<h3 id="创建PlatformIO项目"><a href="#创建PlatformIO项目" class="headerlink" title="创建PlatformIO项目"></a>创建PlatformIO项目</h3><ol>
+<li><p>选择自己的board或者framework，创建项目；</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224154343595.png" alt="image-20241224154343595"></p>
+</li>
+<li><p>经过较长时间的等待后，成功创建工程，并生成了Arduino的”stub code”。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224154819663.png" alt="image-20241224154819663"></p>
+</li>
+</ol>
+<h3 id="实现upload自动上传项目（坑）"><a href="#实现upload自动上传项目（坑）" class="headerlink" title="实现upload自动上传项目（坑）"></a>实现upload自动上传项目（坑）</h3><p>一直报错Error 1，最后摸索出来以下这个步骤，百分百成功。</p>
+<ol>
+<li><p>下载<a href="https://zadig.akeo.ie/downloads/">zadig 2.5</a>版本，注意一定要是2.5版本，不能太新；</p>
+</li>
+<li><p>pico板进入bootloader，然后打开zadig，勾选<code>Options</code>里的<code>List All Devices</code>；</p>
+</li>
+<li><p>为<strong>RP2 Boot(Interface 1)<strong>安装</strong>WinUSB驱动</strong>；</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224155601520.png" alt="image-20241224155601520"></p>
+</li>
+<li><p>进入CLion，为pico随便编译一个程序，在<code>./.pio/build/pico/</code>里找到<code>firmware.uf2</code>，复制进pico的MSV设备里；</p>
+</li>
+<li><p>然后再使用PlatformIO里的upload就不会报错了。</p>
+</li>
+</ol>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://www.jetbrains.com/help/clion/platformio.html">PlatformIO | CLion Documentation</a><br><a href="https://docs.platformio.org/en/latest/core/installation/methods/installer-script.html">Installer Script (Recommended) — PlatformIO latest documentation</a></p>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>Dev</tag>
+        <tag>Arduino</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>用CLion优雅地调试和开发STM32(CubeMX)</title>
     <url>/post/63adfc20.html</url>
     <content><![CDATA[<h2 id="Why-CLion"><a href="#Why-CLion" class="headerlink" title="Why CLion?"></a>Why CLion?</h2><p>Keil操作简单，容易上手，而且可以很方便地进行调试，不过其古老的界面，不符合人类直觉的操作，不符合现代的编程习惯，必然会被逐渐淘汰。</p>
@@ -1003,66 +1070,42 @@
       </tags>
   </entry>
   <entry>
-    <title>用CLion配合PlatformIO开发树莓派Pico(RP2040)</title>
-    <url>/post/672d89ba.html</url>
-    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
-<li>Windows 11</li>
-<li>CLion 2024.3</li>
-<li>Python 3.12.3</li>
+    <title>百度网盘不限速</title>
+    <url>/post/900d6e7c.html</url>
+    <content><![CDATA[<p><em>最近不太稳定了 20241123</em></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>浏览器：Firefox &#x2F; Chromium</li>
+<li>脚本管理器：Tampermonkey Beta（注意：只能用Beta版本）</li>
+<li><a href="https://motrix.app/">Motrix下载器</a></li>
 </ul>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="安装PlatformIO"><a href="#安装PlatformIO" class="headerlink" title="安装PlatformIO"></a>安装PlatformIO</h3><ol>
-<li><p>下载<a href="https://raw.githubusercontent.com/platformio/platformio-core-installer/master/get-platformio.py">get-platformio.py</a></p>
-</li>
-<li><p>执行如下命令</p>
-</li>
-</ol>
- <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"># change directory to the folder where is located downloaded &quot;get-platformio.py&quot;</span><br><span class="line"><span class="built_in">cd</span> C:/<span class="built_in">path</span>-to-<span class="built_in">dir</span>/where/get-platformio.py/is-located</span><br><span class="line">   </span><br><span class="line"># run it</span><br><span class="line">python.exe get-platformio.py</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li><p>编辑名为 <code>Path</code> 的系统环境变量并追加 <code>C:\Users\UserName\.platformio\penv\Scripts\</code> 列表开头的路径（请将<code>UserName</code>替换为帐户名）。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224153641139.png" alt="image-20241224153641139"></p>
+<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="STEP-1-安装插件"><a href="#STEP-1-安装插件" class="headerlink" title="STEP 1 安装插件"></a>STEP 1 安装插件</h3><ol>
+<li>打开Tampermonkey Beta的「管理面板」</li>
+<li>进入「实用工具」选项卡</li>
+<li>复制粘贴安装地址到「从URL安装」进行安装<blockquote>
+<p>安装地址：<a href="http://1.94.138.197/tampermonkey/min.baidu.user.js">http://1.94.138.197/tampermonkey/min.baidu.user.js</a></p>
+</blockquote>
 </li>
 </ol>
-<h3 id="安装PlatformIO插件"><a href="#安装PlatformIO插件" class="headerlink" title="安装PlatformIO插件"></a>安装PlatformIO插件</h3><ol>
-<li><p>Go to <strong>Settings | Plugins</strong> and switch to <strong>Marketplace</strong>.</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224153936338.png" alt="image-20241224153936338"></p>
-</li>
-<li><p>Search for <strong>PlatformIO for CLion</strong> and click <strong>Install</strong>.</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224154022748.png" alt="image-20241224154022748"></p>
-</li>
-<li><p>After the installation is finished, click <strong>Restart IDE</strong>.</p>
-</li>
+<h3 id="STEP-2-使用"><a href="#STEP-2-使用" class="headerlink" title="STEP 2 使用"></a>STEP 2 使用</h3><ol>
+<li>脚本会在网盘根目录自动创建一个文件夹并设置为永久分享，把需要下载的资源转移到这个文件夹里操作。</li>
+<li>注意Motrix必须提前在后台打开，否则无法正常拉起。</li>
 </ol>
-<h3 id="创建PlatformIO项目"><a href="#创建PlatformIO项目" class="headerlink" title="创建PlatformIO项目"></a>创建PlatformIO项目</h3><ol>
-<li><p>选择自己的board或者framework，创建项目；</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224154343595.png" alt="image-20241224154343595"></p>
-</li>
-<li><p>经过较长时间的等待后，成功创建工程，并生成了Arduino的”stub code”。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224154819663.png" alt="image-20241224154819663"></p>
-</li>
-</ol>
-<h3 id="实现upload自动上传项目（坑）"><a href="#实现upload自动上传项目（坑）" class="headerlink" title="实现upload自动上传项目（坑）"></a>实现upload自动上传项目（坑）</h3><p>一直报错Error 1，最后摸索出来以下这个步骤，百分百成功。</p>
+<p><img src="C:/Users/MDLZ/AppData/Roaming/Typora/typora-user-images/image-20241112173125588.png" alt="image-20241112173125588"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241112173455348.png" alt="image-20241112173455348"></p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>这个方法目前来看应该是最稳定的，速度可以基本跑满，作者规则更新很频繁。相当于免费，不过对于特大文件（比如&gt;30G的文件，好像还没办法下载）</p>
 <ol>
-<li><p>下载<a href="https://zadig.akeo.ie/downloads/">zadig 2.5</a>版本，注意一定要是2.5版本，不能太新；</p>
+<li><p>解析下载时根据每个文件的大小扣减解析点数，不足1G的文件消耗1点，1G到2G的文件需要消耗2点，2G至3G的文件消耗3点，以此类推。</p>
 </li>
-<li><p>pico板进入bootloader，然后打开zadig，勾选<code>Options</code>里的<code>List All Devices</code>；</p>
-</li>
-<li><p>为<strong>RP2 Boot(Interface 1)<strong>安装</strong>WinUSB驱动</strong>；</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224155601520.png" alt="image-20241224155601520"></p>
-</li>
-<li><p>进入CLion，为pico随便编译一个程序，在<code>./.pio/build/pico/</code>里找到<code>firmware.uf2</code>，复制进pico的MSV设备里；</p>
-</li>
-<li><p>然后再使用PlatformIO里的upload就不会报错了。</p>
+<li><p>获取解析点数的方式目前有「签到」和「视频点赞」两种，点赞列表中的每个视频只有第一次点赞会增加点数，取消点赞则扣除相应点数。</p>
 </li>
 </ol>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://www.jetbrains.com/help/clion/platformio.html">PlatformIO | CLion Documentation</a><br><a href="https://docs.platformio.org/en/latest/core/installation/methods/installer-script.html">Installer Script (Recommended) — PlatformIO latest documentation</a></p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>插件主页链接：<a href="https://1.94.138.197/bangumi">hd2a</a></p>
 ]]></content>
       <categories>
-        <category>Dev</category>
+        <category>Tools</category>
       </categories>
       <tags>
-        <tag>Dev</tag>
-        <tag>Arduino</tag>
+        <tag>Tools</tag>
       </tags>
   </entry>
   <entry>
@@ -1106,45 +1149,6 @@
       </categories>
       <tags>
         <tag>STM32</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>百度网盘不限速</title>
-    <url>/post/900d6e7c.html</url>
-    <content><![CDATA[<p><em>最近不太稳定了 20241123</em></p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
-<li>浏览器：Firefox &#x2F; Chromium</li>
-<li>脚本管理器：Tampermonkey Beta（注意：只能用Beta版本）</li>
-<li><a href="https://motrix.app/">Motrix下载器</a></li>
-</ul>
-<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="STEP-1-安装插件"><a href="#STEP-1-安装插件" class="headerlink" title="STEP 1 安装插件"></a>STEP 1 安装插件</h3><ol>
-<li>打开Tampermonkey Beta的「管理面板」</li>
-<li>进入「实用工具」选项卡</li>
-<li>复制粘贴安装地址到「从URL安装」进行安装<blockquote>
-<p>安装地址：<a href="http://1.94.138.197/tampermonkey/min.baidu.user.js">http://1.94.138.197/tampermonkey/min.baidu.user.js</a></p>
-</blockquote>
-</li>
-</ol>
-<h3 id="STEP-2-使用"><a href="#STEP-2-使用" class="headerlink" title="STEP 2 使用"></a>STEP 2 使用</h3><ol>
-<li>脚本会在网盘根目录自动创建一个文件夹并设置为永久分享，把需要下载的资源转移到这个文件夹里操作。</li>
-<li>注意Motrix必须提前在后台打开，否则无法正常拉起。</li>
-</ol>
-<p><img src="C:/Users/MDLZ/AppData/Roaming/Typora/typora-user-images/image-20241112173125588.png" alt="image-20241112173125588"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241112173455348.png" alt="image-20241112173455348"></p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>这个方法目前来看应该是最稳定的，速度可以基本跑满，作者规则更新很频繁。相当于免费，不过对于特大文件（比如&gt;30G的文件，好像还没办法下载）</p>
-<ol>
-<li><p>解析下载时根据每个文件的大小扣减解析点数，不足1G的文件消耗1点，1G到2G的文件需要消耗2点，2G至3G的文件消耗3点，以此类推。</p>
-</li>
-<li><p>获取解析点数的方式目前有「签到」和「视频点赞」两种，点赞列表中的每个视频只有第一次点赞会增加点数，取消点赞则扣除相应点数。</p>
-</li>
-</ol>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>插件主页链接：<a href="https://1.94.138.197/bangumi">hd2a</a></p>
-]]></content>
-      <categories>
-        <category>Tools</category>
-      </categories>
-      <tags>
-        <tag>Tools</tag>
       </tags>
   </entry>
   <entry>
