@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>IDM脚本和谐破解注册</title>
+    <url>/post/5983f199.html</url>
+    <content><![CDATA[<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>一、在官网下载安装IDM</p>
+<p><a href="https://www.internetdownloadmanager.com/">Internet Download Manager</a></p>
+<p>二、在PowerShell里粘贴以下脚本</p>
+<ul>
+<li>方法1（Recommended）</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">irm https://massgrave.dev/ias | iex</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>方法2（Traditional）</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Check the instructions here on how to use it https://massgrave.dev/idm-activation-script</span></span><br><span class="line"> </span><br><span class="line"><span class="variable">$ErrorActionPreference</span> = <span class="string">&quot;Stop&quot;</span></span><br><span class="line"><span class="comment"># Enable TLSv1.2 for compatibility with older clients</span></span><br><span class="line">[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12</span><br><span class="line"> </span><br><span class="line"><span class="variable">$DownloadURL</span> = <span class="string">&#x27;https://raw.githubusercontent.com/WindowsAddict/IDM-Activation-Script/main/IAS.cmd&#x27;</span></span><br><span class="line"><span class="variable">$DownloadURL2</span> = <span class="string">&#x27;https://bitbucket.org/WindowsAddict/idm-activation-script/raw/main/IAS.cmd&#x27;</span></span><br><span class="line"> </span><br><span class="line"><span class="variable">$rand</span> = Get-Random -Maximum 99999999</span><br><span class="line"><span class="variable">$isAdmin</span> = [bool]([Security.Principal.WindowsIdentity]::GetCurrent().Groups -match <span class="string">&#x27;S-1-5-32-544&#x27;</span>)</span><br><span class="line"><span class="variable">$FilePath</span> = <span class="keyword">if</span> (<span class="variable">$isAdmin</span>) &#123; <span class="string">&quot;<span class="variable">$env</span>:SystemRoot\Temp\IAS_<span class="variable">$rand</span>.cmd&quot;</span> &#125; <span class="keyword">else</span> &#123; <span class="string">&quot;<span class="variable">$env</span>:TEMP\IAS_<span class="variable">$rand</span>.cmd&quot;</span> &#125;</span><br><span class="line"> </span><br><span class="line">try &#123;</span><br><span class="line">    <span class="variable">$response</span> = Invoke-WebRequest -Uri <span class="variable">$DownloadURL</span> -UseBasicParsing</span><br><span class="line">&#125;</span><br><span class="line">catch &#123;</span><br><span class="line">    <span class="variable">$response</span> = Invoke-WebRequest -Uri <span class="variable">$DownloadURL2</span> -UseBasicParsing</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="variable">$ScriptArgs</span> = <span class="string">&quot;<span class="variable">$args</span> &quot;</span></span><br><span class="line"><span class="variable">$prefix</span> = <span class="string">&quot;@REM <span class="variable">$rand</span> `r`n&quot;</span></span><br><span class="line"><span class="variable">$content</span> = <span class="variable">$prefix</span> + <span class="variable">$response</span></span><br><span class="line">Set-Content -Path <span class="variable">$FilePath</span> -Value <span class="variable">$content</span></span><br><span class="line"> </span><br><span class="line">Start-Process <span class="variable">$FilePath</span> <span class="variable">$ScriptArgs</span> -Wait</span><br><span class="line"> </span><br><span class="line"><span class="variable">$FilePaths</span> = @(<span class="string">&quot;<span class="variable">$env</span>:TEMP\IAS*.cmd&quot;</span>, <span class="string">&quot;<span class="variable">$env</span>:SystemRoot\Temp\IAS*.cmd&quot;</span>)</span><br><span class="line">foreach (<span class="variable">$FilePath</span> <span class="keyword">in</span> <span class="variable">$FilePaths</span>) &#123; Get-Item <span class="variable">$FilePath</span> | Remove-Item &#125;</span><br></pre></td></tr></table></figure>
+
+<p>等待一会，出现下面界面</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241002180500615.png" alt="image-20241002180500615"></p>
+<p>选择1或者2都可，出现如下界面表示成功</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241002181148701.png" alt="image-20241002181148701"></p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>可能在一段时间后会失效，重新来一遍即可</p>
+]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>Tools</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>KiCad导出Gerber图形文件</title>
     <url>/post/ef2c5f04.html</url>
     <content><![CDATA[<h3 id="KiCad导出Gerber图形文件"><a href="#KiCad导出Gerber图形文件" class="headerlink" title="KiCad导出Gerber图形文件"></a>KiCad导出Gerber图形文件</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png" alt="image-20240527171958427"></p>
@@ -14,24 +43,21 @@
       </tags>
   </entry>
   <entry>
-    <title>Git使用小技巧Tricks</title>
-    <url>/post/4bb6437a.html</url>
-    <content><![CDATA[<h2 id="经历了一次错误的commit，想要撤回"><a href="#经历了一次错误的commit，想要撤回" class="headerlink" title="经历了一次错误的commit，想要撤回"></a>经历了一次错误的commit，想要撤回</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span> <span class="comment"># 查看上次commit的完整hash字串</span></span><br><span class="line">git reset &lt;arg1&gt; &lt;<span class="built_in">hash</span>字串&gt; <span class="comment"># 撤回commit，&lt;arg1&gt;有参数--soft、--hard、--mixed可选。</span></span><br><span class="line"><span class="comment"># 注意注意：一般可以忽略&lt;arg1&gt;。</span></span><br><span class="line"><span class="comment"># 区别为</span></span><br><span class="line"><span class="comment"># --soft 文件还保存在git里，可以再reset回来</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)        (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B-C</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># --hard 文件直接被删去，慎用！！！</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)        (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># --mixed 文件未被删去，就在本地workspace里，处于未被add的状态(推荐)</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)          (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B-C</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 注：(F)指的是磁盘里此时实际的文件处于哪个版本</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="清除本地对远端已经不存在的分支的引用"><a href="#清除本地对远端已经不存在的分支的引用" class="headerlink" title="清除本地对远端已经不存在的分支的引用"></a>清除本地对远端已经不存在的分支的引用</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote prune origin</span><br></pre></td></tr></table></figure>
-
-<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><ul>
-<li><code>origin</code> 是默认的远程仓库名称，如果有其他远程仓库，可以用相应的名字替换 <code>origin</code>。</li>
-<li>该命令__不会删除本地的任何分支或数据__，只会移除本地对那些已经在远程仓库中删除的分支的引用。</li>
+    <title>Jetbrains系IDE使用小技巧</title>
+    <url>/post/af86e289.html</url>
+    <content><![CDATA[<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><ul>
+<li>One Dark</li>
 </ul>
-<h2 id="更新子模块"><a href="#更新子模块" class="headerlink" title="更新子模块"></a>更新子模块</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git submodule --update --init --recursive</span><br></pre></td></tr></table></figure>
-
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><ul>
+<li>Chinese (Simplified) Language Pack &#x2F; 中文语言包</li>
+<li>CodeGlance Pro &#x2F; 侧栏代码缩略</li>
+</ul>
 ]]></content>
       <categories>
         <category>Dev</category>
       </categories>
       <tags>
-        <tag>Git</tag>
+        <tag>Dev</tag>
       </tags>
   </entry>
   <entry>
@@ -54,43 +80,18 @@
       </tags>
   </entry>
   <entry>
-    <title>Jetbrains系IDE使用小技巧</title>
-    <url>/post/af86e289.html</url>
-    <content><![CDATA[<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><ul>
-<li>One Dark</li>
+    <title>Git使用小技巧Tricks</title>
+    <url>/post/4bb6437a.html</url>
+    <content><![CDATA[<h2 id="经历了一次错误的commit，想要撤回"><a href="#经历了一次错误的commit，想要撤回" class="headerlink" title="经历了一次错误的commit，想要撤回"></a>经历了一次错误的commit，想要撤回</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span> <span class="comment"># 查看上次commit的完整hash字串</span></span><br><span class="line">git reset &lt;arg1&gt; &lt;<span class="built_in">hash</span>字串&gt; <span class="comment"># 撤回commit，&lt;arg1&gt;有参数--soft、--hard、--mixed可选。</span></span><br><span class="line"><span class="comment"># 注意注意：一般可以忽略&lt;arg1&gt;。</span></span><br><span class="line"><span class="comment"># 区别为</span></span><br><span class="line"><span class="comment"># --soft 文件还保存在git里，可以再reset回来</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)        (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B-C</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># --hard 文件直接被删去，慎用！！！</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)        (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># --mixed 文件未被删去，就在本地workspace里，处于未被add的状态(推荐)</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)          (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B-C</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 注：(F)指的是磁盘里此时实际的文件处于哪个版本</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="清除本地对远端已经不存在的分支的引用"><a href="#清除本地对远端已经不存在的分支的引用" class="headerlink" title="清除本地对远端已经不存在的分支的引用"></a>清除本地对远端已经不存在的分支的引用</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git remote prune origin</span><br></pre></td></tr></table></figure>
+
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><ul>
+<li><code>origin</code> 是默认的远程仓库名称，如果有其他远程仓库，可以用相应的名字替换 <code>origin</code>。</li>
+<li>该命令__不会删除本地的任何分支或数据__，只会移除本地对那些已经在远程仓库中删除的分支的引用。</li>
 </ul>
-<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><ul>
-<li>Chinese (Simplified) Language Pack &#x2F; 中文语言包</li>
-<li>CodeGlance Pro &#x2F; 侧栏代码缩略</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>Dev</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>克隆远端很大的仓库出现early EOF</title>
-    <url>/post/c93388c7.html</url>
-    <content><![CDATA[<h2 id="一般做法"><a href="#一般做法" class="headerlink" title="一般做法"></a>一般做法</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">设置缓存为1G</span></span><br><span class="line">git config --global http.postBuffer 1048576000</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">设置缓存为1G</span></span><br><span class="line">git config --global https.postBuffer 1048576000</span><br></pre></td></tr></table></figure>
+<h2 id="更新子模块"><a href="#更新子模块" class="headerlink" title="更新子模块"></a>更新子模块</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git submodule --update --init --recursive</span><br></pre></td></tr></table></figure>
 
-<p>上面的方法对我没用。</p>
-<h2 id="有用的方法"><a href="#有用的方法" class="headerlink" title="有用的方法"></a>有用的方法</h2><ol>
-<li>先浅层clone，只拉取最近的一次提交</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone --depth=1 http://xxx.git</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>浅层clone成功后，再完整拉取</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git fetch --unshallow</span><br><span class="line">git config remote.origin.fetch &quot;+refs/heads/*:refs/remotes/origin/*&quot;</span><br></pre></td></tr></table></figure>
-
-<p>3.然后执行以下命令获取所有分支</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git fetch -pv 或 $ git fetch -v</span><br></pre></td></tr></table></figure>
-
-<p>这种错误产生的原因其实还是网络问题</p>
 ]]></content>
       <categories>
         <category>Dev</category>
@@ -142,6 +143,34 @@
       </categories>
       <tags>
         <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>克隆远端很大的仓库出现early EOF</title>
+    <url>/post/c93388c7.html</url>
+    <content><![CDATA[<h2 id="一般做法"><a href="#一般做法" class="headerlink" title="一般做法"></a>一般做法</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">设置缓存为1G</span></span><br><span class="line">git config --global http.postBuffer 1048576000</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">设置缓存为1G</span></span><br><span class="line">git config --global https.postBuffer 1048576000</span><br></pre></td></tr></table></figure>
+
+<p>上面的方法对我没用。</p>
+<h2 id="有用的方法"><a href="#有用的方法" class="headerlink" title="有用的方法"></a>有用的方法</h2><ol>
+<li>先浅层clone，只拉取最近的一次提交</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone --depth=1 http://xxx.git</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>浅层clone成功后，再完整拉取</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git fetch --unshallow</span><br><span class="line">git config remote.origin.fetch &quot;+refs/heads/*:refs/remotes/origin/*&quot;</span><br></pre></td></tr></table></figure>
+
+<p>3.然后执行以下命令获取所有分支</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git fetch -pv 或 $ git fetch -v</span><br></pre></td></tr></table></figure>
+
+<p>这种错误产生的原因其实还是网络问题</p>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
@@ -217,91 +246,6 @@
 <li><p><a href="https://lvgl.100ask.net/8.2/">百问网LVGL中文教程文档</a> <em>- 20241028这个暂时只汉化到v8.2</em></p>
 </li>
 </ul>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>Dev</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>IDM脚本和谐破解注册</title>
-    <url>/post/5983f199.html</url>
-    <content><![CDATA[<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>一、在官网下载安装IDM</p>
-<p><a href="https://www.internetdownloadmanager.com/">Internet Download Manager</a></p>
-<p>二、在PowerShell里粘贴以下脚本</p>
-<ul>
-<li>方法1（Recommended）</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">irm https://massgrave.dev/ias | iex</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>方法2（Traditional）</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Check the instructions here on how to use it https://massgrave.dev/idm-activation-script</span></span><br><span class="line"> </span><br><span class="line"><span class="variable">$ErrorActionPreference</span> = <span class="string">&quot;Stop&quot;</span></span><br><span class="line"><span class="comment"># Enable TLSv1.2 for compatibility with older clients</span></span><br><span class="line">[Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12</span><br><span class="line"> </span><br><span class="line"><span class="variable">$DownloadURL</span> = <span class="string">&#x27;https://raw.githubusercontent.com/WindowsAddict/IDM-Activation-Script/main/IAS.cmd&#x27;</span></span><br><span class="line"><span class="variable">$DownloadURL2</span> = <span class="string">&#x27;https://bitbucket.org/WindowsAddict/idm-activation-script/raw/main/IAS.cmd&#x27;</span></span><br><span class="line"> </span><br><span class="line"><span class="variable">$rand</span> = Get-Random -Maximum 99999999</span><br><span class="line"><span class="variable">$isAdmin</span> = [bool]([Security.Principal.WindowsIdentity]::GetCurrent().Groups -match <span class="string">&#x27;S-1-5-32-544&#x27;</span>)</span><br><span class="line"><span class="variable">$FilePath</span> = <span class="keyword">if</span> (<span class="variable">$isAdmin</span>) &#123; <span class="string">&quot;<span class="variable">$env</span>:SystemRoot\Temp\IAS_<span class="variable">$rand</span>.cmd&quot;</span> &#125; <span class="keyword">else</span> &#123; <span class="string">&quot;<span class="variable">$env</span>:TEMP\IAS_<span class="variable">$rand</span>.cmd&quot;</span> &#125;</span><br><span class="line"> </span><br><span class="line">try &#123;</span><br><span class="line">    <span class="variable">$response</span> = Invoke-WebRequest -Uri <span class="variable">$DownloadURL</span> -UseBasicParsing</span><br><span class="line">&#125;</span><br><span class="line">catch &#123;</span><br><span class="line">    <span class="variable">$response</span> = Invoke-WebRequest -Uri <span class="variable">$DownloadURL2</span> -UseBasicParsing</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="variable">$ScriptArgs</span> = <span class="string">&quot;<span class="variable">$args</span> &quot;</span></span><br><span class="line"><span class="variable">$prefix</span> = <span class="string">&quot;@REM <span class="variable">$rand</span> `r`n&quot;</span></span><br><span class="line"><span class="variable">$content</span> = <span class="variable">$prefix</span> + <span class="variable">$response</span></span><br><span class="line">Set-Content -Path <span class="variable">$FilePath</span> -Value <span class="variable">$content</span></span><br><span class="line"> </span><br><span class="line">Start-Process <span class="variable">$FilePath</span> <span class="variable">$ScriptArgs</span> -Wait</span><br><span class="line"> </span><br><span class="line"><span class="variable">$FilePaths</span> = @(<span class="string">&quot;<span class="variable">$env</span>:TEMP\IAS*.cmd&quot;</span>, <span class="string">&quot;<span class="variable">$env</span>:SystemRoot\Temp\IAS*.cmd&quot;</span>)</span><br><span class="line">foreach (<span class="variable">$FilePath</span> <span class="keyword">in</span> <span class="variable">$FilePaths</span>) &#123; Get-Item <span class="variable">$FilePath</span> | Remove-Item &#125;</span><br></pre></td></tr></table></figure>
-
-<p>等待一会，出现下面界面</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241002180500615.png" alt="image-20241002180500615"></p>
-<p>选择1或者2都可，出现如下界面表示成功</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241002181148701.png" alt="image-20241002181148701"></p>
-<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>可能在一段时间后会失效，重新来一遍即可</p>
-]]></content>
-      <categories>
-        <category>Tools</category>
-      </categories>
-      <tags>
-        <tag>Tools</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在 RT-Thread Studio 环境中为 ART-Pi 2 移植 CherryUSB（以 usb_device 为例）</title>
-    <url>/post/12a4c8db.html</url>
-    <content><![CDATA[<h2 id="开始之前"><a href="#开始之前" class="headerlink" title="开始之前"></a>开始之前</h2><p>ART-Pi 2 搭载了 STM32H7R7x 芯片，这是 ST 推出的一款自带 Internal HS PHY 的 MCU。目前论坛里资料较少，故尝试在 RT-Thread Studio 中移植 CherryUSB，本文从创建工程开始，事无巨细地记录了移植的全过程。</p>
-<h2 id="移植过程"><a href="#移植过程" class="headerlink" title="移植过程"></a>移植过程</h2><h3 id="1-新建工程"><a href="#1-新建工程" class="headerlink" title="1. 新建工程"></a>1. 新建工程</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419020115734.png" alt="image-20250419020115734"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419020207053.png" alt="image-20250419020207053"></p>
-<p>如图示，新建基于 ART-Pi 2 开发板的项目。</p>
-<p>工程的目录结构如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419020410693.png" alt="image-20250419020410693"></p>
-<h3 id="2-添加CherryUSB的package"><a href="#2-添加CherryUSB的package" class="headerlink" title="2. 添加CherryUSB的package"></a>2. 添加CherryUSB的package</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419020518831.png" alt="image-20250419020518831"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419020553232.png" alt="image-20250419020553232"></p>
-<p>在工程中一键添加CherryUSB的包，按下 Ctrl+S 保存设置，自动开始下载 CherryUSB，这里要注意网络畅通，因为要从 Github 上拉取 最新的 release，成功后控制台信息如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419021305634.png" alt="image-20250419021305634"></p>
-<h3 id="3-配置CherryUSB"><a href="#3-配置CherryUSB" class="headerlink" title="3. 配置CherryUSB"></a>3. 配置CherryUSB</h3><p>在软件包里找到 CherryUSB 的配置项，我们以usb_device为例，进行如下配置，不要忘记保存：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419020815020.png" alt="image-20250419020815020"></p>
-<p>将 .&#x2F;packages&#x2F;CherryUSB-v1.4.3&#x2F;cherryusb_config_template.h 拷贝到 .&#x2F;board&#x2F;port 里面，并命名为 usb_config.h，如下图：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419021711309.png" alt="image-20250419021711309"></p>
-<p>然后刷新工程，即可找到新添加的文件。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/Screenshot%202025-04-19%20022134.png" alt="Screenshot 2025-04-19 022134"></p>
-<p>打开 usb_config.h，修改以下宏</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;rtthread.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_PRINTF(...) rt_kprintf(__VA_ARGS__)</span></span><br></pre></td></tr></table></figure>
-
-<p>USB IP 相关的 config 需要自己根据芯片实际情况修改，这里实现下面的宏</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USBDEV_EP_NUM 8</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_RXALL_FIFO_SIZE (1024 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX0_FIFO_SIZE (64 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX1_FIFO_SIZE (1024 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX2_FIFO_SIZE (64 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX3_FIFO_SIZE (64 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX4_FIFO_SIZE (64 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX5_FIFO_SIZE (64 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX6_FIFO_SIZE (64 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX7_FIFO_SIZE (64 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX8_FIFO_SIZE (64 / 4)</span></span><br></pre></td></tr></table></figure>
-
-<p>修改 .&#x2F;board&#x2F;board.c，在最后实现下面函数（我们这里就用 hid_mouse 的 demo）</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">usb_dc_low_level_init</span><span class="params">(<span class="type">uint8_t</span> busid)</span> &#123;</span><br><span class="line">	add something...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">OTG_HS_IRQHandler</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">extern</span> <span class="type">void</span> <span class="title function_">USBD_IRQHandler</span><span class="params">(<span class="type">uint8_t</span> busid)</span>;</span><br><span class="line">    USBD_IRQHandler(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">usbd_init</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">extern</span> <span class="type">void</span> <span class="title function_">hid_mouse_init</span><span class="params">(<span class="type">uint8_t</span> busid, <span class="type">uintptr_t</span> reg_base)</span>;</span><br><span class="line">    hid_mouse_init(<span class="number">0</span>, USB_OTG_HS_PERIPH_BASE);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">INIT_APP_EXPORT(usbd_init);</span><br></pre></td></tr></table></figure>
-
-<p>关于上面 void usb_dc_low_level_init(uint8_t busid) 函数怎么实现，请参阅我的另一个帖子：<a href="https://mdlzcool.github.io/post/fb4bb4c3.html">在STM32G4上移植CherryUSB协议栈（usb_device）</a>，这里主要就是用CubeMX新建一个工程，然后打开USB_HS_OTG和中断，然后在生成的代码里面找到初始化 USB 时钟和中断的代码复制过来，就OK了，下面附上我的实现，可以直接拿去用：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">usb_dc_low_level_init</span><span class="params">(<span class="type">uint8_t</span> busid)</span> &#123;</span><br><span class="line">    RCC_PeriphCLKInitTypeDef PeriphClkInit = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USBPHYC;</span><br><span class="line">    PeriphClkInit.UsbPhycClockSelection = RCC_USBPHYCCLKSOURCE_HSE;</span><br><span class="line">    HAL_PWREx_EnableUSBVoltageDetector();</span><br><span class="line">    __HAL_RCC_USB_OTG_HS_CLK_ENABLE();</span><br><span class="line">    __HAL_RCC_USBPHYC_CLK_ENABLE();</span><br><span class="line">    HAL_NVIC_SetPriority(OTG_HS_IRQn, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    HAL_NVIC_EnableIRQ(OTG_HS_IRQn);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>做完以上所有步骤后，编译烧录一气呵成没有报错：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419023353355.png" alt="image-20250419023353355"></p>
-<p>在终端里面可以看到已经识别正确：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419023159824.png" alt="image-20250419023159824"></p>
-<p>且给USB-HS插到电脑上可以正确枚举：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419023532794.png" alt="image-20250419023532794"></p>
-<h3 id="3-收尾"><a href="#3-收尾" class="headerlink" title="3. 收尾"></a>3. 收尾</h3><p>在 .&#x2F;applications&#x2F;main.c 中，添加 CherryUSB 的 hid_mouse 的线程，如图：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419023807276.png" alt="image-20250419023807276"></p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">rt_thread_t</span> hid_thread = RT_NULL;</span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">hid_mouse_thread_entry</span><span class="params">(<span class="type">void</span> *parameter)</span></span><br><span class="line">&#123;</span><br><span class="line">    rt_kprintf(<span class="string">&quot;USB HID Mouse thread started\n&quot;</span>);</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">extern</span> <span class="type">void</span> <span class="title function_">hid_mouse_test</span><span class="params">(<span class="type">uint8_t</span> busid)</span>;</span><br><span class="line">            hid_mouse_test(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    ...</span><br><span class="line">    hid_thread = rt_thread_create(<span class="string">&quot;hid_mouse&quot;</span>, hid_mouse_thread_entry,</span><br><span class="line">    RT_NULL, <span class="number">1024</span>, <span class="number">20</span>, <span class="number">5</span>);</span><br><span class="line">    <span class="keyword">if</span> (hid_thread != RT_NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        rt_thread_startup(hid_thread);</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后再次编译烧录，发现鼠标不出所料地开始转圈了：）</p>
-<p>至此移植结束，再次感谢 <em>sakumisu</em> 的贡献。</p>
-<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p>附一些图片</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/355652e85715a278f290de8799c94dc.jpg" alt="355652e85715a278f290de8799c94dc"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/2f0488a99281d2249a52e645f95fcaf.jpg" alt="2f0488a99281d2249a52e645f95fcaf"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/3043ee331dae5b84d8902f62195a9d7.jpg" alt="3043ee331dae5b84d8902f62195a9d7"></p>
-<h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><p><a href="https://github.com/MDLZCOOL/CherryUSB_ART_Pi2">https://github.com/MDLZCOOL/CherryUSB_ART_Pi2</a></p>
 ]]></content>
       <categories>
         <category>Dev</category>
@@ -460,7 +404,7 @@
 <ol start="6">
 <li><p>修改<code>STM32Hardware.h</code>，具体为：</p>
 <ul>
-<li>定义自己的设备头（如果预处理部分没有你的设备，请自己加上）</li>
+<li>（注意注意！这一步在 <a href="https://github.com/MDLZCOOL/rosserial_stm32/commit/0b769c8a64fb37ad54a39b7a6ea32c3498a91ea8">#0b769c8</a> 后已经不再需要）定义自己的设备头（如果预处理部分没有你的设备，请自己加上）</li>
 </ul>
 </li>
 </ol>
@@ -527,194 +471,59 @@
       </tags>
   </entry>
   <entry>
-    <title>常用工具性网站&amp;工具</title>
-    <url>/post/5788685f.html</url>
-    <content><![CDATA[<h2 id="工具网站"><a href="#工具网站" class="headerlink" title="工具网站"></a>工具网站</h2><p>🎁此处列出的网站均来源于互联网，请注意不要在这些网站上输入任何个人敏感信息（如有可能）</p>
-<p>🌎某些网站可能需要国际网络</p>
-<p>🌈欢迎贡献</p>
-<ul>
-<li>添加站点</li>
-<li>反馈站点失效</li>
-<li>更多(todo)</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>序号</th>
-<th>网站</th>
-<th>添加时间</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>1</td>
-<td><a href="https://www.runoob.com/">https://www.runoob.com/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>菜鸟教程</td>
-</tr>
-<tr>
-<td>2</td>
-<td><a href="https://serial.keysking.com/">https://serial.keysking.com/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>网页版串口助手</td>
-</tr>
-<tr>
-<td>3</td>
-<td><a href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>阿里巴巴矢量图标库</td>
-</tr>
-<tr>
-<td>4</td>
-<td><a href="https://book.openmv.cc/">https://book.openmv.cc/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>OpenMV中文入门教程</td>
-</tr>
-<tr>
-<td>5</td>
-<td><a href="https://www.3dcontentcentral.com/">https://www.3dcontentcentral.com/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>3D模型下载站</td>
-</tr>
-<tr>
-<td>6</td>
-<td><a href="https://www2.futureware.at/KiCad/">https://www2.futureware.at/KiCad/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>Altium Designe转KiCad</td>
-</tr>
-<tr>
-<td>7</td>
-<td><a href="https://www.nerdfonts.com/font-downloads">https://www.nerdfonts.com/font-downloads</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>艺术字体下载</td>
-</tr>
-<tr>
-<td>8</td>
-<td><a href="https://fontawesome.p2hp.com/icons-ui.html">https://fontawesome.p2hp.com/icons-ui.html</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>The Icons矢量图标库</td>
-</tr>
-<tr>
-<td>9</td>
-<td><a href="http://network-science.de/ascii/">http://network-science.de/ascii/</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>终端立体字生成</td>
-</tr>
-<tr>
-<td>10</td>
-<td><a href="https://tableconvert.com/zh-cn/latex-to-latex">https://tableconvert.com/zh-cn/latex-to-latex</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>Latex表格在线编辑和转Excel</td>
-</tr>
-<tr>
-<td>11</td>
-<td><a href="https://www.niupizhiyuan.com/download.html">https://www.niupizhiyuan.com/download.html</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>CSDN文章和文件下载</td>
-</tr>
-<tr>
-<td>12</td>
-<td><a href="http://1.94.138.197/bangumi">http://1.94.138.197/bangumi</a></td>
-<td>2024&#x2F;7&#x2F;9</td>
-<td>百度云不限速，配合油猴</td>
-</tr>
-<tr>
-<td>13</td>
-<td><a href="https://limestart.cn/">https://limestart.cn</a></td>
-<td>2024&#x2F;7&#x2F;22</td>
-<td>青柠起始页，优雅的浏览器主页</td>
-</tr>
-<tr>
-<td>14</td>
-<td><a href="https://skillicons.dev/">https://skillicons.dev/</a></td>
-<td>2024&#x2F;7&#x2F;24</td>
-<td>Skill Icons，技术栈图标</td>
-</tr>
-<tr>
-<td>15</td>
-<td><a href="https://bing.img.run/api.html">https://bing.img.run/api.html</a></td>
-<td>2024&#x2F;7&#x2F;25</td>
-<td>获取每日Bing壁纸API，有多种选择</td>
-</tr>
-<tr>
-<td>16</td>
-<td><a href="https://ai.97866.com/">https://ai.97866.com/</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>AI 工具合集</td>
-</tr>
-<tr>
-<td>17</td>
-<td><a href="https://tools.miku.ac/">https://tools.miku.ac/</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>轻量的工具集合</td>
-</tr>
-<tr>
-<td>18</td>
-<td><a href="https://star-history.com/">https://star-history.com/</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>Github Star历史图</td>
-</tr>
-<tr>
-<td>19</td>
-<td><a href="https://github.com/2016rshah/githubchart-api">https://github.com/2016rshah/githubchart-api</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>Github Commit频率图API</td>
-</tr>
-<tr>
-<td>20</td>
-<td><a href="https://shields.io/">https://shields.io/</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>在线统计工具，支持多种徽章样式</td>
-</tr>
-<tr>
-<td>21</td>
-<td><a href="https://carbon.now.sh/">https://carbon.now.sh</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>代码图片工具</td>
-</tr>
-<tr>
-<td>22</td>
-<td><a href="https://ray.so/">https://ray.so</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>代码图片工具</td>
-</tr>
-<tr>
-<td>23</td>
-<td><a href="https://codeimg.io/">https://codeimg.io</a></td>
-<td>2024&#x2F;8&#x2F;10</td>
-<td>代码图片工具</td>
-</tr>
-<tr>
-<td>24</td>
-<td><a href="http://www.autolabor.com.cn/book/ROSTutorials/index.html">http://www.autolabor.com.cn/book/ROSTutorials/index.html</a></td>
-<td>2024&#x2F;9&#x2F;2</td>
-<td>ROS中文教程</td>
-</tr>
-<tr>
-<td>25</td>
-<td><a href="https://unsplash.com/wallpapers/screen/4k">https://unsplash.com/wallpapers/screen/4k</a></td>
-<td>2024&#x2F;9&#x2F;3</td>
-<td>免费4K壁纸</td>
-</tr>
-<tr>
-<td>26</td>
-<td><a href="https://kicanvas.org/">https://kicanvas.org/</a></td>
-<td>2024&#x2F;9&#x2F;9</td>
-<td>KiCad原理图或PCB在线查看</td>
-</tr>
-<tr>
-<td>27</td>
-<td><a href="https://www.snapeda.com/">https://www.snapeda.com/</a></td>
-<td>2025&#x2F;1&#x2F;29</td>
-<td>在线器件封装库，很全</td>
-</tr>
-</tbody></table>
+    <title>在 RT-Thread Studio 环境中为 ART-Pi 2 移植 CherryUSB（以 usb_device 为例）</title>
+    <url>/post/12a4c8db.html</url>
+    <content><![CDATA[<h2 id="开始之前"><a href="#开始之前" class="headerlink" title="开始之前"></a>开始之前</h2><p>ART-Pi 2 搭载了 STM32H7R7x 芯片，这是 ST 推出的一款自带 Internal HS PHY 的 MCU。目前论坛里资料较少，故尝试在 RT-Thread Studio 中移植 CherryUSB，本文从创建工程开始，事无巨细地记录了移植的全过程。</p>
+<h2 id="移植过程"><a href="#移植过程" class="headerlink" title="移植过程"></a>移植过程</h2><h3 id="1-新建工程"><a href="#1-新建工程" class="headerlink" title="1. 新建工程"></a>1. 新建工程</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419020115734.png" alt="image-20250419020115734"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419020207053.png" alt="image-20250419020207053"></p>
+<p>如图示，新建基于 ART-Pi 2 开发板的项目。</p>
+<p>工程的目录结构如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419020410693.png" alt="image-20250419020410693"></p>
+<h3 id="2-添加CherryUSB的package"><a href="#2-添加CherryUSB的package" class="headerlink" title="2. 添加CherryUSB的package"></a>2. 添加CherryUSB的package</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419020518831.png" alt="image-20250419020518831"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419020553232.png" alt="image-20250419020553232"></p>
+<p>在工程中一键添加CherryUSB的包，按下 Ctrl+S 保存设置，自动开始下载 CherryUSB，这里要注意网络畅通，因为要从 Github 上拉取 最新的 release，成功后控制台信息如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419021305634.png" alt="image-20250419021305634"></p>
+<h3 id="3-配置CherryUSB"><a href="#3-配置CherryUSB" class="headerlink" title="3. 配置CherryUSB"></a>3. 配置CherryUSB</h3><p>在软件包里找到 CherryUSB 的配置项，我们以usb_device为例，进行如下配置，不要忘记保存：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419020815020.png" alt="image-20250419020815020"></p>
+<p>将 .&#x2F;packages&#x2F;CherryUSB-v1.4.3&#x2F;cherryusb_config_template.h 拷贝到 .&#x2F;board&#x2F;port 里面，并命名为 usb_config.h，如下图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419021711309.png" alt="image-20250419021711309"></p>
+<p>然后刷新工程，即可找到新添加的文件。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/Screenshot%202025-04-19%20022134.png" alt="Screenshot 2025-04-19 022134"></p>
+<p>打开 usb_config.h，修改以下宏</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;rtthread.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_PRINTF(...) rt_kprintf(__VA_ARGS__)</span></span><br></pre></td></tr></table></figure>
+
+<p>USB IP 相关的 config 需要自己根据芯片实际情况修改，这里实现下面的宏</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USBDEV_EP_NUM 8</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_RXALL_FIFO_SIZE (1024 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX0_FIFO_SIZE (64 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX1_FIFO_SIZE (1024 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX2_FIFO_SIZE (64 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX3_FIFO_SIZE (64 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX4_FIFO_SIZE (64 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX5_FIFO_SIZE (64 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX6_FIFO_SIZE (64 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX7_FIFO_SIZE (64 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX8_FIFO_SIZE (64 / 4)</span></span><br></pre></td></tr></table></figure>
+
+<p>修改 .&#x2F;board&#x2F;board.c，在最后实现下面函数（我们这里就用 hid_mouse 的 demo）</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">usb_dc_low_level_init</span><span class="params">(<span class="type">uint8_t</span> busid)</span> &#123;</span><br><span class="line">	add something...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">OTG_HS_IRQHandler</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">extern</span> <span class="type">void</span> <span class="title function_">USBD_IRQHandler</span><span class="params">(<span class="type">uint8_t</span> busid)</span>;</span><br><span class="line">    USBD_IRQHandler(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">usbd_init</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">extern</span> <span class="type">void</span> <span class="title function_">hid_mouse_init</span><span class="params">(<span class="type">uint8_t</span> busid, <span class="type">uintptr_t</span> reg_base)</span>;</span><br><span class="line">    hid_mouse_init(<span class="number">0</span>, USB_OTG_HS_PERIPH_BASE);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">INIT_APP_EXPORT(usbd_init);</span><br></pre></td></tr></table></figure>
+
+<p>关于上面 void usb_dc_low_level_init(uint8_t busid) 函数怎么实现，请参阅我的另一个帖子：<a href="https://mdlzcool.github.io/post/fb4bb4c3.html">在STM32G4上移植CherryUSB协议栈（usb_device）</a>，这里主要就是用CubeMX新建一个工程，然后打开USB_HS_OTG和中断，然后在生成的代码里面找到初始化 USB 时钟和中断的代码复制过来，就OK了，下面附上我的实现，可以直接拿去用：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">usb_dc_low_level_init</span><span class="params">(<span class="type">uint8_t</span> busid)</span> &#123;</span><br><span class="line">    RCC_PeriphCLKInitTypeDef PeriphClkInit = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USBPHYC;</span><br><span class="line">    PeriphClkInit.UsbPhycClockSelection = RCC_USBPHYCCLKSOURCE_HSE;</span><br><span class="line">    HAL_PWREx_EnableUSBVoltageDetector();</span><br><span class="line">    __HAL_RCC_USB_OTG_HS_CLK_ENABLE();</span><br><span class="line">    __HAL_RCC_USBPHYC_CLK_ENABLE();</span><br><span class="line">    HAL_NVIC_SetPriority(OTG_HS_IRQn, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    HAL_NVIC_EnableIRQ(OTG_HS_IRQn);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>做完以上所有步骤后，编译烧录一气呵成没有报错：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419023353355.png" alt="image-20250419023353355"></p>
+<p>在终端里面可以看到已经识别正确：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419023159824.png" alt="image-20250419023159824"></p>
+<p>且给USB-HS插到电脑上可以正确枚举：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419023532794.png" alt="image-20250419023532794"></p>
+<h3 id="3-收尾"><a href="#3-收尾" class="headerlink" title="3. 收尾"></a>3. 收尾</h3><p>在 .&#x2F;applications&#x2F;main.c 中，添加 CherryUSB 的 hid_mouse 的线程，如图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419023807276.png" alt="image-20250419023807276"></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">rt_thread_t</span> hid_thread = RT_NULL;</span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">hid_mouse_thread_entry</span><span class="params">(<span class="type">void</span> *parameter)</span></span><br><span class="line">&#123;</span><br><span class="line">    rt_kprintf(<span class="string">&quot;USB HID Mouse thread started\n&quot;</span>);</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">extern</span> <span class="type">void</span> <span class="title function_">hid_mouse_test</span><span class="params">(<span class="type">uint8_t</span> busid)</span>;</span><br><span class="line">            hid_mouse_test(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    ...</span><br><span class="line">    hid_thread = rt_thread_create(<span class="string">&quot;hid_mouse&quot;</span>, hid_mouse_thread_entry,</span><br><span class="line">    RT_NULL, <span class="number">1024</span>, <span class="number">20</span>, <span class="number">5</span>);</span><br><span class="line">    <span class="keyword">if</span> (hid_thread != RT_NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        rt_thread_startup(hid_thread);</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后再次编译烧录，发现鼠标不出所料地开始转圈了：）</p>
+<p>至此移植结束，再次感谢 <em>sakumisu</em> 的贡献。</p>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p>附一些图片</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/355652e85715a278f290de8799c94dc.jpg" alt="355652e85715a278f290de8799c94dc"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/2f0488a99281d2249a52e645f95fcaf.jpg" alt="2f0488a99281d2249a52e645f95fcaf"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/3043ee331dae5b84d8902f62195a9d7.jpg" alt="3043ee331dae5b84d8902f62195a9d7"></p>
+<h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><p><a href="https://github.com/MDLZCOOL/CherryUSB_ART_Pi2">https://github.com/MDLZCOOL/CherryUSB_ART_Pi2</a></p>
 ]]></content>
       <categories>
-        <category>Tools</category>
+        <category>Dev</category>
       </categories>
       <tags>
-        <tag>Tools</tag>
+        <tag>Dev</tag>
       </tags>
   </entry>
   <entry>
@@ -975,6 +784,236 @@
       </tags>
   </entry>
   <entry>
+    <title>百度网盘不限速</title>
+    <url>/post/900d6e7c.html</url>
+    <content><![CDATA[<p><em>最近不太稳定了 20241123</em></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>浏览器：Firefox &#x2F; Chromium</li>
+<li>脚本管理器：Tampermonkey Beta（注意：只能用Beta版本）</li>
+<li><a href="https://motrix.app/">Motrix下载器</a></li>
+</ul>
+<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="STEP-1-安装插件"><a href="#STEP-1-安装插件" class="headerlink" title="STEP 1 安装插件"></a>STEP 1 安装插件</h3><ol>
+<li>打开Tampermonkey Beta的「管理面板」</li>
+<li>进入「实用工具」选项卡</li>
+<li>复制粘贴安装地址到「从URL安装」进行安装<blockquote>
+<p>安装地址：<a href="http://1.94.138.197/tampermonkey/min.baidu.user.js">http://1.94.138.197/tampermonkey/min.baidu.user.js</a></p>
+</blockquote>
+</li>
+</ol>
+<h3 id="STEP-2-使用"><a href="#STEP-2-使用" class="headerlink" title="STEP 2 使用"></a>STEP 2 使用</h3><ol>
+<li>脚本会在网盘根目录自动创建一个文件夹并设置为永久分享，把需要下载的资源转移到这个文件夹里操作。</li>
+<li>注意Motrix必须提前在后台打开，否则无法正常拉起。</li>
+</ol>
+<p><img src="C:/Users/MDLZ/AppData/Roaming/Typora/typora-user-images/image-20241112173125588.png" alt="image-20241112173125588"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241112173455348.png" alt="image-20241112173455348"></p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>这个方法目前来看应该是最稳定的，速度可以基本跑满，作者规则更新很频繁。相当于免费，不过对于特大文件（比如&gt;30G的文件，好像还没办法下载）</p>
+<ol>
+<li><p>解析下载时根据每个文件的大小扣减解析点数，不足1G的文件消耗1点，1G到2G的文件需要消耗2点，2G至3G的文件消耗3点，以此类推。</p>
+</li>
+<li><p>获取解析点数的方式目前有「签到」和「视频点赞」两种，点赞列表中的每个视频只有第一次点赞会增加点数，取消点赞则扣除相应点数。</p>
+</li>
+</ol>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>插件主页链接：<a href="https://1.94.138.197/bangumi">hd2a</a></p>
+]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>Tools</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常用工具性网站&amp;工具</title>
+    <url>/post/5788685f.html</url>
+    <content><![CDATA[<h2 id="工具网站"><a href="#工具网站" class="headerlink" title="工具网站"></a>工具网站</h2><p>🎁此处列出的网站均来源于互联网，请注意不要在这些网站上输入任何个人敏感信息（如有可能）</p>
+<p>🌎某些网站可能需要国际网络</p>
+<p>🌈欢迎贡献</p>
+<ul>
+<li>添加站点</li>
+<li>反馈站点失效</li>
+<li>更多(todo)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>网站</th>
+<th>添加时间</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td><a href="https://www.runoob.com/">https://www.runoob.com/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>菜鸟教程</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="https://serial.keysking.com/">https://serial.keysking.com/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>网页版串口助手</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="https://www.iconfont.cn/">https://www.iconfont.cn/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>阿里巴巴矢量图标库</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="https://book.openmv.cc/">https://book.openmv.cc/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>OpenMV中文入门教程</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="https://www.3dcontentcentral.com/">https://www.3dcontentcentral.com/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>3D模型下载站</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="https://www2.futureware.at/KiCad/">https://www2.futureware.at/KiCad/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>Altium Designe转KiCad</td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="https://www.nerdfonts.com/font-downloads">https://www.nerdfonts.com/font-downloads</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>艺术字体下载</td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="https://fontawesome.p2hp.com/icons-ui.html">https://fontawesome.p2hp.com/icons-ui.html</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>The Icons矢量图标库</td>
+</tr>
+<tr>
+<td>9</td>
+<td><a href="http://network-science.de/ascii/">http://network-science.de/ascii/</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>终端立体字生成</td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="https://tableconvert.com/zh-cn/latex-to-latex">https://tableconvert.com/zh-cn/latex-to-latex</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>Latex表格在线编辑和转Excel</td>
+</tr>
+<tr>
+<td>11</td>
+<td><a href="https://www.niupizhiyuan.com/download.html">https://www.niupizhiyuan.com/download.html</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>CSDN文章和文件下载</td>
+</tr>
+<tr>
+<td>12</td>
+<td><a href="http://1.94.138.197/bangumi">http://1.94.138.197/bangumi</a></td>
+<td>2024&#x2F;7&#x2F;9</td>
+<td>百度云不限速，配合油猴</td>
+</tr>
+<tr>
+<td>13</td>
+<td><a href="https://limestart.cn/">https://limestart.cn</a></td>
+<td>2024&#x2F;7&#x2F;22</td>
+<td>青柠起始页，优雅的浏览器主页</td>
+</tr>
+<tr>
+<td>14</td>
+<td><a href="https://skillicons.dev/">https://skillicons.dev/</a></td>
+<td>2024&#x2F;7&#x2F;24</td>
+<td>Skill Icons，技术栈图标</td>
+</tr>
+<tr>
+<td>15</td>
+<td><a href="https://bing.img.run/api.html">https://bing.img.run/api.html</a></td>
+<td>2024&#x2F;7&#x2F;25</td>
+<td>获取每日Bing壁纸API，有多种选择</td>
+</tr>
+<tr>
+<td>16</td>
+<td><a href="https://ai.97866.com/">https://ai.97866.com/</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>AI 工具合集</td>
+</tr>
+<tr>
+<td>17</td>
+<td><a href="https://tools.miku.ac/">https://tools.miku.ac/</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>轻量的工具集合</td>
+</tr>
+<tr>
+<td>18</td>
+<td><a href="https://star-history.com/">https://star-history.com/</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>Github Star历史图</td>
+</tr>
+<tr>
+<td>19</td>
+<td><a href="https://github.com/2016rshah/githubchart-api">https://github.com/2016rshah/githubchart-api</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>Github Commit频率图API</td>
+</tr>
+<tr>
+<td>20</td>
+<td><a href="https://shields.io/">https://shields.io/</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>在线统计工具，支持多种徽章样式</td>
+</tr>
+<tr>
+<td>21</td>
+<td><a href="https://carbon.now.sh/">https://carbon.now.sh</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>代码图片工具</td>
+</tr>
+<tr>
+<td>22</td>
+<td><a href="https://ray.so/">https://ray.so</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>代码图片工具</td>
+</tr>
+<tr>
+<td>23</td>
+<td><a href="https://codeimg.io/">https://codeimg.io</a></td>
+<td>2024&#x2F;8&#x2F;10</td>
+<td>代码图片工具</td>
+</tr>
+<tr>
+<td>24</td>
+<td><a href="http://www.autolabor.com.cn/book/ROSTutorials/index.html">http://www.autolabor.com.cn/book/ROSTutorials/index.html</a></td>
+<td>2024&#x2F;9&#x2F;2</td>
+<td>ROS中文教程</td>
+</tr>
+<tr>
+<td>25</td>
+<td><a href="https://unsplash.com/wallpapers/screen/4k">https://unsplash.com/wallpapers/screen/4k</a></td>
+<td>2024&#x2F;9&#x2F;3</td>
+<td>免费4K壁纸</td>
+</tr>
+<tr>
+<td>26</td>
+<td><a href="https://kicanvas.org/">https://kicanvas.org/</a></td>
+<td>2024&#x2F;9&#x2F;9</td>
+<td>KiCad原理图或PCB在线查看</td>
+</tr>
+<tr>
+<td>27</td>
+<td><a href="https://www.snapeda.com/">https://www.snapeda.com/</a></td>
+<td>2025&#x2F;1&#x2F;29</td>
+<td>在线器件封装库，很全</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>Tools</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>用CLion配合PlatformIO开发树莓派Pico(RP2040)</title>
     <url>/post/672d89ba.html</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
@@ -1035,88 +1074,6 @@
       <tags>
         <tag>Dev</tag>
         <tag>Arduino</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>百度网盘不限速</title>
-    <url>/post/900d6e7c.html</url>
-    <content><![CDATA[<p><em>最近不太稳定了 20241123</em></p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
-<li>浏览器：Firefox &#x2F; Chromium</li>
-<li>脚本管理器：Tampermonkey Beta（注意：只能用Beta版本）</li>
-<li><a href="https://motrix.app/">Motrix下载器</a></li>
-</ul>
-<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="STEP-1-安装插件"><a href="#STEP-1-安装插件" class="headerlink" title="STEP 1 安装插件"></a>STEP 1 安装插件</h3><ol>
-<li>打开Tampermonkey Beta的「管理面板」</li>
-<li>进入「实用工具」选项卡</li>
-<li>复制粘贴安装地址到「从URL安装」进行安装<blockquote>
-<p>安装地址：<a href="http://1.94.138.197/tampermonkey/min.baidu.user.js">http://1.94.138.197/tampermonkey/min.baidu.user.js</a></p>
-</blockquote>
-</li>
-</ol>
-<h3 id="STEP-2-使用"><a href="#STEP-2-使用" class="headerlink" title="STEP 2 使用"></a>STEP 2 使用</h3><ol>
-<li>脚本会在网盘根目录自动创建一个文件夹并设置为永久分享，把需要下载的资源转移到这个文件夹里操作。</li>
-<li>注意Motrix必须提前在后台打开，否则无法正常拉起。</li>
-</ol>
-<p><img src="C:/Users/MDLZ/AppData/Roaming/Typora/typora-user-images/image-20241112173125588.png" alt="image-20241112173125588"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241112173455348.png" alt="image-20241112173455348"></p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>这个方法目前来看应该是最稳定的，速度可以基本跑满，作者规则更新很频繁。相当于免费，不过对于特大文件（比如&gt;30G的文件，好像还没办法下载）</p>
-<ol>
-<li><p>解析下载时根据每个文件的大小扣减解析点数，不足1G的文件消耗1点，1G到2G的文件需要消耗2点，2G至3G的文件消耗3点，以此类推。</p>
-</li>
-<li><p>获取解析点数的方式目前有「签到」和「视频点赞」两种，点赞列表中的每个视频只有第一次点赞会增加点数，取消点赞则扣除相应点数。</p>
-</li>
-</ol>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>插件主页链接：<a href="https://1.94.138.197/bangumi">hd2a</a></p>
-]]></content>
-      <categories>
-        <category>Tools</category>
-      </categories>
-      <tags>
-        <tag>Tools</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>舵机多功能测试程序说明</title>
-    <url>/post/cee333e2.html</url>
-    <content><![CDATA[<p><strong>写在前面：基地一直都有对舵机快捷测试的需求，但是每次都得改源码，很麻烦，也不能实现舵机的精准角度控制，最近忙完期中考试，抽时间写了这个程序，也算是对学到的东西的一点小小的应用吧</strong></p>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本程序运行在大疆开发板C型，基于STM32 HAL平台开发，具有极其优良的可移植性，可以快速迁移至其他MCU，本程序依托串口与上位机通信，使用时接串口线和电池即可</p>
-<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404301832725.png" alt="image-20240430183243677"></p>
-<p>对主菜单的解释，每个指令串口都会输出对应的注解，<strong>注意输入任何指令都需要以回车结尾！</strong></p>
-<table>
-<thead>
-<tr>
-<th>功能</th>
-<th>解释</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Plain Servo Test</td>
-<td>朴素舵机测试（控制舵机转到特定角度）</td>
-</tr>
-<tr>
-<td>Interval Servo Test</td>
-<td>区间舵机测试（控制舵机在特定区间转动）</td>
-</tr>
-<tr>
-<td>Quick Servo Test</td>
-<td>快速舵机测试（快速测试舵机好坏）</td>
-</tr>
-<tr>
-<td>Use Multi Channels</td>
-<td>使用多个PWM通道，可以一次测试多个舵机</td>
-</tr>
-<tr>
-<td>Direct PWM Ctrl (20240709更新)</td>
-<td>直接输入PWM Compare值控制舵机</td>
-</tr>
-</tbody></table>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>STM32</tag>
       </tags>
   </entry>
   <entry>
@@ -1205,6 +1162,49 @@
         <tag>Dev</tag>
         <tag>STM32</tag>
         <tag>ROS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>舵机多功能测试程序说明</title>
+    <url>/post/cee333e2.html</url>
+    <content><![CDATA[<p><strong>写在前面：基地一直都有对舵机快捷测试的需求，但是每次都得改源码，很麻烦，也不能实现舵机的精准角度控制，最近忙完期中考试，抽时间写了这个程序，也算是对学到的东西的一点小小的应用吧</strong></p>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>本程序运行在大疆开发板C型，基于STM32 HAL平台开发，具有极其优良的可移植性，可以快速迁移至其他MCU，本程序依托串口与上位机通信，使用时接串口线和电池即可</p>
+<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404301832725.png" alt="image-20240430183243677"></p>
+<p>对主菜单的解释，每个指令串口都会输出对应的注解，<strong>注意输入任何指令都需要以回车结尾！</strong></p>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Plain Servo Test</td>
+<td>朴素舵机测试（控制舵机转到特定角度）</td>
+</tr>
+<tr>
+<td>Interval Servo Test</td>
+<td>区间舵机测试（控制舵机在特定区间转动）</td>
+</tr>
+<tr>
+<td>Quick Servo Test</td>
+<td>快速舵机测试（快速测试舵机好坏）</td>
+</tr>
+<tr>
+<td>Use Multi Channels</td>
+<td>使用多个PWM通道，可以一次测试多个舵机</td>
+</tr>
+<tr>
+<td>Direct PWM Ctrl (20240709更新)</td>
+<td>直接输入PWM Compare值控制舵机</td>
+</tr>
+</tbody></table>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>STM32</tag>
       </tags>
   </entry>
   <entry>
