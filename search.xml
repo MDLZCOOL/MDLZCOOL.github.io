@@ -1,28 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Github中那些谜之缩写</title>
-    <url>/post/59c9e1c3.html</url>
-    <content><![CDATA[<p><img src="C:/Users/MDLZ/AppData/Roaming/Typora/typora-user-images/image-20250708014613865.png" alt="image-20250708014613865"></p>
-<ul>
-<li><strong>PR:</strong> Pull Request. 拉取请求，给其他项目提交代码</li>
-<li><strong>LGTM:</strong> Looks Good To Me. 朕知道了 代码已经过 review，可以合并</li>
-<li><strong>SGTM:</strong> Sounds Good To Me. 和上面那句意思差不多，也是已经通过了 review 的意思</li>
-<li><strong>WIP:</strong> Work In Progress. 传说中提 PR 的最佳实践是，如果你有个改动很大的 PR，可以在写了一部分的情况下先提交，但是在标题里写上 WIP，以告诉项目维护者这个功能还未完成，方便维护者提前 review 部分提交的代码。</li>
-<li><strong>PTAL:</strong> Please Take A Look. 你来瞅瞅？用来提示别人来看一下</li>
-<li><strong>TBR:</strong> To Be Reviewed. 提示维护者进行 review</li>
-<li><strong>TL;DR:</strong> Too Long; Didn’t Read. 太长懒得看。也有很多文档在做简略描述之前会写这么一句</li>
-<li><strong>TBD:</strong> To Be Done (or Defined&#x2F;Discussed&#x2F;Decided&#x2F;Determined). 根据语境不同意义有所区别，但一般都是还没搞定的意思</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Chat</category>
-      </categories>
-      <tags>
-        <tag>Chat</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Git使用小技巧Tricks</title>
     <url>/post/4bb6437a.html</url>
     <content><![CDATA[<h2 id="经历了一次错误的commit，想要撤回"><a href="#经历了一次错误的commit，想要撤回" class="headerlink" title="经历了一次错误的commit，想要撤回"></a>经历了一次错误的commit，想要撤回</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span> <span class="comment"># 查看上次commit的完整hash字串</span></span><br><span class="line">git reset &lt;arg1&gt; &lt;<span class="built_in">hash</span>字串&gt; <span class="comment"># 撤回commit，&lt;arg1&gt;有参数--soft、--hard、--mixed可选。</span></span><br><span class="line"><span class="comment"># 注意注意：一般可以忽略&lt;arg1&gt;。</span></span><br><span class="line"><span class="comment"># 区别为</span></span><br><span class="line"><span class="comment"># --soft 文件还保存在git里，可以再reset回来</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)        (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B-C</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># --hard 文件直接被删去，慎用！！！</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)        (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># --mixed 文件未被删去，就在本地workspace里，处于未被add的状态(推荐)</span></span><br><span class="line"><span class="comment">#   修改前  --&gt;  修改后</span></span><br><span class="line"><span class="comment">#    (F)          (F)</span></span><br><span class="line"><span class="comment"># A-B-C        A-B-C</span></span><br><span class="line"><span class="comment">#     ↑          ↑</span></span><br><span class="line"><span class="comment">#   master     master</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># 注：(F)指的是磁盘里此时实际的文件处于哪个版本</span></span><br></pre></td></tr></table></figure>
@@ -79,6 +57,28 @@
       </tags>
   </entry>
   <entry>
+    <title>Github中那些谜之缩写</title>
+    <url>/post/59c9e1c3.html</url>
+    <content><![CDATA[<p><img src="C:/Users/MDLZ/AppData/Roaming/Typora/typora-user-images/image-20250708014613865.png" alt="image-20250708014613865"></p>
+<ul>
+<li><strong>PR:</strong> Pull Request. 拉取请求，给其他项目提交代码</li>
+<li><strong>LGTM:</strong> Looks Good To Me. 朕知道了 代码已经过 review，可以合并</li>
+<li><strong>SGTM:</strong> Sounds Good To Me. 和上面那句意思差不多，也是已经通过了 review 的意思</li>
+<li><strong>WIP:</strong> Work In Progress. 传说中提 PR 的最佳实践是，如果你有个改动很大的 PR，可以在写了一部分的情况下先提交，但是在标题里写上 WIP，以告诉项目维护者这个功能还未完成，方便维护者提前 review 部分提交的代码。</li>
+<li><strong>PTAL:</strong> Please Take A Look. 你来瞅瞅？用来提示别人来看一下</li>
+<li><strong>TBR:</strong> To Be Reviewed. 提示维护者进行 review</li>
+<li><strong>TL;DR:</strong> Too Long; Didn’t Read. 太长懒得看。也有很多文档在做简略描述之前会写这么一句</li>
+<li><strong>TBD:</strong> To Be Done (or Defined&#x2F;Discussed&#x2F;Decided&#x2F;Determined). 根据语境不同意义有所区别，但一般都是还没搞定的意思</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Chat</category>
+      </categories>
+      <tags>
+        <tag>Chat</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Jetbrains系IDE使用小技巧</title>
     <url>/post/af86e289.html</url>
     <content><![CDATA[<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><ul>
@@ -107,51 +107,6 @@
       </categories>
       <tags>
         <tag>PCB</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【前端学习笔记】 HTML+JavaScript+CSS</title>
-    <url>/post/64aca0a5.html</url>
-    <content><![CDATA[<h2 id="为什么要学"><a href="#为什么要学" class="headerlink" title="为什么要学"></a>为什么要学</h2><p>最近在学长的建议下准备开始接触前端开发，学习路线预计是先HTML，再JavaScript，再CSS。因为我之前自己在树莓派上建过服务器，搭建过WordPress和NAS等服务，可能算有一丁点基础，所以日后可能会负责维护基地的Git和Docs等服务。也产生过些一套自己的博客主题或者浏览器主页之类的想法，一个比较好的例子是<a href="https://limestart.cn/">青柠起始页</a>，之后可能会仿照着做一个。</p>
-<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><p>HTML的全称为超文本标记语言，是一种标记语言。它包括一系列标签，通过这些标签可以将网络上的文档格式统一，使分散的Internet资源连接为一个逻辑整体。HTML文本是由HTML命令组成的描述性文本，HTML命令可以说明文字，图形、动画、声音、表格、链接等。<strong>值得注意的是，HTML不是一种编程语言，因其不具有逻辑处理的能力。</strong></p>
-<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><p>JavaScript（简称“JS”）是一种具有函数优先的轻量级，解释型或即时编译型的编程语言。虽然它是作为开发Web页面的脚本语言而出名，但是它也被用到了很多非浏览器环境中，JavaScript基于原型编程、多范式的动态脚本语言，并且支持面向对象、命令式、声明式、函数式编程范式。</p>
-<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><p>层叠样式表(英文全称：Cascading Style Sheets)是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言。CSS不仅可以静态地修饰网页，还可以配合各种脚本语言动态地对网页各元素进行格式化。</p>
-<blockquote>
-<p>简单理解：CSS可以美化HTML，让HTML更漂亮，JavaScript可以给页面带来生命力，让其具有逻辑性。</p>
-<p>CSS、HTML、JavaScript使页面的构建更加模块化，单元化。</p>
-</blockquote>
-<h2 id="编辑器IDE"><a href="#编辑器IDE" class="headerlink" title="编辑器IDE"></a>编辑器IDE</h2><p>我用的是Jetbrains的<code>WebStorm</code>编辑器，主要原因是写C代码用的是<code>CLion</code>，使用下来体验感很好，而且JB家的IDE设置可以无损在各种IDE迁移，这点很爽，对于一个新的IDE完全没有上手难度</p>
-<h2 id="今日所学-2024-7-22"><a href="#今日所学-2024-7-22" class="headerlink" title="今日所学(2024&#x2F;7&#x2F;22)"></a>今日所学(2024&#x2F;7&#x2F;22)</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>HTML study<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--标题标签 h--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Heading<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>Heading<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span>Heading<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span>&gt;</span>Heading<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h5</span>&gt;</span>Heading<span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h6</span>&gt;</span>Heading<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--段落文本 p--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, deleniti exercitationem facere fugit id</span><br><span class="line">      ipsam</span><br><span class="line">      iste minima modi omnis provident quod rem, sequi sit tempora, totam ullam vel velit voluptatem?</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--粗体 b--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">b</span>&gt;</span>strong<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--斜体 i--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">i</span>&gt;</span>italics<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://mdlzcool.github.io&quot;</span>&gt;</span>My Blog<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--无序列表 ul--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--有序列表 ol--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--表格列表 table--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span>&gt;</span>姓名<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span>&gt;</span>邮箱<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span>&gt;</span>年龄<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>MDLZCOOL<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>mdlzcool@foxmail.com<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>19<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--表单 form--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--input text--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>名称：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>密码：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--textarea--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>备注：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">textarea</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--选择列表--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>性别：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">select</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;male&quot;</span>&gt;</span>男<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;female&quot;</span>&gt;</span>女<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;others&quot;</span>&gt;</span>其他<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--input submit--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--按钮 button--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>Click here<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--图片 img--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">alt</span>=<span class="string">&quot;图片加载出错&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">width</span>=<span class="string">&quot;600&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">height</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>最终效果</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202407222326299.png" alt="image-20240722232605140"></p>
-<h2 id="今日所学-2024-7-23"><a href="#今日所学-2024-7-23" class="headerlink" title="今日所学(2024&#x2F;7&#x2F;23)"></a>今日所学(2024&#x2F;7&#x2F;23)</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 这是我的第一个JS代码</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hello Console!&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// var, let, const 变量与常量</span></span><br><span class="line"><span class="comment">//     var -&gt; 很少使用，全局作用域，基本不使用</span></span><br><span class="line"><span class="comment">//     let -&gt; 声明变量，值可以被修改</span></span><br><span class="line"><span class="comment">//     const -&gt; 声明时必须被初始化。声明常量，值不可以被修改; 声明数组或对象时，可以改变，但是不能将整个数组完全更改，本质上const只能保证元素的指针不动</span></span><br><span class="line"><span class="keyword">let</span> age = <span class="number">19</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(age);</span><br><span class="line"></span><br><span class="line"><span class="comment">// String, Number, Boolean, Number, null, undefined 原生数据类型</span></span><br><span class="line"><span class="comment">// 加引号是String，数字是Number，true或者false是Boolean</span></span><br><span class="line"><span class="keyword">const</span> username = <span class="string">&#x27;MDLZCOOL&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> userage = <span class="number">19</span>;</span><br><span class="line"><span class="keyword">const</span> isCool = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">const</span> rate = <span class="number">4.8</span>; <span class="comment">// 在JS中没有浮点型，整型和浮点型都是Number</span></span><br><span class="line"><span class="keyword">const</span> x = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">const</span> y = <span class="literal">undefined</span>; <span class="comment">// null和undefined的区别是，null表示一个值被定义为空，undefined表示未定义</span></span><br><span class="line"><span class="keyword">let</span> z;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`My name is <span class="subst">$&#123;username&#125;</span> and I am <span class="subst">$&#123;userage&#125;</span>.`</span>);</span><br><span class="line"><span class="keyword">const</span> hello = <span class="string">`My name is <span class="subst">$&#123;username&#125;</span> and I am <span class="subst">$&#123;userage&#125;</span>.`</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(hello);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> s = <span class="string">&#x27;Hello World!&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s.<span class="property">length</span>);</span><br><span class="line"><span class="comment">// 转换成大写</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s.<span class="title function_">toUpperCase</span>()); <span class="comment">// 方法=对象函数有()，属性=对象里的变量没有()</span></span><br><span class="line"><span class="comment">// 转换成小写</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s.<span class="title function_">toLowerCase</span>());</span><br><span class="line"><span class="comment">// 分割String</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s.<span class="title function_">substring</span>(<span class="number">0</span>, <span class="number">5</span>));</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s.<span class="title function_">substring</span>(<span class="number">0</span>, <span class="number">5</span>).<span class="title function_">toUpperCase</span>());</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s.<span class="title function_">split</span>(<span class="string">&#x27;&#x27;</span>)) <span class="comment">// 字符串分割为数组的方法</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> str = <span class="string">&#x27;technology, computers, science&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">split</span>(<span class="string">&#x27;, &#x27;</span>));</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fruits = [<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;pear&#x27;</span>, <span class="string">&#x27;watermelon&#x27;</span>];</span><br><span class="line">fruits[<span class="number">0</span>] = <span class="string">&#x27;mango&#x27;</span>;</span><br><span class="line">fruits.<span class="title function_">push</span>(<span class="string">&#x27;lemon&#x27;</span>); <span class="comment">// 在数组后面push上一个新的元素</span></span><br><span class="line">fruits.<span class="title function_">unshift</span>(<span class="string">&#x27;grape&#x27;</span>); <span class="comment">// 在数组前面unshift上一个新的元素</span></span><br><span class="line">fruits.<span class="title function_">pop</span>(); <span class="comment">// 删除数组末尾的元素</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Array</span>.<span class="title function_">isArray</span>(fruits)); <span class="comment">// 判断是不是数组</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(fruits.<span class="title function_">indexOf</span>(<span class="string">&#x27;pear&#x27;</span>)); <span class="comment">// 查找数组里指定元素的索引，需要注意的是，如果有多个相同元素，那么就会返回第一个元素的索引</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;fruits&#125;</span>`</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对象 键值对</span></span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  <span class="attr">firstName</span>: <span class="string">&#x27;MDLZ&#x27;</span>,</span><br><span class="line">  <span class="attr">lastName</span>: <span class="string">&#x27;COOL&#x27;</span>,</span><br><span class="line">  <span class="attr">email</span>: <span class="string">&#x27;mdlzcool@foxmail.com&#x27;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">19</span>,</span><br><span class="line">  <span class="attr">hobbies</span>: [<span class="string">&#x27;coding&#x27;</span>, <span class="string">&#x27;movies&#x27;</span>, <span class="string">&#x27;music&#x27;</span>],</span><br><span class="line">  <span class="attr">address</span>: &#123;</span><br><span class="line">    <span class="attr">street</span>: <span class="string">&#x27;Renmin Rd&#x27;</span>,</span><br><span class="line">    <span class="attr">city</span>: <span class="string">&#x27;Yanliang&#x27;</span>,</span><br><span class="line">    <span class="attr">state</span>: <span class="string">&#x27;Shaanxi&#x27;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`name is <span class="subst">$&#123;person.firstName&#125;</span><span class="subst">$&#123;person.lastName&#125;</span>\r\nhobbies is <span class="subst">$&#123;person.hobbies&#125;</span>\r\nRoad is <span class="subst">$&#123;person.address.street&#125;</span>`</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123;firstName, lastName, <span class="attr">address</span>: &#123;city&#125;,&#125; = person;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(firstName);</span><br><span class="line"></span><br><span class="line">person.<span class="property">gender</span> = <span class="string">&#x27;male&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;person.gender&#125;</span>`</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对象数组和JSON</span></span><br><span class="line"><span class="keyword">const</span> todos = [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">id</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">text</span>: <span class="string">&#x27;Go to the airport&#x27;</span>,</span><br><span class="line">    <span class="attr">isCompleted</span>: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">id</span>: <span class="number">2</span>,</span><br><span class="line">    <span class="attr">text</span>: <span class="string">&#x27;Meet the teacher&#x27;</span>,</span><br><span class="line">    <span class="attr">isCompleted</span>: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">id</span>: <span class="number">3</span>,</span><br><span class="line">    <span class="attr">text</span>: <span class="string">&#x27;See the movie&#x27;</span>,</span><br><span class="line">    <span class="attr">isCompleted</span>: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> todoJSON = <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(todos); <span class="comment">// 对象数组JSON化</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(todos);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(todoJSON);</span><br><span class="line"></span><br><span class="line"><span class="comment">// if-else条件语句</span></span><br><span class="line"><span class="keyword">const</span> var_x = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> var_y = <span class="string">&#x27;10&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ==号不判断数据类型，只判断值的等于与否，===号既判断数据类型，也判断值的等于与否</span></span><br><span class="line"><span class="keyword">if</span> (<span class="number">10</span> == var_x) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;var_x is 10&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (<span class="number">10</span> === var_y) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;var_y is 10&#x27;</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">&#x27;10&#x27;</span> === var_y) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;var_y is String 10&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 三目运算符</span></span><br><span class="line"><span class="keyword">const</span> var_z = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> isTrue = var_z &gt; <span class="number">10</span> ? <span class="string">&#x27;true&#x27;</span> : <span class="string">&#x27;false&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(isTrue);</span><br><span class="line"></span><br><span class="line"><span class="comment">// switch条件语句</span></span><br><span class="line"><span class="keyword">switch</span> (isTrue) &#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">&#x27;true&#x27;</span>:</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;switch go into true&#x27;</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">&#x27;false&#x27;</span>:</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;switch go into false&#x27;</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="attr">default</span>:</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;switch neither go into true nor go into false&#x27;</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// for循环语句</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;for loop:&#x27;</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; todos.<span class="property">length</span>; i++) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(todos[i].<span class="property">text</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;增强for loop:&#x27;</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> todo <span class="keyword">of</span> todos) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(todo.<span class="property">text</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// while循环语句</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;while loop:&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> j = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span> (j &lt; todos.<span class="property">length</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(todos[j].<span class="property">text</span>);</span><br><span class="line">  j++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>今天学了点JavaScript相关的东西，发现很多东西都是和C语言一样的，怪不得有句话这样说</p>
-<blockquote>
-<p>机器码生汇编，汇编生C，C生万物</p>
-</blockquote>
-<p>有了C的基础，感觉JavaScript的语法不难掌握，而且JS的语法相当灵活，不过想要学精恐怕肯定是不容易的。</p>
-<p>最终效果</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202407231321532.png" alt="image-20240723132108407"></p>
-<p>CSS优先级：行内样式 &gt; 内部样式 &#x3D; 外部样式，其中内部样式与外部样式有先后关系，同一个样式表（stylesheet）内部优先级相同，同一元素与出现的先后有关系，后出现的会顶替掉先出现的。</p>
-<p><strong>前端开发一般都用外部样式，结构与样式完全分离，样式可以复用，触发浏览器缓存机制，便于维护</strong></p>
-<h2 id="今日所学-2024-7-24"><a href="#今日所学-2024-7-24" class="headerlink" title="今日所学(2024&#x2F;7&#x2F;24)"></a>今日所学(2024&#x2F;7&#x2F;24)</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>CSS study<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">href</span>=<span class="string">&quot;styles/style.css&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--多个class可以写在一起中间用空格隔开--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">&quot;projectName&quot;</span>&gt;</span>项目：应用于xxx的基于yyy的zzz<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">&quot;author&quot;</span>&gt;</span>作者：aaa<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span> <span class="attr">class</span>=<span class="string">&quot;unit&quot;</span>&gt;</span>单位：西北工业大学<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;passage&quot;</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias asperiores atque</span><br><span class="line">      consequuntur cum</span><br><span class="line">      deleniti dignissimos dolore esse fuga id illo na m nihil nostrum, quas, quod saepe tempora, vel vero?<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--多个元素的id值不能一样--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--一个元素可以同时拥有id和class--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span> <span class="attr">id</span>=<span class="string">&quot;acknowledgements&quot;</span>&gt;</span>鸣谢<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span> <span class="attr">class</span>=<span class="string">&quot;afterword&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">id</span>=<span class="string">&quot;postscript&quot;</span>&gt;</span>后记<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span> <span class="attr">class</span>=<span class="string">&quot;a&quot;</span>&gt;</span>just for test<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span> <span class="attr">class</span>=<span class="string">&quot;b&quot;</span>&gt;</span>just for test<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span> <span class="attr">class</span>=<span class="string">&quot;c&quot;</span>&gt;</span>just for test<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span> <span class="attr">id</span>=<span class="string">&quot;sheep&quot;</span>&gt;</span>小羊苏西<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;www.baidu.com&quot;</span>&gt;</span>百度<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>查资料<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*h1 &#123;*/</span></span><br><span class="line"><span class="comment">/*    color: green;*/</span></span><br><span class="line"><span class="comment">/*    font-size: 40px;*/</span></span><br><span class="line"><span class="comment">/*&#125;*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*h2 &#123;*/</span></span><br><span class="line"><span class="comment">/*    color: red;*/</span></span><br><span class="line"><span class="comment">/*    font-size: 60px;*/</span></span><br><span class="line"><span class="comment">/*&#125;*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*p &#123;*/</span></span><br><span class="line"><span class="comment">/*    color: blue;*/</span></span><br><span class="line"><span class="comment">/*    font-size: 80px;*/</span></span><br><span class="line"><span class="comment">/*&#125;*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*img &#123;*/</span></span><br><span class="line"><span class="comment">/*    width: 200px;*/</span></span><br><span class="line"><span class="comment">/*&#125;*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 星号 *标签可以选中所有HTML元素，对于清除样式有用 */</span></span><br><span class="line"><span class="comment">/** &#123;*/</span></span><br><span class="line"><span class="comment">/*    color: orange;*/</span></span><br><span class="line"><span class="comment">/*    font-size: 40px;*/</span></span><br><span class="line"><span class="comment">/*&#125;*/</span></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.author</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: blue;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.projectName</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: chocolate;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">60px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: aquamarine;</span><br><span class="line">    <span class="comment">/*width: 16em;*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.passage</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: brown;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.unit</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#acknowledgements</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: green;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">30px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*交集选择器 且*/</span></span><br><span class="line"><span class="selector-tag">h4</span><span class="selector-class">.afterword</span><span class="selector-id">#postscript</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: deeppink;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">30px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*并集选择器 或*/</span></span><br><span class="line"><span class="selector-class">.a</span>,</span><br><span class="line"><span class="selector-class">.b</span>,</span><br><span class="line"><span class="selector-class">.c</span>,</span><br><span class="line"><span class="selector-id">#sheep</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: green;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">30px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*后代选择器 xxx中的yyy...*/</span></span><br><span class="line"><span class="comment">/*ul中的li中的a*/</span></span><br><span class="line"><span class="selector-tag">ul</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: brown;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*ul中的li*/</span></span><br><span class="line"><span class="selector-tag">ul</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: cadetblue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>最终效果</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202407241806340.png" alt="image-20240724180628176"></p>
-<h2 id="今日所学-2024-7-25"><a href="#今日所学-2024-7-25" class="headerlink" title="今日所学(2024&#x2F;7&#x2F;25)"></a>今日所学(2024&#x2F;7&#x2F;25)</h2><p>感觉基本入门了前端，用HTML+CSS+JS写了个小网页</p>
-<p>最终效果</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202407251743937.gif" alt="gif1"></p>
-<p>可能会把这个小项目放到Github上，以后维护下去。</p>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -295,25 +250,6 @@
       </tags>
   </entry>
   <entry>
-    <title>为什么你的Github总是无法正常clone或者push</title>
-    <url>/post/2f28be0b.html</url>
-    <content><![CDATA[<h2 id="产生原因"><a href="#产生原因" class="headerlink" title="产生原因"></a>产生原因</h2><p><strong>代理服务器</strong><br>你的电脑和互联网的中介。当访问外网时（如<a href="http://google.com)/">http://google.com）</a>, 你的请求首先转发到代理服务器，然后代理服务器替你访问外网，并将结果原封不动的给你的电脑，这样你的电脑就可以看到外网的内容。</p>
-<p>网络路径如下：<br>你的电脑-&gt;代理服务器-&gt;外网<br>外网-&gt;代理服务器-&gt;你的电脑</p>
-<p>配置代理之后，可以正常访问github网页了，但是发现在本地克隆github仓库（git clone xxx）或者进行push操作时还是报网络错误（Failed to connect to server …）。</p>
-<p><strong>那是因为git clone没有走代理，所以需要设置git走代理才行</strong></p>
-<h2 id="设置代理"><a href="#设置代理" class="headerlink" title="设置代理"></a>设置代理</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:7890</span><br><span class="line">git config --global https.proxy https://127.0.0.1:7890</span><br></pre></td></tr></table></figure>
-
-<h2 id="Git查看现有配置"><a href="#Git查看现有配置" class="headerlink" title="Git查看现有配置"></a>Git查看现有配置</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global -l</span><br></pre></td></tr></table></figure>
-
-<h2 id="取消代理"><a href="#取消代理" class="headerlink" title="取消代理"></a>取消代理</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>克隆远端很大的仓库出现early EOF</title>
     <url>/post/c93388c7.html</url>
     <content><![CDATA[<h2 id="一般做法"><a href="#一般做法" class="headerlink" title="一般做法"></a>一般做法</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">设置缓存为1G</span></span><br><span class="line">git config --global http.postBuffer 1048576000</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">设置缓存为1G</span></span><br><span class="line">git config --global https.postBuffer 1048576000</span><br></pre></td></tr></table></figure>
@@ -339,6 +275,151 @@
       </categories>
       <tags>
         <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【前端学习笔记】 HTML+JavaScript+CSS</title>
+    <url>/post/64aca0a5.html</url>
+    <content><![CDATA[<h2 id="为什么要学"><a href="#为什么要学" class="headerlink" title="为什么要学"></a>为什么要学</h2><p>最近在学长的建议下准备开始接触前端开发，学习路线预计是先HTML，再JavaScript，再CSS。因为我之前自己在树莓派上建过服务器，搭建过WordPress和NAS等服务，可能算有一丁点基础，所以日后可能会负责维护基地的Git和Docs等服务。也产生过些一套自己的博客主题或者浏览器主页之类的想法，一个比较好的例子是<a href="https://limestart.cn/">青柠起始页</a>，之后可能会仿照着做一个。</p>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><p>HTML的全称为超文本标记语言，是一种标记语言。它包括一系列标签，通过这些标签可以将网络上的文档格式统一，使分散的Internet资源连接为一个逻辑整体。HTML文本是由HTML命令组成的描述性文本，HTML命令可以说明文字，图形、动画、声音、表格、链接等。<strong>值得注意的是，HTML不是一种编程语言，因其不具有逻辑处理的能力。</strong></p>
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><p>JavaScript（简称“JS”）是一种具有函数优先的轻量级，解释型或即时编译型的编程语言。虽然它是作为开发Web页面的脚本语言而出名，但是它也被用到了很多非浏览器环境中，JavaScript基于原型编程、多范式的动态脚本语言，并且支持面向对象、命令式、声明式、函数式编程范式。</p>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><p>层叠样式表(英文全称：Cascading Style Sheets)是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言。CSS不仅可以静态地修饰网页，还可以配合各种脚本语言动态地对网页各元素进行格式化。</p>
+<blockquote>
+<p>简单理解：CSS可以美化HTML，让HTML更漂亮，JavaScript可以给页面带来生命力，让其具有逻辑性。</p>
+<p>CSS、HTML、JavaScript使页面的构建更加模块化，单元化。</p>
+</blockquote>
+<h2 id="编辑器IDE"><a href="#编辑器IDE" class="headerlink" title="编辑器IDE"></a>编辑器IDE</h2><p>我用的是Jetbrains的<code>WebStorm</code>编辑器，主要原因是写C代码用的是<code>CLion</code>，使用下来体验感很好，而且JB家的IDE设置可以无损在各种IDE迁移，这点很爽，对于一个新的IDE完全没有上手难度</p>
+<h2 id="今日所学-2024-7-22"><a href="#今日所学-2024-7-22" class="headerlink" title="今日所学(2024&#x2F;7&#x2F;22)"></a>今日所学(2024&#x2F;7&#x2F;22)</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>HTML study<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--标题标签 h--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Heading<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span>&gt;</span>Heading<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span>Heading<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span>&gt;</span>Heading<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h5</span>&gt;</span>Heading<span class="tag">&lt;/<span class="name">h5</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h6</span>&gt;</span>Heading<span class="tag">&lt;/<span class="name">h6</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--段落文本 p--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, deleniti exercitationem facere fugit id</span><br><span class="line">      ipsam</span><br><span class="line">      iste minima modi omnis provident quod rem, sequi sit tempora, totam ullam vel velit voluptatem?</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--粗体 b--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">b</span>&gt;</span>strong<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--斜体 i--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">i</span>&gt;</span>italics<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://mdlzcool.github.io&quot;</span>&gt;</span>My Blog<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--无序列表 ul--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--有序列表 ol--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>列表项4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--表格列表 table--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">thead</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span>&gt;</span>姓名<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span>&gt;</span>邮箱<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span>&gt;</span>年龄<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">thead</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tbody</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>MDLZCOOL<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>mdlzcool@foxmail.com<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span>19<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">tbody</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--表单 form--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--input text--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>名称：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>密码：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--textarea--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>备注：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">textarea</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--选择列表--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>性别：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">select</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;male&quot;</span>&gt;</span>男<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;female&quot;</span>&gt;</span>女<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;others&quot;</span>&gt;</span>其他<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!--input submit--&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--按钮 button--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>Click here<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--图片 img--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">alt</span>=<span class="string">&quot;图片加载出错&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">width</span>=<span class="string">&quot;600&quot;</span></span></span><br><span class="line"><span class="tag">         <span class="attr">height</span>=<span class="string">&quot;&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>最终效果</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202407222326299.png" alt="image-20240722232605140"></p>
+<h2 id="今日所学-2024-7-23"><a href="#今日所学-2024-7-23" class="headerlink" title="今日所学(2024&#x2F;7&#x2F;23)"></a>今日所学(2024&#x2F;7&#x2F;23)</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 这是我的第一个JS代码</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Hello Console!&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// var, let, const 变量与常量</span></span><br><span class="line"><span class="comment">//     var -&gt; 很少使用，全局作用域，基本不使用</span></span><br><span class="line"><span class="comment">//     let -&gt; 声明变量，值可以被修改</span></span><br><span class="line"><span class="comment">//     const -&gt; 声明时必须被初始化。声明常量，值不可以被修改; 声明数组或对象时，可以改变，但是不能将整个数组完全更改，本质上const只能保证元素的指针不动</span></span><br><span class="line"><span class="keyword">let</span> age = <span class="number">19</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(age);</span><br><span class="line"></span><br><span class="line"><span class="comment">// String, Number, Boolean, Number, null, undefined 原生数据类型</span></span><br><span class="line"><span class="comment">// 加引号是String，数字是Number，true或者false是Boolean</span></span><br><span class="line"><span class="keyword">const</span> username = <span class="string">&#x27;MDLZCOOL&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> userage = <span class="number">19</span>;</span><br><span class="line"><span class="keyword">const</span> isCool = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">const</span> rate = <span class="number">4.8</span>; <span class="comment">// 在JS中没有浮点型，整型和浮点型都是Number</span></span><br><span class="line"><span class="keyword">const</span> x = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">const</span> y = <span class="literal">undefined</span>; <span class="comment">// null和undefined的区别是，null表示一个值被定义为空，undefined表示未定义</span></span><br><span class="line"><span class="keyword">let</span> z;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`My name is <span class="subst">$&#123;username&#125;</span> and I am <span class="subst">$&#123;userage&#125;</span>.`</span>);</span><br><span class="line"><span class="keyword">const</span> hello = <span class="string">`My name is <span class="subst">$&#123;username&#125;</span> and I am <span class="subst">$&#123;userage&#125;</span>.`</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(hello);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> s = <span class="string">&#x27;Hello World!&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s.<span class="property">length</span>);</span><br><span class="line"><span class="comment">// 转换成大写</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s.<span class="title function_">toUpperCase</span>()); <span class="comment">// 方法=对象函数有()，属性=对象里的变量没有()</span></span><br><span class="line"><span class="comment">// 转换成小写</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s.<span class="title function_">toLowerCase</span>());</span><br><span class="line"><span class="comment">// 分割String</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s.<span class="title function_">substring</span>(<span class="number">0</span>, <span class="number">5</span>));</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s.<span class="title function_">substring</span>(<span class="number">0</span>, <span class="number">5</span>).<span class="title function_">toUpperCase</span>());</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s.<span class="title function_">split</span>(<span class="string">&#x27;&#x27;</span>)) <span class="comment">// 字符串分割为数组的方法</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> str = <span class="string">&#x27;technology, computers, science&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(str.<span class="title function_">split</span>(<span class="string">&#x27;, &#x27;</span>));</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> fruits = [<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;pear&#x27;</span>, <span class="string">&#x27;watermelon&#x27;</span>];</span><br><span class="line">fruits[<span class="number">0</span>] = <span class="string">&#x27;mango&#x27;</span>;</span><br><span class="line">fruits.<span class="title function_">push</span>(<span class="string">&#x27;lemon&#x27;</span>); <span class="comment">// 在数组后面push上一个新的元素</span></span><br><span class="line">fruits.<span class="title function_">unshift</span>(<span class="string">&#x27;grape&#x27;</span>); <span class="comment">// 在数组前面unshift上一个新的元素</span></span><br><span class="line">fruits.<span class="title function_">pop</span>(); <span class="comment">// 删除数组末尾的元素</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Array</span>.<span class="title function_">isArray</span>(fruits)); <span class="comment">// 判断是不是数组</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(fruits.<span class="title function_">indexOf</span>(<span class="string">&#x27;pear&#x27;</span>)); <span class="comment">// 查找数组里指定元素的索引，需要注意的是，如果有多个相同元素，那么就会返回第一个元素的索引</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;fruits&#125;</span>`</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对象 键值对</span></span><br><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  <span class="attr">firstName</span>: <span class="string">&#x27;MDLZ&#x27;</span>,</span><br><span class="line">  <span class="attr">lastName</span>: <span class="string">&#x27;COOL&#x27;</span>,</span><br><span class="line">  <span class="attr">email</span>: <span class="string">&#x27;mdlzcool@foxmail.com&#x27;</span>,</span><br><span class="line">  <span class="attr">age</span>: <span class="number">19</span>,</span><br><span class="line">  <span class="attr">hobbies</span>: [<span class="string">&#x27;coding&#x27;</span>, <span class="string">&#x27;movies&#x27;</span>, <span class="string">&#x27;music&#x27;</span>],</span><br><span class="line">  <span class="attr">address</span>: &#123;</span><br><span class="line">    <span class="attr">street</span>: <span class="string">&#x27;Renmin Rd&#x27;</span>,</span><br><span class="line">    <span class="attr">city</span>: <span class="string">&#x27;Yanliang&#x27;</span>,</span><br><span class="line">    <span class="attr">state</span>: <span class="string">&#x27;Shaanxi&#x27;</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`name is <span class="subst">$&#123;person.firstName&#125;</span><span class="subst">$&#123;person.lastName&#125;</span>\r\nhobbies is <span class="subst">$&#123;person.hobbies&#125;</span>\r\nRoad is <span class="subst">$&#123;person.address.street&#125;</span>`</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123;firstName, lastName, <span class="attr">address</span>: &#123;city&#125;,&#125; = person;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(firstName);</span><br><span class="line"></span><br><span class="line">person.<span class="property">gender</span> = <span class="string">&#x27;male&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`<span class="subst">$&#123;person.gender&#125;</span>`</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对象数组和JSON</span></span><br><span class="line"><span class="keyword">const</span> todos = [</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">id</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attr">text</span>: <span class="string">&#x27;Go to the airport&#x27;</span>,</span><br><span class="line">    <span class="attr">isCompleted</span>: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">id</span>: <span class="number">2</span>,</span><br><span class="line">    <span class="attr">text</span>: <span class="string">&#x27;Meet the teacher&#x27;</span>,</span><br><span class="line">    <span class="attr">isCompleted</span>: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">id</span>: <span class="number">3</span>,</span><br><span class="line">    <span class="attr">text</span>: <span class="string">&#x27;See the movie&#x27;</span>,</span><br><span class="line">    <span class="attr">isCompleted</span>: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> todoJSON = <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(todos); <span class="comment">// 对象数组JSON化</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(todos);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(todoJSON);</span><br><span class="line"></span><br><span class="line"><span class="comment">// if-else条件语句</span></span><br><span class="line"><span class="keyword">const</span> var_x = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> var_y = <span class="string">&#x27;10&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ==号不判断数据类型，只判断值的等于与否，===号既判断数据类型，也判断值的等于与否</span></span><br><span class="line"><span class="keyword">if</span> (<span class="number">10</span> == var_x) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;var_x is 10&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (<span class="number">10</span> === var_y) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;var_y is 10&#x27;</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">&#x27;10&#x27;</span> === var_y) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;var_y is String 10&#x27;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 三目运算符</span></span><br><span class="line"><span class="keyword">const</span> var_z = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> isTrue = var_z &gt; <span class="number">10</span> ? <span class="string">&#x27;true&#x27;</span> : <span class="string">&#x27;false&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(isTrue);</span><br><span class="line"></span><br><span class="line"><span class="comment">// switch条件语句</span></span><br><span class="line"><span class="keyword">switch</span> (isTrue) &#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">&#x27;true&#x27;</span>:</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;switch go into true&#x27;</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">&#x27;false&#x27;</span>:</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;switch go into false&#x27;</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="attr">default</span>:</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;switch neither go into true nor go into false&#x27;</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// for循环语句</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;for loop:&#x27;</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; todos.<span class="property">length</span>; i++) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(todos[i].<span class="property">text</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;增强for loop:&#x27;</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> todo <span class="keyword">of</span> todos) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(todo.<span class="property">text</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// while循环语句</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;while loop:&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> j = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span> (j &lt; todos.<span class="property">length</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(todos[j].<span class="property">text</span>);</span><br><span class="line">  j++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>今天学了点JavaScript相关的东西，发现很多东西都是和C语言一样的，怪不得有句话这样说</p>
+<blockquote>
+<p>机器码生汇编，汇编生C，C生万物</p>
+</blockquote>
+<p>有了C的基础，感觉JavaScript的语法不难掌握，而且JS的语法相当灵活，不过想要学精恐怕肯定是不容易的。</p>
+<p>最终效果</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202407231321532.png" alt="image-20240723132108407"></p>
+<p>CSS优先级：行内样式 &gt; 内部样式 &#x3D; 外部样式，其中内部样式与外部样式有先后关系，同一个样式表（stylesheet）内部优先级相同，同一元素与出现的先后有关系，后出现的会顶替掉先出现的。</p>
+<p><strong>前端开发一般都用外部样式，结构与样式完全分离，样式可以复用，触发浏览器缓存机制，便于维护</strong></p>
+<h2 id="今日所学-2024-7-24"><a href="#今日所学-2024-7-24" class="headerlink" title="今日所学(2024&#x2F;7&#x2F;24)"></a>今日所学(2024&#x2F;7&#x2F;24)</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>CSS study<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span></span></span><br><span class="line"><span class="tag">          <span class="attr">href</span>=<span class="string">&quot;styles/style.css&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--多个class可以写在一起中间用空格隔开--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">&quot;projectName&quot;</span>&gt;</span>项目：应用于xxx的基于yyy的zzz<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">&quot;author&quot;</span>&gt;</span>作者：aaa<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span> <span class="attr">class</span>=<span class="string">&quot;unit&quot;</span>&gt;</span>单位：西北工业大学<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">&quot;passage&quot;</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias asperiores atque</span><br><span class="line">      consequuntur cum</span><br><span class="line">      deleniti dignissimos dolore esse fuga id illo na m nihil nostrum, quas, quod saepe tempora, vel vero?<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--多个元素的id值不能一样--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--一个元素可以同时拥有id和class--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span> <span class="attr">id</span>=<span class="string">&quot;acknowledgements&quot;</span>&gt;</span>鸣谢<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span> <span class="attr">class</span>=<span class="string">&quot;afterword&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">id</span>=<span class="string">&quot;postscript&quot;</span>&gt;</span>后记<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span> <span class="attr">class</span>=<span class="string">&quot;a&quot;</span>&gt;</span>just for test<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span> <span class="attr">class</span>=<span class="string">&quot;b&quot;</span>&gt;</span>just for test<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span> <span class="attr">class</span>=<span class="string">&quot;c&quot;</span>&gt;</span>just for test<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h4</span> <span class="attr">id</span>=<span class="string">&quot;sheep&quot;</span>&gt;</span>小羊苏西<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;www.baidu.com&quot;</span>&gt;</span>百度<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>查资料<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*h1 &#123;*/</span></span><br><span class="line"><span class="comment">/*    color: green;*/</span></span><br><span class="line"><span class="comment">/*    font-size: 40px;*/</span></span><br><span class="line"><span class="comment">/*&#125;*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*h2 &#123;*/</span></span><br><span class="line"><span class="comment">/*    color: red;*/</span></span><br><span class="line"><span class="comment">/*    font-size: 60px;*/</span></span><br><span class="line"><span class="comment">/*&#125;*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*p &#123;*/</span></span><br><span class="line"><span class="comment">/*    color: blue;*/</span></span><br><span class="line"><span class="comment">/*    font-size: 80px;*/</span></span><br><span class="line"><span class="comment">/*&#125;*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*img &#123;*/</span></span><br><span class="line"><span class="comment">/*    width: 200px;*/</span></span><br><span class="line"><span class="comment">/*&#125;*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 星号 *标签可以选中所有HTML元素，对于清除样式有用 */</span></span><br><span class="line"><span class="comment">/** &#123;*/</span></span><br><span class="line"><span class="comment">/*    color: orange;*/</span></span><br><span class="line"><span class="comment">/*    font-size: 40px;*/</span></span><br><span class="line"><span class="comment">/*&#125;*/</span></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.author</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: blue;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.projectName</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: chocolate;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">60px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: aquamarine;</span><br><span class="line">    <span class="comment">/*width: 16em;*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.passage</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: brown;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.unit</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">40px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#acknowledgements</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: green;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">30px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*交集选择器 且*/</span></span><br><span class="line"><span class="selector-tag">h4</span><span class="selector-class">.afterword</span><span class="selector-id">#postscript</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: deeppink;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">30px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*并集选择器 或*/</span></span><br><span class="line"><span class="selector-class">.a</span>,</span><br><span class="line"><span class="selector-class">.b</span>,</span><br><span class="line"><span class="selector-class">.c</span>,</span><br><span class="line"><span class="selector-id">#sheep</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: green;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">30px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*后代选择器 xxx中的yyy...*/</span></span><br><span class="line"><span class="comment">/*ul中的li中的a*/</span></span><br><span class="line"><span class="selector-tag">ul</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: brown;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*ul中的li*/</span></span><br><span class="line"><span class="selector-tag">ul</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: cadetblue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最终效果</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202407241806340.png" alt="image-20240724180628176"></p>
+<h2 id="今日所学-2024-7-25"><a href="#今日所学-2024-7-25" class="headerlink" title="今日所学(2024&#x2F;7&#x2F;25)"></a>今日所学(2024&#x2F;7&#x2F;25)</h2><p>感觉基本入门了前端，用HTML+CSS+JS写了个小网页</p>
+<p>最终效果</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202407251743937.gif" alt="gif1"></p>
+<p>可能会把这个小项目放到Github上，以后维护下去。</p>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为什么你的Github总是无法正常clone或者push</title>
+    <url>/post/2f28be0b.html</url>
+    <content><![CDATA[<h2 id="产生原因"><a href="#产生原因" class="headerlink" title="产生原因"></a>产生原因</h2><p><strong>代理服务器</strong><br>你的电脑和互联网的中介。当访问外网时（如<a href="http://google.com)/">http://google.com）</a>, 你的请求首先转发到代理服务器，然后代理服务器替你访问外网，并将结果原封不动的给你的电脑，这样你的电脑就可以看到外网的内容。</p>
+<p>网络路径如下：<br>你的电脑-&gt;代理服务器-&gt;外网<br>外网-&gt;代理服务器-&gt;你的电脑</p>
+<p>配置代理之后，可以正常访问github网页了，但是发现在本地克隆github仓库（git clone xxx）或者进行push操作时还是报网络错误（Failed to connect to server …）。</p>
+<p><strong>那是因为git clone没有走代理，所以需要设置git走代理才行</strong></p>
+<h2 id="设置代理"><a href="#设置代理" class="headerlink" title="设置代理"></a>设置代理</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:7890</span><br><span class="line">git config --global https.proxy https://127.0.0.1:7890</span><br></pre></td></tr></table></figure>
+
+<h2 id="Git查看现有配置"><a href="#Git查看现有配置" class="headerlink" title="Git查看现有配置"></a>Git查看现有配置</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global -l</span><br></pre></td></tr></table></figure>
+
+<h2 id="取消代理"><a href="#取消代理" class="headerlink" title="取消代理"></a>取消代理</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在CLion上搭建LVGL模拟器</title>
+    <url>/post/90c7d419.html</url>
+    <content><![CDATA[<blockquote>
+<p>注：本文默认已经安装好了CLion，目标LVGL的版本为8.3，当然新版本也是可以的，都差不多。</p>
+</blockquote>
+<h2 id="需要准备的文件"><a href="#需要准备的文件" class="headerlink" title="需要准备的文件"></a>需要准备的文件</h2><ul>
+<li><p><a href="https://github.com/lvgl/lv_port_pc_eclipse">lv_port_pc_eclipse</a></p>
+<p>使用下列命令克隆仓库到本地（本文以8.3版本为例）</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b release/v8.3 --recursive https://github.com/lvgl/lv_port_pc_eclipse.git</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><a href="https://github.com/niXman/mingw-builds-binaries/releases">mingw-builds-binaries</a></p>
+<p><em>注意下载13.2.0-rt_v11-rev1或之前的版本，新版本CLion暂时不支持</em></p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028130733571.png" alt="image-20241028130733571"></p>
+<ul>
+<li><a href="https://github.com/libsdl-org/SDL/releases">SDL</a></li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028130851970.png" alt="image-20241028130851970"></p>
+<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><ol>
+<li>解压下载的mingw64，得到如下文件</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028183539520.png" alt="image-20241028183539520"></p>
+<ol start="2">
+<li>解压下载的SDL2，得到如下文件</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028183713461.png" alt="image-20241028183713461"></p>
+<p>将<code>SDL2/x86_64_w64-mingw32/include/SDL2</code>复制到<code>mingw64/x86_64_w64-mingw32/include</code>文件夹中</p>
+<p>将<code>SDL2/x86_64_w64-mingw32/lib</code>所有的文件复制到<code>mingw64/x86_64_w64-mingw32/lib</code>中</p>
+<ol start="3">
+<li>CLion配置工具链</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028184123222.png" alt="image-20241028184123222"></p>
+<p>在<code>设置 - 构建、执行、部署 - 工具链</code>新建如上工具链，注意所有工具都参考上图设置成对应的，用内部集成的会报错。</p>
+<ol start="4">
+<li>工程</li>
+</ol>
+<p>用CLion打开lv_port_pc_eclipse为CMake项目，然后即可进行开发。</p>
+<h2 id="一些报错"><a href="#一些报错" class="headerlink" title="一些报错"></a>一些报错</h2><ol>
+<li>CMake找不到SDL2库</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028184609315.png" alt="image-20241028184609315"></p>
+<p>解决办法：在CMakeLists.txt里添加如下语句，注意不要照抄，请将自己的本地文件目录添加进来</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SET</span>(SDL2_DIR D:/program-tools/mingw64/x86_64-w64-mingw32/lib/cmake/SDL2)</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>编译成功，但是运行程序会直接退出，没有GUI界面出现</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028185226640.png" alt="image-20241028185226640"></p>
+<p>解决办法：将下载的SDL2库的SDL2.dll复制到lv_port_pc_eclipse下的bin文件夹里</p>
+<ol start="3">
+<li>分辨率可在<code>lv_drv_conf.h</code>里修改</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028190804549.png" alt="image-20241028190804549"></p>
+<h2 id="与SquareLine-Studio联合开发"><a href="#与SquareLine-Studio联合开发" class="headerlink" title="与SquareLine Studio联合开发"></a>与SquareLine Studio联合开发</h2><p>将SquareLine Studio生成的ui文件夹复制到lv_port_pc_eclipse下，在CmakeLists.txt里添加如下语句，注意不要照抄，请将自己的本地文件目录添加进来</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 递归引用ui下的源文件</span></span><br><span class="line"><span class="keyword">FILE</span>(GLOB_RECURSE UI_Sources CONFIGURE_DEPENDS ui/*.c ui/*.cpp)</span><br><span class="line"><span class="comment"># 将$&#123;UI_Sources&#125;添加到add_executable以对main这个target使用</span></span><br><span class="line"><span class="keyword">add_executable</span>(main main.c mouse_cursor_icon.c <span class="variable">$&#123;SOURCES&#125;</span> <span class="variable">$&#123;INCLUDES&#125;</span> <span class="variable">$&#123;UI_Sources&#125;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>在main.c里添加如下代码：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;ui.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span> &#123;</span><br><span class="line">    (<span class="type">void</span>) argc; <span class="comment">/*Unused*/</span></span><br><span class="line">    (<span class="type">void</span>) argv; <span class="comment">/*Unused*/</span></span><br><span class="line">    ...</span><br><span class="line">    ui_init();</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>记得注释掉lvgl自带的示例代码，编译即可运行SquareLine Studio生成的代码</p>
+<h2 id="LVGL学习资料"><a href="#LVGL学习资料" class="headerlink" title="LVGL学习资料"></a>LVGL学习资料</h2><ul>
+<li><p><a href="https://lvgl-chinese-doc.readthedocs.io/zh-cn/latest/index.html">官方手册</a></p>
+</li>
+<li><p><a href="https://github.com/lvgl/lvgl">源码仓库</a></p>
+</li>
+<li><p><a href="https://lvgl.100ask.net/8.2/">百问网LVGL中文教程文档</a> <em>- 20241028这个暂时只汉化到v8.2</em></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>Dev</tag>
       </tags>
   </entry>
   <entry>
@@ -395,6 +476,263 @@
       </categories>
       <tags>
         <tag>Dev</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于ESP-IDF在ESP32S3上移植LVGL和显示触摸驱动</title>
+    <url>/post/64bc178b.html</url>
+    <content><![CDATA[<p>ESP32很久没搞了，这篇文章是基于VSCode写的，写的自认为很一般，不过对于初学者应该是有点帮助的，近期可能会用CLion再试试配置ESP-IDF环境 - 20241028更新</p>
+<p><strong>前言：之前基本一直在搞STM32的开发，想换到别的平台（比如ESP32）试试，也算对自己的一种锻炼和提升，注意到网上关于LVGL移植的教程非常多，但是大部分是基于Arduino平台的，基本没有基于ESP-IDF框架的（即使有也已经过时）。最近入手了几块ESP32的开发板和一块带CTP（电容触摸）的3.5寸IPS屏幕，可视角度和分辨率都不错，作为一个对GUI界面有执着追求的人，我想把当下很火的嵌入式GUI项目<a href="https://lvgl.io/">LVGL - Light and Versatile Embedded Graphics Library</a>移植到我的项目里，并实现一部分优化，让它即使在资源极端有限的情况下也能较为流畅地运行~</strong></p>
+<p><strong>进度:</strong></p>
+<ul>
+<li>（已完成）实现正确显示 - 20240412</li>
+<li>（已完成）跑demo、优化帧率 - 20240414</li>
+<li>（已完成）基于SquareLine平台设计UI - 很简单，可以看一下CLion实现的LVGL模拟器 20241028</li>
+<li>（已完成）接入各种传感器 - 很简单</li>
+</ul>
+<h2 id="物料选择"><a href="#物料选择" class="headerlink" title="物料选择"></a>物料选择</h2><ul>
+<li><p>ESP32S3开发板一块，比如我使用立创的ESP32-S3开发板（集成串口芯片）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404122139635.jpg" alt="087b0e76d0dc9852b9dd31fb43531fa"></p>
+</li>
+<li><p>3.5寸电容触摸屏（显示驱动为ST7796U，电容触摸驱动为gt911）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404122139803.jpg" alt="6dd6fbcc761ede3cc4c3065eba1070c"></p>
+</li>
+<li><p>杜邦线若干</p>
+</li>
+<li><p>Type-C数据线</p>
+</li>
+</ul>
+<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><ul>
+<li>电脑系统：<code>Windows 11</code></li>
+<li>开发环境：<code>Visual Studio Code</code>（至于为什么不用CLion，因为CLion上没配起来IDF框架（抽象））、<code>ESP-IDF_5.1.2</code></li>
+</ul>
+<blockquote>
+<p>2024&#x2F;10&#x2F;29更新，CLion官网出配置ESP-IDF教程了，好耶：<a href="https://www.jetbrains.com/help/clion/esp-idf.html">https://www.jetbrains.com/help/clion/esp-idf.html</a></p>
+</blockquote>
+<p><em>这里具体配置细节暂时略去，因为最近要重新装系统，到时候刚好重新配置一遍，写个教程补上 - 20240412</em></p>
+<h2 id="开工！"><a href="#开工！" class="headerlink" title="开工！"></a>开工！</h2><h3 id="文件准备"><a href="#文件准备" class="headerlink" title="文件准备"></a>文件准备</h3><ul>
+<li><p>先找到示例文件夹，在IDF的安装目录下<br><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121501913.png" alt="image-20240412150107877"></p>
+</li>
+<li><p>打开进入<code>./get-started/</code>，找到<code>hello_world</code>程序并复制出来</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121502899.png" alt="image-20240412150249861"></p>
+</li>
+<li><p>再在<code>./peripherals/i2c</code>中找到<code>i2c_tools</code>，也和刚才的<code>hello_world</code>放在一起<br><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121506011.png" alt="image-20240412150606976"></p>
+</li>
+<li><p>打开<code>Visual Studio Code</code>，选到hello_world目录</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121518948.png" alt="image-20240412151819885"></p>
+</li>
+<li><p>这里配置一下开发板的信息：<br>1. 插上开发板，点一下左下角的<code>COM1</code>，根据实际选择正确的<code>COM</code><br>1. 点左下角<code>esp32</code>，选择合适的esp芯片型号，比如我就选esp32s3<br>1. 选择<code>OpenOCD</code>的配置文件，一般选择<code>via ESP-PROG</code>就好<br>1. 点左下角的五角星，选择<code>UART</code>（我的开发板上带了TTL芯片）<br>最终配置好应该是这样的：<br><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121527778.png" alt="image-20240412152745759"></p>
+</li>
+<li><p>在main文件夹里新建一个<code>idf_component.yml</code>文件，并复制以下内容</p>
+<p><em><a href="https://docs.espressif.com/projects/idf-component-manager/en/latest/reference/manifest_file.html">这个网站</a>有<code>idf_component.yml</code>的编写规则，这里我就直接用里面的框架了</em></p>
+</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">dependencies:</span></span><br><span class="line">  <span class="attr">pkg_name:</span> <span class="string">&quot;pkg_version&quot;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>浏览器打开<a href="https://www.espressif.com/">乐鑫官网</a>，在<code>SDKs</code>下找到<code>IDF Component Manager</code>包管理器</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121535817.png" alt="image-20240412153510715"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121546289.png" alt="image-20240412154657218"></p>
+</li>
+<li><p>在<code>IDF Component Manager</code>中搜索<code>LVGL</code>，这次用的是<code>lvgl</code>和<code>esp_lvgl_port</code>，至于驱动为什么不用<code>lvgl_esp32_drivers</code>，是因为这玩意的代码已经很久没有维护了，不支持<code>IDF5.x</code>版本和较新的<code>LVGL</code></p>
+<p>这次用的是<code>1.4.0</code>版本的<code>esp_lvgl_port</code>，在<code>idf_component.yml</code>中把<code>pkg_name</code>换成<code>esp_lvgl_port</code>，因为我们这次移植的是<code>8.4.0</code>的<code>LVGL</code>，所以<code>pkg_version</code>改成<code>1.4.0</code>，把<code>LVGL</code>和<code>gt911触摸芯片</code>和<code>ST7796显示芯片</code>的驱动也加上，像下面这样</p>
+</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">dependencies:</span></span><br><span class="line">  <span class="attr">esp_lvgl_port:</span> <span class="string">&quot;1.4.0&quot;</span></span><br><span class="line">  <span class="attr">esp_lcd_touch_gt911:</span> <span class="string">&quot;1.1.0&quot;</span></span><br><span class="line">  <span class="attr">esp_lcd_st7796:</span> <span class="string">&quot;1.2.1&quot;</span></span><br><span class="line">  <span class="attr">lvgl/lvgl:</span> <span class="string">&quot;8.4.0&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>  然后编译一次就会自动下载相关依赖（这里即使最后编译报错了也没关系，因为依赖已经下好了，报错稍后再去解决）</p>
+<p>  待依赖下载完成之后，工作空间的根目录会出现<code>managed_components</code>文件夹，把这个文件夹改为<code>components</code>（这步是因为可能要修改某些依赖的源码，如果不这样的话修改后会报<code>哈希不匹配</code>的错），把里面的依赖整理一下，像这样<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121647535.png" alt="image-20240412164748491"></p>
+<p>  检查每个依赖中的其他关联依赖（<code>idf_component.yml</code>），把所有除了IDF以外的其他依赖全部删掉</p>
+<ul>
+<li><p>把<code>./esp_lvgl_port/examples/touchscreen/main/</code>下的<code>main.c</code>文件的全部内容复制到hello_world_main.c里<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121657456.png"></p>
+</li>
+<li><p>顺便说一下，如果VScode没法代码补全和代码跳转的话，按下<code>Ctrl+Shift+P</code>，搜索<code>IntelliSense</code>，选择第一个不带bootloader的，选好之后Full Clean，再点一下编译，就可以正常使用了</p>
+</li>
+<li><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121808911.png" alt="image-20240412180848835"></p>
+</li>
+<li><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121809959.png" alt="image-20240412180922880"></p>
+</li>
+<li><p>编译一下，看看报错</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121659815.png" alt="image-20240412165942792"></p>
+<p>可以看到找不到对应的头文件，这里示例文件默认用的触摸驱动是tt21100，与我用的gt911不一样，所以我们要包含gt911的驱动进去，故要做的就是修改头文件，把tt21100的驱动换成gt911的，并且把程序里调用的函数进行对应的更改</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;esp_lcd_touch_tt21100.h&quot;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>更改为</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;esp_lcd_touch_gt911.h&quot;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>对应的函数改为gt911</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121815198.png" alt="image-20240412181507168"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121816895.png" alt="image-20240412181658868"></p>
+<p>再次编译，看看报错</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121820971.png" alt="image-20240412182013943"></p>
+<p>注意到这里找不到<code>lvgl.h</code>的错误是<code>esp_lvgl_port</code>这个依赖发出的，所以进入该依赖的<code>CmakeLists.txt</code>，在<code>PRIV_REQUIRES</code>里加入<code>lvgl</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121821249.png" alt="image-20240412182143182"></p>
+<p>再次编译，看看报错</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121822908.png" alt="image-20240412182235878"></p>
+<p>这里gt911的驱动报错找不到<code>driver/gpio.h</code>，与上面类似地，修改gt911的驱动里的<code>CmakeLists.txt</code>，在<code>PRIV_REQUIRES</code>里加入<code>driver</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121824523.png" alt="image-20240412182412458"></p>
+<p>再编译，看看报错</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121825244.png" alt="image-20240412182513212"></p>
+<p>这里gt911的驱动报错找不到<code>esp_lcd_touch.h</code>，与上面类似地，修改gt911的驱动里的<code>CmakeLists.txt</code>，在<code>PRIV_REQUIRES</code>里加入<code>esp_lcd_touch</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121826592.png"></p>
+<p>再次编译，发现可以编译通过了！（好吧，其实离能用还有很远）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121827054.png" alt="image-20240412182738026"></p>
+<h3 id="硬件连线"><a href="#硬件连线" class="headerlink" title="硬件连线"></a>硬件连线</h3><p>查看开发板的原理图和乐鑫ESP32S3技术文档，应该按照下表接线</p>
+<table>
+<thead>
+<tr>
+<th align="center">屏幕+触摸</th>
+<th align="center">ESP32S3开发板</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">VDD</td>
+<td align="center">3V3</td>
+</tr>
+<tr>
+<td align="center">GND</td>
+<td align="center">GND</td>
+</tr>
+<tr>
+<td align="center">SCLK</td>
+<td align="center">GPIO_NUM_12</td>
+</tr>
+<tr>
+<td align="center">MOSI</td>
+<td align="center">GPIO_NUM_11</td>
+</tr>
+<tr>
+<td align="center">RST</td>
+<td align="center">GPIO_NUM_3</td>
+</tr>
+<tr>
+<td align="center">DC</td>
+<td align="center">GPIO_NUM_9</td>
+</tr>
+<tr>
+<td align="center">CS</td>
+<td align="center">GPIO_NUM_10</td>
+</tr>
+<tr>
+<td align="center">BL</td>
+<td align="center">GPIO_NUM_46</td>
+</tr>
+<tr>
+<td align="center">I2C_SCL</td>
+<td align="center">GPIO_NUM_2</td>
+</tr>
+<tr>
+<td align="center">I2C_SDA</td>
+<td align="center">GPIO_NUM_1</td>
+</tr>
+<tr>
+<td align="center">CTP_INT</td>
+<td align="center">GPIO_NUM_45</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<p><strong>注意：VDD和GND千万不能接错，否则烧毁！</strong></p>
+<p>接好线后烧录刚才的程序试一下，然后…咦？屏幕怎么没反应呢？？？</p>
+<p>原来是接线没有在程序里映射出来，这里修改<code>hello_world_main.c</code>的第24-50行为，在不同硬件上需要做相应调整</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* LCD settings */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_SPI_NUM         (SPI3_HOST)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_PIXEL_CLK_HZ    (40 * 1000 * 1000)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_CMD_BITS        (8)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_PARAM_BITS      (8)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_COLOR_SPACE     (ESP_LCD_COLOR_SPACE_BGR)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_BITS_PER_PIXEL  (16)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_DRAW_BUFF_DOUBLE (1)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_DRAW_BUFF_HEIGHT (50)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_BL_ON_LEVEL     (1)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* LCD pins */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_GPIO_SCLK       (GPIO_NUM_12)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_GPIO_MOSI       (GPIO_NUM_11)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_GPIO_RST        (GPIO_NUM_3)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_GPIO_DC         (GPIO_NUM_9)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_GPIO_CS         (GPIO_NUM_10)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_GPIO_BL         (GPIO_NUM_46)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* Touch settings */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_TOUCH_I2C_NUM       (0)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_TOUCH_I2C_CLK_HZ    (400000)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* LCD touch pins */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_TOUCH_I2C_SCL       (GPIO_NUM_2)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_TOUCH_I2C_SDA       (GPIO_NUM_1)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_TOUCH_GPIO_INT      (GPIO_NUM_45)</span></span><br></pre></td></tr></table></figure>
+
+<p>改完之后再次烧录，发现屏幕不断滚动报错</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121851092.png" alt="image-20240412185134048"></p>
+<p>看红字知道报错是因为I2C总线上没有找到gt911，这就比较奇怪了，难道是因为I2C地址错了吗？幸好乐鑫提供了一个专门的I2C检测工具，可以遍历所有I2C地址，还记得和hello_world工程一起复制过来的i2c_tools工程吗，现在需要用到它了</p>
+<p>在VScode中打开<code>i2c_tools</code>工程，编译烧录，在终端中可以看到进入了<code>i2c_tools</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121938181.png" alt="image-20240412193813115"></p>
+<p>输入<code>i2cdetect</code>即可遍历总线上的地址</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121938576.png" alt="image-20240412193850546"></p>
+<p>这里出现了<code>0x14</code>，当前挂载在I2C总线上的只有一个设备，所以gt911的地址是<code>0x14</code>，然后我们回到hello_world程序，打开<code>/components/esp_lcd_touch_gt911/include/esp_lcd_touch_gt911.h</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121942008.png" alt="image-20240412194202971"></p>
+<p>可以看到定义了两个I2C地址，在结构体中调用了一个，这里看到调用的是<code>ESP_LCD_TOUCH_IO_I2C_gt911_ADDRESS</code>，值为<code>0x5D</code>，与实际地址<code>0x14</code>不符合，而<code>ESP_LCD_TOUCH_IO_I2C_gt911_ADDRESS_BACKUP</code>的值为<code>0x14</code>，所以结构体里改为<code>ESP_LCD_TOUCH_IO_I2C_gt911_ADDRESS_BACKUP</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121944838.png" alt="image-20240412194432812"></p>
+<h3 id="改代码"><a href="#改代码" class="headerlink" title="改代码"></a>改代码</h3><p>再次烧录，看看效果__结果还是不行，还是报I2C的错误，这里我们查看原理图，发现屏幕的I2C没有上拉__，所以我们需要打开芯片的内部上拉</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121954480.png" alt="image-20240412195427450"></p>
+<p>然后再次烧录，屏幕成功点亮，但是显示有点奇怪</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404122139981.jpg" alt="0f0e9dbd753c2ea81331be530d4058f"></p>
+<p>现在发现：</p>
+<ol>
+<li>长宽不对</li>
+<li>字显示不清晰</li>
+<li>屏幕镜像颠倒 </li>
+<li>触摸X、Y轴反向</li>
+</ol>
+<p>现在开始逐一解决：</p>
+<ol>
+<li>设置长宽，更改宏定义里的<code>EXAMPLE_LCD_H_RES</code>为320，<code>EXAMPLE_LCD_V_RES</code>为480</li>
+<li>点左下角小齿轮，进入<code>SDK Configuration editor</code>，搜索<code>Swap</code>，找到这个选项，打上勾（改完记得保存）<br> <img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404122005348.png" alt="image-20240412200541312"></li>
+<li>这两个<code>true</code>随便改一个为<code>false</code><br> <img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404122021990.png" alt="image-20240412202126956"></li>
+<li>把结构体里的<code>mirror_x</code>的1改为0，<code>mirror_y</code>的0改为1<br> <img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404122047197.png" alt="image-20240412204715167"></li>
+</ol>
+<p>然后再次烧录测试，发现颜色还是不对，背景是黑色的，但是理论上应该是白色<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404122138345.jpg" alt="c4ae5d37df49d5748cd673873cdaece"></p>
+<p>考虑到屏幕的面板是IPS的，而默认显示驱动可能支持的是TN屏，我这里选择魔改另外一款默认为IPS的显示驱动芯片（ili9341）的驱动程序，具体操作如下：</p>
+<ol>
+<li><p>通过<code>idf-component</code>下载<code>esp_lcd_ili9341</code>并移动到<code>components</code>目录下，并修改<code>esp_lcd_ili9341</code>的<code>idf-component.yml</code></p>
+</li>
+<li><p>修改<code>/esp_lcd_ili9341/esp_lcd_ili9341.c</code>的<code>vendor_specific_init_default</code>数组为（这里是参照屏幕厂商的驱动改的）</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"> <span class="type">const</span> <span class="type">ili9341_lcd_init_cmd_t</span> vendor_specific_init_default[] = &#123;</span><br><span class="line"><span class="comment">//  &#123;cmd, &#123; data &#125;, data_size, delay_ms&#125;</span></span><br><span class="line">    <span class="comment">/* Power contorl B, power control = 0, DC_ENA = 1 */</span></span><br><span class="line">    <span class="comment">// &#123;0x11, (uint8_t [])&#123;0x00&#125;, 0, 120&#125;,</span></span><br><span class="line">    &#123;<span class="number">0xB2</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x0C</span>, <span class="number">0x0C</span>, <span class="number">0x00</span>, <span class="number">0x33</span>, <span class="number">0x33</span>&#125;, <span class="number">5</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xB0</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x00</span>, <span class="number">0xE0</span>&#125;, <span class="number">2</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    <span class="comment">// &#123;0x36, (uint8_t [])&#123;0x00&#125;, 1, 0&#125;,</span></span><br><span class="line">    <span class="comment">// &#123;0x3A, (uint8_t [])&#123;0x05&#125;, 1, 0&#125;,</span></span><br><span class="line">    &#123;<span class="number">0xB7</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x56</span>&#125;, <span class="number">1</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xBB</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x14</span>&#125;, <span class="number">1</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xC0</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x2C</span>&#125;, <span class="number">1</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xC2</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x01</span>&#125;, <span class="number">1</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xC3</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x0B</span>&#125;, <span class="number">1</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xC4</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x10</span>&#125;, <span class="number">1</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xC6</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x0F</span>&#125;, <span class="number">1</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xD0</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0xA4</span>, <span class="number">0xA1</span>&#125;, <span class="number">2</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xD6</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0xA1</span>&#125;, <span class="number">1</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xE0</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0xD0</span>, <span class="number">0x08</span>, <span class="number">0x0A</span>, <span class="number">0x0D</span>, <span class="number">0x0B</span>, <span class="number">0x07</span>, <span class="number">0x21</span>, <span class="number">0x33</span>, <span class="number">0x39</span>, <span class="number">0x39</span>, <span class="number">0x16</span>, <span class="number">0x16</span>, <span class="number">0x1F</span>, <span class="number">0x3C</span>&#125;, <span class="number">14</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xE1</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0xD0</span>, <span class="number">0x00</span>, <span class="number">0x03</span>, <span class="number">0x01</span>, <span class="number">0x00</span>, <span class="number">0x10</span>, <span class="number">0x21</span>, <span class="number">0x32</span>, <span class="number">0x38</span>, <span class="number">0x16</span>, <span class="number">0x14</span>, <span class="number">0x14</span>, <span class="number">0x20</span>, <span class="number">0x3D</span>&#125;, <span class="number">14</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0x21</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x00</span>&#125;, <span class="number">0</span>, <span class="number">120</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0x29</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x00</span>&#125;, <span class="number">0</span>, <span class="number">1</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0x2C</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x00</span>&#125;, <span class="number">0</span>, <span class="number">1</span>&#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>至此驱动修改完毕，在<code>hello_world_main.c</code>中include一下<code>esp_lcd_ili9341.h</code>，把<code>esp_lcd_new_panel_st7796</code>函数改为<code>esp_lcd_new_panel_ili9341</code>，烧录看看效果</p>
+</li>
+</ol>
+<h3 id="正常显示-20240412"><a href="#正常显示-20240412" class="headerlink" title="正常显示 - 20240412"></a>正常显示 - 20240412</h3><p>可以看到，已经正确显示了（但其实旋转方向之后显示还是不太对，屏幕会镜像，不知道为什么，应该还是驱动的问题）<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404122138205.jpg" alt="61e5f02c1fdb5e1fd49e2a5a34a134b"></p>
+<h3 id="跑demo-20240414"><a href="#跑demo-20240414" class="headerlink" title="跑demo - 20240414"></a>跑demo - 20240414</h3><h4 id="Music音乐播放器demo"><a href="#Music音乐播放器demo" class="headerlink" title="Music音乐播放器demo"></a>Music音乐播放器demo</h4><p>点左下角小齿轮，进入<code>SDK Configuration editor</code>，找到LVGL相关的设置</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404141416848.png" alt="image-20240414141602770"></p>
+<p>在<code>Demos</code>里面勾选<code>Music player demo</code>，别忘了保存</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404141417085.png" alt="image-20240414141718058"></p>
+<p>然后回到hello_world_main.c里，找到函数<code>app_main_display()</code>，将里面的<code>Label</code>和<code>Button</code>注释掉，并在后面加上lv_demo_music函数的声明和调用</p>
+<p><em>这里补充一点，C语言可以在函数里面声明函数，格式与在函数之外相同。 声明后的函数只在本函数内调用有效。其他函数需要重新声明</em></p>
+<p>修改好后的app_main_display()函数如下</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">app_main_display</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">lv_obj_t</span> *scr = lv_scr_act();</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Task lock */</span></span><br><span class="line">    lvgl_port_lock(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Your LVGL objects code here .... */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// /* Label */</span></span><br><span class="line">    <span class="comment">// lv_obj_t *label = lv_label_create(scr);</span></span><br><span class="line">    <span class="comment">// lv_label_set_recolor(label, true);</span></span><br><span class="line">    <span class="comment">// lv_obj_set_width(label, EXAMPLE_LCD_H_RES);</span></span><br><span class="line">    <span class="comment">// lv_obj_set_style_text_align(label, LV_TEXT_ALIGN_CENTER, 0);</span></span><br><span class="line">    <span class="comment">// lv_label_set_text(label, &quot;#FF0000 &quot;LV_SYMBOL_BELL&quot; Hello world Espressif and LVGL &quot;LV_SYMBOL_BELL&quot;#\n#FF9400 &quot;LV_SYMBOL_WARNING&quot; For simplier initialization, use BSP &quot;LV_SYMBOL_WARNING&quot; #&quot;);</span></span><br><span class="line">    <span class="comment">// lv_obj_align(label, LV_ALIGN_CENTER, 0, -30);</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// /* Button */</span></span><br><span class="line">    <span class="comment">// lv_obj_t *btn = lv_btn_create(scr);</span></span><br><span class="line">    <span class="comment">// label = lv_label_create(btn);</span></span><br><span class="line">    <span class="comment">// lv_label_set_text_static(label, &quot;Rotate screen&quot;);</span></span><br><span class="line">    <span class="comment">// lv_obj_align(btn, LV_ALIGN_BOTTOM_MID, 0, -30);</span></span><br><span class="line">    <span class="comment">// lv_obj_add_event_cb(btn, _app_button_cb, LV_EVENT_CLICKED, NULL);</span></span><br><span class="line">    <span class="type">void</span> <span class="title function_">lv_demo_music</span><span class="params">(<span class="type">void</span>)</span>; </span><br><span class="line">    lv_demo_music();</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Task unlock */</span></span><br><span class="line">    lvgl_port_unlock();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们编译试试，看会不会报错<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404141423001.png" alt="image-20240414142329954"></p>
+<p>还真报错了，这里说的是找不到需要的字体，点左下角小齿轮进入LVGL的配置界面，在Font usage里勾选上12和16号字体，记得保存</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404141424111.png" alt="image-20240414142453070"></p>
+<p>再编译试试，可以看到已经编译过了<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404141429970.png" alt="image-20240414142923937"></p>
+<p>那就烧录看看效果吧（这里有可能触摸的X或者Y还会反，再去改tp_cfg结构体里的mirror_x或者mirror_y就行）<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404141435341.jpg" alt="0396dc12365b70b64f1728d4a349420"></p>
+<p>可以看到显示和触摸都正常了</p>
+<h3 id="跑组件（Widget）demo"><a href="#跑组件（Widget）demo" class="headerlink" title="跑组件（Widget）demo"></a>跑组件（Widget）demo</h3><h3 id="优化帧率-20240414"><a href="#优化帧率-20240414" class="headerlink" title="优化帧率 - 20240414"></a>优化帧率 - 20240414</h3><p>打开<a href="https://www.espressif.com/">乐鑫官网</a>，点顶部的Support，在找到ESP-FAQ，搜索LVGL，即可找到如下内容</p>
+<ul>
+<li><p>Taking ESP32-S3R8 as an example, the following ESP configuration items can improve the frame rate (ESP-IDF release&#x2F;v5.1):</p>
+<ul>
+<li><code>CONFIG_FREERTOS_HZ=1000</code></li>
+<li><code>CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_240=y</code></li>
+<li><code>CONFIG_ESPTOOLPY_FLASHMODE_QIO=y</code></li>
+<li><code>CONFIG_ESPTOOLPY_FLASHFREQ_120M=y</code> [should be consistent with PSRAM]</li>
+<li><code>CONFIG_SPIRAM_MODE_OCT=y</code></li>
+<li><code>CONFIG_IDF_EXPERIMENTAL_FEATURES=y</code> and <code>CONFIG_SPIRAM_SPEED_120M=y</code> [should be consistent with FLASH]</li>
+<li><code>CONFIG_SPIRAM_FETCH_INSTRUCTIONS=y</code></li>
+<li><code>CONFIG_SPIRAM_RODATA=y</code></li>
+<li><code>CONFIG_ESP32S3_DATA_CACHE_LINE_64B=y</code></li>
+<li><code>CONFIG_COMPILER_OPTIMIZATION_PERF=y</code></li>
+</ul>
+</li>
+<li><p>The following LVGL configuration items can improve the frame rate (LVGL v8.3):</p>
+<ul>
+<li><p><code>#define LV_MEM_CUSTOM 1</code> or <code>CONFIG_LV_MEM_CUSTOM=y</code></p>
+</li>
+<li><p><code>#define LV_MEMCPY_MEMSET_STD 1</code> or <code>CONFIG_LV_MEMCPY_MEMSET_STD=y</code></p>
+</li>
+<li><p><code>#define LV_ATTRIBUTE_FAST_MEM IRAM_ATTR</code> or <code>CONFIG_LV_ATTRIBUTE_FAST_MEM=y</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>再加一个<code>LV_DISP_DEF_REFR_PERIOD</code>由30改为10</p>
+<p>注：如果要显示帧率和CPU占用，可以吧<code>Show CPU usage and FPS count</code>勾上</p>
+<p>这里就按照官网的推荐来进行修改，点左下角小齿轮，分别修改上面的这些参数（修改完记得保存），其中某些参数可能找不到，这是由于CSDK的版本和使用的MCU型号不同导致的，不用深究</p>
+<p>修改hello_world_main.c里的SPI频率到80M（实测这个影响帧率最为明显）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404141458859.png" alt="image-20240414145809827"></p>
+<p>改完以后再来编译烧录，发现帧率提升了很多，滑动较为丝滑了</p>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>ESP32</tag>
+        <tag>LVGL</tag>
+        <tag>ESP-IDF</tag>
       </tags>
   </entry>
   <entry>
@@ -805,69 +1143,6 @@
       </tags>
   </entry>
   <entry>
-    <title>用CLion配合PlatformIO开发树莓派Pico(RP2040)</title>
-    <url>/post/672d89ba.html</url>
-    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
-<li>Windows 11</li>
-<li>CLion 2024.3</li>
-<li>Python 3.12.3</li>
-</ul>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="安装PlatformIO"><a href="#安装PlatformIO" class="headerlink" title="安装PlatformIO"></a>安装PlatformIO</h3><ol>
-<li><p>下载<a href="https://raw.githubusercontent.com/platformio/platformio-core-installer/master/get-platformio.py">get-platformio.py</a></p>
-</li>
-<li><p>执行如下命令</p>
-</li>
-</ol>
- <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"># change directory to the folder where is located downloaded &quot;get-platformio.py&quot;</span><br><span class="line"><span class="built_in">cd</span> C:/<span class="built_in">path</span>-to-<span class="built_in">dir</span>/where/get-platformio.py/is-located</span><br><span class="line">   </span><br><span class="line"># run it</span><br><span class="line">python.exe get-platformio.py</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li><p>编辑名为 <code>Path</code> 的系统环境变量并追加 <code>C:\Users\UserName\.platformio\penv\Scripts\</code> 列表开头的路径（请将<code>UserName</code>替换为帐户名）。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224153641139.png" alt="image-20241224153641139"></p>
-</li>
-</ol>
-<h3 id="安装PlatformIO插件"><a href="#安装PlatformIO插件" class="headerlink" title="安装PlatformIO插件"></a>安装PlatformIO插件</h3><ol>
-<li><p>Go to <strong>Settings | Plugins</strong> and switch to <strong>Marketplace</strong>.</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224153936338.png" alt="image-20241224153936338"></p>
-</li>
-<li><p>Search for <strong>PlatformIO for CLion</strong> and click <strong>Install</strong>.</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224154022748.png" alt="image-20241224154022748"></p>
-</li>
-<li><p>After the installation is finished, click <strong>Restart IDE</strong>.</p>
-</li>
-</ol>
-<h3 id="创建PlatformIO项目"><a href="#创建PlatformIO项目" class="headerlink" title="创建PlatformIO项目"></a>创建PlatformIO项目</h3><ol>
-<li><p>选择自己的board或者framework，创建项目；</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224154343595.png" alt="image-20241224154343595"></p>
-</li>
-<li><p>经过较长时间的等待后，成功创建工程，并生成了Arduino的”stub code”。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224154819663.png" alt="image-20241224154819663"></p>
-</li>
-</ol>
-<h3 id="实现upload自动上传项目（坑）"><a href="#实现upload自动上传项目（坑）" class="headerlink" title="实现upload自动上传项目（坑）"></a>实现upload自动上传项目（坑）</h3><p>一直报错Error 1，最后摸索出来以下这个步骤，百分百成功。</p>
-<ol>
-<li><p>下载<a href="https://zadig.akeo.ie/downloads/">zadig 2.5</a>版本，注意一定要是2.5版本，不能太新；</p>
-</li>
-<li><p>pico板进入bootloader，然后打开zadig，勾选<code>Options</code>里的<code>List All Devices</code>；</p>
-</li>
-<li><p>为<strong>RP2 Boot(Interface 1)<strong>安装</strong>WinUSB驱动</strong>；</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224155601520.png" alt="image-20241224155601520"></p>
-</li>
-<li><p>进入CLion，为pico随便编译一个程序，在<code>./.pio/build/pico/</code>里找到<code>firmware.uf2</code>，复制进pico的MSC设备里；</p>
-</li>
-<li><p>然后再使用PlatformIO里的upload就不会报错了。</p>
-</li>
-</ol>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://www.jetbrains.com/help/clion/platformio.html">PlatformIO | CLion Documentation</a><br><a href="https://docs.platformio.org/en/latest/core/installation/methods/installer-script.html">Installer Script (Recommended) — PlatformIO latest documentation</a></p>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>Dev</tag>
-        <tag>Arduino</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>用CLion优雅地调试和开发STM32(CubeMX)</title>
     <url>/post/63adfc20.html</url>
     <content><![CDATA[<h2 id="Why-CLion"><a href="#Why-CLion" class="headerlink" title="Why CLion?"></a>Why CLion?</h2><p>Keil操作简单，容易上手，而且可以很方便地进行调试，不过其古老的界面，不符合人类直觉的操作，不符合现代的编程习惯，必然会被逐渐淘汰。</p>
@@ -956,263 +1231,6 @@
       </tags>
   </entry>
   <entry>
-    <title>基于ESP-IDF在ESP32S3上移植LVGL和显示触摸驱动</title>
-    <url>/post/64bc178b.html</url>
-    <content><![CDATA[<p>ESP32很久没搞了，这篇文章是基于VSCode写的，写的自认为很一般，不过对于初学者应该是有点帮助的，近期可能会用CLion再试试配置ESP-IDF环境 - 20241028更新</p>
-<p><strong>前言：之前基本一直在搞STM32的开发，想换到别的平台（比如ESP32）试试，也算对自己的一种锻炼和提升，注意到网上关于LVGL移植的教程非常多，但是大部分是基于Arduino平台的，基本没有基于ESP-IDF框架的（即使有也已经过时）。最近入手了几块ESP32的开发板和一块带CTP（电容触摸）的3.5寸IPS屏幕，可视角度和分辨率都不错，作为一个对GUI界面有执着追求的人，我想把当下很火的嵌入式GUI项目<a href="https://lvgl.io/">LVGL - Light and Versatile Embedded Graphics Library</a>移植到我的项目里，并实现一部分优化，让它即使在资源极端有限的情况下也能较为流畅地运行~</strong></p>
-<p><strong>进度:</strong></p>
-<ul>
-<li>（已完成）实现正确显示 - 20240412</li>
-<li>（已完成）跑demo、优化帧率 - 20240414</li>
-<li>（已完成）基于SquareLine平台设计UI - 很简单，可以看一下CLion实现的LVGL模拟器 20241028</li>
-<li>（已完成）接入各种传感器 - 很简单</li>
-</ul>
-<h2 id="物料选择"><a href="#物料选择" class="headerlink" title="物料选择"></a>物料选择</h2><ul>
-<li><p>ESP32S3开发板一块，比如我使用立创的ESP32-S3开发板（集成串口芯片）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404122139635.jpg" alt="087b0e76d0dc9852b9dd31fb43531fa"></p>
-</li>
-<li><p>3.5寸电容触摸屏（显示驱动为ST7796U，电容触摸驱动为gt911）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404122139803.jpg" alt="6dd6fbcc761ede3cc4c3065eba1070c"></p>
-</li>
-<li><p>杜邦线若干</p>
-</li>
-<li><p>Type-C数据线</p>
-</li>
-</ul>
-<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><ul>
-<li>电脑系统：<code>Windows 11</code></li>
-<li>开发环境：<code>Visual Studio Code</code>（至于为什么不用CLion，因为CLion上没配起来IDF框架（抽象））、<code>ESP-IDF_5.1.2</code></li>
-</ul>
-<blockquote>
-<p>2024&#x2F;10&#x2F;29更新，CLion官网出配置ESP-IDF教程了，好耶：<a href="https://www.jetbrains.com/help/clion/esp-idf.html">https://www.jetbrains.com/help/clion/esp-idf.html</a></p>
-</blockquote>
-<p><em>这里具体配置细节暂时略去，因为最近要重新装系统，到时候刚好重新配置一遍，写个教程补上 - 20240412</em></p>
-<h2 id="开工！"><a href="#开工！" class="headerlink" title="开工！"></a>开工！</h2><h3 id="文件准备"><a href="#文件准备" class="headerlink" title="文件准备"></a>文件准备</h3><ul>
-<li><p>先找到示例文件夹，在IDF的安装目录下<br><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121501913.png" alt="image-20240412150107877"></p>
-</li>
-<li><p>打开进入<code>./get-started/</code>，找到<code>hello_world</code>程序并复制出来</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121502899.png" alt="image-20240412150249861"></p>
-</li>
-<li><p>再在<code>./peripherals/i2c</code>中找到<code>i2c_tools</code>，也和刚才的<code>hello_world</code>放在一起<br><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121506011.png" alt="image-20240412150606976"></p>
-</li>
-<li><p>打开<code>Visual Studio Code</code>，选到hello_world目录</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121518948.png" alt="image-20240412151819885"></p>
-</li>
-<li><p>这里配置一下开发板的信息：<br>1. 插上开发板，点一下左下角的<code>COM1</code>，根据实际选择正确的<code>COM</code><br>1. 点左下角<code>esp32</code>，选择合适的esp芯片型号，比如我就选esp32s3<br>1. 选择<code>OpenOCD</code>的配置文件，一般选择<code>via ESP-PROG</code>就好<br>1. 点左下角的五角星，选择<code>UART</code>（我的开发板上带了TTL芯片）<br>最终配置好应该是这样的：<br><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121527778.png" alt="image-20240412152745759"></p>
-</li>
-<li><p>在main文件夹里新建一个<code>idf_component.yml</code>文件，并复制以下内容</p>
-<p><em><a href="https://docs.espressif.com/projects/idf-component-manager/en/latest/reference/manifest_file.html">这个网站</a>有<code>idf_component.yml</code>的编写规则，这里我就直接用里面的框架了</em></p>
-</li>
-</ul>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">dependencies:</span></span><br><span class="line">  <span class="attr">pkg_name:</span> <span class="string">&quot;pkg_version&quot;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>浏览器打开<a href="https://www.espressif.com/">乐鑫官网</a>，在<code>SDKs</code>下找到<code>IDF Component Manager</code>包管理器</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121535817.png" alt="image-20240412153510715"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121546289.png" alt="image-20240412154657218"></p>
-</li>
-<li><p>在<code>IDF Component Manager</code>中搜索<code>LVGL</code>，这次用的是<code>lvgl</code>和<code>esp_lvgl_port</code>，至于驱动为什么不用<code>lvgl_esp32_drivers</code>，是因为这玩意的代码已经很久没有维护了，不支持<code>IDF5.x</code>版本和较新的<code>LVGL</code></p>
-<p>这次用的是<code>1.4.0</code>版本的<code>esp_lvgl_port</code>，在<code>idf_component.yml</code>中把<code>pkg_name</code>换成<code>esp_lvgl_port</code>，因为我们这次移植的是<code>8.4.0</code>的<code>LVGL</code>，所以<code>pkg_version</code>改成<code>1.4.0</code>，把<code>LVGL</code>和<code>gt911触摸芯片</code>和<code>ST7796显示芯片</code>的驱动也加上，像下面这样</p>
-</li>
-</ul>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">dependencies:</span></span><br><span class="line">  <span class="attr">esp_lvgl_port:</span> <span class="string">&quot;1.4.0&quot;</span></span><br><span class="line">  <span class="attr">esp_lcd_touch_gt911:</span> <span class="string">&quot;1.1.0&quot;</span></span><br><span class="line">  <span class="attr">esp_lcd_st7796:</span> <span class="string">&quot;1.2.1&quot;</span></span><br><span class="line">  <span class="attr">lvgl/lvgl:</span> <span class="string">&quot;8.4.0&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>  然后编译一次就会自动下载相关依赖（这里即使最后编译报错了也没关系，因为依赖已经下好了，报错稍后再去解决）</p>
-<p>  待依赖下载完成之后，工作空间的根目录会出现<code>managed_components</code>文件夹，把这个文件夹改为<code>components</code>（这步是因为可能要修改某些依赖的源码，如果不这样的话修改后会报<code>哈希不匹配</code>的错），把里面的依赖整理一下，像这样<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121647535.png" alt="image-20240412164748491"></p>
-<p>  检查每个依赖中的其他关联依赖（<code>idf_component.yml</code>），把所有除了IDF以外的其他依赖全部删掉</p>
-<ul>
-<li><p>把<code>./esp_lvgl_port/examples/touchscreen/main/</code>下的<code>main.c</code>文件的全部内容复制到hello_world_main.c里<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121657456.png"></p>
-</li>
-<li><p>顺便说一下，如果VScode没法代码补全和代码跳转的话，按下<code>Ctrl+Shift+P</code>，搜索<code>IntelliSense</code>，选择第一个不带bootloader的，选好之后Full Clean，再点一下编译，就可以正常使用了</p>
-</li>
-<li><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121808911.png" alt="image-20240412180848835"></p>
-</li>
-<li><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121809959.png" alt="image-20240412180922880"></p>
-</li>
-<li><p>编译一下，看看报错</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121659815.png" alt="image-20240412165942792"></p>
-<p>可以看到找不到对应的头文件，这里示例文件默认用的触摸驱动是tt21100，与我用的gt911不一样，所以我们要包含gt911的驱动进去，故要做的就是修改头文件，把tt21100的驱动换成gt911的，并且把程序里调用的函数进行对应的更改</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;esp_lcd_touch_tt21100.h&quot;</span></span></span><br></pre></td></tr></table></figure>
-
-<p>更改为</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;esp_lcd_touch_gt911.h&quot;</span></span></span><br></pre></td></tr></table></figure>
-
-<p>对应的函数改为gt911</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121815198.png" alt="image-20240412181507168"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121816895.png" alt="image-20240412181658868"></p>
-<p>再次编译，看看报错</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121820971.png" alt="image-20240412182013943"></p>
-<p>注意到这里找不到<code>lvgl.h</code>的错误是<code>esp_lvgl_port</code>这个依赖发出的，所以进入该依赖的<code>CmakeLists.txt</code>，在<code>PRIV_REQUIRES</code>里加入<code>lvgl</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121821249.png" alt="image-20240412182143182"></p>
-<p>再次编译，看看报错</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121822908.png" alt="image-20240412182235878"></p>
-<p>这里gt911的驱动报错找不到<code>driver/gpio.h</code>，与上面类似地，修改gt911的驱动里的<code>CmakeLists.txt</code>，在<code>PRIV_REQUIRES</code>里加入<code>driver</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121824523.png" alt="image-20240412182412458"></p>
-<p>再编译，看看报错</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121825244.png" alt="image-20240412182513212"></p>
-<p>这里gt911的驱动报错找不到<code>esp_lcd_touch.h</code>，与上面类似地，修改gt911的驱动里的<code>CmakeLists.txt</code>，在<code>PRIV_REQUIRES</code>里加入<code>esp_lcd_touch</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121826592.png"></p>
-<p>再次编译，发现可以编译通过了！（好吧，其实离能用还有很远）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121827054.png" alt="image-20240412182738026"></p>
-<h3 id="硬件连线"><a href="#硬件连线" class="headerlink" title="硬件连线"></a>硬件连线</h3><p>查看开发板的原理图和乐鑫ESP32S3技术文档，应该按照下表接线</p>
-<table>
-<thead>
-<tr>
-<th align="center">屏幕+触摸</th>
-<th align="center">ESP32S3开发板</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">VDD</td>
-<td align="center">3V3</td>
-</tr>
-<tr>
-<td align="center">GND</td>
-<td align="center">GND</td>
-</tr>
-<tr>
-<td align="center">SCLK</td>
-<td align="center">GPIO_NUM_12</td>
-</tr>
-<tr>
-<td align="center">MOSI</td>
-<td align="center">GPIO_NUM_11</td>
-</tr>
-<tr>
-<td align="center">RST</td>
-<td align="center">GPIO_NUM_3</td>
-</tr>
-<tr>
-<td align="center">DC</td>
-<td align="center">GPIO_NUM_9</td>
-</tr>
-<tr>
-<td align="center">CS</td>
-<td align="center">GPIO_NUM_10</td>
-</tr>
-<tr>
-<td align="center">BL</td>
-<td align="center">GPIO_NUM_46</td>
-</tr>
-<tr>
-<td align="center">I2C_SCL</td>
-<td align="center">GPIO_NUM_2</td>
-</tr>
-<tr>
-<td align="center">I2C_SDA</td>
-<td align="center">GPIO_NUM_1</td>
-</tr>
-<tr>
-<td align="center">CTP_INT</td>
-<td align="center">GPIO_NUM_45</td>
-</tr>
-</tbody></table>
-</li>
-</ul>
-<p><strong>注意：VDD和GND千万不能接错，否则烧毁！</strong></p>
-<p>接好线后烧录刚才的程序试一下，然后…咦？屏幕怎么没反应呢？？？</p>
-<p>原来是接线没有在程序里映射出来，这里修改<code>hello_world_main.c</code>的第24-50行为，在不同硬件上需要做相应调整</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* LCD settings */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_SPI_NUM         (SPI3_HOST)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_PIXEL_CLK_HZ    (40 * 1000 * 1000)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_CMD_BITS        (8)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_PARAM_BITS      (8)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_COLOR_SPACE     (ESP_LCD_COLOR_SPACE_BGR)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_BITS_PER_PIXEL  (16)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_DRAW_BUFF_DOUBLE (1)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_DRAW_BUFF_HEIGHT (50)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_BL_ON_LEVEL     (1)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* LCD pins */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_GPIO_SCLK       (GPIO_NUM_12)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_GPIO_MOSI       (GPIO_NUM_11)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_GPIO_RST        (GPIO_NUM_3)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_GPIO_DC         (GPIO_NUM_9)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_GPIO_CS         (GPIO_NUM_10)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_LCD_GPIO_BL         (GPIO_NUM_46)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* Touch settings */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_TOUCH_I2C_NUM       (0)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_TOUCH_I2C_CLK_HZ    (400000)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* LCD touch pins */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_TOUCH_I2C_SCL       (GPIO_NUM_2)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_TOUCH_I2C_SDA       (GPIO_NUM_1)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> EXAMPLE_TOUCH_GPIO_INT      (GPIO_NUM_45)</span></span><br></pre></td></tr></table></figure>
-
-<p>改完之后再次烧录，发现屏幕不断滚动报错</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121851092.png" alt="image-20240412185134048"></p>
-<p>看红字知道报错是因为I2C总线上没有找到gt911，这就比较奇怪了，难道是因为I2C地址错了吗？幸好乐鑫提供了一个专门的I2C检测工具，可以遍历所有I2C地址，还记得和hello_world工程一起复制过来的i2c_tools工程吗，现在需要用到它了</p>
-<p>在VScode中打开<code>i2c_tools</code>工程，编译烧录，在终端中可以看到进入了<code>i2c_tools</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121938181.png" alt="image-20240412193813115"></p>
-<p>输入<code>i2cdetect</code>即可遍历总线上的地址</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121938576.png" alt="image-20240412193850546"></p>
-<p>这里出现了<code>0x14</code>，当前挂载在I2C总线上的只有一个设备，所以gt911的地址是<code>0x14</code>，然后我们回到hello_world程序，打开<code>/components/esp_lcd_touch_gt911/include/esp_lcd_touch_gt911.h</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121942008.png" alt="image-20240412194202971"></p>
-<p>可以看到定义了两个I2C地址，在结构体中调用了一个，这里看到调用的是<code>ESP_LCD_TOUCH_IO_I2C_gt911_ADDRESS</code>，值为<code>0x5D</code>，与实际地址<code>0x14</code>不符合，而<code>ESP_LCD_TOUCH_IO_I2C_gt911_ADDRESS_BACKUP</code>的值为<code>0x14</code>，所以结构体里改为<code>ESP_LCD_TOUCH_IO_I2C_gt911_ADDRESS_BACKUP</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121944838.png" alt="image-20240412194432812"></p>
-<h3 id="改代码"><a href="#改代码" class="headerlink" title="改代码"></a>改代码</h3><p>再次烧录，看看效果__结果还是不行，还是报I2C的错误，这里我们查看原理图，发现屏幕的I2C没有上拉__，所以我们需要打开芯片的内部上拉</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404121954480.png" alt="image-20240412195427450"></p>
-<p>然后再次烧录，屏幕成功点亮，但是显示有点奇怪</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404122139981.jpg" alt="0f0e9dbd753c2ea81331be530d4058f"></p>
-<p>现在发现：</p>
-<ol>
-<li>长宽不对</li>
-<li>字显示不清晰</li>
-<li>屏幕镜像颠倒 </li>
-<li>触摸X、Y轴反向</li>
-</ol>
-<p>现在开始逐一解决：</p>
-<ol>
-<li>设置长宽，更改宏定义里的<code>EXAMPLE_LCD_H_RES</code>为320，<code>EXAMPLE_LCD_V_RES</code>为480</li>
-<li>点左下角小齿轮，进入<code>SDK Configuration editor</code>，搜索<code>Swap</code>，找到这个选项，打上勾（改完记得保存）<br> <img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404122005348.png" alt="image-20240412200541312"></li>
-<li>这两个<code>true</code>随便改一个为<code>false</code><br> <img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404122021990.png" alt="image-20240412202126956"></li>
-<li>把结构体里的<code>mirror_x</code>的1改为0，<code>mirror_y</code>的0改为1<br> <img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404122047197.png" alt="image-20240412204715167"></li>
-</ol>
-<p>然后再次烧录测试，发现颜色还是不对，背景是黑色的，但是理论上应该是白色<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404122138345.jpg" alt="c4ae5d37df49d5748cd673873cdaece"></p>
-<p>考虑到屏幕的面板是IPS的，而默认显示驱动可能支持的是TN屏，我这里选择魔改另外一款默认为IPS的显示驱动芯片（ili9341）的驱动程序，具体操作如下：</p>
-<ol>
-<li><p>通过<code>idf-component</code>下载<code>esp_lcd_ili9341</code>并移动到<code>components</code>目录下，并修改<code>esp_lcd_ili9341</code>的<code>idf-component.yml</code></p>
-</li>
-<li><p>修改<code>/esp_lcd_ili9341/esp_lcd_ili9341.c</code>的<code>vendor_specific_init_default</code>数组为（这里是参照屏幕厂商的驱动改的）</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"> <span class="type">const</span> <span class="type">ili9341_lcd_init_cmd_t</span> vendor_specific_init_default[] = &#123;</span><br><span class="line"><span class="comment">//  &#123;cmd, &#123; data &#125;, data_size, delay_ms&#125;</span></span><br><span class="line">    <span class="comment">/* Power contorl B, power control = 0, DC_ENA = 1 */</span></span><br><span class="line">    <span class="comment">// &#123;0x11, (uint8_t [])&#123;0x00&#125;, 0, 120&#125;,</span></span><br><span class="line">    &#123;<span class="number">0xB2</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x0C</span>, <span class="number">0x0C</span>, <span class="number">0x00</span>, <span class="number">0x33</span>, <span class="number">0x33</span>&#125;, <span class="number">5</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xB0</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x00</span>, <span class="number">0xE0</span>&#125;, <span class="number">2</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    <span class="comment">// &#123;0x36, (uint8_t [])&#123;0x00&#125;, 1, 0&#125;,</span></span><br><span class="line">    <span class="comment">// &#123;0x3A, (uint8_t [])&#123;0x05&#125;, 1, 0&#125;,</span></span><br><span class="line">    &#123;<span class="number">0xB7</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x56</span>&#125;, <span class="number">1</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xBB</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x14</span>&#125;, <span class="number">1</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xC0</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x2C</span>&#125;, <span class="number">1</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xC2</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x01</span>&#125;, <span class="number">1</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xC3</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x0B</span>&#125;, <span class="number">1</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xC4</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x10</span>&#125;, <span class="number">1</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xC6</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x0F</span>&#125;, <span class="number">1</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xD0</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0xA4</span>, <span class="number">0xA1</span>&#125;, <span class="number">2</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xD6</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0xA1</span>&#125;, <span class="number">1</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xE0</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0xD0</span>, <span class="number">0x08</span>, <span class="number">0x0A</span>, <span class="number">0x0D</span>, <span class="number">0x0B</span>, <span class="number">0x07</span>, <span class="number">0x21</span>, <span class="number">0x33</span>, <span class="number">0x39</span>, <span class="number">0x39</span>, <span class="number">0x16</span>, <span class="number">0x16</span>, <span class="number">0x1F</span>, <span class="number">0x3C</span>&#125;, <span class="number">14</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0xE1</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0xD0</span>, <span class="number">0x00</span>, <span class="number">0x03</span>, <span class="number">0x01</span>, <span class="number">0x00</span>, <span class="number">0x10</span>, <span class="number">0x21</span>, <span class="number">0x32</span>, <span class="number">0x38</span>, <span class="number">0x16</span>, <span class="number">0x14</span>, <span class="number">0x14</span>, <span class="number">0x20</span>, <span class="number">0x3D</span>&#125;, <span class="number">14</span>, <span class="number">0</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0x21</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x00</span>&#125;, <span class="number">0</span>, <span class="number">120</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0x29</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x00</span>&#125;, <span class="number">0</span>, <span class="number">1</span>&#125;,</span><br><span class="line">    &#123;<span class="number">0x2C</span>, (<span class="type">uint8_t</span> [])&#123;<span class="number">0x00</span>&#125;, <span class="number">0</span>, <span class="number">1</span>&#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>至此驱动修改完毕，在<code>hello_world_main.c</code>中include一下<code>esp_lcd_ili9341.h</code>，把<code>esp_lcd_new_panel_st7796</code>函数改为<code>esp_lcd_new_panel_ili9341</code>，烧录看看效果</p>
-</li>
-</ol>
-<h3 id="正常显示-20240412"><a href="#正常显示-20240412" class="headerlink" title="正常显示 - 20240412"></a>正常显示 - 20240412</h3><p>可以看到，已经正确显示了（但其实旋转方向之后显示还是不太对，屏幕会镜像，不知道为什么，应该还是驱动的问题）<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404122138205.jpg" alt="61e5f02c1fdb5e1fd49e2a5a34a134b"></p>
-<h3 id="跑demo-20240414"><a href="#跑demo-20240414" class="headerlink" title="跑demo - 20240414"></a>跑demo - 20240414</h3><h4 id="Music音乐播放器demo"><a href="#Music音乐播放器demo" class="headerlink" title="Music音乐播放器demo"></a>Music音乐播放器demo</h4><p>点左下角小齿轮，进入<code>SDK Configuration editor</code>，找到LVGL相关的设置</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404141416848.png" alt="image-20240414141602770"></p>
-<p>在<code>Demos</code>里面勾选<code>Music player demo</code>，别忘了保存</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404141417085.png" alt="image-20240414141718058"></p>
-<p>然后回到hello_world_main.c里，找到函数<code>app_main_display()</code>，将里面的<code>Label</code>和<code>Button</code>注释掉，并在后面加上lv_demo_music函数的声明和调用</p>
-<p><em>这里补充一点，C语言可以在函数里面声明函数，格式与在函数之外相同。 声明后的函数只在本函数内调用有效。其他函数需要重新声明</em></p>
-<p>修改好后的app_main_display()函数如下</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">app_main_display</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">lv_obj_t</span> *scr = lv_scr_act();</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Task lock */</span></span><br><span class="line">    lvgl_port_lock(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Your LVGL objects code here .... */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// /* Label */</span></span><br><span class="line">    <span class="comment">// lv_obj_t *label = lv_label_create(scr);</span></span><br><span class="line">    <span class="comment">// lv_label_set_recolor(label, true);</span></span><br><span class="line">    <span class="comment">// lv_obj_set_width(label, EXAMPLE_LCD_H_RES);</span></span><br><span class="line">    <span class="comment">// lv_obj_set_style_text_align(label, LV_TEXT_ALIGN_CENTER, 0);</span></span><br><span class="line">    <span class="comment">// lv_label_set_text(label, &quot;#FF0000 &quot;LV_SYMBOL_BELL&quot; Hello world Espressif and LVGL &quot;LV_SYMBOL_BELL&quot;#\n#FF9400 &quot;LV_SYMBOL_WARNING&quot; For simplier initialization, use BSP &quot;LV_SYMBOL_WARNING&quot; #&quot;);</span></span><br><span class="line">    <span class="comment">// lv_obj_align(label, LV_ALIGN_CENTER, 0, -30);</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// /* Button */</span></span><br><span class="line">    <span class="comment">// lv_obj_t *btn = lv_btn_create(scr);</span></span><br><span class="line">    <span class="comment">// label = lv_label_create(btn);</span></span><br><span class="line">    <span class="comment">// lv_label_set_text_static(label, &quot;Rotate screen&quot;);</span></span><br><span class="line">    <span class="comment">// lv_obj_align(btn, LV_ALIGN_BOTTOM_MID, 0, -30);</span></span><br><span class="line">    <span class="comment">// lv_obj_add_event_cb(btn, _app_button_cb, LV_EVENT_CLICKED, NULL);</span></span><br><span class="line">    <span class="type">void</span> <span class="title function_">lv_demo_music</span><span class="params">(<span class="type">void</span>)</span>; </span><br><span class="line">    lv_demo_music();</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Task unlock */</span></span><br><span class="line">    lvgl_port_unlock();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>我们编译试试，看会不会报错<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404141423001.png" alt="image-20240414142329954"></p>
-<p>还真报错了，这里说的是找不到需要的字体，点左下角小齿轮进入LVGL的配置界面，在Font usage里勾选上12和16号字体，记得保存</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404141424111.png" alt="image-20240414142453070"></p>
-<p>再编译试试，可以看到已经编译过了<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404141429970.png" alt="image-20240414142923937"></p>
-<p>那就烧录看看效果吧（这里有可能触摸的X或者Y还会反，再去改tp_cfg结构体里的mirror_x或者mirror_y就行）<img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404141435341.jpg" alt="0396dc12365b70b64f1728d4a349420"></p>
-<p>可以看到显示和触摸都正常了</p>
-<h3 id="跑组件（Widget）demo"><a href="#跑组件（Widget）demo" class="headerlink" title="跑组件（Widget）demo"></a>跑组件（Widget）demo</h3><h3 id="优化帧率-20240414"><a href="#优化帧率-20240414" class="headerlink" title="优化帧率 - 20240414"></a>优化帧率 - 20240414</h3><p>打开<a href="https://www.espressif.com/">乐鑫官网</a>，点顶部的Support，在找到ESP-FAQ，搜索LVGL，即可找到如下内容</p>
-<ul>
-<li><p>Taking ESP32-S3R8 as an example, the following ESP configuration items can improve the frame rate (ESP-IDF release&#x2F;v5.1):</p>
-<ul>
-<li><code>CONFIG_FREERTOS_HZ=1000</code></li>
-<li><code>CONFIG_ESP_DEFAULT_CPU_FREQ_MHZ_240=y</code></li>
-<li><code>CONFIG_ESPTOOLPY_FLASHMODE_QIO=y</code></li>
-<li><code>CONFIG_ESPTOOLPY_FLASHFREQ_120M=y</code> [should be consistent with PSRAM]</li>
-<li><code>CONFIG_SPIRAM_MODE_OCT=y</code></li>
-<li><code>CONFIG_IDF_EXPERIMENTAL_FEATURES=y</code> and <code>CONFIG_SPIRAM_SPEED_120M=y</code> [should be consistent with FLASH]</li>
-<li><code>CONFIG_SPIRAM_FETCH_INSTRUCTIONS=y</code></li>
-<li><code>CONFIG_SPIRAM_RODATA=y</code></li>
-<li><code>CONFIG_ESP32S3_DATA_CACHE_LINE_64B=y</code></li>
-<li><code>CONFIG_COMPILER_OPTIMIZATION_PERF=y</code></li>
-</ul>
-</li>
-<li><p>The following LVGL configuration items can improve the frame rate (LVGL v8.3):</p>
-<ul>
-<li><p><code>#define LV_MEM_CUSTOM 1</code> or <code>CONFIG_LV_MEM_CUSTOM=y</code></p>
-</li>
-<li><p><code>#define LV_MEMCPY_MEMSET_STD 1</code> or <code>CONFIG_LV_MEMCPY_MEMSET_STD=y</code></p>
-</li>
-<li><p><code>#define LV_ATTRIBUTE_FAST_MEM IRAM_ATTR</code> or <code>CONFIG_LV_ATTRIBUTE_FAST_MEM=y</code></p>
-</li>
-</ul>
-</li>
-</ul>
-<p>再加一个<code>LV_DISP_DEF_REFR_PERIOD</code>由30改为10</p>
-<p>注：如果要显示帧率和CPU占用，可以吧<code>Show CPU usage and FPS count</code>勾上</p>
-<p>这里就按照官网的推荐来进行修改，点左下角小齿轮，分别修改上面的这些参数（修改完记得保存），其中某些参数可能找不到，这是由于CSDK的版本和使用的MCU型号不同导致的，不用深究</p>
-<p>修改hello_world_main.c里的SPI频率到80M（实测这个影响帧率最为明显）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202404141458859.png" alt="image-20240414145809827"></p>
-<p>改完以后再来编译烧录，发现帧率提升了很多，滑动较为丝滑了</p>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>ESP32</tag>
-        <tag>LVGL</tag>
-        <tag>ESP-IDF</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>百度网盘不限速</title>
     <url>/post/900d6e7c.html</url>
     <content><![CDATA[<p><em>最近不太稳定了 20241123</em></p>
@@ -1252,84 +1270,66 @@
       </tags>
   </entry>
   <entry>
-    <title>在CLion上搭建LVGL模拟器</title>
-    <url>/post/90c7d419.html</url>
-    <content><![CDATA[<blockquote>
-<p>注：本文默认已经安装好了CLion，目标LVGL的版本为8.3，当然新版本也是可以的，都差不多。</p>
-</blockquote>
-<h2 id="需要准备的文件"><a href="#需要准备的文件" class="headerlink" title="需要准备的文件"></a>需要准备的文件</h2><ul>
-<li><p><a href="https://github.com/lvgl/lv_port_pc_eclipse">lv_port_pc_eclipse</a></p>
-<p>使用下列命令克隆仓库到本地（本文以8.3版本为例）</p>
-</li>
+    <title>用CLion配合PlatformIO开发树莓派Pico(RP2040)</title>
+    <url>/post/672d89ba.html</url>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
+<li>Windows 11</li>
+<li>CLion 2024.3</li>
+<li>Python 3.12.3</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> -b release/v8.3 --recursive https://github.com/lvgl/lv_port_pc_eclipse.git</span><br></pre></td></tr></table></figure>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="安装PlatformIO"><a href="#安装PlatformIO" class="headerlink" title="安装PlatformIO"></a>安装PlatformIO</h3><ol>
+<li><p>下载<a href="https://raw.githubusercontent.com/platformio/platformio-core-installer/master/get-platformio.py">get-platformio.py</a></p>
+</li>
+<li><p>执行如下命令</p>
+</li>
+</ol>
+ <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"># change directory to the folder where is located downloaded &quot;get-platformio.py&quot;</span><br><span class="line"><span class="built_in">cd</span> C:/<span class="built_in">path</span>-to-<span class="built_in">dir</span>/where/get-platformio.py/is-located</span><br><span class="line">   </span><br><span class="line"># run it</span><br><span class="line">python.exe get-platformio.py</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li><p><a href="https://github.com/niXman/mingw-builds-binaries/releases">mingw-builds-binaries</a></p>
-<p><em>注意下载13.2.0-rt_v11-rev1或之前的版本，新版本CLion暂时不支持</em></p>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028130733571.png" alt="image-20241028130733571"></p>
-<ul>
-<li><a href="https://github.com/libsdl-org/SDL/releases">SDL</a></li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028130851970.png" alt="image-20241028130851970"></p>
-<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><ol>
-<li>解压下载的mingw64，得到如下文件</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028183539520.png" alt="image-20241028183539520"></p>
-<ol start="2">
-<li>解压下载的SDL2，得到如下文件</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028183713461.png" alt="image-20241028183713461"></p>
-<p>将<code>SDL2/x86_64_w64-mingw32/include/SDL2</code>复制到<code>mingw64/x86_64_w64-mingw32/include</code>文件夹中</p>
-<p>将<code>SDL2/x86_64_w64-mingw32/lib</code>所有的文件复制到<code>mingw64/x86_64_w64-mingw32/lib</code>中</p>
 <ol start="3">
-<li>CLion配置工具链</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028184123222.png" alt="image-20241028184123222"></p>
-<p>在<code>设置 - 构建、执行、部署 - 工具链</code>新建如上工具链，注意所有工具都参考上图设置成对应的，用内部集成的会报错。</p>
-<ol start="4">
-<li>工程</li>
-</ol>
-<p>用CLion打开lv_port_pc_eclipse为CMake项目，然后即可进行开发。</p>
-<h2 id="一些报错"><a href="#一些报错" class="headerlink" title="一些报错"></a>一些报错</h2><ol>
-<li>CMake找不到SDL2库</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028184609315.png" alt="image-20241028184609315"></p>
-<p>解决办法：在CMakeLists.txt里添加如下语句，注意不要照抄，请将自己的本地文件目录添加进来</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SET</span>(SDL2_DIR D:/program-tools/mingw64/x86_64-w64-mingw32/lib/cmake/SDL2)</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>编译成功，但是运行程序会直接退出，没有GUI界面出现</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028185226640.png" alt="image-20241028185226640"></p>
-<p>解决办法：将下载的SDL2库的SDL2.dll复制到lv_port_pc_eclipse下的bin文件夹里</p>
-<ol start="3">
-<li>分辨率可在<code>lv_drv_conf.h</code>里修改</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241028190804549.png" alt="image-20241028190804549"></p>
-<h2 id="与SquareLine-Studio联合开发"><a href="#与SquareLine-Studio联合开发" class="headerlink" title="与SquareLine Studio联合开发"></a>与SquareLine Studio联合开发</h2><p>将SquareLine Studio生成的ui文件夹复制到lv_port_pc_eclipse下，在CmakeLists.txt里添加如下语句，注意不要照抄，请将自己的本地文件目录添加进来</p>
-<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 递归引用ui下的源文件</span></span><br><span class="line"><span class="keyword">FILE</span>(GLOB_RECURSE UI_Sources CONFIGURE_DEPENDS ui/*.c ui/*.cpp)</span><br><span class="line"><span class="comment"># 将$&#123;UI_Sources&#125;添加到add_executable以对main这个target使用</span></span><br><span class="line"><span class="keyword">add_executable</span>(main main.c mouse_cursor_icon.c <span class="variable">$&#123;SOURCES&#125;</span> <span class="variable">$&#123;INCLUDES&#125;</span> <span class="variable">$&#123;UI_Sources&#125;</span>)</span><br></pre></td></tr></table></figure>
-
-<p>在main.c里添加如下代码：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;ui.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> **argv)</span> &#123;</span><br><span class="line">    (<span class="type">void</span>) argc; <span class="comment">/*Unused*/</span></span><br><span class="line">    (<span class="type">void</span>) argv; <span class="comment">/*Unused*/</span></span><br><span class="line">    ...</span><br><span class="line">    ui_init();</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>记得注释掉lvgl自带的示例代码，编译即可运行SquareLine Studio生成的代码</p>
-<h2 id="LVGL学习资料"><a href="#LVGL学习资料" class="headerlink" title="LVGL学习资料"></a>LVGL学习资料</h2><ul>
-<li><p><a href="https://lvgl-chinese-doc.readthedocs.io/zh-cn/latest/index.html">官方手册</a></p>
+<li><p>编辑名为 <code>Path</code> 的系统环境变量并追加 <code>C:\Users\UserName\.platformio\penv\Scripts\</code> 列表开头的路径（请将<code>UserName</code>替换为帐户名）。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224153641139.png" alt="image-20241224153641139"></p>
 </li>
-<li><p><a href="https://github.com/lvgl/lvgl">源码仓库</a></p>
+</ol>
+<h3 id="安装PlatformIO插件"><a href="#安装PlatformIO插件" class="headerlink" title="安装PlatformIO插件"></a>安装PlatformIO插件</h3><ol>
+<li><p>Go to <strong>Settings | Plugins</strong> and switch to <strong>Marketplace</strong>.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224153936338.png" alt="image-20241224153936338"></p>
 </li>
-<li><p><a href="https://lvgl.100ask.net/8.2/">百问网LVGL中文教程文档</a> <em>- 20241028这个暂时只汉化到v8.2</em></p>
+<li><p>Search for <strong>PlatformIO for CLion</strong> and click <strong>Install</strong>.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224154022748.png" alt="image-20241224154022748"></p>
 </li>
-</ul>
+<li><p>After the installation is finished, click <strong>Restart IDE</strong>.</p>
+</li>
+</ol>
+<h3 id="创建PlatformIO项目"><a href="#创建PlatformIO项目" class="headerlink" title="创建PlatformIO项目"></a>创建PlatformIO项目</h3><ol>
+<li><p>选择自己的board或者framework，创建项目；</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224154343595.png" alt="image-20241224154343595"></p>
+</li>
+<li><p>经过较长时间的等待后，成功创建工程，并生成了Arduino的”stub code”。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224154819663.png" alt="image-20241224154819663"></p>
+</li>
+</ol>
+<h3 id="实现upload自动上传项目（坑）"><a href="#实现upload自动上传项目（坑）" class="headerlink" title="实现upload自动上传项目（坑）"></a>实现upload自动上传项目（坑）</h3><p>一直报错Error 1，最后摸索出来以下这个步骤，百分百成功。</p>
+<ol>
+<li><p>下载<a href="https://zadig.akeo.ie/downloads/">zadig 2.5</a>版本，注意一定要是2.5版本，不能太新；</p>
+</li>
+<li><p>pico板进入bootloader，然后打开zadig，勾选<code>Options</code>里的<code>List All Devices</code>；</p>
+</li>
+<li><p>为<strong>RP2 Boot(Interface 1)<strong>安装</strong>WinUSB驱动</strong>；</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224155601520.png" alt="image-20241224155601520"></p>
+</li>
+<li><p>进入CLion，为pico随便编译一个程序，在<code>./.pio/build/pico/</code>里找到<code>firmware.uf2</code>，复制进pico的MSC设备里；</p>
+</li>
+<li><p>然后再使用PlatformIO里的upload就不会报错了。</p>
+</li>
+</ol>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://www.jetbrains.com/help/clion/platformio.html">PlatformIO | CLion Documentation</a><br><a href="https://docs.platformio.org/en/latest/core/installation/methods/installer-script.html">Installer Script (Recommended) — PlatformIO latest documentation</a></p>
 ]]></content>
       <categories>
         <category>Dev</category>
       </categories>
       <tags>
         <tag>Dev</tag>
+        <tag>Arduino</tag>
       </tags>
   </entry>
   <entry>
