@@ -1,28 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Github中一些缩写</title>
-    <url>/post/59c9e1c3.html</url>
-    <content><![CDATA[<p><img src="C:/Users/MDLZ/AppData/Roaming/Typora/typora-user-images/image-20250708014613865.png" alt="image-20250708014613865"></p>
-<ul>
-<li><strong>PR:</strong> Pull Request. 拉取请求，给其他项目提交代码</li>
-<li><strong>LGTM:</strong> Looks Good To Me. 朕知道了 代码已经过 review，可以合并</li>
-<li><strong>SGTM:</strong> Sounds Good To Me. 和上面那句意思差不多，也是已经通过了 review 的意思</li>
-<li><strong>WIP:</strong> Work In Progress. 传说中提 PR 的最佳实践是，如果你有个改动很大的 PR，可以在写了一部分的情况下先提交，但是在标题里写上 WIP，以告诉项目维护者这个功能还未完成，方便维护者提前 review 部分提交的代码。</li>
-<li><strong>PTAL:</strong> Please Take A Look. 你来瞅瞅？用来提示别人来看一下</li>
-<li><strong>TBR:</strong> To Be Reviewed. 提示维护者进行 review</li>
-<li><strong>TL;DR:</strong> Too Long; Didn’t Read. 太长懒得看。也有很多文档在做简略描述之前会写这么一句</li>
-<li><strong>TBD:</strong> To Be Done (or Defined&#x2F;Discussed&#x2F;Decided&#x2F;Determined). 根据语境不同意义有所区别，但一般都是还没搞定的意思</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Chat</category>
-      </categories>
-      <tags>
-        <tag>Chat</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>IDM脚本和谐破解注册</title>
     <url>/post/5983f199.html</url>
     <content><![CDATA[<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>一、在官网下载安装IDM</p>
@@ -49,6 +27,28 @@
       </categories>
       <tags>
         <tag>Tools</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Github中一些缩写</title>
+    <url>/post/59c9e1c3.html</url>
+    <content><![CDATA[<p><img src="C:/Users/MDLZ/AppData/Roaming/Typora/typora-user-images/image-20250708014613865.png" alt="image-20250708014613865"></p>
+<ul>
+<li><strong>PR:</strong> Pull Request. 拉取请求，给其他项目提交代码</li>
+<li><strong>LGTM:</strong> Looks Good To Me. 朕知道了 代码已经过 review，可以合并</li>
+<li><strong>SGTM:</strong> Sounds Good To Me. 和上面那句意思差不多，也是已经通过了 review 的意思</li>
+<li><strong>WIP:</strong> Work In Progress. 传说中提 PR 的最佳实践是，如果你有个改动很大的 PR，可以在写了一部分的情况下先提交，但是在标题里写上 WIP，以告诉项目维护者这个功能还未完成，方便维护者提前 review 部分提交的代码。</li>
+<li><strong>PTAL:</strong> Please Take A Look. 你来瞅瞅？用来提示别人来看一下</li>
+<li><strong>TBR:</strong> To Be Reviewed. 提示维护者进行 review</li>
+<li><strong>TL;DR:</strong> Too Long; Didn’t Read. 太长懒得看。也有很多文档在做简略描述之前会写这么一句</li>
+<li><strong>TBD:</strong> To Be Done (or Defined&#x2F;Discussed&#x2F;Decided&#x2F;Determined). 根据语境不同意义有所区别，但一般都是还没搞定的意思</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Chat</category>
+      </categories>
+      <tags>
+        <tag>Chat</tag>
       </tags>
   </entry>
   <entry>
@@ -92,16 +92,21 @@
       </tags>
   </entry>
   <entry>
-    <title>VS2022编译在.h头文件出现“fatal error RC1004 unexpected end of file found”错误</title>
-    <url>/post/e5b39c0d.html</url>
-    <content><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>VS2022中编译是在.h头文件出现“fatal error RC1004: unexpected end of file found”错误，错误提示指向最后一行#endif</p>
-<h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p>头文件最后一行需要一个回车，可能是因为通过拷贝粘贴时将回车换行去掉了</p>
-<p>最近在做机载总线实验，编写一个软件实现MIL-STD-1553B的RT和BC通信，碰到了这个问题，一直以为是文件编码问题，试了好久发现竟然是一个回车的事，真坑！</p>
+    <title>PX4 io mcu固件信息</title>
+    <url>/post/a8cf0f3b.html</url>
+    <content><![CDATA[<p>io mcu在这里是stm32f1xx系列芯片</p>
+<p>px4io的bootloader文件为px4_io-v2_bootloader.bin，烧录地址为0x08000000</p>
+<p>px4io的firmware文件为px4_io-v2_default.bin，烧录地址为0x08001000</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20260318124850079.png" alt="image-20260318124850079"></p>
+<p>px4_io-v2_bootloader.bin下载地址：<a href="https://github.com/PX4/PX4-Autopilot/blob/main/boards/px4/io-v2/extras/px4_io-v2_bootloader.bin">https://github.com/PX4/PX4-Autopilot/blob/main/boards/px4/io-v2/extras/px4_io-v2_bootloader.bin</a></p>
+<p>px4_io-v2_default.bin下载地址（For PX6X）：<a href="https://github.com/PX4/PX4-Autopilot/blob/main/boards/px4/fmu-v6x/extras/px4_io-v2_default.bin">https://github.com/PX4/PX4-Autopilot/blob/main/boards/px4/fmu-v6x/extras/px4_io-v2_default.bin</a></p>
 ]]></content>
       <categories>
         <category>Dev</category>
       </categories>
       <tags>
+        <tag>Hardware</tag>
+        <tag>PX4</tag>
         <tag>Dev</tag>
       </tags>
   </entry>
@@ -124,25 +129,17 @@
       </tags>
   </entry>
   <entry>
-    <title>usbipd出现error Loading vhci_hcd failed</title>
-    <url>/post/64c45387.html</url>
-    <content><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>WSL用usbipd.exe共享USB端口，出现</p>
-<blockquote>
-<p>error: Loading vhci_hcd failed.</p>
-</blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20251121145533043.png" alt="image-20251121145533043"></p>
-<h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><p>在WSL里面执行</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo modprobe vhci_hcd</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20251121145558866.png" alt="image-20251121145558866"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20251121145549812.png" alt="image-20251121145549812"></p>
-<p>这样就解决了</p>
+    <title>VS2022编译在.h头文件出现“fatal error RC1004 unexpected end of file found”错误</title>
+    <url>/post/e5b39c0d.html</url>
+    <content><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>VS2022中编译是在.h头文件出现“fatal error RC1004: unexpected end of file found”错误，错误提示指向最后一行#endif</p>
+<h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p>头文件最后一行需要一个回车，可能是因为通过拷贝粘贴时将回车换行去掉了</p>
+<p>最近在做机载总线实验，编写一个软件实现MIL-STD-1553B的RT和BC通信，碰到了这个问题，一直以为是文件编码问题，试了好久发现竟然是一个回车的事，真坑！</p>
 ]]></content>
       <categories>
         <category>Dev</category>
       </categories>
       <tags>
-        <tag>WSL</tag>
+        <tag>Dev</tag>
       </tags>
   </entry>
   <entry>
@@ -191,6 +188,28 @@
       </tags>
   </entry>
   <entry>
+    <title>usbipd出现error Loading vhci_hcd failed</title>
+    <url>/post/64c45387.html</url>
+    <content><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>WSL用usbipd.exe共享USB端口，出现</p>
+<blockquote>
+<p>error: Loading vhci_hcd failed.</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20251121145533043.png" alt="image-20251121145533043"></p>
+<h2 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h2><p>在WSL里面执行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo modprobe vhci_hcd</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20251121145558866.png" alt="image-20251121145558866"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20251121145549812.png" alt="image-20251121145549812"></p>
+<p>这样就解决了</p>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>WSL</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>一本接口定义手册</title>
     <url>/post/4258943.html</url>
     <content><![CDATA[<p>一本小而美的接口定义手册</p>
@@ -206,6 +225,25 @@
       </categories>
       <tags>
         <tag>Hardware</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为什么你的Github总是无法正常clone或者push</title>
+    <url>/post/2f28be0b.html</url>
+    <content><![CDATA[<h2 id="产生原因"><a href="#产生原因" class="headerlink" title="产生原因"></a>产生原因</h2><p><strong>代理服务器</strong><br>你的电脑和互联网的中介。当访问外网时（如<a href="http://google.com)/">http://google.com）</a>, 你的请求首先转发到代理服务器，然后代理服务器替你访问外网，并将结果原封不动的给你的电脑，这样你的电脑就可以看到外网的内容。</p>
+<p>网络路径如下：<br>你的电脑-&gt;代理服务器-&gt;外网<br>外网-&gt;代理服务器-&gt;你的电脑</p>
+<p>配置代理之后，可以正常访问github网页了，但是发现在本地克隆github仓库（git clone xxx）或者进行push操作时还是报网络错误（Failed to connect to server …）。</p>
+<p><strong>那是因为git clone没有走代理，所以需要设置git走代理才行</strong></p>
+<h2 id="设置代理"><a href="#设置代理" class="headerlink" title="设置代理"></a>设置代理</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:7890</span><br><span class="line">git config --global https.proxy https://127.0.0.1:7890</span><br></pre></td></tr></table></figure>
+
+<h2 id="Git查看现有配置"><a href="#Git查看现有配置" class="headerlink" title="Git查看现有配置"></a>Git查看现有配置</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global -l</span><br></pre></td></tr></table></figure>
+
+<h2 id="取消代理"><a href="#取消代理" class="headerlink" title="取消代理"></a>取消代理</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
@@ -369,25 +407,6 @@
 
 <p>这种错误产生的原因其实还是网络问题</p>
 ]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>为什么你的Github总是无法正常clone或者push</title>
-    <url>/post/2f28be0b.html</url>
-    <content><![CDATA[<h2 id="产生原因"><a href="#产生原因" class="headerlink" title="产生原因"></a>产生原因</h2><p><strong>代理服务器</strong><br>你的电脑和互联网的中介。当访问外网时（如<a href="http://google.com)/">http://google.com）</a>, 你的请求首先转发到代理服务器，然后代理服务器替你访问外网，并将结果原封不动的给你的电脑，这样你的电脑就可以看到外网的内容。</p>
-<p>网络路径如下：<br>你的电脑-&gt;代理服务器-&gt;外网<br>外网-&gt;代理服务器-&gt;你的电脑</p>
-<p>配置代理之后，可以正常访问github网页了，但是发现在本地克隆github仓库（git clone xxx）或者进行push操作时还是报网络错误（Failed to connect to server …）。</p>
-<p><strong>那是因为git clone没有走代理，所以需要设置git走代理才行</strong></p>
-<h2 id="设置代理"><a href="#设置代理" class="headerlink" title="设置代理"></a>设置代理</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:7890</span><br><span class="line">git config --global https.proxy https://127.0.0.1:7890</span><br></pre></td></tr></table></figure>
-
-<h2 id="Git查看现有配置"><a href="#Git查看现有配置" class="headerlink" title="Git查看现有配置"></a>Git查看现有配置</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global -l</span><br></pre></td></tr></table></figure>
-
-<h2 id="取消代理"><a href="#取消代理" class="headerlink" title="取消代理"></a>取消代理</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Dev</category>
       </categories>
@@ -1006,6 +1025,19 @@
       </tags>
   </entry>
   <entry>
+    <title>复位之后无法自动枚举USB</title>
+    <url>/post/d8d58b13.html</url>
+    <content><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>单片机的USB在soft-reset复位之后有时无法自动重新枚举</p>
+<h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p>复位之后拉低一下USB引脚</p>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>USB</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>常用工具性网站&amp;工具</title>
     <url>/post/5788685f.html</url>
     <content><![CDATA[<h2 id="工具网站"><a href="#工具网站" class="headerlink" title="工具网站"></a>工具网站</h2><p>🎁此处列出的网站均来源于互联网，请注意不要在这些网站上输入任何个人敏感信息（如有可能）</p>
@@ -1197,19 +1229,6 @@
       </tags>
   </entry>
   <entry>
-    <title>复位之后无法自动枚举USB</title>
-    <url>/post/d8d58b13.html</url>
-    <content><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>单片机的USB在soft-reset复位之后有时无法自动重新枚举</p>
-<h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p>复位之后拉低一下USB引脚</p>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>USB</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>用CLion优雅地调试和开发STM32(CubeMX)</title>
     <url>/post/63adfc20.html</url>
     <content><![CDATA[<h2 id="Why-CLion"><a href="#Why-CLion" class="headerlink" title="Why CLion?"></a>Why CLion?</h2><p>Keil操作简单，容易上手，而且可以很方便地进行调试，不过其古老的界面，不符合人类直觉的操作，不符合现代的编程习惯，必然会被逐渐淘汰。</p>
@@ -1298,45 +1317,6 @@
       </tags>
   </entry>
   <entry>
-    <title>百度网盘不限速</title>
-    <url>/post/900d6e7c.html</url>
-    <content><![CDATA[<p><em>最近不太稳定了 20241123</em></p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
-<li>浏览器：Firefox &#x2F; Chromium</li>
-<li>脚本管理器：Tampermonkey Beta（注意：只能用Beta版本）</li>
-<li><a href="https://motrix.app/">Motrix下载器</a></li>
-</ul>
-<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="STEP-1-安装插件"><a href="#STEP-1-安装插件" class="headerlink" title="STEP 1 安装插件"></a>STEP 1 安装插件</h3><ol>
-<li>打开Tampermonkey Beta的「管理面板」</li>
-<li>进入「实用工具」选项卡</li>
-<li>复制粘贴安装地址到「从URL安装」进行安装<blockquote>
-<p>安装地址：<a href="http://1.94.138.197/tampermonkey/min.baidu.user.js">http://1.94.138.197/tampermonkey/min.baidu.user.js</a></p>
-</blockquote>
-</li>
-</ol>
-<h3 id="STEP-2-使用"><a href="#STEP-2-使用" class="headerlink" title="STEP 2 使用"></a>STEP 2 使用</h3><ol>
-<li>脚本会在网盘根目录自动创建一个文件夹并设置为永久分享，把需要下载的资源转移到这个文件夹里操作。</li>
-<li>注意Motrix必须提前在后台打开，否则无法正常拉起。</li>
-</ol>
-<p><img src="C:/Users/MDLZ/AppData/Roaming/Typora/typora-user-images/image-20241112173125588.png" alt="image-20241112173125588"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241112173455348.png" alt="image-20241112173455348"></p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>这个方法目前来看应该是最稳定的，速度可以基本跑满，作者规则更新很频繁。相当于免费，不过对于特大文件（比如&gt;30G的文件，好像还没办法下载）</p>
-<ol>
-<li><p>解析下载时根据每个文件的大小扣减解析点数，不足1G的文件消耗1点，1G到2G的文件需要消耗2点，2G至3G的文件消耗3点，以此类推。</p>
-</li>
-<li><p>获取解析点数的方式目前有「签到」和「视频点赞」两种，点赞列表中的每个视频只有第一次点赞会增加点数，取消点赞则扣除相应点数。</p>
-</li>
-</ol>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>插件主页链接：<a href="https://1.94.138.197/bangumi">hd2a</a></p>
-]]></content>
-      <categories>
-        <category>Tools</category>
-      </categories>
-      <tags>
-        <tag>Tools</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>用CLion配合PlatformIO开发树莓派Pico(RP2040)</title>
     <url>/post/672d89ba.html</url>
     <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
@@ -1397,6 +1377,45 @@
       <tags>
         <tag>Dev</tag>
         <tag>Arduino</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>百度网盘不限速</title>
+    <url>/post/900d6e7c.html</url>
+    <content><![CDATA[<p><em>最近不太稳定了 20241123</em></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>浏览器：Firefox &#x2F; Chromium</li>
+<li>脚本管理器：Tampermonkey Beta（注意：只能用Beta版本）</li>
+<li><a href="https://motrix.app/">Motrix下载器</a></li>
+</ul>
+<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><h3 id="STEP-1-安装插件"><a href="#STEP-1-安装插件" class="headerlink" title="STEP 1 安装插件"></a>STEP 1 安装插件</h3><ol>
+<li>打开Tampermonkey Beta的「管理面板」</li>
+<li>进入「实用工具」选项卡</li>
+<li>复制粘贴安装地址到「从URL安装」进行安装<blockquote>
+<p>安装地址：<a href="http://1.94.138.197/tampermonkey/min.baidu.user.js">http://1.94.138.197/tampermonkey/min.baidu.user.js</a></p>
+</blockquote>
+</li>
+</ol>
+<h3 id="STEP-2-使用"><a href="#STEP-2-使用" class="headerlink" title="STEP 2 使用"></a>STEP 2 使用</h3><ol>
+<li>脚本会在网盘根目录自动创建一个文件夹并设置为永久分享，把需要下载的资源转移到这个文件夹里操作。</li>
+<li>注意Motrix必须提前在后台打开，否则无法正常拉起。</li>
+</ol>
+<p><img src="C:/Users/MDLZ/AppData/Roaming/Typora/typora-user-images/image-20241112173125588.png" alt="image-20241112173125588"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241112173455348.png" alt="image-20241112173455348"></p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>这个方法目前来看应该是最稳定的，速度可以基本跑满，作者规则更新很频繁。相当于免费，不过对于特大文件（比如&gt;30G的文件，好像还没办法下载）</p>
+<ol>
+<li><p>解析下载时根据每个文件的大小扣减解析点数，不足1G的文件消耗1点，1G到2G的文件需要消耗2点，2G至3G的文件消耗3点，以此类推。</p>
+</li>
+<li><p>获取解析点数的方式目前有「签到」和「视频点赞」两种，点赞列表中的每个视频只有第一次点赞会增加点数，取消点赞则扣除相应点数。</p>
+</li>
+</ol>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>插件主页链接：<a href="https://1.94.138.197/bangumi">hd2a</a></p>
+]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>Tools</tag>
       </tags>
   </entry>
   <entry>
