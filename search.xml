@@ -28,21 +28,25 @@
       </tags>
   </entry>
   <entry>
-    <title>Jetbrains系IDE使用小技巧</title>
-    <url>/post/af86e289.html</url>
-    <content><![CDATA[<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><ul>
-<li>One Dark</li>
-</ul>
-<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><ul>
-<li>Chinese (Simplified) Language Pack &#x2F; 中文语言包</li>
-<li>CodeGlance Pro &#x2F; 侧栏代码缩略</li>
+    <title>Github中一些缩写</title>
+    <url>/post/59c9e1c3.html</url>
+    <content><![CDATA[<p><img src="C:/Users/MDLZ/AppData/Roaming/Typora/typora-user-images/image-20250708014613865.png" alt="image-20250708014613865"></p>
+<ul>
+<li><strong>PR:</strong> Pull Request. 拉取请求，给其他项目提交代码</li>
+<li><strong>LGTM:</strong> Looks Good To Me. 朕知道了 代码已经过 review，可以合并</li>
+<li><strong>SGTM:</strong> Sounds Good To Me. 和上面那句意思差不多，也是已经通过了 review 的意思</li>
+<li><strong>WIP:</strong> Work In Progress. 传说中提 PR 的最佳实践是，如果你有个改动很大的 PR，可以在写了一部分的情况下先提交，但是在标题里写上 WIP，以告诉项目维护者这个功能还未完成，方便维护者提前 review 部分提交的代码。</li>
+<li><strong>PTAL:</strong> Please Take A Look. 你来瞅瞅？用来提示别人来看一下</li>
+<li><strong>TBR:</strong> To Be Reviewed. 提示维护者进行 review</li>
+<li><strong>TL;DR:</strong> Too Long; Didn’t Read. 太长懒得看。也有很多文档在做简略描述之前会写这么一句</li>
+<li><strong>TBD:</strong> To Be Done (or Defined&#x2F;Discussed&#x2F;Decided&#x2F;Determined). 根据语境不同意义有所区别，但一般都是还没搞定的意思</li>
 </ul>
 ]]></content>
       <categories>
-        <category>Dev</category>
+        <category>Chat</category>
       </categories>
       <tags>
-        <tag>Dev</tag>
+        <tag>Chat</tag>
       </tags>
   </entry>
   <entry>
@@ -75,6 +79,24 @@
       </tags>
   </entry>
   <entry>
+    <title>Jetbrains系IDE使用小技巧</title>
+    <url>/post/af86e289.html</url>
+    <content><![CDATA[<h2 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h2><ul>
+<li>One Dark</li>
+</ul>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><ul>
+<li>Chinese (Simplified) Language Pack &#x2F; 中文语言包</li>
+<li>CodeGlance Pro &#x2F; 侧栏代码缩略</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>Dev</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>KiCad导出Gerber图形文件</title>
     <url>/post/ef2c5f04.html</url>
     <content><![CDATA[<h3 id="KiCad导出Gerber图形文件"><a href="#KiCad导出Gerber图形文件" class="headerlink" title="KiCad导出Gerber图形文件"></a>KiCad导出Gerber图形文件</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/202405271719605.png" alt="image-20240527171958427"></p>
@@ -85,28 +107,6 @@
       </categories>
       <tags>
         <tag>PCB</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Github中一些缩写</title>
-    <url>/post/59c9e1c3.html</url>
-    <content><![CDATA[<p><img src="C:/Users/MDLZ/AppData/Roaming/Typora/typora-user-images/image-20250708014613865.png" alt="image-20250708014613865"></p>
-<ul>
-<li><strong>PR:</strong> Pull Request. 拉取请求，给其他项目提交代码</li>
-<li><strong>LGTM:</strong> Looks Good To Me. 朕知道了 代码已经过 review，可以合并</li>
-<li><strong>SGTM:</strong> Sounds Good To Me. 和上面那句意思差不多，也是已经通过了 review 的意思</li>
-<li><strong>WIP:</strong> Work In Progress. 传说中提 PR 的最佳实践是，如果你有个改动很大的 PR，可以在写了一部分的情况下先提交，但是在标题里写上 WIP，以告诉项目维护者这个功能还未完成，方便维护者提前 review 部分提交的代码。</li>
-<li><strong>PTAL:</strong> Please Take A Look. 你来瞅瞅？用来提示别人来看一下</li>
-<li><strong>TBR:</strong> To Be Reviewed. 提示维护者进行 review</li>
-<li><strong>TL;DR:</strong> Too Long; Didn’t Read. 太长懒得看。也有很多文档在做简略描述之前会写这么一句</li>
-<li><strong>TBD:</strong> To Be Done (or Defined&#x2F;Discussed&#x2F;Decided&#x2F;Determined). 根据语境不同意义有所区别，但一般都是还没搞定的意思</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Chat</category>
-      </categories>
-      <tags>
-        <tag>Chat</tag>
       </tags>
   </entry>
   <entry>
@@ -188,24 +188,6 @@
       </tags>
   </entry>
   <entry>
-    <title>一本接口定义手册</title>
-    <url>/post/4258943.html</url>
-    <content><![CDATA[<p>一本小而美的接口定义手册</p>
-<p>符合我的习惯，简洁、小而美、不失专业性</p>
-<p><a href="https://pinouts.org/">Pinouts.org</a></p>
-<p>比如USB-C的接口定义</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20260115003159447.png" alt="image-20260115003159447"></p>
-<p>常见的开发板的Pinout</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20260115003329534.png" alt="image-20260115003329534"></p>
-]]></content>
-      <categories>
-        <category>Books</category>
-      </categories>
-      <tags>
-        <tag>Hardware</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>usbipd出现error Loading vhci_hcd failed</title>
     <url>/post/64c45387.html</url>
     <content><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>WSL用usbipd.exe共享USB端口，出现</p>
@@ -225,6 +207,25 @@
       </categories>
       <tags>
         <tag>WSL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为什么你的Github总是无法正常clone或者push</title>
+    <url>/post/2f28be0b.html</url>
+    <content><![CDATA[<h2 id="产生原因"><a href="#产生原因" class="headerlink" title="产生原因"></a>产生原因</h2><p><strong>代理服务器</strong><br>你的电脑和互联网的中介。当访问外网时（如<a href="http://google.com)/">http://google.com）</a>, 你的请求首先转发到代理服务器，然后代理服务器替你访问外网，并将结果原封不动的给你的电脑，这样你的电脑就可以看到外网的内容。</p>
+<p>网络路径如下：<br>你的电脑-&gt;代理服务器-&gt;外网<br>外网-&gt;代理服务器-&gt;你的电脑</p>
+<p>配置代理之后，可以正常访问github网页了，但是发现在本地克隆github仓库（git clone xxx）或者进行push操作时还是报网络错误（Failed to connect to server …）。</p>
+<p><strong>那是因为git clone没有走代理，所以需要设置git走代理才行</strong></p>
+<h2 id="设置代理"><a href="#设置代理" class="headerlink" title="设置代理"></a>设置代理</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:7890</span><br><span class="line">git config --global https.proxy https://127.0.0.1:7890</span><br></pre></td></tr></table></figure>
+
+<h2 id="Git查看现有配置"><a href="#Git查看现有配置" class="headerlink" title="Git查看现有配置"></a>Git查看现有配置</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global -l</span><br></pre></td></tr></table></figure>
+
+<h2 id="取消代理"><a href="#取消代理" class="headerlink" title="取消代理"></a>取消代理</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
@@ -396,81 +397,6 @@
       </tags>
   </entry>
   <entry>
-    <title>为什么你的Github总是无法正常clone或者push</title>
-    <url>/post/2f28be0b.html</url>
-    <content><![CDATA[<h2 id="产生原因"><a href="#产生原因" class="headerlink" title="产生原因"></a>产生原因</h2><p><strong>代理服务器</strong><br>你的电脑和互联网的中介。当访问外网时（如<a href="http://google.com)/">http://google.com）</a>, 你的请求首先转发到代理服务器，然后代理服务器替你访问外网，并将结果原封不动的给你的电脑，这样你的电脑就可以看到外网的内容。</p>
-<p>网络路径如下：<br>你的电脑-&gt;代理服务器-&gt;外网<br>外网-&gt;代理服务器-&gt;你的电脑</p>
-<p>配置代理之后，可以正常访问github网页了，但是发现在本地克隆github仓库（git clone xxx）或者进行push操作时还是报网络错误（Failed to connect to server …）。</p>
-<p><strong>那是因为git clone没有走代理，所以需要设置git走代理才行</strong></p>
-<h2 id="设置代理"><a href="#设置代理" class="headerlink" title="设置代理"></a>设置代理</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global http.proxy http://127.0.0.1:7890</span><br><span class="line">git config --global https.proxy https://127.0.0.1:7890</span><br></pre></td></tr></table></figure>
-
-<h2 id="Git查看现有配置"><a href="#Git查看现有配置" class="headerlink" title="Git查看现有配置"></a>Git查看现有配置</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global -l</span><br></pre></td></tr></table></figure>
-
-<h2 id="取消代理"><a href="#取消代理" class="headerlink" title="取消代理"></a>取消代理</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git config --global --unset http.proxy</span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>Git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在 RT-Thread Studio 环境中为 ART-Pi 2 移植 CherryUSB（以 usb_device 为例）</title>
-    <url>/post/12a4c8db.html</url>
-    <content><![CDATA[<h2 id="开始之前"><a href="#开始之前" class="headerlink" title="开始之前"></a>开始之前</h2><p>ART-Pi 2 搭载了 STM32H7R7x 芯片，这是 ST 推出的一款自带 Internal HS PHY 的 MCU。目前论坛里资料较少，故尝试在 RT-Thread Studio 中移植 CherryUSB，本文从创建工程开始，事无巨细地记录了移植的全过程。</p>
-<h2 id="移植过程"><a href="#移植过程" class="headerlink" title="移植过程"></a>移植过程</h2><h3 id="1-新建工程"><a href="#1-新建工程" class="headerlink" title="1. 新建工程"></a>1. 新建工程</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419020115734.png" alt="image-20250419020115734"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419020207053.png" alt="image-20250419020207053"></p>
-<p>如图示，新建基于 ART-Pi 2 开发板的项目。</p>
-<p>工程的目录结构如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419020410693.png" alt="image-20250419020410693"></p>
-<h3 id="2-添加CherryUSB的package"><a href="#2-添加CherryUSB的package" class="headerlink" title="2. 添加CherryUSB的package"></a>2. 添加CherryUSB的package</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419020518831.png" alt="image-20250419020518831"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419020553232.png" alt="image-20250419020553232"></p>
-<p>在工程中一键添加CherryUSB的包，按下 Ctrl+S 保存设置，自动开始下载 CherryUSB，这里要注意网络畅通，因为要从 Github 上拉取 最新的 release，成功后控制台信息如下：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419021305634.png" alt="image-20250419021305634"></p>
-<h3 id="3-配置CherryUSB"><a href="#3-配置CherryUSB" class="headerlink" title="3. 配置CherryUSB"></a>3. 配置CherryUSB</h3><p>在软件包里找到 CherryUSB 的配置项，我们以usb_device为例，进行如下配置，不要忘记保存：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419020815020.png" alt="image-20250419020815020"></p>
-<p>将 .&#x2F;packages&#x2F;CherryUSB-v1.4.3&#x2F;cherryusb_config_template.h 拷贝到 .&#x2F;board&#x2F;port 里面，并命名为 usb_config.h，如下图：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419021711309.png" alt="image-20250419021711309"></p>
-<p>然后刷新工程，即可找到新添加的文件。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/Screenshot%202025-04-19%20022134.png" alt="Screenshot 2025-04-19 022134"></p>
-<p>打开 usb_config.h，修改以下宏</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;rtthread.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_PRINTF(...) rt_kprintf(__VA_ARGS__)</span></span><br></pre></td></tr></table></figure>
-
-<p>USB IP 相关的 config 需要自己根据芯片实际情况修改，这里实现下面的宏</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USBDEV_EP_NUM 8</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_RXALL_FIFO_SIZE (1024 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX0_FIFO_SIZE (64 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX1_FIFO_SIZE (1024 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX2_FIFO_SIZE (64 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX3_FIFO_SIZE (64 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX4_FIFO_SIZE (64 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX5_FIFO_SIZE (64 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX6_FIFO_SIZE (64 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX7_FIFO_SIZE (64 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX8_FIFO_SIZE (64 / 4)</span></span><br></pre></td></tr></table></figure>
-
-<p>修改 .&#x2F;board&#x2F;board.c，在最后实现下面函数（我们这里就用 hid_mouse 的 demo）</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">usb_dc_low_level_init</span><span class="params">(<span class="type">uint8_t</span> busid)</span> &#123;</span><br><span class="line">	add something...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">OTG_HS_IRQHandler</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">extern</span> <span class="type">void</span> <span class="title function_">USBD_IRQHandler</span><span class="params">(<span class="type">uint8_t</span> busid)</span>;</span><br><span class="line">    USBD_IRQHandler(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">usbd_init</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">extern</span> <span class="type">void</span> <span class="title function_">hid_mouse_init</span><span class="params">(<span class="type">uint8_t</span> busid, <span class="type">uintptr_t</span> reg_base)</span>;</span><br><span class="line">    hid_mouse_init(<span class="number">0</span>, USB_OTG_HS_PERIPH_BASE);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">INIT_APP_EXPORT(usbd_init);</span><br></pre></td></tr></table></figure>
-
-<p>关于上面 void usb_dc_low_level_init(uint8_t busid) 函数怎么实现，请参阅我的另一个帖子：<a href="https://mdlzcool.github.io/post/fb4bb4c3.html">在STM32G4上移植CherryUSB协议栈（usb_device）</a>，这里主要就是用CubeMX新建一个工程，然后打开USB_HS_OTG和中断，然后在生成的代码里面找到初始化 USB 时钟和中断的代码复制过来，就OK了，下面附上我的实现，可以直接拿去用：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">usb_dc_low_level_init</span><span class="params">(<span class="type">uint8_t</span> busid)</span> &#123;</span><br><span class="line">    RCC_PeriphCLKInitTypeDef PeriphClkInit = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USBPHYC;</span><br><span class="line">    PeriphClkInit.UsbPhycClockSelection = RCC_USBPHYCCLKSOURCE_HSE;</span><br><span class="line">    HAL_PWREx_EnableUSBVoltageDetector();</span><br><span class="line">    __HAL_RCC_USB_OTG_HS_CLK_ENABLE();</span><br><span class="line">    __HAL_RCC_USBPHYC_CLK_ENABLE();</span><br><span class="line">    HAL_NVIC_SetPriority(OTG_HS_IRQn, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    HAL_NVIC_EnableIRQ(OTG_HS_IRQn);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>做完以上所有步骤后，编译烧录一气呵成没有报错：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419023353355.png" alt="image-20250419023353355"></p>
-<p>在终端里面可以看到已经识别正确：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419023159824.png" alt="image-20250419023159824"></p>
-<p>且给USB-HS插到电脑上可以正确枚举：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419023532794.png" alt="image-20250419023532794"></p>
-<h3 id="3-收尾"><a href="#3-收尾" class="headerlink" title="3. 收尾"></a>3. 收尾</h3><p>在 .&#x2F;applications&#x2F;main.c 中，添加 CherryUSB 的 hid_mouse 的线程，如图：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419023807276.png" alt="image-20250419023807276"></p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">rt_thread_t</span> hid_thread = RT_NULL;</span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">hid_mouse_thread_entry</span><span class="params">(<span class="type">void</span> *parameter)</span></span><br><span class="line">&#123;</span><br><span class="line">    rt_kprintf(<span class="string">&quot;USB HID Mouse thread started\n&quot;</span>);</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">extern</span> <span class="type">void</span> <span class="title function_">hid_mouse_test</span><span class="params">(<span class="type">uint8_t</span> busid)</span>;</span><br><span class="line">            hid_mouse_test(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    ...</span><br><span class="line">    hid_thread = rt_thread_create(<span class="string">&quot;hid_mouse&quot;</span>, hid_mouse_thread_entry,</span><br><span class="line">    RT_NULL, <span class="number">1024</span>, <span class="number">20</span>, <span class="number">5</span>);</span><br><span class="line">    <span class="keyword">if</span> (hid_thread != RT_NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        rt_thread_startup(hid_thread);</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后再次编译烧录，发现鼠标不出所料地开始转圈了：）</p>
-<p>至此移植结束，再次感谢 <em>sakumisu</em> 的贡献。</p>
-<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p>附一些图片</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/355652e85715a278f290de8799c94dc.jpg" alt="355652e85715a278f290de8799c94dc"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/2f0488a99281d2249a52e645f95fcaf.jpg" alt="2f0488a99281d2249a52e645f95fcaf"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/3043ee331dae5b84d8902f62195a9d7.jpg" alt="3043ee331dae5b84d8902f62195a9d7"></p>
-<h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><p><a href="https://github.com/MDLZCOOL/CherryUSB_ART_Pi2">https://github.com/MDLZCOOL/CherryUSB_ART_Pi2</a></p>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>Dev</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>在CLion上搭建LVGL模拟器</title>
     <url>/post/90c7d419.html</url>
     <content><![CDATA[<blockquote>
@@ -543,6 +469,278 @@
 <li><p><a href="https://lvgl.100ask.net/8.2/">百问网LVGL中文教程文档</a> <em>- 20241028这个暂时只汉化到v8.2</em></p>
 </li>
 </ul>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>Dev</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在STM32G4上移植CherryUSB协议栈（usb_device）</title>
+    <url>/post/fb4bb4c3.html</url>
+    <content><![CDATA[<blockquote>
+<p>本文实现了STM32G4模拟 usb hid 设备作为鼠标</p>
+<p>CherryUSB版本为v1.4.3</p>
+<p>ST的固件库为STM32Cube_FW_G4_V1.6.1</p>
+</blockquote>
+<h3 id="CherryUSB介绍（摘自CherryUSB的readme）"><a href="#CherryUSB介绍（摘自CherryUSB的readme）" class="headerlink" title="CherryUSB介绍（摘自CherryUSB的readme）"></a>CherryUSB介绍（摘自CherryUSB的readme）</h3><p>CherryUSB 是一个小而美的、可移植性高的、用于嵌入式系统的 USB 主从协议栈。同时 CherryUSB 具有以下优点：</p>
+<p><strong>易于学习 USB</strong></p>
+<p>为了方便用户学习 USB 基本知识、枚举、驱动加载、IP 驱动，因此，编写的代码具备以下优点：</p>
+<ul>
+<li>代码精简，逻辑简单，无复杂 C 语言语法</li>
+<li>树状化编程，代码层层递进</li>
+<li>Class 驱动和 porting 驱动模板化、精简化</li>
+<li>API 分类清晰（从机：初始化、注册类、命令回调类、数据收发类；主机：初始化、查找类、数据收发类）</li>
+</ul>
+<p><strong>易于使用 USB</strong></p>
+<p>为了方便用户使用 USB 接口，考虑到用户学习过 uart 和 dma，因此，设计的数据收发类接口具备以下优点：</p>
+<ul>
+<li>等价于使用 uart tx dma&#x2F;uart rx dma</li>
+<li>收发长度没有限制，用户不需要关心 USB 分包过程（porting 驱动做分包过程）</li>
+</ul>
+<p><strong>易于发挥 USB 性能</strong></p>
+<p>考虑到 USB 性能问题，尽量达到 USB 硬件理论带宽，因此，设计的数据收发类接口具备以下优点：</p>
+<ul>
+<li>Porting 驱动直接对接寄存器，无抽象层封装</li>
+<li>Memory zero copy</li>
+<li>IP 如果带 DMA 则使用 DMA 模式（DMA 带硬件分包功能）</li>
+<li>长度无限制，方便对接硬件 DMA 并且发挥 DMA 的优势</li>
+<li>分包功能在中断中处理</li>
+</ul>
+<p><strong>从机协议栈整体执行流程</strong></p>
+<p><img src="https://cherryusb.readthedocs.io/zh-cn/latest/_images/usbdev.svg" alt="usb-device"></p>
+<p><strong>主机协议栈整体执行流程</strong></p>
+<p><img src="https://cherryusb.readthedocs.io/zh-cn/latest/_images/usbhost.svg" alt="usb-host"></p>
+<h3 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h3><p><a href="https://github.com/cherry-embedded/CherryUSB/">cherry-embedded&#x2F;CherryUSB</a></p>
+<h3 id="开始移植"><a href="#开始移植" class="headerlink" title="开始移植"></a>开始移植</h3><ol>
+<li>使用 STM32CubeMX 创建工程，配置基本的 RCC、UART (作为 log 使用，但是我们移植的 G4 系列的 usb ip 核为 fsdev，基本没有配置项，故无 log)</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314221305123.png" alt="image-20250314221305123"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314221318104.png" alt="image-20250314221318104"></p>
+<ol start="2">
+<li>我们这里使用的是 fsdev ip，勾选 USB。开启 USB 中断，其他配置对我们没用，cherry 的代码中不会使用任何 ST 的 USB 库</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314221336698.png" alt="image-20250314221336698"></p>
+<ol start="3">
+<li><p>检查时钟树，保证 USB 时钟为 48MHz</p>
+<blockquote>
+<p>发现一个现象，如果用的是PLL出来的48M，后面注释MX自动生成的 usb init 似乎可有可无，但是用HSI的48M，则必须注释掉MX生成的 usb init，否则无法枚举</p>
+</blockquote>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250315111137942.png" alt="image-20250315111137942"></p>
+<ol start="4">
+<li>Generate CODE</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314221525860.png" alt="image-20250314221525860"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314221525860.png"></p>
+<p>在项目目录里拷进CherryUSB源码</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314221959758.png" alt="image-20250314221959758"></p>
+<ol start="5">
+<li>添加 CherryUSB 必须要的源码，以及想要使用的 class 驱动，可以将对应 class 的 demo template 添加方便测试，我这里就添加 hid 的 class 和 demo template 来测试。</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314235630850.png" alt="image-20250314235630850"></p>
+<ol start="6">
+<li>将 .&#x2F;CherryUSB&#x2F;cherryusb_config_template.h 复制到 .&#x2F;Core&#x2F;Inc 并重命名为 usb_config.h</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314234255893.png" alt="image-20250314234255893"></p>
+<ol start="7">
+<li>如果使用 fsdev ip，在 usb_config.h 中实现以下宏</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 以下细节不同芯片可能有出入，要改！！</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USBDEV_EP_NUM 8</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USBDEV_FSDEV_PMA_ACCESS 2</span></span><br></pre></td></tr></table></figure>
+
+<ol start="8">
+<li>拷贝 usb_xxx.c 里面的 HAL_PCD_MspInit 函数中的内容到 usb_dc_low_level_init 函数中，并屏蔽 ST 生成的 USB 初始化</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">usb_dc_low_level_init</span><span class="params">(<span class="type">uint8_t</span> busid)</span> &#123;</span><br><span class="line">    add something...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250315111125946.png" alt="image-20250315111125946"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314234942250.png" alt="image-20250314234942250"></p>
+<ol start="9">
+<li>在中断函数中调用 USBD_IRQHandler，并传入 busid</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314235159981.png" alt="image-20250314235159981"></p>
+<ol start="10">
+<li>调用 template 的内容初始化，并填入 busid 和 USB IP 的 reg base，busid 从 0 开始，不能超过CONFIG_USBDEV_MAX_BUS，这里 reg base 在 stm32xxx.h 里找。</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250315111248946.png" alt="image-20250315111248946"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314235723312.png" alt="image-20250314235723312"></p>
+<p>顺利的话，应该接上 USB 鼠标就开始转圈了，但是这里出现了没法枚举的情况。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250315110450418.png" alt="image-20250315110450418"></p>
+<p>由于 fsdev ip 本来就只有一个配置项，故怀疑是</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USBDEV_FSDEV_PMA_ACCESS 2 <span class="comment">// maybe 1 or 2, many chips may have a difference</span></span></span><br></pre></td></tr></table></figure>
+
+<p>这里的 define 不太合适，改为“1”后解决问题，鼠标开始转圈圈了。</p>
+<p><strong>注意注意：配置USB时钟的时候如果用HSI的48MHz频率，则必须不要忘了注释MX生成的 usb init。</strong></p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ol>
+<li><a href="https://cherryusb.readthedocs.io/zh-cn/latest/">CherryUSB 使用指南</a>——遇事不决先看官方文档，这是能找到的最好的资料，99%的问题文档里都提到过，感谢<a href="https://github.com/sakumisu">@sakumisu</a></li>
+<li><a href="https://club.rt-thread.org/ask/article/3e893614c58da7aa.html">APM32F407VGT6 DWC2移植 Port.A Full-Speed + Por.B High-Speed</a>——另一位大佬的帖子，看完受益匪浅</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>USB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在STM32里使用rosserial</title>
+    <url>/post/f3ad7b3e.html</url>
+    <content><![CDATA[<blockquote>
+<p>我使用的是Ubuntu 20.04 ROS Noetic搭配STM32F407开发板，不同STM32芯片之间使用起来差异不大</p>
+</blockquote>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>Ubuntu安装软件包</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install ros-noetic-rosserial ros-noetic-rosserial-arduino</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>（已经配置好的库）<a href="https://github.com/MDLZCOOL/rosserial_stm32">MDLZCOOL&#x2F;rosserial_stm32</a></li>
+</ul>
+<h2 id="开始配置"><a href="#开始配置" class="headerlink" title="开始配置"></a>开始配置</h2><ol>
+<li>新建STM32工程，配置RCC等步骤省略。</li>
+<li>打开串口，配置中断和DMA，波特率推荐115200。具体配置见下图</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129190705711.png" alt="image-20241129190705711"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129190741215.png" alt="image-20241129190741215"></p>
+<ol start="3">
+<li><p>生成代码，将<code>rosserial_stm32_lib</code>复制到<code>Core/Inc</code>，并添加进工程里。</p>
+</li>
+<li><p>在<code>Core/Src</code>添加一个<code>mainpp.cpp</code>，添加以下代码</p>
+</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ros.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;std_msgs/String.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;mainpp.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;main.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">messageCallback</span><span class="params">(<span class="type">const</span> std_msgs::String &amp;msg)</span> &#123;</span><br><span class="line">    <span class="comment">// Callback</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ros::NodeHandle nh;</span><br><span class="line">ros::Subscriber&lt;std_msgs::String&gt; <span class="title function_">sub</span><span class="params">(<span class="string">&quot;/stm32_ros_bridge&quot;</span>, &amp;messageCallback)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">HAL_UART_TxCpltCallback</span><span class="params">(UART_HandleTypeDef *huart)</span> &#123;</span><br><span class="line">    nh.getHardware()-&gt;flush();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">HAL_UART_RxCpltCallback</span><span class="params">(UART_HandleTypeDef *huart)</span> &#123;</span><br><span class="line">    nh.getHardware()-&gt;reset_rbuf();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    nh.initNode();</span><br><span class="line">    nh.subscribe(sub);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    nh.spinOnce();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li>在<code>Core/Inc</code>添加<code>mainpp.h</code>，添加以下代码</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> MAINPP_H_</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAINPP_H_</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> __cplusplus</span></span><br><span class="line"><span class="keyword">extern</span> <span class="string">&quot;C&quot;</span> &#123;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> __cplusplus</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span> <span class="comment">/* MAINPP_H_ */</span></span></span><br></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>修改<code>main.c</code></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span>&#123;</span><br><span class="line">...</span><br><span class="line">  <span class="comment">/* USER CODE BEGIN 2 */</span></span><br><span class="line">  setup();</span><br><span class="line">  <span class="comment">/* USER CODE END 2 */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Infinite loop */</span></span><br><span class="line">  <span class="comment">/* USER CODE BEGIN WHILE */</span></span><br><span class="line">  <span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">/* USER CODE END WHILE */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* USER CODE BEGIN 3 */</span></span><br><span class="line">    loop();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">/* USER CODE END 3 */</span></span><br><span class="line">...</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li><p>修改<code>STM32Hardware.h</code>，具体为：</p>
+<ul>
+<li>（注意注意！这一步在 <a href="https://github.com/MDLZCOOL/rosserial_stm32/commit/0b769c8a64fb37ad54a39b7a6ea32c3498a91ea8">#0b769c8</a> 后已经不再需要）定义自己的设备头（如果预处理部分没有你的设备，请自己加上）</li>
+</ul>
+</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129193813695.png" alt="image-20241129193813695"></p>
+<ul>
+<li>将所有的huart句柄改为你自己的，比如在<code>STM32Hardware.h</code>里默认handler名字叫<code>huart1</code></li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129194059681.png" alt="image-20241129194059681"></p>
+<ol start="7">
+<li>至此STM32就配好了</li>
+<li>用串口工具连接STM32和电脑USB_HOST，使用以下命令查看USB文件位置（Linux里万物皆为文件）</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ls</span> /dev/ttyUSB*</span><br><span class="line">或者</span><br><span class="line">dmesg | grep <span class="built_in">tty</span></span><br></pre></td></tr></table></figure>
+
+<p>比如这里我的USB位置就是<code>/dev/ttyUSB0</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129195247309.png" alt="image-20241129195247309"></p>
+<ol start="9">
+<li>执行下面命令使ROS连接上STM32，别忘了先roscore</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rosrun rosserial_python serial_node.py _baud:=115200 _port:=/dev/ttyUSB0</span><br></pre></td></tr></table></figure>
+
+<p>不出所料的话，现在已经成功连接上设备了</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129195651213.png" alt="image-20241129195651213"></p>
+<h2 id="STM32执行ROS发来的指令"><a href="#STM32执行ROS发来的指令" class="headerlink" title="STM32执行ROS发来的指令"></a>STM32执行ROS发来的指令</h2><ol>
+<li>在<code>mainpp.cpp</code>实现下面测试代码：</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">messageCallback</span><span class="params">(<span class="type">const</span> std_msgs::String &amp;msg)</span> &#123;</span><br><span class="line">    SEGGER_RTT_WriteString(<span class="number">0</span>, <span class="string">&quot;\r\nmessageCallback occurred!\r\nYour message is &quot;</span>);</span><br><span class="line">    SEGGER_RTT_WriteString(<span class="number">0</span>, msg.data);</span><br><span class="line">    SEGGER_RTT_WriteString(<span class="number">0</span>, <span class="string">&quot;\r\n&quot;</span>);</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">strcmp</span>(<span class="string">&quot;servo_1&quot;</span>, msg.data) == <span class="number">0</span>) &#123;</span><br><span class="line">        SEGGER_RTT_WriteString(<span class="number">0</span>, <span class="string">&quot;Action &#x27;servo_1&#x27; begin!\r\n&quot;</span>);</span><br><span class="line">        __HAL_TIM_SET_COMPARE(&amp;htim1, TIM_CHANNEL_1, <span class="number">1500</span>);</span><br><span class="line">        SEGGER_RTT_WriteString(<span class="number">0</span>, <span class="string">&quot;Action &#x27;servo_1&#x27; complete!\r\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>写入固件，连接电脑测试</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129200940086.png" alt="image-20241129200940086"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129201020932.png" alt="image-20241129201020932"></p>
+<p>可以看到，回调函数正常触发，至此实现了ROS对STM32 publish 消息，并成功接收。</p>
+<h2 id="STM32向ROS发送话题"><a href="#STM32向ROS发送话题" class="headerlink" title="STM32向ROS发送话题"></a>STM32向ROS发送话题</h2><ol>
+<li>在<code>mainpp.cpp</code>实现下面测试代码：</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ros.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;std_msgs/String.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;mainpp.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;main.h&quot;</span></span></span><br><span class="line"></span><br><span class="line">std_msgs::String str_msg;</span><br><span class="line">ros::NodeHandle nh;</span><br><span class="line">ros::Publisher <span class="title function_">pub</span><span class="params">(<span class="string">&quot;stm32_ros_bridge_pub&quot;</span>, &amp;str_msg)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">HAL_UART_TxCpltCallback</span><span class="params">(UART_HandleTypeDef *huart)</span> &#123;</span><br><span class="line">    nh.getHardware()-&gt;flush();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">HAL_UART_RxCpltCallback</span><span class="params">(UART_HandleTypeDef *huart)</span> &#123;</span><br><span class="line">    nh.getHardware()-&gt;reset_rbuf();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    nh.initNode();</span><br><span class="line">    str_msg.data = <span class="string">&quot;Hello, ROS!&quot;</span>;</span><br><span class="line">    nh.advertise(pub);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    pub.publish(&amp;str_msg);</span><br><span class="line">    nh.spinOnce();</span><br><span class="line">    HAL_Delay(<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129203923631.png" alt="image-20241129203923631"></p>
+<blockquote>
+<p>注意：这里有一个问题，我们用的波特率是115200，发送数据的频率是有限制的，如果超过这个上限，ROS拿到的数据就会丢包，没法通过完整性校验，所以这里在loop()里写了一个delay，但是这种做法不是通常推荐的，<strong>更加一般的做法是把publish写在某个定时器里，这样就不会占用CPU时间去等待。</strong></p>
+</blockquote>
+<p>贴一张图，发送频率不能太高</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129204312643.png" alt="image-20241129204312643"></p>
+<p>至此实现了STM32与ROS的<strong>双向通信</strong>，后面可以拿来做一些好玩的东西了。</p>
+<hr>
+<p>测试STM32F103C8Tx单片机，其FLASH为64K，无法装下程序，故推荐FLASH大小为80K左右。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241130185002474.png" alt="image-20241130185002474"></p>
+<hr>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://wiki.ros.org/rosserial/Overview/">rosserial&#x2F;Overview</a></li>
+</ol>
+<hr>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>Dev</tag>
+        <tag>STM32</tag>
+        <tag>ROS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在 RT-Thread Studio 环境中为 ART-Pi 2 移植 CherryUSB（以 usb_device 为例）</title>
+    <url>/post/12a4c8db.html</url>
+    <content><![CDATA[<h2 id="开始之前"><a href="#开始之前" class="headerlink" title="开始之前"></a>开始之前</h2><p>ART-Pi 2 搭载了 STM32H7R7x 芯片，这是 ST 推出的一款自带 Internal HS PHY 的 MCU。目前论坛里资料较少，故尝试在 RT-Thread Studio 中移植 CherryUSB，本文从创建工程开始，事无巨细地记录了移植的全过程。</p>
+<h2 id="移植过程"><a href="#移植过程" class="headerlink" title="移植过程"></a>移植过程</h2><h3 id="1-新建工程"><a href="#1-新建工程" class="headerlink" title="1. 新建工程"></a>1. 新建工程</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419020115734.png" alt="image-20250419020115734"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419020207053.png" alt="image-20250419020207053"></p>
+<p>如图示，新建基于 ART-Pi 2 开发板的项目。</p>
+<p>工程的目录结构如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419020410693.png" alt="image-20250419020410693"></p>
+<h3 id="2-添加CherryUSB的package"><a href="#2-添加CherryUSB的package" class="headerlink" title="2. 添加CherryUSB的package"></a>2. 添加CherryUSB的package</h3><p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419020518831.png" alt="image-20250419020518831"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419020553232.png" alt="image-20250419020553232"></p>
+<p>在工程中一键添加CherryUSB的包，按下 Ctrl+S 保存设置，自动开始下载 CherryUSB，这里要注意网络畅通，因为要从 Github 上拉取 最新的 release，成功后控制台信息如下：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419021305634.png" alt="image-20250419021305634"></p>
+<h3 id="3-配置CherryUSB"><a href="#3-配置CherryUSB" class="headerlink" title="3. 配置CherryUSB"></a>3. 配置CherryUSB</h3><p>在软件包里找到 CherryUSB 的配置项，我们以usb_device为例，进行如下配置，不要忘记保存：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419020815020.png" alt="image-20250419020815020"></p>
+<p>将 .&#x2F;packages&#x2F;CherryUSB-v1.4.3&#x2F;cherryusb_config_template.h 拷贝到 .&#x2F;board&#x2F;port 里面，并命名为 usb_config.h，如下图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419021711309.png" alt="image-20250419021711309"></p>
+<p>然后刷新工程，即可找到新添加的文件。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/Screenshot%202025-04-19%20022134.png" alt="Screenshot 2025-04-19 022134"></p>
+<p>打开 usb_config.h，修改以下宏</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;rtthread.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_PRINTF(...) rt_kprintf(__VA_ARGS__)</span></span><br></pre></td></tr></table></figure>
+
+<p>USB IP 相关的 config 需要自己根据芯片实际情况修改，这里实现下面的宏</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USBDEV_EP_NUM 8</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_RXALL_FIFO_SIZE (1024 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX0_FIFO_SIZE (64 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX1_FIFO_SIZE (1024 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX2_FIFO_SIZE (64 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX3_FIFO_SIZE (64 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX4_FIFO_SIZE (64 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX5_FIFO_SIZE (64 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX6_FIFO_SIZE (64 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX7_FIFO_SIZE (64 / 4)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USB_DWC2_TX8_FIFO_SIZE (64 / 4)</span></span><br></pre></td></tr></table></figure>
+
+<p>修改 .&#x2F;board&#x2F;board.c，在最后实现下面函数（我们这里就用 hid_mouse 的 demo）</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">usb_dc_low_level_init</span><span class="params">(<span class="type">uint8_t</span> busid)</span> &#123;</span><br><span class="line">	add something...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">OTG_HS_IRQHandler</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">extern</span> <span class="type">void</span> <span class="title function_">USBD_IRQHandler</span><span class="params">(<span class="type">uint8_t</span> busid)</span>;</span><br><span class="line">    USBD_IRQHandler(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">usbd_init</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">extern</span> <span class="type">void</span> <span class="title function_">hid_mouse_init</span><span class="params">(<span class="type">uint8_t</span> busid, <span class="type">uintptr_t</span> reg_base)</span>;</span><br><span class="line">    hid_mouse_init(<span class="number">0</span>, USB_OTG_HS_PERIPH_BASE);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">INIT_APP_EXPORT(usbd_init);</span><br></pre></td></tr></table></figure>
+
+<p>关于上面 void usb_dc_low_level_init(uint8_t busid) 函数怎么实现，请参阅我的另一个帖子：<a href="https://mdlzcool.github.io/post/fb4bb4c3.html">在STM32G4上移植CherryUSB协议栈（usb_device）</a>，这里主要就是用CubeMX新建一个工程，然后打开USB_HS_OTG和中断，然后在生成的代码里面找到初始化 USB 时钟和中断的代码复制过来，就OK了，下面附上我的实现，可以直接拿去用：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">usb_dc_low_level_init</span><span class="params">(<span class="type">uint8_t</span> busid)</span> &#123;</span><br><span class="line">    RCC_PeriphCLKInitTypeDef PeriphClkInit = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USBPHYC;</span><br><span class="line">    PeriphClkInit.UsbPhycClockSelection = RCC_USBPHYCCLKSOURCE_HSE;</span><br><span class="line">    HAL_PWREx_EnableUSBVoltageDetector();</span><br><span class="line">    __HAL_RCC_USB_OTG_HS_CLK_ENABLE();</span><br><span class="line">    __HAL_RCC_USBPHYC_CLK_ENABLE();</span><br><span class="line">    HAL_NVIC_SetPriority(OTG_HS_IRQn, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    HAL_NVIC_EnableIRQ(OTG_HS_IRQn);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>做完以上所有步骤后，编译烧录一气呵成没有报错：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419023353355.png" alt="image-20250419023353355"></p>
+<p>在终端里面可以看到已经识别正确：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419023159824.png" alt="image-20250419023159824"></p>
+<p>且给USB-HS插到电脑上可以正确枚举：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419023532794.png" alt="image-20250419023532794"></p>
+<h3 id="3-收尾"><a href="#3-收尾" class="headerlink" title="3. 收尾"></a>3. 收尾</h3><p>在 .&#x2F;applications&#x2F;main.c 中，添加 CherryUSB 的 hid_mouse 的线程，如图：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250419023807276.png" alt="image-20250419023807276"></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">rt_thread_t</span> hid_thread = RT_NULL;</span><br><span class="line"></span><br><span class="line"><span class="type">static</span> <span class="type">void</span> <span class="title function_">hid_mouse_thread_entry</span><span class="params">(<span class="type">void</span> *parameter)</span></span><br><span class="line">&#123;</span><br><span class="line">    rt_kprintf(<span class="string">&quot;USB HID Mouse thread started\n&quot;</span>);</span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">extern</span> <span class="type">void</span> <span class="title function_">hid_mouse_test</span><span class="params">(<span class="type">uint8_t</span> busid)</span>;</span><br><span class="line">            hid_mouse_test(<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    ...</span><br><span class="line">    hid_thread = rt_thread_create(<span class="string">&quot;hid_mouse&quot;</span>, hid_mouse_thread_entry,</span><br><span class="line">    RT_NULL, <span class="number">1024</span>, <span class="number">20</span>, <span class="number">5</span>);</span><br><span class="line">    <span class="keyword">if</span> (hid_thread != RT_NULL)</span><br><span class="line">    &#123;</span><br><span class="line">        rt_thread_startup(hid_thread);</span><br><span class="line">    &#125;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后再次编译烧录，发现鼠标不出所料地开始转圈了：）</p>
+<p>至此移植结束，再次感谢 <em>sakumisu</em> 的贡献。</p>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><p>附一些图片</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/355652e85715a278f290de8799c94dc.jpg" alt="355652e85715a278f290de8799c94dc"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/2f0488a99281d2249a52e645f95fcaf.jpg" alt="2f0488a99281d2249a52e645f95fcaf"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/3043ee331dae5b84d8902f62195a9d7.jpg" alt="3043ee331dae5b84d8902f62195a9d7"></p>
+<h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><p><a href="https://github.com/MDLZCOOL/CherryUSB_ART_Pi2">https://github.com/MDLZCOOL/CherryUSB_ART_Pi2</a></p>
 ]]></content>
       <categories>
         <category>Dev</category>
@@ -809,222 +1007,6 @@
       </tags>
   </entry>
   <entry>
-    <title>在STM32里使用rosserial</title>
-    <url>/post/f3ad7b3e.html</url>
-    <content><![CDATA[<blockquote>
-<p>我使用的是Ubuntu 20.04 ROS Noetic搭配STM32F407开发板，不同STM32芯片之间使用起来差异不大</p>
-</blockquote>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
-<li>Ubuntu安装软件包</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install ros-noetic-rosserial ros-noetic-rosserial-arduino</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>（已经配置好的库）<a href="https://github.com/MDLZCOOL/rosserial_stm32">MDLZCOOL&#x2F;rosserial_stm32</a></li>
-</ul>
-<h2 id="开始配置"><a href="#开始配置" class="headerlink" title="开始配置"></a>开始配置</h2><ol>
-<li>新建STM32工程，配置RCC等步骤省略。</li>
-<li>打开串口，配置中断和DMA，波特率推荐115200。具体配置见下图</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129190705711.png" alt="image-20241129190705711"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129190741215.png" alt="image-20241129190741215"></p>
-<ol start="3">
-<li><p>生成代码，将<code>rosserial_stm32_lib</code>复制到<code>Core/Inc</code>，并添加进工程里。</p>
-</li>
-<li><p>在<code>Core/Src</code>添加一个<code>mainpp.cpp</code>，添加以下代码</p>
-</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ros.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;std_msgs/String.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;mainpp.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;main.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">messageCallback</span><span class="params">(<span class="type">const</span> std_msgs::String &amp;msg)</span> &#123;</span><br><span class="line">    <span class="comment">// Callback</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ros::NodeHandle nh;</span><br><span class="line">ros::Subscriber&lt;std_msgs::String&gt; <span class="title function_">sub</span><span class="params">(<span class="string">&quot;/stm32_ros_bridge&quot;</span>, &amp;messageCallback)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">HAL_UART_TxCpltCallback</span><span class="params">(UART_HandleTypeDef *huart)</span> &#123;</span><br><span class="line">    nh.getHardware()-&gt;flush();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">HAL_UART_RxCpltCallback</span><span class="params">(UART_HandleTypeDef *huart)</span> &#123;</span><br><span class="line">    nh.getHardware()-&gt;reset_rbuf();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    nh.initNode();</span><br><span class="line">    nh.subscribe(sub);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    nh.spinOnce();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol start="6">
-<li>在<code>Core/Inc</code>添加<code>mainpp.h</code>，添加以下代码</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> MAINPP_H_</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAINPP_H_</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> __cplusplus</span></span><br><span class="line"><span class="keyword">extern</span> <span class="string">&quot;C&quot;</span> &#123;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">(<span class="type">void</span>)</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> __cplusplus</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span> <span class="comment">/* MAINPP_H_ */</span></span></span><br></pre></td></tr></table></figure>
-
-<ol start="5">
-<li>修改<code>main.c</code></li>
-</ol>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span>&#123;</span><br><span class="line">...</span><br><span class="line">  <span class="comment">/* USER CODE BEGIN 2 */</span></span><br><span class="line">  setup();</span><br><span class="line">  <span class="comment">/* USER CODE END 2 */</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Infinite loop */</span></span><br><span class="line">  <span class="comment">/* USER CODE BEGIN WHILE */</span></span><br><span class="line">  <span class="keyword">while</span> (<span class="number">1</span>)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">/* USER CODE END WHILE */</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* USER CODE BEGIN 3 */</span></span><br><span class="line">    loop();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">/* USER CODE END 3 */</span></span><br><span class="line">...</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ol start="6">
-<li><p>修改<code>STM32Hardware.h</code>，具体为：</p>
-<ul>
-<li>（注意注意！这一步在 <a href="https://github.com/MDLZCOOL/rosserial_stm32/commit/0b769c8a64fb37ad54a39b7a6ea32c3498a91ea8">#0b769c8</a> 后已经不再需要）定义自己的设备头（如果预处理部分没有你的设备，请自己加上）</li>
-</ul>
-</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129193813695.png" alt="image-20241129193813695"></p>
-<ul>
-<li>将所有的huart句柄改为你自己的，比如在<code>STM32Hardware.h</code>里默认handler名字叫<code>huart1</code></li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129194059681.png" alt="image-20241129194059681"></p>
-<ol start="7">
-<li>至此STM32就配好了</li>
-<li>用串口工具连接STM32和电脑USB_HOST，使用以下命令查看USB文件位置（Linux里万物皆为文件）</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ls</span> /dev/ttyUSB*</span><br><span class="line">或者</span><br><span class="line">dmesg | grep <span class="built_in">tty</span></span><br></pre></td></tr></table></figure>
-
-<p>比如这里我的USB位置就是<code>/dev/ttyUSB0</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129195247309.png" alt="image-20241129195247309"></p>
-<ol start="9">
-<li>执行下面命令使ROS连接上STM32，别忘了先roscore</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rosrun rosserial_python serial_node.py _baud:=115200 _port:=/dev/ttyUSB0</span><br></pre></td></tr></table></figure>
-
-<p>不出所料的话，现在已经成功连接上设备了</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129195651213.png" alt="image-20241129195651213"></p>
-<h2 id="STM32执行ROS发来的指令"><a href="#STM32执行ROS发来的指令" class="headerlink" title="STM32执行ROS发来的指令"></a>STM32执行ROS发来的指令</h2><ol>
-<li>在<code>mainpp.cpp</code>实现下面测试代码：</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">messageCallback</span><span class="params">(<span class="type">const</span> std_msgs::String &amp;msg)</span> &#123;</span><br><span class="line">    SEGGER_RTT_WriteString(<span class="number">0</span>, <span class="string">&quot;\r\nmessageCallback occurred!\r\nYour message is &quot;</span>);</span><br><span class="line">    SEGGER_RTT_WriteString(<span class="number">0</span>, msg.data);</span><br><span class="line">    SEGGER_RTT_WriteString(<span class="number">0</span>, <span class="string">&quot;\r\n&quot;</span>);</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">strcmp</span>(<span class="string">&quot;servo_1&quot;</span>, msg.data) == <span class="number">0</span>) &#123;</span><br><span class="line">        SEGGER_RTT_WriteString(<span class="number">0</span>, <span class="string">&quot;Action &#x27;servo_1&#x27; begin!\r\n&quot;</span>);</span><br><span class="line">        __HAL_TIM_SET_COMPARE(&amp;htim1, TIM_CHANNEL_1, <span class="number">1500</span>);</span><br><span class="line">        SEGGER_RTT_WriteString(<span class="number">0</span>, <span class="string">&quot;Action &#x27;servo_1&#x27; complete!\r\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>写入固件，连接电脑测试</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129200940086.png" alt="image-20241129200940086"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129201020932.png" alt="image-20241129201020932"></p>
-<p>可以看到，回调函数正常触发，至此实现了ROS对STM32 publish 消息，并成功接收。</p>
-<h2 id="STM32向ROS发送话题"><a href="#STM32向ROS发送话题" class="headerlink" title="STM32向ROS发送话题"></a>STM32向ROS发送话题</h2><ol>
-<li>在<code>mainpp.cpp</code>实现下面测试代码：</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ros.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;std_msgs/String.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;mainpp.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;main.h&quot;</span></span></span><br><span class="line"></span><br><span class="line">std_msgs::String str_msg;</span><br><span class="line">ros::NodeHandle nh;</span><br><span class="line">ros::Publisher <span class="title function_">pub</span><span class="params">(<span class="string">&quot;stm32_ros_bridge_pub&quot;</span>, &amp;str_msg)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">HAL_UART_TxCpltCallback</span><span class="params">(UART_HandleTypeDef *huart)</span> &#123;</span><br><span class="line">    nh.getHardware()-&gt;flush();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">HAL_UART_RxCpltCallback</span><span class="params">(UART_HandleTypeDef *huart)</span> &#123;</span><br><span class="line">    nh.getHardware()-&gt;reset_rbuf();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    nh.initNode();</span><br><span class="line">    str_msg.data = <span class="string">&quot;Hello, ROS!&quot;</span>;</span><br><span class="line">    nh.advertise(pub);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">    pub.publish(&amp;str_msg);</span><br><span class="line">    nh.spinOnce();</span><br><span class="line">    HAL_Delay(<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129203923631.png" alt="image-20241129203923631"></p>
-<blockquote>
-<p>注意：这里有一个问题，我们用的波特率是115200，发送数据的频率是有限制的，如果超过这个上限，ROS拿到的数据就会丢包，没法通过完整性校验，所以这里在loop()里写了一个delay，但是这种做法不是通常推荐的，<strong>更加一般的做法是把publish写在某个定时器里，这样就不会占用CPU时间去等待。</strong></p>
-</blockquote>
-<p>贴一张图，发送频率不能太高</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241129204312643.png" alt="image-20241129204312643"></p>
-<p>至此实现了STM32与ROS的<strong>双向通信</strong>，后面可以拿来做一些好玩的东西了。</p>
-<hr>
-<p>测试STM32F103C8Tx单片机，其FLASH为64K，无法装下程序，故推荐FLASH大小为80K左右。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241130185002474.png" alt="image-20241130185002474"></p>
-<hr>
-<p>参考资料：</p>
-<ol>
-<li><a href="https://wiki.ros.org/rosserial/Overview/">rosserial&#x2F;Overview</a></li>
-</ol>
-<hr>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>Dev</tag>
-        <tag>STM32</tag>
-        <tag>ROS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>在STM32G4上移植CherryUSB协议栈（usb_device）</title>
-    <url>/post/fb4bb4c3.html</url>
-    <content><![CDATA[<blockquote>
-<p>本文实现了STM32G4模拟 usb hid 设备作为鼠标</p>
-<p>CherryUSB版本为v1.4.3</p>
-<p>ST的固件库为STM32Cube_FW_G4_V1.6.1</p>
-</blockquote>
-<h3 id="CherryUSB介绍（摘自CherryUSB的readme）"><a href="#CherryUSB介绍（摘自CherryUSB的readme）" class="headerlink" title="CherryUSB介绍（摘自CherryUSB的readme）"></a>CherryUSB介绍（摘自CherryUSB的readme）</h3><p>CherryUSB 是一个小而美的、可移植性高的、用于嵌入式系统的 USB 主从协议栈。同时 CherryUSB 具有以下优点：</p>
-<p><strong>易于学习 USB</strong></p>
-<p>为了方便用户学习 USB 基本知识、枚举、驱动加载、IP 驱动，因此，编写的代码具备以下优点：</p>
-<ul>
-<li>代码精简，逻辑简单，无复杂 C 语言语法</li>
-<li>树状化编程，代码层层递进</li>
-<li>Class 驱动和 porting 驱动模板化、精简化</li>
-<li>API 分类清晰（从机：初始化、注册类、命令回调类、数据收发类；主机：初始化、查找类、数据收发类）</li>
-</ul>
-<p><strong>易于使用 USB</strong></p>
-<p>为了方便用户使用 USB 接口，考虑到用户学习过 uart 和 dma，因此，设计的数据收发类接口具备以下优点：</p>
-<ul>
-<li>等价于使用 uart tx dma&#x2F;uart rx dma</li>
-<li>收发长度没有限制，用户不需要关心 USB 分包过程（porting 驱动做分包过程）</li>
-</ul>
-<p><strong>易于发挥 USB 性能</strong></p>
-<p>考虑到 USB 性能问题，尽量达到 USB 硬件理论带宽，因此，设计的数据收发类接口具备以下优点：</p>
-<ul>
-<li>Porting 驱动直接对接寄存器，无抽象层封装</li>
-<li>Memory zero copy</li>
-<li>IP 如果带 DMA 则使用 DMA 模式（DMA 带硬件分包功能）</li>
-<li>长度无限制，方便对接硬件 DMA 并且发挥 DMA 的优势</li>
-<li>分包功能在中断中处理</li>
-</ul>
-<p><strong>从机协议栈整体执行流程</strong></p>
-<p><img src="https://cherryusb.readthedocs.io/zh-cn/latest/_images/usbdev.svg" alt="usb-device"></p>
-<p><strong>主机协议栈整体执行流程</strong></p>
-<p><img src="https://cherryusb.readthedocs.io/zh-cn/latest/_images/usbhost.svg" alt="usb-host"></p>
-<h3 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h3><p><a href="https://github.com/cherry-embedded/CherryUSB/">cherry-embedded&#x2F;CherryUSB</a></p>
-<h3 id="开始移植"><a href="#开始移植" class="headerlink" title="开始移植"></a>开始移植</h3><ol>
-<li>使用 STM32CubeMX 创建工程，配置基本的 RCC、UART (作为 log 使用，但是我们移植的 G4 系列的 usb ip 核为 fsdev，基本没有配置项，故无 log)</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314221305123.png" alt="image-20250314221305123"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314221318104.png" alt="image-20250314221318104"></p>
-<ol start="2">
-<li>我们这里使用的是 fsdev ip，勾选 USB。开启 USB 中断，其他配置对我们没用，cherry 的代码中不会使用任何 ST 的 USB 库</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314221336698.png" alt="image-20250314221336698"></p>
-<ol start="3">
-<li><p>检查时钟树，保证 USB 时钟为 48MHz</p>
-<blockquote>
-<p>发现一个现象，如果用的是PLL出来的48M，后面注释MX自动生成的 usb init 似乎可有可无，但是用HSI的48M，则必须注释掉MX生成的 usb init，否则无法枚举</p>
-</blockquote>
-</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250315111137942.png" alt="image-20250315111137942"></p>
-<ol start="4">
-<li>Generate CODE</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314221525860.png" alt="image-20250314221525860"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314221525860.png"></p>
-<p>在项目目录里拷进CherryUSB源码</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314221959758.png" alt="image-20250314221959758"></p>
-<ol start="5">
-<li>添加 CherryUSB 必须要的源码，以及想要使用的 class 驱动，可以将对应 class 的 demo template 添加方便测试，我这里就添加 hid 的 class 和 demo template 来测试。</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314235630850.png" alt="image-20250314235630850"></p>
-<ol start="6">
-<li>将 .&#x2F;CherryUSB&#x2F;cherryusb_config_template.h 复制到 .&#x2F;Core&#x2F;Inc 并重命名为 usb_config.h</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314234255893.png" alt="image-20250314234255893"></p>
-<ol start="7">
-<li>如果使用 fsdev ip，在 usb_config.h 中实现以下宏</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 以下细节不同芯片可能有出入，要改！！</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USBDEV_EP_NUM 8</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USBDEV_FSDEV_PMA_ACCESS 2</span></span><br></pre></td></tr></table></figure>
-
-<ol start="8">
-<li>拷贝 usb_xxx.c 里面的 HAL_PCD_MspInit 函数中的内容到 usb_dc_low_level_init 函数中，并屏蔽 ST 生成的 USB 初始化</li>
-</ol>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">usb_dc_low_level_init</span><span class="params">(<span class="type">uint8_t</span> busid)</span> &#123;</span><br><span class="line">    add something...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250315111125946.png" alt="image-20250315111125946"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314234942250.png" alt="image-20250314234942250"></p>
-<ol start="9">
-<li>在中断函数中调用 USBD_IRQHandler，并传入 busid</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314235159981.png" alt="image-20250314235159981"></p>
-<ol start="10">
-<li>调用 template 的内容初始化，并填入 busid 和 USB IP 的 reg base，busid 从 0 开始，不能超过CONFIG_USBDEV_MAX_BUS，这里 reg base 在 stm32xxx.h 里找。</li>
-</ol>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250315111248946.png" alt="image-20250315111248946"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250314235723312.png" alt="image-20250314235723312"></p>
-<p>顺利的话，应该接上 USB 鼠标就开始转圈了，但是这里出现了没法枚举的情况。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20250315110450418.png" alt="image-20250315110450418"></p>
-<p>由于 fsdev ip 本来就只有一个配置项，故怀疑是</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> CONFIG_USBDEV_FSDEV_PMA_ACCESS 2 <span class="comment">// maybe 1 or 2, many chips may have a difference</span></span></span><br></pre></td></tr></table></figure>
-
-<p>这里的 define 不太合适，改为“1”后解决问题，鼠标开始转圈圈了。</p>
-<p><strong>注意注意：配置USB时钟的时候如果用HSI的48MHz频率，则必须不要忘了注释MX生成的 usb init。</strong></p>
-<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ol>
-<li><a href="https://cherryusb.readthedocs.io/zh-cn/latest/">CherryUSB 使用指南</a>——遇事不决先看官方文档，这是能找到的最好的资料，99%的问题文档里都提到过，感谢<a href="https://github.com/sakumisu">@sakumisu</a></li>
-<li><a href="https://club.rt-thread.org/ask/article/3e893614c58da7aa.html">APM32F407VGT6 DWC2移植 Port.A Full-Speed + Por.B High-Speed</a>——另一位大佬的帖子，看完受益匪浅</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>USB</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>复位之后无法自动枚举USB</title>
     <url>/post/d8d58b13.html</url>
     <content><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>单片机的USB在soft-reset复位之后有时无法自动重新枚举</p>
@@ -1229,6 +1211,69 @@
       </tags>
   </entry>
   <entry>
+    <title>用CLion配合PlatformIO开发树莓派Pico(RP2040)</title>
+    <url>/post/672d89ba.html</url>
+    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
+<li>Windows 11</li>
+<li>CLion 2024.3</li>
+<li>Python 3.12.3</li>
+</ul>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="安装PlatformIO"><a href="#安装PlatformIO" class="headerlink" title="安装PlatformIO"></a>安装PlatformIO</h3><ol>
+<li><p>下载<a href="https://raw.githubusercontent.com/platformio/platformio-core-installer/master/get-platformio.py">get-platformio.py</a></p>
+</li>
+<li><p>执行如下命令</p>
+</li>
+</ol>
+ <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"># change directory to the folder where is located downloaded &quot;get-platformio.py&quot;</span><br><span class="line"><span class="built_in">cd</span> C:/<span class="built_in">path</span>-to-<span class="built_in">dir</span>/where/get-platformio.py/is-located</span><br><span class="line">   </span><br><span class="line"># run it</span><br><span class="line">python.exe get-platformio.py</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><p>编辑名为 <code>Path</code> 的系统环境变量并追加 <code>C:\Users\UserName\.platformio\penv\Scripts\</code> 列表开头的路径（请将<code>UserName</code>替换为帐户名）。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224153641139.png" alt="image-20241224153641139"></p>
+</li>
+</ol>
+<h3 id="安装PlatformIO插件"><a href="#安装PlatformIO插件" class="headerlink" title="安装PlatformIO插件"></a>安装PlatformIO插件</h3><ol>
+<li><p>Go to <strong>Settings | Plugins</strong> and switch to <strong>Marketplace</strong>.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224153936338.png" alt="image-20241224153936338"></p>
+</li>
+<li><p>Search for <strong>PlatformIO for CLion</strong> and click <strong>Install</strong>.</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224154022748.png" alt="image-20241224154022748"></p>
+</li>
+<li><p>After the installation is finished, click <strong>Restart IDE</strong>.</p>
+</li>
+</ol>
+<h3 id="创建PlatformIO项目"><a href="#创建PlatformIO项目" class="headerlink" title="创建PlatformIO项目"></a>创建PlatformIO项目</h3><ol>
+<li><p>选择自己的board或者framework，创建项目；</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224154343595.png" alt="image-20241224154343595"></p>
+</li>
+<li><p>经过较长时间的等待后，成功创建工程，并生成了Arduino的”stub code”。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224154819663.png" alt="image-20241224154819663"></p>
+</li>
+</ol>
+<h3 id="实现upload自动上传项目（坑）"><a href="#实现upload自动上传项目（坑）" class="headerlink" title="实现upload自动上传项目（坑）"></a>实现upload自动上传项目（坑）</h3><p>一直报错Error 1，最后摸索出来以下这个步骤，百分百成功。</p>
+<ol>
+<li><p>下载<a href="https://zadig.akeo.ie/downloads/">zadig 2.5</a>版本，注意一定要是2.5版本，不能太新；</p>
+</li>
+<li><p>pico板进入bootloader，然后打开zadig，勾选<code>Options</code>里的<code>List All Devices</code>；</p>
+</li>
+<li><p>为<strong>RP2 Boot(Interface 1)<strong>安装</strong>WinUSB驱动</strong>；</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224155601520.png" alt="image-20241224155601520"></p>
+</li>
+<li><p>进入CLion，为pico随便编译一个程序，在<code>./.pio/build/pico/</code>里找到<code>firmware.uf2</code>，复制进pico的MSC设备里；</p>
+</li>
+<li><p>然后再使用PlatformIO里的upload就不会报错了。</p>
+</li>
+</ol>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://www.jetbrains.com/help/clion/platformio.html">PlatformIO | CLion Documentation</a><br><a href="https://docs.platformio.org/en/latest/core/installation/methods/installer-script.html">Installer Script (Recommended) — PlatformIO latest documentation</a></p>
+]]></content>
+      <categories>
+        <category>Dev</category>
+      </categories>
+      <tags>
+        <tag>Dev</tag>
+        <tag>Arduino</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>用CLion优雅地调试和开发STM32(CubeMX)</title>
     <url>/post/63adfc20.html</url>
     <content><![CDATA[<h2 id="Why-CLion"><a href="#Why-CLion" class="headerlink" title="Why CLion?"></a>Why CLion?</h2><p>Keil操作简单，容易上手，而且可以很方便地进行调试，不过其古老的界面，不符合人类直觉的操作，不符合现代的编程习惯，必然会被逐渐淘汰。</p>
@@ -1317,69 +1362,6 @@
       </tags>
   </entry>
   <entry>
-    <title>用CLion配合PlatformIO开发树莓派Pico(RP2040)</title>
-    <url>/post/672d89ba.html</url>
-    <content><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
-<li>Windows 11</li>
-<li>CLion 2024.3</li>
-<li>Python 3.12.3</li>
-</ul>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="安装PlatformIO"><a href="#安装PlatformIO" class="headerlink" title="安装PlatformIO"></a>安装PlatformIO</h3><ol>
-<li><p>下载<a href="https://raw.githubusercontent.com/platformio/platformio-core-installer/master/get-platformio.py">get-platformio.py</a></p>
-</li>
-<li><p>执行如下命令</p>
-</li>
-</ol>
- <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"># change directory to the folder where is located downloaded &quot;get-platformio.py&quot;</span><br><span class="line"><span class="built_in">cd</span> C:/<span class="built_in">path</span>-to-<span class="built_in">dir</span>/where/get-platformio.py/is-located</span><br><span class="line">   </span><br><span class="line"># run it</span><br><span class="line">python.exe get-platformio.py</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li><p>编辑名为 <code>Path</code> 的系统环境变量并追加 <code>C:\Users\UserName\.platformio\penv\Scripts\</code> 列表开头的路径（请将<code>UserName</code>替换为帐户名）。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224153641139.png" alt="image-20241224153641139"></p>
-</li>
-</ol>
-<h3 id="安装PlatformIO插件"><a href="#安装PlatformIO插件" class="headerlink" title="安装PlatformIO插件"></a>安装PlatformIO插件</h3><ol>
-<li><p>Go to <strong>Settings | Plugins</strong> and switch to <strong>Marketplace</strong>.</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224153936338.png" alt="image-20241224153936338"></p>
-</li>
-<li><p>Search for <strong>PlatformIO for CLion</strong> and click <strong>Install</strong>.</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224154022748.png" alt="image-20241224154022748"></p>
-</li>
-<li><p>After the installation is finished, click <strong>Restart IDE</strong>.</p>
-</li>
-</ol>
-<h3 id="创建PlatformIO项目"><a href="#创建PlatformIO项目" class="headerlink" title="创建PlatformIO项目"></a>创建PlatformIO项目</h3><ol>
-<li><p>选择自己的board或者framework，创建项目；</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224154343595.png" alt="image-20241224154343595"></p>
-</li>
-<li><p>经过较长时间的等待后，成功创建工程，并生成了Arduino的”stub code”。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224154819663.png" alt="image-20241224154819663"></p>
-</li>
-</ol>
-<h3 id="实现upload自动上传项目（坑）"><a href="#实现upload自动上传项目（坑）" class="headerlink" title="实现upload自动上传项目（坑）"></a>实现upload自动上传项目（坑）</h3><p>一直报错Error 1，最后摸索出来以下这个步骤，百分百成功。</p>
-<ol>
-<li><p>下载<a href="https://zadig.akeo.ie/downloads/">zadig 2.5</a>版本，注意一定要是2.5版本，不能太新；</p>
-</li>
-<li><p>pico板进入bootloader，然后打开zadig，勾选<code>Options</code>里的<code>List All Devices</code>；</p>
-</li>
-<li><p>为<strong>RP2 Boot(Interface 1)<strong>安装</strong>WinUSB驱动</strong>；</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20241224155601520.png" alt="image-20241224155601520"></p>
-</li>
-<li><p>进入CLion，为pico随便编译一个程序，在<code>./.pio/build/pico/</code>里找到<code>firmware.uf2</code>，复制进pico的MSC设备里；</p>
-</li>
-<li><p>然后再使用PlatformIO里的upload就不会报错了。</p>
-</li>
-</ol>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><p><a href="https://www.jetbrains.com/help/clion/platformio.html">PlatformIO | CLion Documentation</a><br><a href="https://docs.platformio.org/en/latest/core/installation/methods/installer-script.html">Installer Script (Recommended) — PlatformIO latest documentation</a></p>
-]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>Dev</tag>
-        <tag>Arduino</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>舵机多功能测试程序说明</title>
     <url>/post/cee333e2.html</url>
     <content><![CDATA[<p><strong>写在前面：基地一直都有对舵机快捷测试的需求，但是每次都得改源码，很麻烦，也不能实现舵机的精准角度控制，最近忙完期中考试，抽时间写了这个程序，也算是对学到的东西的一点小小的应用吧</strong></p>
@@ -1462,18 +1444,6 @@
       </tags>
   </entry>
   <entry>
-    <title>记录一个小项目——FRAM Disk</title>
-    <url>/post/6d4548a3.html</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Dev</category>
-      </categories>
-      <tags>
-        <tag>Dev</tag>
-        <tag>Hardware</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>记录一个小项目——道岔机遥控</title>
     <url>/post/e0fe6a7d.html</url>
     <content><![CDATA[<p>使用场景为工厂，环境存在433MHz对讲机干扰，通信要求可以一对一通信，也可以多对一通信，但是发送端同时还要接收接收端的回传信息，同时接收端留485进行MODBUS RTU通信，接入PLC。（最多99发99收）</p>
@@ -1525,6 +1495,24 @@
       <tags>
         <tag>Hardware</tag>
         <tag>电力电子</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一本接口定义手册</title>
+    <url>/post/4258943.html</url>
+    <content><![CDATA[<p>一本小而美的接口定义手册</p>
+<p>符合我的习惯，简洁、小而美、不失专业性</p>
+<p><a href="https://pinouts.org/">Pinouts.org</a></p>
+<p>比如USB-C的接口定义</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20260115003159447.png" alt="image-20260115003159447"></p>
+<p>常见的开发板的Pinout</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MDLZCOOL/blog-img/img/image-20260115003329534.png" alt="image-20260115003329534"></p>
+]]></content>
+      <categories>
+        <category>Books</category>
+      </categories>
+      <tags>
+        <tag>Hardware</tag>
       </tags>
   </entry>
   <entry>
